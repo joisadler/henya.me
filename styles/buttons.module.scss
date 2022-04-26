@@ -1,0 +1,25 @@
+@import 'utils';
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-color: transparent;
+  color: $black;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.25,.8,.25,1);
+
+  &:hover, &:active, &:focus {
+    outline: none;
+  }
+
+  @include breakpoint(tablet) {
+
+  }
+}
+
+.action_button {
+  @extend .button;
+}

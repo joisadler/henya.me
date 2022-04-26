@@ -1,0 +1,18 @@
+@import 'functions';
+
+/* Sizes */
+$header_height: toRem(66);
+$header_height_mobile: toRem(56);
+$border_radius_medium: toRem(6);
+$border_radius_small: toRem(4);
+$border_raduis_large: toRem(12);
+
+/* Breakpoints */
+$mobile: 360px;
+$tablet: 768px;
+$desktop: 1024px;
+$large_desktop: 1920px;
+
+/* Colors */
+$white: #ffffff;
+$black: #000000;

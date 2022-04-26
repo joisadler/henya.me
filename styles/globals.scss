@@ -1,0 +1,27 @@
+@import 'utils';
+
+/* Font face example */
+// @font-face {
+//   font-family: "GT Pressura Pro M Trial";
+//   src: url("../public/fonts/GT-Pressura-Pro-Mono-Trial-Bold-Italic.otf") format("opentype");
+//   font-weight: 700;
+//   font-style: italic;
+// }
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  background: $white;
+  color: $black;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

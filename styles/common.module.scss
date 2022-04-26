@@ -1,0 +1,31 @@
+@import 'utils';
+
+.section_container {
+
+  @include breakpoint(desktop) {
+
+  }
+}
+
+.section_container_limited {
+  min-width: 280px;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.section_title {
+
+
+  @include breakpoint(desktop) {
+
+  }
+}
+
+.hidden {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
