@@ -1,3 +1,72 @@
 {
-  "extends": "next/core-web-vitals"
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [".", "src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    // "no-param-reassign": [1, { "props": false}],
+    "jsx-a11y/label-has-associated-control": [1, {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "jsx-a11y/label-has-for": [1, {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "hrefLeft", "hrefRight" ],
+      "aspects": [ "invalidHref", "preferButton" ]
+    }],
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/react-in-jsx-scope": 0,
+    "react/prop-types": 1,
+    "react/require-default-props": 1,
+    "react/button-has-type": 0,
+    "import/extensions": 1,
+    "import/prefer-default-export": 0,
+    "import/no-named-as-default": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-await-in-loop": 0,
+    "no-return-assign": 0,
+    "no-param-reassign": 0,
+    "global-require": 0,
+    "no-underscore-dangle": 0,
+    "no-extend-native": 1,
+    "no-plusplus": 0,
+    "no-unused-vars": 1,
+    "camelcase": 0,
+    // "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-console": 0,
+    "no-shadow": 1
+  }
 }
