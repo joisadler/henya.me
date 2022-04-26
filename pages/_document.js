@@ -1,9 +1,9 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
     <Html>
-            <Head>
+      <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Henya Adler - UX/UI designer" />
         <link rel="icon" href="/favicon.ico" />
@@ -23,5 +23,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }
