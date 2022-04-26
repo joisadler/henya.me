@@ -1,6 +1,22 @@
+import { useEffect } from 'react';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
+  // Make scroll smooth
+  useEffect(() => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function listener(e) {
+        e.preventDefault();
+
+        document
+          .querySelector(e.currentTarget.getAttribute('href'))
+          .scrollIntoView({
+            behavior: 'smooth',
+          });
+      });
+    });
+  }, []);
+
   return (
     <Html>
       <Head>
