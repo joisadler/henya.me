@@ -11,7 +11,7 @@ const Home = ({ projects }) => {
         <title>Henya Adler</title>
       </Head>
 
-      <main className={styles.container} />
+      <main className={styles.container}>hi</main>
     </div>
   );
 };
