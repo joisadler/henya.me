@@ -20,8 +20,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content="Henya Adler - UX/UI designer" />
         <link rel="icon" href="/favicon.ico" />
         {/* example for prefetch images: */}
         {/* <link rel="prefetch" href="/images/image.png" /> */}

@@ -1,10 +1,11 @@
 @import 'utils';
 
-.container {
-  
+.page_container {
+
 }
 
 .section_container {
+  min-height: 100vh;
 
   @include breakpoint(desktop) {
 
@@ -13,7 +14,7 @@
 
 .section_container_limited {
   min-width: 280px;
-  max-width: 1440px;
+  max-width: 1200px;
   margin-inline: auto;
 }
 

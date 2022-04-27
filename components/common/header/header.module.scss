@@ -1,0 +1,29 @@
+@import 'utils';
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: $header_height_mobile;
+  border: 1px solid white;
+  color: $white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+
+  @include breakpoint(desktop) {
+    height: $header_height;
+  }
+}
+
+.logo_container {
+  height: 100%;
+  border: 1px solid white;
+}
+
+.nav {
+  height: 100%;
+  border: 1px solid white;
+}
