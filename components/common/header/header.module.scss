@@ -9,9 +9,9 @@
   align-items: flex-start;
   width: 100%;
   height: $header_height_mobile;
-  border: 1px solid white;
+  padding-inline: toRem(36);
   color: $white;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  // box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 
   @include breakpoint(desktop) {
     height: $header_height;
@@ -20,10 +20,50 @@
 
 .logo_container {
   height: 100%;
-  border: 1px solid white;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: toRem(35);
+  height: toRem(40);
+}
+
+.nav_container {
+  display: flex;
+  height: 100%;
 }
 
 .nav {
+  display: flex;
+  align-items: center;
   height: 100%;
-  border: 1px solid white;
+  margin-inline-end: toRem(12);
+}
+
+.nav_link {
+  margin-inline-end: toRem(30);
+  font-family: $montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: toRem(18);
+  line-height: toRem(22);
+  color: $white;
+}
+
+.contact_info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.contact_info_text {
+  color: $white;
+  font-family: $mulish;
+  font-size: toRem(16);
+  line-height: toRem(24);
+  font-style: normal;
+  font-weight: 600;
 }
