@@ -2,11 +2,10 @@ import Head from 'next/head';
 import { arrayOf, shape, string, number } from 'prop-types';
 import Main from 'components/home/main';
 import Header from 'components/common/header';
-import commonStyles from '../styles/common.module.scss';
 
 const Home = ({ projects, nav_links }) => {
   return (
-    <div className={commonStyles.page_container}>
+    <>
       <Head>
         <title>Henya Adler</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -14,7 +13,7 @@ const Home = ({ projects, nav_links }) => {
       </Head>
       <Header nav_links={nav_links} />
       <Main />
-    </div>
+    </>
   );
 };
 

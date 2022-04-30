@@ -5,8 +5,14 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-color: transparent;
-  color: $black;
+  border: 0.5px solid transparent;
+  border-radius: $normal_border_radius;
+  font-family: $alata;
+  font-style: normal;
+  font-weight: 400;
+  font-size: toRem(20);
+  line-height: 160%;
+  letter-spacing: 2px;
   white-space: nowrap;
   cursor: pointer;
   transition: all .3s cubic-bezier(.25,.8,.25,1);
@@ -22,4 +28,7 @@
 
 .action_button {
   @extend .button;
+  color: $white;
+  background: #EE3364;
+  padding: toRem(12) toRem(15);
 }

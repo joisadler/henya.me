@@ -9,12 +9,17 @@
   align-items: flex-start;
   width: 100%;
   height: $header_height_mobile;
-  padding-inline: toRem(36);
+  padding-inline: toRem(10);
   color: $white;
   // box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 
+  @include breakpoint(tablet) {
+    padding-inline: toRem(24);
+  }
+
   @include breakpoint(desktop) {
     height: $header_height;
+    padding-inline: toRem(70);
   }
 }
 
@@ -25,13 +30,20 @@
 }
 
 .logo {
-  width: toRem(35);
-  height: toRem(40);
+  height: calc($header_height_mobile * 0.8);
+
+  @include breakpoint(desktop) {
+    height: calc($header_height * 0.8);
+  }
 }
 
 .nav_container {
-  display: flex;
-  height: 100%;
+  display: none;
+
+  @include breakpoint(desktop) {
+    display: flex;
+    height: 100%;
+  }
 }
 
 .nav {
@@ -43,7 +55,7 @@
 
 .nav_link {
   margin-inline-end: toRem(30);
-  font-family: $montserrat;
+  font-family: $mulish;
   font-style: normal;
   font-weight: 600;
   font-size: toRem(18);
