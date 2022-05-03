@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { arrayOf, shape, string, number } from 'prop-types';
 import Main from 'components/home/main';
 import Header from 'components/common/header';
+import MobileMenu from 'components/common/mobile_menu';
 
 const Home = ({ projects, nav_links }) => {
   return (
@@ -11,6 +12,7 @@ const Home = ({ projects, nav_links }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Henya Adler - UX/UI designer" />
       </Head>
+      <MobileMenu nav_links={nav_links} />
       <Header nav_links={nav_links} />
       <Main />
     </>

@@ -1,9 +1,23 @@
+import { useContext } from 'react';
 import { arrayOf, shape, string, number } from 'prop-types';
 import LogoIcon from 'components/icons/LogoIcon';
+import Hamburger from 'hamburger-react';
+import Context from 'context/Context';
 import NavLink from './NavLink';
 import styles from './header.module.scss';
 
 const Header = ({ nav_links }) => {
+  const { isMobileMenuOpen, showMobileMenu, hideMobileMenu } =
+    useContext(Context);
+
+  const onHamburgerButtonClick = (toggled) => {
+    if (toggled) {
+      showMobileMenu();
+    } else {
+      hideMobileMenu();
+    }
+  };
+
   return (
     <section className={styles.container}>
       <div className={styles.logo_container}>
@@ -21,6 +35,13 @@ const Header = ({ nav_links }) => {
           </span>
           <span className={styles.contact_info_text}>+972 58 778 2 776</span>
         </div>
+      </div>
+      <div className={styles.hamburger_container}>
+        <Hamburger
+          toggled={isMobileMenuOpen}
+          onToggle={onHamburgerButtonClick}
+          label="Show menu"
+        />
       </div>
     </section>
   );
