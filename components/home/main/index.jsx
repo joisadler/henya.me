@@ -50,7 +50,7 @@ const Main = () => {
         </div>
         <div className={styles.image_container}>
           <img
-            src="images/preview.png"
+            src="images/preview.gif"
             alt="Projects preview"
             className={styles.image}
           />
