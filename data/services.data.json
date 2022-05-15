@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "UX/UI Design",
+    "description": "I've been an UX/UI designer for more than a year with adequate experience and expertise.",
+    "img_src": "images/services/uxui.png"
+  },
+  {
+    "id": 2,
+    "title": "Graphic Design",
+    "description": "I've been an experienced and skilled professional in this field and direction for five full years.",
+    "img_src": "images/services/graphic.png"
+  },
+  {
+    "id": 3,
+    "title": "Motion Design",
+    "description": "I've become self-taught in this field because of my immense desire to develop myself.",
+    "img_src": "images/services/motion.png"
+  }
+]

@@ -35,13 +35,15 @@ Home.propTypes = {
 };
 
 export async function getStaticProps() {
-  const projects = require('data/projects.json');
-  const nav_links = require('data/nav_links.json');
+  const projects = require('data/projects.data.json');
+  const nav_links = require('data/nav_links.data.json');
+  const services = require('data/services.data.json');
 
   return {
     props: {
       projects,
       nav_links,
+      services,
     },
   };
 }
