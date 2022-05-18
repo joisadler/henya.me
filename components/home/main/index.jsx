@@ -1,10 +1,12 @@
 // import Image from 'next/image';
 import { useRef } from 'react';
+import { arrayOf, shape, string, number } from 'prop-types';
 import Typed from 'react-typed';
 import buttonStyles from 'styles/buttons.module.scss';
+import Services from '../services/Services';
 import styles from './main.module.scss';
 
-const Main = () => {
+const Main = ({ services }) => {
   const texts = ['UX/UI Designer', 'Graphic Designer', 'Motion Designer'];
   const cvLinkRef = useRef(null);
 
@@ -58,6 +60,17 @@ const Main = () => {
       </div>
     </section>
   );
+};
+
+Main.propTypes = {
+  services: arrayOf(
+    shape({
+      id: number.isRequired,
+      title: string.isRequired,
+      description: string.isRequired,
+      img_src: string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Main;

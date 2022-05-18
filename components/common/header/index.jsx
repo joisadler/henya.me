@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { arrayOf, shape, string, number } from 'prop-types';
 import LogoIcon from 'components/icons/LogoIcon';
 import Hamburger from 'hamburger-react';
@@ -9,6 +9,14 @@ import styles from './header.module.scss';
 const Header = ({ nav_links }) => {
   const { isMobileMenuOpen, showMobileMenu, hideMobileMenu } =
     useContext(Context);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
 
   const onHamburgerButtonClick = (toggled) => {
     if (toggled) {

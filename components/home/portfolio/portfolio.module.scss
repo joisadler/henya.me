@@ -1,0 +1,143 @@
+@import 'utils.scss';
+
+.container {
+  width: 100%;
+  padding-inline: toRem(10);
+
+  @include breakpoint(tablet) {
+    padding-inline: toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    padding-inline: toRem(70);
+  }
+}
+
+.projects_list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 0;
+  list-style-type: none;
+
+  @media (min-width: 62rem) {
+    flex-flow: row wrap;
+  }
+  @media (min-width: 1200px) {
+  }
+}
+
+.project_preview {
+  width: 100%;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 15px 15px 61px -18px rgb(46 45 58 / 13%);
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  transition: all 0.3s ease-in-out;
+
+  @media (min-width: 62rem) {
+    width: calc((100% - 2.5rem) / 2);
+  }
+
+  * {
+    transform-style: preserve-3d;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: translate3d(0px, -10px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+
+    .project_preview_image {
+      transform: translate3d(0px, 0px, 0px) scale3d(1.05, 1.05, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    }
+    .right_arrow_icon {
+      transform: translate3d(13px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+
+    }
+  }
+}
+
+.project_preview_link {
+  width: 100%;
+  height: 100%;
+}
+
+.project_preview_top {
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  overflow: hidden;
+}
+
+.project_preview_image {
+  width: 100%;
+  aspect-ratio: 345/194;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  object-fit: cover;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+}
+
+.project_preview_info {
+  padding: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
+.tag {
+  padding:  0.25rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.project_title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #23233F;
+
+  @media (min-width: 62rem) {
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+
+.project_description {
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #23233F;
+
+  @media (min-width: 62rem) {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+.view_case_study {
+  font-size: 14px;
+  line-height: 20px;
+  color: #23233F;
+  font-weight: 700;
+
+  @media (min-width: 62rem) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.right_arrow_icon {
+  width: 24px;
+  height: 24px;
+  padding-left: 8px;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+}

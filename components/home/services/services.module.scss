@@ -1,101 +1,8 @@
 @import 'utils.scss';
 
-.container {
-  min-height: 100vh;
-  height: 100vh;
-  padding-block-start: $header_height_mobile;
-  padding-inline: toRem(10);
-  background: $maastricht_blue;
-
-  @include breakpoint(tablet) {
-    padding-inline: toRem(24);
-  }
-
-  @include breakpoint(desktop) {
-    padding-block-start: $header_height;
-    padding-inline: toRem(70);
-  }
-}
-
-.main_content {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 90%;
-  background: url('/images/icons-background.svg');
-
-  @include breakpoint(desktop) {
-    flex-flow: row nowrap;
-    align-items: flex-start;
-    height: 90%;
-  }
-}
-
-.text_content {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  width: 100%;
-
-
-  @include breakpoint(desktop) {
-    align-items: flex-start;
-    width: 50%;
-    padding-block-start: toRem(56);
-  }
-}
-
-.heading {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
-  font-family: $mulish;
-  font-weight: 900;
-  font-size: 9vw;
-  line-height: 200%;
-  text-align: center;
-  color: $white;
-
-  @include breakpoint(tablet) {
-    font-size: 6vw;
-    margin-block-end: toRem(70);
-  }
-
-  @include breakpoint(desktop) {
-    font-size: 2.9vw;
-    text-align: start;
-  }
-}
-
-.typed {
-  @extend .heading;
-  display: inline;
-  color: $primary_pink;
-}
-
-.image_container {
-  display: none;
-
-  @include breakpoint(desktop) {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-  }
-}
-
-.image {
-  width: 100%;
-  aspect-ratio: 1000/1080;
-}
-
 .services_container {
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
+  margin-block-start: -150px;
 
   padding-inline: toRem(10);
 
@@ -104,6 +11,7 @@
   }
 
   @include breakpoint(desktop) {
+    margin-block-start: -50px;
     padding-inline: toRem(70);
   }
 }

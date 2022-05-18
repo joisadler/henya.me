@@ -1,10 +1,12 @@
 import Head from 'next/head';
 import { arrayOf, shape, string, number } from 'prop-types';
-import Main from 'components/home/main';
 import Header from 'components/common/header';
+import Main from 'components/home/main';
 import MobileMenu from 'components/common/mobile_menu';
+import Services from '@/components/home/services/Services';
+import Portfolio from 'components/home/portfolio';
 
-const Home = ({ projects, nav_links }) => {
+const Home = ({ projects, nav_links, services }) => {
   return (
     <>
       <Head>
@@ -14,7 +16,9 @@ const Home = ({ projects, nav_links }) => {
       </Head>
       <MobileMenu nav_links={nav_links} />
       <Header nav_links={nav_links} />
-      <Main />
+      <Main services={services} />
+      <Services services={services} />
+      <Portfolio projects={projects} />
     </>
   );
 };
@@ -30,6 +34,14 @@ Home.propTypes = {
       id: number.isRequired,
       name: string.isRequired,
       url: string.isRequired,
+    })
+  ).isRequired,
+  services: arrayOf(
+    shape({
+      id: number.isRequired,
+      title: string.isRequired,
+      description: string.isRequired,
+      img_src: string.isRequired,
     })
   ).isRequired,
 };
