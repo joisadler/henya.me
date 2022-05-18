@@ -95,6 +95,9 @@
 }
 
 .project_preview_info {
+    display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
   padding: 1rem;
 }
 
@@ -137,6 +140,7 @@
 .view_case_study_container {
   display: flex;
   align-items: center;
+  margin-block-start: auto;
 }
 
 .view_case_study {
