@@ -2,7 +2,9 @@
 
 .services_container {
   width: 100%;
+  max-width: 1200px;
   margin-block-start: -150px;
+  margin-inline: auto;
 
   padding-inline: toRem(10);
 

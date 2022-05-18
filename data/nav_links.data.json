@@ -7,7 +7,7 @@
   {
     "id": 2,
     "name": "About",
-    "url": "/about"
+    "url": "about"
   },
   {
     "id": 3,
@@ -16,6 +16,6 @@
   },  {
     "id": 4,
     "name": "My CV",
-    "url": "/download/Henya_Adler_CV.pdf"
+    "url": "download/Henya_Adler_CV.pdf"
   }
 ]

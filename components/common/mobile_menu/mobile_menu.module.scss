@@ -1,7 +1,7 @@
 @import 'utils';
 
 .container {
-  position: absolute;
+  position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
@@ -15,10 +15,6 @@
     display: none;
   }
 }
-
-// .overlay {
-
-// }
 
 .mobile_nav {
   display: flex;
@@ -38,17 +34,12 @@
   width: 100%;
   height: $header_height;
   padding-inline: 10px;
-  // border-block-start: 1px solid $white;
   font-family: $mulish;
   font-style: normal;
   font-weight: 600;
   font-size: toRem(28);
   line-height: 120%;
   color: $white;
-
-  &:last-child {
-    // border-block-end: 1px solid $white;
-  }
 }
 
 .contacts {

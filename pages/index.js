@@ -3,7 +3,7 @@ import { arrayOf, shape, string, number } from 'prop-types';
 import Header from 'components/common/header';
 import Main from 'components/home/main';
 import MobileMenu from 'components/common/mobile_menu';
-import Services from '@/components/home/services/Services';
+import Services from 'components/home/services';
 import Portfolio from 'components/home/portfolio';
 
 const Home = ({ projects, nav_links, services }) => {
@@ -47,7 +47,7 @@ Home.propTypes = {
 };
 
 export async function getStaticProps() {
-  const projects = require('data/projects.data.json');
+  const projects = require('data/projects.data');
   const nav_links = require('data/nav_links.data.json');
   const services = require('data/services.data.json');
 

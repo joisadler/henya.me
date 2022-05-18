@@ -1,12 +1,10 @@
 // import Image from 'next/image';
 import { useRef } from 'react';
-import { arrayOf, shape, string, number } from 'prop-types';
 import Typed from 'react-typed';
 import buttonStyles from 'styles/buttons.module.scss';
-import Services from '../services/Services';
 import styles from './main.module.scss';
 
-const Main = ({ services }) => {
+const Main = () => {
   const texts = ['UX/UI Designer', 'Graphic Designer', 'Motion Designer'];
   const cvLinkRef = useRef(null);
 
@@ -16,7 +14,7 @@ const Main = ({ services }) => {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="home">
       <div className={styles.main_content}>
         <div className={styles.text_content}>
           <h1 className={styles.heading}>
@@ -60,17 +58,6 @@ const Main = ({ services }) => {
       </div>
     </section>
   );
-};
-
-Main.propTypes = {
-  services: arrayOf(
-    shape({
-      id: number.isRequired,
-      title: string.isRequired,
-      description: string.isRequired,
-      img_src: string.isRequired,
-    })
-  ).isRequired,
 };
 
 export default Main;

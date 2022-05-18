@@ -55,8 +55,10 @@ const ProjectPreview = ({ id, preview_image, name, tags, about }) => {
           </div>
           <h1 className={styles.project_title}>{name}</h1>
           <p className={styles.project_description}>{about}</p>
-          <span className={styles.view_case_study}>View Case Study</span>
-          <RightArrowIcon className={styles.right_arrow_icon} />
+          <div className={styles.view_case_study_container}>
+            <span className={styles.view_case_study}>View Case Study</span>
+            <RightArrowIcon className={styles.right_arrow_icon} />
+          </div>
         </div>
       </a>
     </li>

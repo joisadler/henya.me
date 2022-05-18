@@ -87,6 +87,8 @@
 
 .image {
   width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
   aspect-ratio: 1000/1080;
 }
 
@@ -106,88 +108,4 @@
   @include breakpoint(desktop) {
     padding-inline: toRem(70);
   }
-}
-
-.services {
-  width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: toRem(10);
-  padding: 0;
-  list-style-type: none;
-
-  @include breakpoint(tablet) {
-    gap: toRem(24);
-    flex-flow: row nowrap;
-  }
-
-  @include breakpoint(desktop) {
-    gap: toRem(70);
-  }
-}
-
-.service_card {
-  padding: 0 toRem(24) toRem(24);
-  border-radius: toRem(10);
-  background: $white;
-  box-shadow: 0px 0px toRem(4) rgba(0, 0, 0, 0.25);
-
-  width: 100%;
-
-  @include breakpoint(tablet) {
-    width: calc((100% - toRem(24) * 2) / 3);
-  }
-
-  @include breakpoint(desktop) {
-    width: calc((100% - toRem(70) * 2) / 3);
-  }
-}
-
-.service_card_top {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-  @include breakpoint(desktop) {
-    flex-flow: row nowrap;
-  }
-}
-
-.service_card_image {
-  width: 100%;
-
-  @include breakpoint(desktop) {
-    width: 50%;
-  }
-}
-
-.service_card_title {
-  width: 100%;
-  margin-block: toRem(24);
-  font-family: $mulish;
-  font-style: normal;
-  font-weight: 900;
-  font-size: toRem(30);
-  line-height: 117%;
-  text-align: center;
-  color: $maastricht_blue;
-
-  @include breakpoint(desktop) {
-    width: 50%;
-  }
-}
-
-.service_card_description {
-  width: 100%;
-  margin: 0;
-  font-family: $alata;
-  font-style: normal;
-  font-weight: 400;
-  font-size: toRem(20);
-  line-height: 160%;
-  text-align: center;
-  letter-spacing: toRem(0.1);
-  color: $maastricht_blue;
 }
