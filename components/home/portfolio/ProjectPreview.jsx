@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useEffect } from 'react';
-import { string, arrayOf } from 'prop-types';
+import { string, number, arrayOf, bool } from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
 import { desktop_breakpoint } from 'config/constants';
 import styles from './portfolio.module.scss';
@@ -20,7 +20,14 @@ const tagTextColors = {
   Rebranding: '#04A5E0',
 };
 
-const ProjectPreview = ({ id, preview_image, name, tags, about }) => {
+const ProjectPreview = ({
+  id,
+  preview_image,
+  name,
+  tags,
+  about,
+  comingSoon,
+}) => {
   const isMobile = useMediaQuery({
     query: `(max-width: ${desktop_breakpoint}px)`,
   });
@@ -54,6 +61,7 @@ const ProjectPreview = ({ id, preview_image, name, tags, about }) => {
             {tags.map((tag) => {
               return (
                 <span
+                  key={tag}
                   className={styles.tag}
                   style={{
                     color: tagTextColors[tag],
@@ -78,11 +86,12 @@ const ProjectPreview = ({ id, preview_image, name, tags, about }) => {
 };
 
 ProjectPreview.propTypes = {
-  id: string.isRequired,
+  id: number.isRequired,
   preview_image: string.isRequired,
   name: string.isRequired,
   tags: arrayOf(string).isRequired,
   about: string.isRequired,
+  comingSoon: bool.isRequired,
 };
 
 export default ProjectPreview;

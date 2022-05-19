@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { elementType } from 'prop-types';
+import { node } from 'prop-types';
 import Context, { initialState } from './Context';
 
 const GlobalState = ({ children }) => {
@@ -37,7 +37,7 @@ const GlobalState = ({ children }) => {
 };
 
 GlobalState.propTypes = {
-  children: elementType.isRequired,
+  children: node.isRequired,
 };
 
 export default GlobalState;

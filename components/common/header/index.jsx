@@ -34,7 +34,7 @@ const Header = ({ nav_links }) => {
       <div className={styles.nav_container}>
         <nav className={styles.nav}>
           {nav_links.map(({ id, ...linkProps }) => (
-            <NavLink {...linkProps} />
+            <NavLink key={id} {...linkProps} />
           ))}
         </nav>
         <div className={styles.contact_info}>

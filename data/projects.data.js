@@ -7,6 +7,7 @@ module.exports = [
     tags: ['UX/UI', 'Mobile'],
     about:
       'Book Exchange app. You can give your book and get a new one instead',
+    comingSoon: false,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ module.exports = [
     preview_image: '/images/portfolio/ReCon_preview.png',
     tags: ['UX/UI', 'Website'],
     about: 'Responsive website for conference',
+    comingSoon: true,
   },
 
   {
@@ -22,6 +24,7 @@ module.exports = [
     preview_image: '/images/portfolio/Crocoin_preview.png',
     tags: ['UX/UI', 'Website'],
     about: 'Trading Website',
+    comingSoon: true,
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ module.exports = [
     tags: ['UX/UI', 'Mobile'],
     about:
       'Mobile app for an Italian restaurant. Customise your true Italian pizza, pasta, salat, desserts and drinks.',
+    comingSoon: true,
   },
   // {
   //   id: 5,

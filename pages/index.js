@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { arrayOf, shape, string, number } from 'prop-types';
+import { arrayOf, shape, string, number, bool } from 'prop-types';
 import Header from 'components/common/header';
 import Main from 'components/home/main';
 import MobileMenu from 'components/common/mobile_menu';
@@ -26,7 +26,12 @@ const Home = ({ projects, nav_links, services }) => {
 Home.propTypes = {
   projects: arrayOf(
     shape({
-      id: number,
+      id: number.isRequired,
+      preview_image: string.isRequired,
+      name: string.isRequired,
+      tags: arrayOf(string).isRequired,
+      about: string.isRequired,
+      comingSoon: bool.isRequired,
     })
   ).isRequired,
   nav_links: arrayOf(

@@ -34,7 +34,7 @@ const MobileMenu = ({ nav_links }) => {
     >
       <nav className={styles.mobile_nav}>
         {nav_links.map(({ id, ...linkProps }) => (
-          <MobileNavLink {...linkProps} />
+          <MobileNavLink key={id} {...linkProps} />
         ))}
       </nav>
       <nav className={styles.contacts}>

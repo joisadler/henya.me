@@ -1,6 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import { arrayOf, shape, number } from 'prop-types';
+import { arrayOf, shape, number, string, bool } from 'prop-types';
 import styles from './portfolio.module.scss';
 
 const ProjectPreview = dynamic(
@@ -27,7 +27,12 @@ const Portfolio = ({ projects }) => {
 Portfolio.propTypes = {
   projects: arrayOf(
     shape({
-      id: number,
+      id: number.isRequired,
+      preview_image: string.isRequired,
+      name: string.isRequired,
+      tags: arrayOf(string).isRequired,
+      about: string.isRequired,
+      comingSoon: bool.isRequired,
     })
   ).isRequired,
 };
