@@ -17,6 +17,7 @@
 }
 
 .section_title {
+  margin: 0;
   font-family: 'Mulish';
   font-style: normal;
   font-weight: 900;
@@ -30,7 +31,7 @@
   flex-flow: column nowrap;
   gap: 2.5rem;
   width: 100%;
-  margin-inline: auto;
+  margin: 2.5rem auto;
   padding: 0;
   list-style-type: none;
 
@@ -46,10 +47,10 @@
   width: 100%;
   background: #fff;
   border-radius: $border_raduis_large;
-  box-shadow: 15px 15px 61px -18px rgb(46 45 58 / 13%);
+  box-shadow: 15px 15px 61px rgba(46, 45, 58, 0.13);
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
   transform-style: preserve-3d;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s linear;
 
   @include breakpoint(desktop) {
     width: calc((100% - 2.5rem) / 2);
@@ -57,7 +58,7 @@
 
   * {
     transform-style: preserve-3d;
-    transition: all 0.3s ease-in-out
+    transition: all 0.3s linear;
   }
 
   &:hover {
