@@ -147,6 +147,10 @@
   @include breakpoint(desktop) {
     margin-block-start: auto;
   }
+
+  &[data-autowidth="true"] {
+    width: fit-content;
+  }
 }
 
 .view_case_study {

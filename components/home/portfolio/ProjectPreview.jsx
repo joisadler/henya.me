@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useEffect } from 'react';
-import { string, number, arrayOf, bool } from 'prop-types';
+import { string, number, arrayOf, bool, node } from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
 import { desktop_breakpoint } from 'config/constants';
 import styles from './portfolio.module.scss';
@@ -46,9 +46,22 @@ const ProjectPreview = ({
     }px`;
   }, [window.offsetHeight, window.offsetWigth, isMobile]);
 
+  const buttonText = comingSoon ? 'Coming soon...' : 'View Case Study';
+
+  const Wrapper = ({ children }) =>
+    !comingSoon ? (
+      <a href={`/projects/${id}`}>{children}</a>
+    ) : (
+      <div>{children}</div>
+    );
+
+  Wrapper.propTypes = {
+    children: node.isRequired,
+  };
+
   return (
     <li className={styles.project_preview} ref={containerRef}>
-      <a href={`/projects/${id}`} className={styles.project_preview_link}>
+      <Wrapper className={styles.project_preview_link}>
         <div className={styles.project_preview_top} ref={previewTopRef}>
           <img
             src={preview_image}
@@ -75,12 +88,20 @@ const ProjectPreview = ({
           </div>
           <h1 className={styles.project_title}>{name}</h1>
           <p className={styles.project_description}>{about}</p>
-          <div className={styles.view_case_study_container}>
-            <span className={styles.view_case_study}>View Case Study</span>
-            <RightArrowIcon className={styles.right_arrow_icon} color="#fff" />
+          <div
+            className={styles.view_case_study_container}
+            data-autowidth={Boolean(comingSoon)}
+          >
+            <span className={styles.view_case_study}>{buttonText}</span>
+            {!comingSoon && (
+              <RightArrowIcon
+                className={styles.right_arrow_icon}
+                color="#fff"
+              />
+            )}
           </div>
         </div>
-      </a>
+      </Wrapper>
     </li>
   );
 };
