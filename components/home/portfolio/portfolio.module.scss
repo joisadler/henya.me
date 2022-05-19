@@ -34,7 +34,7 @@
   padding: 0;
   list-style-type: none;
 
-  @media (min-width: 62rem) {
+  @include breakpoint(desktop) {
     flex-flow: row wrap;
   }
   @media (min-width: 1200px) {
@@ -45,13 +45,13 @@
   z-index: 0;
   width: 100%;
   background: #fff;
-  border-radius: 30px;
+  border-radius: $border_raduis_large;
   box-shadow: 15px 15px 61px -18px rgb(46 45 58 / 13%);
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
   transform-style: preserve-3d;
   transition: all 0.3s ease-in-out;
 
-  @media (min-width: 62rem) {
+  @include breakpoint(desktop) {
     width: calc((100% - 2.5rem) / 2);
   }
 
@@ -95,7 +95,7 @@
 }
 
 .project_preview_info {
-    display: flex;
+  display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   padding: 1rem;
@@ -113,45 +113,51 @@
 }
 
 .project_title {
+  margin-block-end: 0;
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
   color: #23233F;
 
-  @media (min-width: 62rem) {
+  @include breakpoint(desktop) {
     font-size: 40px;
     line-height: 56px;
   }
 }
 
 .project_description {
-  margin-bottom: 24px;
   font-size: 14px;
   line-height: 20px;
   color: #23233F;
 
-  @media (min-width: 62rem) {
+  @include breakpoint(desktop) {
     font-size: 18px;
     line-height: 24px;
-    margin-bottom: 32px;
   }
 }
 
 .view_case_study_container {
   display: flex;
   align-items: center;
-  margin-block-start: auto;
+  width: toRem(200);
+  padding: toRem(13) toRem(10);
+  background: $primary_pink;
+  border-radius: $border_radius_medium;
+
+  @include breakpoint(desktop) {
+    margin-block-start: auto;
+  }
 }
 
 .view_case_study {
-  font-size: 14px;
-  line-height: 20px;
-  color: #23233F;
+  font-size: toRem(14);
+  line-height: toRem(20);
+  color: $white;
   font-weight: 700;
 
-  @media (min-width: 62rem) {
-    font-size: 18px;
-    line-height: 24px;
+  @include breakpoint(desktop) {
+    font-size: toRem(18);
+    line-height: toRem(24);
   }
 }
 

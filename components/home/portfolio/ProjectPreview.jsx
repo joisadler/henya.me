@@ -1,5 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useEffect } from 'react';
 import { string, arrayOf } from 'prop-types';
+import { useMediaQuery } from 'react-responsive';
+import { desktop_breakpoint } from 'config/constants';
 import styles from './portfolio.module.scss';
 import RightArrowIcon from '../../icons/RightArrowIcon';
 
@@ -18,17 +21,26 @@ const tagTextColors = {
 };
 
 const ProjectPreview = ({ id, preview_image, name, tags, about }) => {
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${desktop_breakpoint}px)`,
+  });
+
   const previewTopRef = useRef(null);
   const previewInfoRef = useRef(null);
+  const containerRef = useRef(null);
   useEffect(() => {
+    if (isMobile) return;
     if (!previewTopRef?.current || !previewInfoRef?.current) return;
-    const height = previewTopRef.current.offsetHeight;
-    previewInfoRef.current.style.minHeight = `${height}px`;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [window.offsetHeight, window.offsetWigth]);
+    const previewHeight = containerRef.current.offsetHeight;
+    const previewTopHeight = previewTopRef.current.offsetHeight;
+    previewInfoRef.current.style.minHeight = `${previewTopHeight}px`;
+    previewInfoRef.current.style.height = `${
+      previewHeight - previewTopHeight
+    }px`;
+  }, [window.offsetHeight, window.offsetWigth, isMobile]);
 
   return (
-    <li className={styles.project_preview}>
+    <li className={styles.project_preview} ref={containerRef}>
       <a href={`/projects/${id}`} className={styles.project_preview_link}>
         <div className={styles.project_preview_top} ref={previewTopRef}>
           <img
@@ -57,7 +69,7 @@ const ProjectPreview = ({ id, preview_image, name, tags, about }) => {
           <p className={styles.project_description}>{about}</p>
           <div className={styles.view_case_study_container}>
             <span className={styles.view_case_study}>View Case Study</span>
-            <RightArrowIcon className={styles.right_arrow_icon} />
+            <RightArrowIcon className={styles.right_arrow_icon} color="#fff" />
           </div>
         </div>
       </a>

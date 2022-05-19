@@ -3,9 +3,6 @@
 /* Sizes */
 $header_height: toRem(106);
 $header_height_mobile: toRem(86);
-$border_radius_medium: toRem(10);
-$border_radius_small: toRem(4);
-$border_raduis_large: toRem(12);
 
 /* Breakpoints */
 $mobile: 360px;
@@ -27,4 +24,6 @@ $montserrat: 'Montserrat', sans-serif;
 $mulish: 'Mulish', sans-serif;
 
 /* Border-radius */
-$normal_border_radius: toRem(10);
+$border_radius_medium: toRem(10);
+$border_radius_small: toRem(4);
+$border_raduis_large: toRem(24);

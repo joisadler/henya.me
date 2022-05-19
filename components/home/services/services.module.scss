@@ -38,7 +38,7 @@
 
 .service_card {
   padding: 0 toRem(24) toRem(24);
-  border-radius: toRem(10);
+  border-radius: $border_radius_medium;
   background: $white;
   box-shadow: 0px 0px toRem(4) rgba(0, 0, 0, 0.25);
 

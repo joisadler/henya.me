@@ -1,4 +1,3 @@
-// import Image from 'next/image';
 import { useRef } from 'react';
 import Typed from 'react-typed';
 import buttonStyles from 'styles/buttons.module.scss';
