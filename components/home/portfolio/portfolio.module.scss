@@ -68,7 +68,7 @@
       transform: translate3d(0px, 0px, 0px) scale3d(1.05, 1.05, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     }
     .right_arrow_icon {
-      transform: translate3d(13px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      transform: translate3d(4px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     }
   }
 }
@@ -139,7 +139,7 @@
 .view_case_study_container {
   display: flex;
   align-items: center;
-  width: toRem(200);
+  width: toRem(195);
   padding: toRem(13) toRem(10);
   background: $primary_pink;
   border-radius: $border_radius_medium;
