@@ -1,7 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { arrayOf, shape, number, string, bool } from 'prop-types';
-import styles from './portfolio.module.scss';
+import styles from './uxui.module.scss';
 
 const ProjectPreview = dynamic(
   () => {
@@ -10,9 +10,9 @@ const ProjectPreview = dynamic(
   { ssr: false }
 );
 
-const Portfolio = ({ projects }) => {
+const UxUi = ({ projects }) => {
   return (
-    <section id="portfolio" className={styles.container}>
+    <section id="uxui" className={styles.container}>
       <h2 className={styles.section_title}>UX/UI Design</h2>
       <ul className={styles.projects_list}>
         {projects.map((project) => {
@@ -24,7 +24,7 @@ const Portfolio = ({ projects }) => {
   );
 };
 
-Portfolio.propTypes = {
+UxUi.propTypes = {
   projects: arrayOf(
     shape({
       id: number.isRequired,
@@ -37,4 +37,4 @@ Portfolio.propTypes = {
   ).isRequired,
 };
 
-export default Portfolio;
+export default UxUi;

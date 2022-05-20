@@ -4,9 +4,9 @@ import Header from 'components/common/header';
 import Main from 'components/home/main';
 import MobileMenu from 'components/common/mobile_menu';
 import Services from 'components/home/services';
-import Portfolio from 'components/home/portfolio';
+import UxUi from 'components/home/UxUi';
 
-const Home = ({ projects, nav_links, services }) => {
+const Home = ({ uxui_projects, graphic_projects, nav_links, services }) => {
   return (
     <>
       <Head>
@@ -18,13 +18,13 @@ const Home = ({ projects, nav_links, services }) => {
       <Header nav_links={nav_links} />
       <Main services={services} />
       <Services services={services} />
-      <Portfolio projects={projects} />
+      <UxUi projects={uxui_projects} />
     </>
   );
 };
 
 Home.propTypes = {
-  projects: arrayOf(
+  uxui_projects: arrayOf(
     shape({
       id: number.isRequired,
       preview_image: string.isRequired,
@@ -32,6 +32,13 @@ Home.propTypes = {
       tags: arrayOf(string).isRequired,
       about: string.isRequired,
       comingSoon: bool.isRequired,
+    })
+  ).isRequired,
+  graphic_projects: arrayOf(
+    shape({
+      id: number.isRequired,
+      preview_image: string.isRequired,
+      name: string.isRequired,
     })
   ).isRequired,
   nav_links: arrayOf(
@@ -52,13 +59,15 @@ Home.propTypes = {
 };
 
 export async function getStaticProps() {
-  const projects = require('data/projects.data');
+  const uxui_projects = require('data/uxui_projects.data');
+  const graphic_design_projects = require('data/graphic_design_projects.data');
   const nav_links = require('data/nav_links.data.json');
   const services = require('data/services.data.json');
 
   return {
     props: {
-      projects,
+      uxui_projects,
+      graphic_design_projects,
       nav_links,
       services,
     },

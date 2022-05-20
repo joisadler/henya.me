@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import { string, number, arrayOf, bool, node } from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
 import { desktop_breakpoint } from 'config/constants';
-import styles from './portfolio.module.scss';
+import styles from './uxui.module.scss';
 import RightArrowIcon from '../../icons/RightArrowIcon';
 
 const tagBackgroundColors = {
@@ -20,7 +20,7 @@ const tagTextColors = {
   Rebranding: '#04A5E0',
 };
 
-const ProjectPreview = ({
+const UxUiProjectPreview = ({
   id,
   preview_image,
   name,
@@ -50,7 +50,7 @@ const ProjectPreview = ({
 
   const Wrapper = ({ children }) =>
     !comingSoon ? (
-      <a href={`/projects/${id}`}>{children}</a>
+      <a href={`/uxui_projects/${id}`}>{children}</a>
     ) : (
       <div>{children}</div>
     );
@@ -106,7 +106,7 @@ const ProjectPreview = ({
   );
 };
 
-ProjectPreview.propTypes = {
+UxUiProjectPreview.propTypes = {
   id: number.isRequired,
   preview_image: string.isRequired,
   name: string.isRequired,
@@ -115,4 +115,4 @@ ProjectPreview.propTypes = {
   comingSoon: bool.isRequired,
 };
 
-export default ProjectPreview;
+export default UxUiProjectPreview;

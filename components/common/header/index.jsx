@@ -1,14 +1,42 @@
-import { useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { arrayOf, shape, string, number } from 'prop-types';
 import LogoIcon from 'components/icons/LogoIcon';
 import Hamburger from 'hamburger-react';
 import Context from 'context/Context';
+import {
+  desktop_breakpoint,
+  header_height,
+  header_height_mobile,
+} from 'config/constants';
+import { useMediaQuery } from 'react-responsive';
 import NavLink from './NavLink';
 import styles from './header.module.scss';
 
 const Header = ({ nav_links }) => {
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${desktop_breakpoint}px)`,
+  });
+  const height = isMobile ? header_height_mobile : header_height;
+
   const { isMobileMenuOpen, showMobileMenu, hideMobileMenu } =
     useContext(Context);
+
+  const [background, setBackground] = useState('transparent');
+
+  useEffect(() => {
+    const updateBackground = () => {
+      if (window.scrollY >= height) {
+        setBackground('rgba(19, 26, 54, 0.3)');
+      } else {
+        setBackground('transparent');
+      }
+    };
+
+    updateBackground();
+    // adding the event when scroll change background
+    window.addEventListener('scroll', updateBackground);
+    return () => window.removeEventListener('keyup', updateBackground);
+  }, [height]);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -27,7 +55,7 @@ const Header = ({ nav_links }) => {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} style={{ background }}>
       <div className={styles.logo_container}>
         <LogoIcon className={styles.logo} />
       </div>

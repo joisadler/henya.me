@@ -29,7 +29,7 @@
 .projects_list {
   display: flex;
   flex-flow: column nowrap;
-  gap: 2.5rem;
+  gap: toRem(10);
   width: 100%;
   margin: 2.5rem auto;
   padding: 0;
@@ -37,6 +37,7 @@
 
   @include breakpoint(desktop) {
     flex-flow: row wrap;
+    gap: 2.5rem;
   }
   @media (min-width: 1200px) {
   }
@@ -52,24 +53,24 @@
   transform-style: preserve-3d;
   transition: all 0.3s linear;
 
-  @include breakpoint(desktop) {
-    width: calc((100% - 2.5rem) / 2);
-  }
-
   * {
     transform-style: preserve-3d;
     transition: all 0.3s linear;
   }
 
-  &:hover {
-    opacity: 1;
-    transform: translate3d(0px, -10px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  @include breakpoint(desktop) {
+    width: calc((100% - 2.5rem) / 2);
 
-    .project_preview_image {
-      transform: translate3d(0px, 0px, 0px) scale3d(1.05, 1.05, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-    }
-    .right_arrow_icon {
-      transform: translate3d(4px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    &:hover {
+      opacity: 1;
+      transform: translate3d(0px, -10px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+
+      .project_preview_image {
+        transform: translate3d(0px, 0px, 0px) scale3d(1.05, 1.05, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      }
+      .right_arrow_icon {
+        transform: translate3d(4px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      }
     }
   }
 }
@@ -140,12 +141,13 @@
 .view_case_study_container {
   display: flex;
   align-items: center;
-  width: toRem(195);
+  width: toRem(160);
   padding: toRem(13) toRem(10);
   background: $primary_pink;
   border-radius: $border_radius_medium;
 
   @include breakpoint(desktop) {
+    width: toRem(195);
     margin-block-start: auto;
   }
 
