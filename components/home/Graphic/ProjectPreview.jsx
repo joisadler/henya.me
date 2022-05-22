@@ -6,12 +6,12 @@ import styles from './graphic.module.scss';
 const UxUiProjectPreview = ({ preview_image_filename, name }) => {
   return (
     <li className={styles.project_preview}>
-      <picture className={styles.project_preview_image}>
+      <picture className={styles.project_preview_picture}>
         <source srcSet={`${preview_image_filename}.webp`} type="image/webp" />
         <source srcSet={`${preview_image_filename}.png`} type="image/png" />
         <img
-          style={{ width: '100%', height: '100%' }}
-          src={`${preview_image_filename}.png`}
+          className={styles.project_preview_image}
+          src={`${preview_image_filename}.webp`}
           alt={name}
         />
       </picture>
