@@ -66,10 +66,26 @@ const Header = ({ nav_links }) => {
           ))}
         </nav>
         <div className={styles.contact_info}>
-          <span className={styles.contact_info_text}>
+          {/* <span className={styles.contact_info_text}>
             henyadesign@gmail.com
           </span>
-          <span className={styles.contact_info_text}>+972 58 778 2 776</span>
+          <span className={styles.contact_info_text}>+972 58 778 2 776</span> */}
+          <a
+            className={styles.contact_info_text}
+            href="mailto:henyadesign@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            henyadesign@gmail.com
+          </a>
+          <a
+            className={styles.contact_info_text}
+            href="https://wa.me/972587782776"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            +972 58 778 2 776
+          </a>
         </div>
       </div>
       <div className={styles.hamburger_container}>

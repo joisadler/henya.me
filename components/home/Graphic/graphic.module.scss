@@ -4,7 +4,7 @@
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
-  margin-block-start: toRem(100);
+  margin-block: toRem(100);
   padding-inline: toRem(10);
 
 
@@ -19,7 +19,7 @@
 
 .container {
   padding: toRem(10);
-  border-radius: $border_raduis_xlarge;
+  border-radius: $border_raduis_large;
   background: $white_pink;
   box-shadow: 0px 0px 30px rgba(16, 32, 57, 0.15);
 
@@ -28,7 +28,7 @@
   }
 
   @include breakpoint(desktop) {
-    padding: toRem(64) toRem(70);
+    padding: toRem(40) toRem(70);
   }
 
   * {
@@ -62,7 +62,7 @@
   flex-flow: column nowrap;
   gap: toRem(10);
   width: 100%;
-  margin: toRem(60) auto 0 auto;
+  margin: toRem(40) auto 0 auto;
   padding: 0;
   list-style-type: none;
 

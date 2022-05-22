@@ -6,6 +6,7 @@ import MobileMenu from 'components/common/mobile_menu';
 import Services from 'components/home/services';
 import UxUi from 'components/home/UxUi';
 import Graphic from 'components/home/Graphic';
+import Footer from 'components/common/footer';
 
 const Home = ({
   uxui_projects,
@@ -26,6 +27,7 @@ const Home = ({
       <Services services={services} />
       <UxUi projects={uxui_projects} />
       <Graphic projects={graphic_design_projects} />
+      <Footer />
     </>
   );
 };
