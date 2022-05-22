@@ -5,8 +5,14 @@ import Main from 'components/home/main';
 import MobileMenu from 'components/common/mobile_menu';
 import Services from 'components/home/services';
 import UxUi from 'components/home/UxUi';
+import Graphic from 'components/home/Graphic';
 
-const Home = ({ uxui_projects, graphic_projects, nav_links, services }) => {
+const Home = ({
+  uxui_projects,
+  graphic_design_projects,
+  nav_links,
+  services,
+}) => {
   return (
     <>
       <Head>
@@ -19,6 +25,7 @@ const Home = ({ uxui_projects, graphic_projects, nav_links, services }) => {
       <Main services={services} />
       <Services services={services} />
       <UxUi projects={uxui_projects} />
+      <Graphic projects={graphic_design_projects} />
     </>
   );
 };
@@ -34,7 +41,7 @@ Home.propTypes = {
       comingSoon: bool.isRequired,
     })
   ).isRequired,
-  graphic_projects: arrayOf(
+  graphic_design_projects: arrayOf(
     shape({
       id: number.isRequired,
       preview_image: string.isRequired,

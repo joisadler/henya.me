@@ -10,6 +10,7 @@ export const large_desktop_breakpoint = 1920;
 
 /* Colors */
 export const white = '#ffffff';
+export const white_pink = '#FBF7FF';
 export const black = '#000000';
 export const maastricht_blue = '#131A36';
 export const primary_pink = '#EE3364';

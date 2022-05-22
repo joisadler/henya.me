@@ -23,7 +23,12 @@
   font-weight: 900;
   font-size: 40px;
   line-height: 80%;
+  text-align: center;
   color: #131A36;
+
+  @include breakpoint(tablet) {
+    text-align: start;
+  }
 }
 
 .projects_list {
@@ -38,8 +43,6 @@
   @include breakpoint(desktop) {
     flex-flow: row wrap;
     gap: 2.5rem;
-  }
-  @media (min-width: 1200px) {
   }
 }
 
@@ -161,6 +164,7 @@
   line-height: toRem(20);
   color: $white;
   font-weight: 700;
+  white-space: nowrap;
 
   @include breakpoint(desktop) {
     font-size: toRem(18);
