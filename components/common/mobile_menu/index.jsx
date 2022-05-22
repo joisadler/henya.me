@@ -40,7 +40,7 @@ const MobileMenu = ({ nav_links }) => {
       <nav className={styles.contacts}>
         <a
           className={styles.contact_link}
-          href="https://wa.me/972584782771"
+          href="https://wa.me/972587782776"
           target="_blank"
           rel="noopener noreferrer"
         >
