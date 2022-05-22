@@ -40,6 +40,7 @@ const MobileMenu = ({ nav_links }) => {
       <nav className={styles.contacts}>
         <a
           className={styles.contact_link}
+          aria-label="WhatsApp"
           href="https://wa.me/972587782776"
           target="_blank"
           rel="noopener noreferrer"
@@ -48,6 +49,7 @@ const MobileMenu = ({ nav_links }) => {
         </a>
         <a
           className={styles.contact_link}
+          aria-label="Email"
           href="mailto:henyadesign@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -56,6 +58,7 @@ const MobileMenu = ({ nav_links }) => {
         </a>
         <a
           className={styles.contact_link}
+          aria-label="LinkedIn"
           href="https://www.linkedin.com/in/henyaadler/"
           target="_blank"
           rel="noopener noreferrer"
