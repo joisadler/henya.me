@@ -28,7 +28,7 @@ UxUi.propTypes = {
   projects: arrayOf(
     shape({
       id: number.isRequired,
-      preview_image: string.isRequired,
+      preview_image_filename: string.isRequired,
       name: string.isRequired,
       tags: arrayOf(string).isRequired,
       about: string.isRequired,

@@ -22,7 +22,7 @@ const tagTextColors = {
 
 const UxUiProjectPreview = ({
   id,
-  preview_image,
+  preview_image_filename,
   name,
   tags,
   about,
@@ -63,11 +63,18 @@ const UxUiProjectPreview = ({
     <li className={styles.project_preview} ref={containerRef}>
       <Wrapper className={styles.project_preview_link}>
         <div className={styles.project_preview_top} ref={previewTopRef}>
-          <img
-            src={preview_image}
-            alt={name}
-            className={styles.project_preview_image}
-          />
+          <picture className={styles.project_preview_image}>
+            <source
+              srcSet={`${preview_image_filename}.webp`}
+              type="image/webp"
+            />
+            <source srcSet={`${preview_image_filename}.png`} type="image/png" />
+            <img
+              style={{ width: '100%', height: '100%' }}
+              src={`${preview_image_filename}.png`}
+              alt={name}
+            />
+          </picture>
         </div>
         <div className={styles.project_preview_info} ref={previewInfoRef}>
           <div className={styles.tags}>
@@ -108,7 +115,7 @@ const UxUiProjectPreview = ({
 
 UxUiProjectPreview.propTypes = {
   id: number.isRequired,
-  preview_image: string.isRequired,
+  preview_image_filename: string.isRequired,
   name: string.isRequired,
   tags: arrayOf(string).isRequired,
   about: string.isRequired,

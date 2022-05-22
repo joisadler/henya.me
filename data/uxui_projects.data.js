@@ -2,8 +2,8 @@ module.exports = [
   {
     id: 1,
     name: 'BookX 📚',
-    preview_image: '/images/portfolio/uxui/BookX_preview.png',
-    main_image: '/images/portfolio/uxui/BookX_main.png',
+    preview_image_filename: '/images/portfolio/uxui/BookX_preview',
+    main_image_filename: '/images/portfolio/uxui/BookX_main.png',
     tags: ['UX/UI', 'Mobile'],
     about:
       'Book Exchange app. You can give your book and get a new one instead',
@@ -12,7 +12,7 @@ module.exports = [
   {
     id: 2,
     name: 'Recycle Conference ♻️',
-    preview_image: '/images/portfolio/uxui/ReCon_preview.png',
+    preview_image_filename: '/images/portfolio/uxui/ReCon_preview',
     tags: ['UX/UI', 'Website'],
     about: 'Responsive website for conference',
     comingSoon: true,
@@ -21,7 +21,7 @@ module.exports = [
   {
     id: 3,
     name: 'Crocoin 🪙',
-    preview_image: '/images/portfolio/uxui/Crocoin_preview.png',
+    preview_image_filename: '/images/portfolio/uxui/Crocoin_preview',
     tags: ['UX/UI', 'Website'],
     about: 'Trading Website',
     comingSoon: true,
@@ -29,7 +29,7 @@ module.exports = [
   {
     id: 4,
     name: 'Sapori 🍕',
-    preview_image: '/images/portfolio/uxui/Sapori_preview.png',
+    preview_image_filename: '/images/portfolio/uxui/Sapori_preview',
     tags: ['UX/UI', 'Mobile'],
     about:
       'Mobile app for an Italian restaurant. Customise your true Italian pizza, pasta, salat, desserts and drinks.',
@@ -38,14 +38,14 @@ module.exports = [
   // {
   //   id: 5,
   //   name: 'Ivory 💻',
-  //   preview_image: '/images/portfolio/uxui/Ivory.png',
+  //   preview_image_filename: '/images/portfolio/uxui/Ivory',
   //   tags: ['UX/UI', 'Website', 'Rebranding'],
   //   about: 'Design of online electronics store',
   // },
   // {
   //   "id": 6,
   //   "name": "Hike & Guide 🚶‍♀️",
-  //   "preview_image": "/images/portfolio/uxui/HikenGuide.png",
+  //   "preview_image_filename": "/images/portfolio/uxui/HikenGuide",
   //   "tags": [
   //     "UX/UI",
   //     "Mobile"

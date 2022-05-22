@@ -90,6 +90,7 @@
   height: 100%;
   border-radius: $border_radius_medium;
   object-fit: cover;
+  overflow: hidden;
 }
 
 .view_more_button {
