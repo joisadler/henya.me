@@ -21,7 +21,7 @@ Services.propTypes = {
       id: number.isRequired,
       title: string.isRequired,
       description: string.isRequired,
-      img_src: string.isRequired,
+      img_src_filename: string.isRequired,
     })
   ).isRequired,
 };

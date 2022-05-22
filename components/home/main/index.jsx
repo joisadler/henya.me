@@ -48,11 +48,15 @@ const Main = () => {
           </button>
         </div>
         <div className={styles.image_container}>
-          <img
-            src="images/preview.gif"
-            alt="Projects preview"
-            className={styles.image}
-          />
+          <picture>
+            <source srcSet="images/preview.webp" type="image/webp" />
+            <source srcSet="images/preview.gif" type="image/gif" />
+            <img
+              className={styles.image}
+              src="images/preview.gif"
+              alt="Projects Preview"
+            />
+          </picture>
         </div>
       </div>
     </section>
