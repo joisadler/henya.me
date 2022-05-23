@@ -2,20 +2,24 @@
   {
     "id": 1,
     "name": "Home",
-    "url": "#home"
+    "url": "/",
+    "scroll": true
   },
   {
     "id": 2,
     "name": "About",
-    "url": "about"
+    "url": "/about",
+    "scroll": true
   },
   {
     "id": 3,
     "name": "Portfolio",
-    "url": "#uxui"
+    "url": "/#uxui",
+    "scroll": false
   },  {
     "id": 4,
     "name": "My CV",
-    "url": "download/Henya_Adler_CV.pdf"
+    "url": "download/Henya_Adler_CV.pdf",
+    "scroll": false
   }
 ]

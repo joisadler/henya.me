@@ -55,6 +55,7 @@ Home.propTypes = {
       id: number.isRequired,
       name: string.isRequired,
       url: string.isRequired,
+      scroll: bool.isRequired,
     })
   ).isRequired,
   services: arrayOf(

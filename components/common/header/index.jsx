@@ -101,6 +101,7 @@ Header.propTypes = {
       id: number.isRequired,
       name: string.isRequired,
       url: string.isRequired,
+      scroll: bool.isRequired,
     })
   ).isRequired,
   transparent: bool,

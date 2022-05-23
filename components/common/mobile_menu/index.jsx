@@ -1,6 +1,6 @@
 import { useEffect, useRef, useContext } from 'react';
 import Context from 'context/Context';
-import { arrayOf, shape, string, number } from 'prop-types';
+import { arrayOf, shape, string, number, bool } from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
@@ -76,6 +76,7 @@ MobileMenu.propTypes = {
       id: number.isRequired,
       name: string.isRequired,
       url: string.isRequired,
+      scroll: bool.isRequired,
     })
   ).isRequired,
 };
