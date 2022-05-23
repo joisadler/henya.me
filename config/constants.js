@@ -19,8 +19,6 @@ export const primary_yellow = '#FBBD41';
 
 /* Font-families */
 export const alata = "'Alata', sans-serif";
-export const archivo = "'Archivo Black', sans-serif";
-export const montserrat = "'Montserrat', sans-serif";
 export const mulish = "'Mulish', sans-serif";
 
 /* Border-radius */
