@@ -1,0 +1,146 @@
+@import 'utils.scss';
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  margin-block: toRem(100);
+  padding-inline: toRem(10);
+
+
+  @include breakpoint(tablet) {
+    padding-inline: toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    padding-inline: toRem(70);
+  }
+}
+
+.container {
+  padding: toRem(10);
+  border-radius: $border_raduis_large;
+  background: $white_pink;
+  box-shadow: 0px 0px 30px rgba(16, 32, 57, 0.15);
+
+  @include breakpoint(tablet) {
+    padding: toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    padding: toRem(40) toRem(70);
+  }
+
+  * {
+    transform-style: preserve-3d;
+    transition: all 0.3s linear;
+  }
+}
+
+.section_title {
+  margin-block-start: toRem(40);
+  margin-block-end: 0;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 80%;
+  text-align: center;
+  color: #131A36;
+
+  @include breakpoint(tablet) {
+    text-align: start;
+  }
+
+  @include breakpoint(desktop) {
+    margin-block-start: 0;
+  }
+}
+
+.projects_list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: toRem(10);
+  width: 100%;
+  margin: toRem(40) auto 0 auto;
+  padding: 0;
+  list-style-type: none;
+
+  @include breakpoint(desktop) {
+    flex-flow: row wrap;
+    gap: toRem(20);
+  }
+}
+
+.project_preview {
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @include breakpoint(desktop) {
+    width: calc((100% - toRem(20) * 3) / 4);
+  }
+}
+
+.project_preview_picture {
+  width: 100%;
+  border-radius: $border_radius_medium;
+}
+
+.project_preview_image {
+  width: 100%;
+  height: auto;
+  border-radius: $border_radius_medium;
+}
+
+
+.view_more_button {
+  display: flex;
+  align-items: center;
+  width: toRem(120);
+  margin-block-start: toRem(10);
+  margin-inline: auto;
+  padding: toRem(13) toRem(10);
+  background: $primary_pink;
+  border-radius: $border_radius_medium;
+
+  @include breakpoint(tablet) {
+    margin-inline: unset;
+  }
+
+  @include breakpoint(desktop) {
+    margin-block-start: toRem(20);
+
+    &:hover {
+      .right_arrow_icon {
+        transform: translate3d(4px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      }
+    }
+  }
+
+  @include breakpoint(desktop) {
+    width: toRem(140);
+  }
+}
+
+.view_more_button_text {
+  font-size: toRem(14);
+  line-height: toRem(20);
+  color: $white;
+  font-weight: 700;
+  white-space: nowrap;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(18);
+    line-height: toRem(24);
+  }
+}
+
+.right_arrow_icon {
+  width: 24px;
+  height: 24px;
+  padding-left: 8px;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+}
