@@ -1,7 +1,6 @@
 @import 'utils';
 
 .container {
-  display: flex;
   min-height: 100vh;
   padding-block-start: $header_height_mobile;
   padding-inline: toRem(10);
@@ -11,7 +10,6 @@
   }
 
   @include breakpoint(desktop) {
-    flex-flow: row nowrap;
     padding-block-start: $header_height;
     padding-inline: toRem(70);
   }
@@ -22,9 +20,13 @@
   flex-flow: column nowrap;
   width: 100%;
   max-width: 1200px;
+  min-height: calc(100vh - $header_height_mobile);
+  margin-inline: auto;
 
   @include breakpoint(desktop) {
     flex-flow: row nowrap;
+    min-height: calc(100vh - $header_height);
+    height: calc(100vh - $header_height);
   }
 }
 
@@ -34,18 +36,21 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  max-height: 50vh;
 
   @include breakpoint(desktop) {
     width: 50%;
-    max-height: 75vh;
   }
 }
 
 .main_info_image {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 50vh;
   object-fit: contain;
+
+  @include breakpoint(desktop) {
+    max-height: 75vh;
+  }
 }
 
 .main_info_text_content {
@@ -55,7 +60,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: toRem(40) toRem(10);
+  padding: toRem(40) 0;
 
   @include breakpoint(tablet) {
     padding: toRem(40) toRem(24);
@@ -90,7 +95,7 @@
   font-weight: 900;
   font-size: toRem(24);
   line-height: 150%;
-  color: $primary_violette;
+  color: $maastricht_blue;
 
   strong {
     color: $text_red;
@@ -123,5 +128,116 @@
   @include breakpoint(desktop) {
     margin-block-start: toRem(100);
     margin-inline-end: auto;
+  }
+}
+
+.additional_info {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+
+  @include breakpoint(desktop) {
+    flex-flow: row-reverse nowrap;
+  }
+}
+
+.additional_info_section_title {
+  margin: 0 0 toRem(40) 0;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 1000;
+  font-size: 30px;
+  line-height: 100%;
+  color: $maastricht_blue;
+  text-align: center;
+
+  @include breakpoint(desktop) {
+    text-align: start;
+  }
+}
+
+.experience {
+  width: 100%;
+
+  @include breakpoint(tablet) {
+    padding-inline: toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    width: 50%;
+    padding-inline: toRem(70);
+  }
+
+  .info_item_subtitle {
+    color: $primary_pink;
+  }
+}
+
+.education {
+  width: 100%;
+
+  .info_item_subtitle {
+    color: #7713D2;
+  }
+
+  @include breakpoint(tablet) {
+    padding-inline: toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    width: 50%;
+    padding-inline: toRem(70);
+  }
+}
+
+.info_item {
+  width: 100%;
+  margin-block-end: toRem(40);
+
+  @include breakpoint(desktop) {
+    margin-block-end: toRem(88);
+  }
+}
+
+.info_item_title {
+  margin: 0;
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 400;
+  font-size: toRem(17);
+  line-height: 120%;
+  letter-spacing: toRem(0.1);
+  color: $black;
+}
+
+.info_item_subtitle {
+  margin: 0 0 toRem(17) 0;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 900;
+  font-size: toRem(19);
+  line-height: 168%;
+  letter-spacing: toRem(0.4);
+}
+
+.info_item_text {
+  margin: 0;
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 400;
+  font-size: toRem(17);
+  line-height: 188%;
+  color: $black;
+}
+
+.info_item_list {
+  padding: 0;
+  list-style-type: disc;
+
+  li {
+    margin-inline-start: 1em;
+    @extend .info_item_text;
   }
 }
