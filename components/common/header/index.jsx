@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { arrayOf, shape, string, number } from 'prop-types';
+import { arrayOf, shape, string, number, bool } from 'prop-types';
 import LogoIcon from 'components/icons/LogoIcon';
 import Hamburger from 'hamburger-react';
 import Context from 'context/Context';
@@ -12,7 +12,7 @@ import { useMediaQuery } from 'react-responsive';
 import NavLink from './NavLink';
 import styles from './header.module.scss';
 
-const Header = ({ nav_links }) => {
+const Header = ({ nav_links, transparent }) => {
   const isMobile = useMediaQuery({
     query: `(max-width: ${desktop_breakpoint}px)`,
   });
@@ -28,7 +28,7 @@ const Header = ({ nav_links }) => {
       if (window.scrollY >= height) {
         setBackground('rgba(19, 26, 54, 0.3)');
       } else {
-        setBackground('transparent');
+        setBackground(transparent ? 'transparent' : 'rgba(19, 26, 54, 1)');
       }
     };
 
@@ -36,7 +36,7 @@ const Header = ({ nav_links }) => {
     // adding the event when scroll change background
     window.addEventListener('scroll', updateBackground);
     return () => window.removeEventListener('keyup', updateBackground);
-  }, [height]);
+  }, [height, transparent]);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -66,10 +66,6 @@ const Header = ({ nav_links }) => {
           ))}
         </nav>
         <div className={styles.contact_info}>
-          {/* <span className={styles.contact_info_text}>
-            henyadesign@gmail.com
-          </span>
-          <span className={styles.contact_info_text}>+972 58 778 2 776</span> */}
           <a
             className={styles.contact_info_text}
             href="mailto:henyadesign@gmail.com"
@@ -107,6 +103,11 @@ Header.propTypes = {
       url: string.isRequired,
     })
   ).isRequired,
+  transparent: bool,
+};
+
+Header.defaultProps = {
+  transparent: false,
 };
 
 export default Header;

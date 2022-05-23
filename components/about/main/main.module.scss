@@ -1,0 +1,127 @@
+@import 'utils';
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  padding-block-start: $header_height_mobile;
+  padding-inline: toRem(10);
+
+  @include breakpoint(tablet) {
+    padding-inline: toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    flex-flow: row nowrap;
+    padding-block-start: $header_height;
+    padding-inline: toRem(70);
+  }
+}
+
+.main_info {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  max-width: 1200px;
+
+  @include breakpoint(desktop) {
+    flex-flow: row nowrap;
+  }
+}
+
+.main_info_picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-height: 50vh;
+
+  @include breakpoint(desktop) {
+    width: 50%;
+    max-height: 75vh;
+  }
+}
+
+.main_info_image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main_info_text_content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: toRem(40) toRem(10);
+
+  @include breakpoint(tablet) {
+    padding: toRem(40) toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    width: 50%;
+    padding: toRem(40);
+  }
+}
+
+.page_title {
+  margin-block: 0;
+  font-family: $playball;
+  font-style: normal;
+  font-weight: 400;
+  font-size: toRem(18);
+  line-height: 120%;
+  color: $text_red;
+
+  @include breakpoint(desktop) {
+    margin-inline-end: auto;
+    font-size: toRem(24);
+  }
+}
+
+.main_title {
+  margin-block-start: toRem(16);
+  margin-block-end: toRem(24);
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 900;
+  font-size: toRem(24);
+  line-height: 150%;
+  color: $primary_violette;
+
+  strong {
+    color: $text_red;
+  }
+
+  @include breakpoint(desktop) {
+    margin-inline-end: auto;
+    font-size: toRem(40);
+  }
+}
+
+.main_description {
+  margin-block: 0;
+  font-family: $alata;
+  font-style: normal;
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 150%;
+  color: $text_gray;
+
+  @include breakpoint(desktop) {
+    margin-inline-end: auto;
+    font-size: toRem(17);
+  }
+}
+
+.download_cv_button {
+  margin-block-start: toRem(40);
+
+  @include breakpoint(desktop) {
+    margin-block-start: toRem(100);
+    margin-inline-end: auto;
+  }
+}

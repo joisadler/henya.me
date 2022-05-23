@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import { string, number, arrayOf, bool, node } from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
-import { desktop_breakpoint } from 'config/constants';
+import { desktop_breakpoint, text_red } from 'config/constants';
 import styles from './uxui.module.scss';
 import RightArrowIcon from '../../icons/RightArrowIcon';
 
@@ -16,7 +16,7 @@ const tagBackgroundColors = {
 const tagTextColors = {
   'UX/UI': '#A345FB',
   Website: '#FBBC41',
-  Mobile: '#FF2E59',
+  Mobile: text_red,
   Rebranding: '#04A5E0',
 };
 
@@ -63,14 +63,14 @@ const UxUiProjectPreview = ({
     <li className={styles.project_preview} ref={containerRef}>
       <Wrapper className={styles.project_preview_link}>
         <div className={styles.project_preview_top} ref={previewTopRef}>
-          <picture className={styles.project_preview_image}>
+          <picture className={styles.project_preview_picture}>
             <source
               srcSet={`${preview_image_filename}.webp`}
               type="image/webp"
             />
             <source srcSet={`${preview_image_filename}.png`} type="image/png" />
             <img
-              style={{ width: '100%', height: '100%' }}
+              className={styles.project_preview_image}
               src={`${preview_image_filename}.png`}
               alt={name}
             />

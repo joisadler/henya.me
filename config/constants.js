@@ -14,6 +14,7 @@ export const white_pink = '#FBF7FF';
 export const black = '#000000';
 export const maastricht_blue = '#131A36';
 export const primary_pink = '#EE3364';
+export const text_red = '#FF2E59';
 export const primary_yellow = '#FBBD41';
 
 /* Font-families */

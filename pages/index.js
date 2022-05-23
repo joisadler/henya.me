@@ -5,7 +5,7 @@ import Main from 'components/home/main';
 import MobileMenu from 'components/common/mobile_menu';
 import Services from 'components/home/services';
 import UxUi from 'components/home/UxUi';
-import Graphic from 'components/home/Graphic';
+import Graphic from 'components/home/graphic';
 import Footer from 'components/common/footer';
 
 const Home = ({
@@ -22,7 +22,7 @@ const Home = ({
         <meta name="description" content="Henya Adler - UX/UI designer" />
       </Head>
       <MobileMenu nav_links={nav_links} />
-      <Header nav_links={nav_links} />
+      <Header nav_links={nav_links} transparent />
       <Main services={services} />
       <Services services={services} />
       <UxUi projects={uxui_projects} />
