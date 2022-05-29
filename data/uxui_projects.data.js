@@ -7,7 +7,7 @@ module.exports = [
     tags: ['UX/UI', 'Mobile'],
     about:
       'Book Exchange app. You can give your book and get a new one instead',
-    comingSoon: false,
+    comingSoon: true,
   },
   {
     id: 2,
