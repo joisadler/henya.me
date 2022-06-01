@@ -65,13 +65,16 @@ const UxUiProjectPreview = ({
         <div className={styles.project_preview_top} ref={previewTopRef}>
           <picture className={styles.project_preview_picture}>
             <source
-              srcSet={`${preview_image_filename}.webp`}
+              srcSet={`/images/portfolio/uxui/${preview_image_filename}.webp`}
               type="image/webp"
             />
-            <source srcSet={`${preview_image_filename}.png`} type="image/png" />
+            <source
+              srcSet={`/images/portfolio/uxui/${preview_image_filename}.png`}
+              type="image/png"
+            />
             <img
               className={styles.project_preview_image}
-              src={`${preview_image_filename}.png`}
+              src={`/images/portfolio/uxui/${preview_image_filename}.png`}
               alt={name}
             />
           </picture>

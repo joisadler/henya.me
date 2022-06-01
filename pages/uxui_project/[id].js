@@ -38,7 +38,6 @@ Project.propTypes = {
     shape({
       id: number.isRequired,
       name: string.isRequired,
-      preview_image_filename: string.isRequired,
       logo_image_filename: string.isRequired,
       tags: arrayOf(string).isRequired,
       short_about: string.isRequired,
