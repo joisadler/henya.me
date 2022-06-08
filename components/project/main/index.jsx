@@ -1,9 +1,10 @@
 import React from 'react';
-import { arrayOf, shape, string, number, bool } from 'prop-types';
+import { arrayOf, shape, string } from 'prop-types';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
-  const { name, tags, short_about, logo_image_filename, comingSoon } = project;
+  const { name, logo_image_filename, summary, roles, team, tools, duration } =
+    project;
 
   return (
     <main className={styles.container}>
@@ -28,12 +29,13 @@ const Main = ({ project }) => {
 
 Main.propTypes = {
   project: shape({
-    id: number.isRequired,
     name: string.isRequired,
     logo_image_filename: string.isRequired,
-    tags: arrayOf(string).isRequired,
-    short_about: string.isRequired,
-    comingSoon: bool.isRequired,
+    summary: arrayOf(string).isRequired,
+    roles: arrayOf(string).isRequired,
+    team: arrayOf(string).isRequired,
+    tools: arrayOf(string).isRequired,
+    duration: arrayOf(string).isRequired,
   }).isRequired,
 };
 

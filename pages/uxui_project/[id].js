@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { arrayOf, shape, string, number, bool } from 'prop-types';
+import { arrayOf, shape, string, number } from 'prop-types';
 import { useRouter } from 'next/router';
 import Header from 'components/common/header';
 import MobileMenu from 'components/common/mobile_menu';
@@ -36,12 +36,13 @@ Project.propTypes = {
   ).isRequired,
   projectsData: arrayOf(
     shape({
-      id: number.isRequired,
       name: string.isRequired,
       logo_image_filename: string.isRequired,
-      tags: arrayOf(string).isRequired,
-      short_about: string.isRequired,
-      comingSoon: bool.isRequired,
+      summary: arrayOf(string).isRequired,
+      roles: arrayOf(string).isRequired,
+      team: arrayOf(string).isRequired,
+      tools: arrayOf(string).isRequired,
+      duration: arrayOf(string).isRequired,
     })
   ).isRequired,
 };

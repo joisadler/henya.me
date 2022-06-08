@@ -17,7 +17,7 @@ const UxUiProjectPreview = ({ preview_image_filename, name }) => {
         />
         <img
           className={styles.project_preview_image}
-          src={`/images/portfolio/graphic/${preview_image_filename}.webp`}
+          src={`/images/portfolio/graphic/${preview_image_filename}.png`}
           alt={name}
         />
       </picture>
