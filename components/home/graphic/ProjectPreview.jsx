@@ -7,11 +7,17 @@ const UxUiProjectPreview = ({ preview_image_filename, name }) => {
   return (
     <li className={styles.project_preview}>
       <picture className={styles.project_preview_picture}>
-        <source srcSet={`${preview_image_filename}.webp`} type="image/webp" />
-        <source srcSet={`${preview_image_filename}.png`} type="image/png" />
+        <source
+          srcSet={`/images/portfolio/graphic/${preview_image_filename}.webp`}
+          type="image/webp"
+        />
+        <source
+          srcSet={`/images/portfolio/graphic/${preview_image_filename}.png`}
+          type="image/png"
+        />
         <img
           className={styles.project_preview_image}
-          src={`${preview_image_filename}.webp`}
+          src={`/images/portfolio/graphic/${preview_image_filename}.png`}
           alt={name}
         />
       </picture>

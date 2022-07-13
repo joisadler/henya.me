@@ -39,7 +39,7 @@ Home.propTypes = {
       preview_image_filename: string.isRequired,
       name: string.isRequired,
       tags: arrayOf(string).isRequired,
-      about: string.isRequired,
+      short_about: string.isRequired,
       comingSoon: bool.isRequired,
     })
   ).isRequired,

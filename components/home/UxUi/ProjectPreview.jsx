@@ -25,7 +25,7 @@ const UxUiProjectPreview = ({
   preview_image_filename,
   name,
   tags,
-  about,
+  short_about,
   comingSoon,
 }) => {
   const isMobile = useMediaQuery({
@@ -50,7 +50,7 @@ const UxUiProjectPreview = ({
 
   const Wrapper = ({ children }) =>
     !comingSoon ? (
-      <a href={`/uxui_projects/${id}`}>{children}</a>
+      <a href={`/uxui_project/${id}`}>{children}</a>
     ) : (
       <div>{children}</div>
     );
@@ -65,13 +65,16 @@ const UxUiProjectPreview = ({
         <div className={styles.project_preview_top} ref={previewTopRef}>
           <picture className={styles.project_preview_picture}>
             <source
-              srcSet={`${preview_image_filename}.webp`}
+              srcSet={`/images/portfolio/uxui/${preview_image_filename}.webp`}
               type="image/webp"
             />
-            <source srcSet={`${preview_image_filename}.png`} type="image/png" />
+            <source
+              srcSet={`/images/portfolio/uxui/${preview_image_filename}.png`}
+              type="image/png"
+            />
             <img
               className={styles.project_preview_image}
-              src={`${preview_image_filename}.png`}
+              src={`/images/portfolio/uxui/${preview_image_filename}.png`}
               alt={name}
             />
           </picture>
@@ -94,7 +97,7 @@ const UxUiProjectPreview = ({
             })}
           </div>
           <h1 className={styles.project_title}>{name}</h1>
-          <p className={styles.project_description}>{about}</p>
+          <p className={styles.project_description}>{short_about}</p>
           <div
             className={styles.view_case_study_container}
             data-autowidth={Boolean(comingSoon)}
@@ -118,7 +121,7 @@ UxUiProjectPreview.propTypes = {
   preview_image_filename: string.isRequired,
   name: string.isRequired,
   tags: arrayOf(string).isRequired,
-  about: string.isRequired,
+  short_about: string.isRequired,
   comingSoon: bool.isRequired,
 };
 
