@@ -9,7 +9,7 @@ const Home = ({ nav_links }) => {
   return (
     <>
       <Head>
-        <title>Henya Adler</title>
+        <title>Henya Adler | About</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Henya Adler - UX/UI designer" />
       </Head>
