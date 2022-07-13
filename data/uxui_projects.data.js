@@ -1,7 +1,7 @@
 module.exports = [
   {
     id: 1,
-    comingSoon: false,
+    comingSoon: true,
     name: 'BookX 📚',
     preview_image_filename: 'BookX_preview_image',
     preview_animation_filename: 'BookX_preview_animation',
