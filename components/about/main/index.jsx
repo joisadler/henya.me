@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import buttonStyles from 'styles/buttons.module.scss';
+import WebpPicture from 'components/common/WebpPicture';
 import styles from './main.module.scss';
 
 const Main = () => {
@@ -13,15 +14,13 @@ const Main = () => {
   return (
     <main className={styles.container}>
       <section className={styles.main_info}>
-        <picture className={styles.main_info_picture}>
-          <source srcSet="images/about/me.webp" type="image/webp" />
-          <source srcSet="images/about/me.png" type="image/png" />
-          <img
-            className={styles.main_info_image}
-            src="images/about/me.webp"
-            alt="Me"
-          />
-        </picture>
+        <WebpPicture
+          containerClassName={styles.main_info_picture}
+          imgClassName={styles.main_info_image}
+          pathname="images/about/"
+          filename="me"
+          alt="Me"
+        />
         <div className={styles.main_info_text_content}>
           <h1 className={styles.page_title}>About me</h1>
           <h2 className={styles.main_title}>

@@ -4,7 +4,7 @@
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
-  padding-block-start: toRem(100);
+  padding-block-start: $header_height_mobile;
   padding-inline: toRem(10);
 
   @include breakpoint(tablet) {
@@ -12,12 +12,14 @@
   }
 
   @include breakpoint(desktop) {
+    padding-block-start: $header_height;
     padding-inline: toRem(70);
   }
 }
 
 .section_title {
   margin: 0;
+  margin-block-start: 2.5rem;
   font-family: 'Mulish';
   font-style: normal;
   font-weight: 900;
@@ -85,6 +87,7 @@
 
 .project_preview_top {
   width: 100%;
+  // padding: 2rem;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   overflow: hidden;
@@ -95,7 +98,7 @@
   aspect-ratio: 345/194;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  object-fit: cover;
+  object-fit: contain;
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 }
 
@@ -108,7 +111,7 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .tags {
@@ -123,7 +126,7 @@
 }
 
 .project_title {
-  margin-block-end: 0;
+  margin-block: 0; // when the tags are visible change to margin-block-end: 0;
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;

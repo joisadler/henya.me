@@ -1,5 +1,6 @@
 import React from 'react';
 import { arrayOf, shape, string } from 'prop-types';
+import WebpPicture from 'components/common/WebpPicture';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
@@ -8,21 +9,13 @@ const Main = ({ project }) => {
 
   return (
     <main className={styles.container}>
-      <picture className={styles.logo_picture}>
-        <source
-          srcSet={`/images/portfolio/uxui/${logo_image_filename}.webp`}
-          type="image/webp"
-        />
-        <source
-          srcSet={`/images/portfolio/uxui/${logo_image_filename}.png`}
-          type="image/png"
-        />
-        <img
-          className={styles.logo_image}
-          src={`/images/portfolio/uxui/${logo_image_filename}.png`}
-          alt={name}
-        />
-      </picture>
+      <WebpPicture
+        containerClassName={styles.logo_picture}
+        imgClassName={styles.logo_image}
+        pathname="/images/portfolio/uxui/"
+        filename={logo_image_filename}
+        alt={name}
+      />
     </main>
   );
 };
