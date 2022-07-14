@@ -23,7 +23,7 @@ const Home = ({
       </Head>
       <MobileMenu nav_links={nav_links} />
       <Header nav_links={nav_links} transparent />
-      <Main services={services} />
+      <Main />
       <Services services={services} />
       <UxUi projects={uxui_projects} />
       <Graphic projects={graphic_design_projects} />
@@ -63,7 +63,8 @@ Home.propTypes = {
       id: number.isRequired,
       title: string.isRequired,
       description: string.isRequired,
-      img_src_filename: string.isRequired,
+      pathname: string.isRequired,
+      filename: string.isRequired,
     })
   ).isRequired,
 };

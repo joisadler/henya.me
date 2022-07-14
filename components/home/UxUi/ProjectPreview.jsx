@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import { string, number, arrayOf, bool, node } from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
 import { desktop_breakpoint, text_red } from 'config/constants';
+import WebpPicture from 'components/common/WebpPicture';
 import styles from './uxui.module.scss';
 import RightArrowIcon from '../../icons/RightArrowIcon';
 
@@ -63,21 +64,13 @@ const UxUiProjectPreview = ({
     <li className={styles.project_preview} ref={containerRef}>
       <Wrapper className={styles.project_preview_link}>
         <div className={styles.project_preview_top} ref={previewTopRef}>
-          <picture className={styles.project_preview_picture}>
-            <source
-              srcSet={`/images/portfolio/uxui/${preview_image_filename}.webp`}
-              type="image/webp"
-            />
-            <source
-              srcSet={`/images/portfolio/uxui/${preview_image_filename}.png`}
-              type="image/png"
-            />
-            <img
-              className={styles.project_preview_image}
-              src={`/images/portfolio/uxui/${preview_image_filename}.png`}
-              alt={name}
-            />
-          </picture>
+          <WebpPicture
+            containerClassName={styles.project_preview_picture}
+            imgClassName={styles.project_preview_image}
+            pathname="/images/portfolio/uxui/"
+            filename={preview_image_filename}
+            alt={name}
+          />
         </div>
         <div className={styles.project_preview_info} ref={previewInfoRef}>
           <div className={styles.tags}>
