@@ -24,7 +24,7 @@ const Home = ({
       <MobileMenu nav_links={nav_links} />
       <Header nav_links={nav_links} transparent />
       <Main />
-      <Services services={services} />
+      {/* <Services services={services} /> */}
       <UxUi projects={uxui_projects} />
       <Graphic projects={graphic_design_projects} />
       <Footer />

@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import Typed from 'react-typed';
 import WebpPicture from 'components/common/WebpPicture';
+import ScrollDownButton from 'components/common/ScrollDownButton';
 import buttonStyles from 'styles/buttons.module.scss';
 import styles from './main.module.scss';
 
@@ -56,6 +57,7 @@ const Main = () => {
           alt="Projects Preview"
         />
       </div>
+      <ScrollDownButton />
     </section>
   );
 };
