@@ -107,11 +107,12 @@
   border-radius: $border_radius_medium;
 
   @include breakpoint(tablet) {
-    margin-inline: unset;
+    // margin-inline: unset;
+    margin-block-start: toRem(24);
   }
 
   @include breakpoint(desktop) {
-    margin-block-start: toRem(20);
+    margin-block-start: toRem(40);
 
     &:hover {
       .right_arrow_icon {
