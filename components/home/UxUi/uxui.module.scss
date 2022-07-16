@@ -51,7 +51,7 @@
 .project_preview {
   z-index: 0;
   width: 100%;
-  background: #fff;
+  background: $white;
   border-radius: $border_raduis_large;
   box-shadow: 15px 15px 61px rgba(46, 45, 58, 0.13);
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
