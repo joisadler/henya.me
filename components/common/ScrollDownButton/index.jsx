@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react';
+import { desktop_breakpoint } from 'config/constants';
+import { useMediaQuery } from 'react-responsive';
 import styles from './scroll_down_button.module.scss';
 
 const ScrollDownButton = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [top, setTop] = useState(0);
+  const isDesktop = useMediaQuery({
+    query: `(min-width: ${desktop_breakpoint}px)`,
+  });
 
   useEffect(() => {
     setTop(window.innerHeight);
@@ -30,6 +35,7 @@ const ScrollDownButton = () => {
     });
   };
 
+  if (!isDesktop) return null;
   return (
     <div
       role="presentation"
