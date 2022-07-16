@@ -1,15 +1,37 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import buttonStyles from 'styles/buttons.module.scss';
 import WebpPicture from 'components/common/WebpPicture';
+import { useMediaQuery } from 'react-responsive';
+import { desktop_breakpoint } from 'config/constants';
 import styles from './main.module.scss';
 
 const Main = () => {
   const cvLinkRef = useRef(null);
+  const pictureRef = useRef(null);
+  const textContentRef = useRef(null);
 
   const onDownloadCV = () => {
     if (!cvLinkRef.current) return;
     cvLinkRef.current.click();
   };
+
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${desktop_breakpoint}px)`,
+  });
+
+  useEffect(() => {
+    if (isMobile) return;
+    const picture = pictureRef.current;
+    const mainInfoTextContent = textContentRef.current;
+    if (!picture || !mainInfoTextContent) return;
+    const image = picture.querySelector('img');
+    const imageNaturalHeight = image.naturalHeight;
+    const imageNaturalWidth = image.naturalWidth;
+    const imageAspectRatio = imageNaturalWidth / imageNaturalHeight;
+    const imageClientWidth = image.clientWidth;
+    const imageRealHeight = imageClientWidth / imageAspectRatio;
+    mainInfoTextContent.style.height = `${imageRealHeight}px`;
+  }, []);
 
   return (
     <main className={styles.container}>
@@ -20,11 +42,14 @@ const Main = () => {
           pathname="images/about/"
           filename="me"
           alt="Me"
+          ref={pictureRef}
         />
-        <div className={styles.main_info_text_content}>
-          <h1 className={styles.page_title}>About me</h1>
+        <div className={styles.main_info_text_content} ref={textContentRef}>
+          <h1 className={styles.page_title}>About Me</h1>
           <h2 className={styles.main_title}>
-            Hi, I am open to <strong>work.</strong>
+            Hi, my name is Henya Adler.
+            <br />
+            I&apos;m <strong>UX/UI</strong> designer.
           </h2>
           <p className={styles.main_description}>
             I&apos;m a graphic and UX/UI designer from Israel. Passionate about
