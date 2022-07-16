@@ -4,17 +4,15 @@ import { useMediaQuery } from 'react-responsive';
 import styles from './scroll_down_button.module.scss';
 
 const ScrollDownButton = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [top, setTop] = useState(0);
-  const isDesktop = useMediaQuery({
-    query: `(min-width: ${desktop_breakpoint}px)`,
+  const isMobileOrTablet = useMediaQuery({
+    query: `(max-width: ${desktop_breakpoint}px)`,
   });
+  const [isVisible, setIsVisible] = useState(false);
+  const [top, setTop] = useState(0);
 
   useEffect(() => {
     setTop(window.innerHeight);
-  }, []);
 
-  useEffect(() => {
     const toggleVisible = () => {
       const scrolled = document.documentElement.scrollTop;
       if (scrolled > 0) {
@@ -24,9 +22,14 @@ const ScrollDownButton = () => {
       }
     };
 
-    window.addEventListener('scroll', toggleVisible);
+    if (isMobileOrTablet) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+      window.addEventListener('scroll', toggleVisible);
+    }
     return () => window.removeEventListener('scroll', toggleVisible);
-  }, []);
+  }, [isMobileOrTablet]);
 
   const scrollToBottom = () => {
     window.scrollTo({
@@ -35,7 +38,6 @@ const ScrollDownButton = () => {
     });
   };
 
-  if (!isDesktop) return null;
   return (
     <div
       role="presentation"
