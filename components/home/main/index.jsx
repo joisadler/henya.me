@@ -56,7 +56,11 @@ const Main = () => {
           filename="preview"
           alt="Projects Preview"
         />
+        {/* <div className={styles.image_container}>
+          <img src="images/test.gif" alt="test gif" className={styles.image} />
+        </div> */}
       </div>
+
       <ScrollDownButton />
     </section>
   );

@@ -25,6 +25,7 @@
 
   @include breakpoint(desktop) {
     flex-flow: row nowrap;
+    align-items: center;
     min-height: calc(100vh - $header_height);
     height: calc(100vh - $header_height);
   }
@@ -104,7 +105,7 @@
 
   @include breakpoint(desktop) {
     margin-inline-end: auto;
-    font-size: toRem(40);
+    font-size: toRem(36);
   }
 }
 
@@ -127,8 +128,8 @@
   margin-block-start: toRem(40);
 
   @include breakpoint(desktop) {
-    margin-block-start: toRem(100);
-    margin-inline-end: auto;
+    margin-block-start: auto;
+    margin-inline-start: auto;
   }
 }
 

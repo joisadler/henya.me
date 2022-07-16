@@ -1,15 +1,17 @@
 import React from 'react';
 import { string } from 'prop-types';
 
-const WebpPicture = ({
-  pathname,
-  filename,
-  alt,
-  containerClassName,
-  imgClassName,
-}) => {
+const WebpPicture = React.forwardRef((props, ref) => {
+  const {
+    pathname,
+    filename,
+    alt,
+    containerClassName,
+    imgClassName,
+    ...restProps
+  } = props;
   return (
-    <picture className={containerClassName}>
+    <picture className={containerClassName} {...restProps} ref={ref}>
       <source srcSet={`${pathname}${filename}.webp`} type="image/webp" />
       <source srcSet={`${pathname}${filename}.png`} type="image/png" />
       <img
@@ -20,7 +22,7 @@ const WebpPicture = ({
       />
     </picture>
   );
-};
+});
 
 WebpPicture.propTypes = {
   pathname: string.isRequired,
