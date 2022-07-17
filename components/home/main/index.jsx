@@ -49,16 +49,16 @@ const Main = () => {
             Download Resume
           </button>
         </div>
-        <WebpPicture
+        {/* <WebpPicture
           containerClassName={styles.image_container}
           imgClassName={styles.image}
           pathname="images/"
           filename="preview"
           alt="Projects Preview"
-        />
-        {/* <div className={styles.image_container}>
+        /> */}
+        <div className={styles.image_container}>
           <img src="images/test.gif" alt="test gif" className={styles.image} />
-        </div> */}
+        </div>
       </div>
 
       <ScrollDownButton />
