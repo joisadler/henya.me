@@ -40,9 +40,11 @@ const ScrollDownButton = () => {
 
   return (
     <div
-      role="presentation"
-      onClick={scrollToBottom}
+      role="button"
       aria-label="Scroll down"
+      tabIndex={0}
+      onClick={scrollToBottom}
+      onKeyDown={scrollToBottom}
       className={styles.scroll_downs}
       style={{ display: isVisible ? 'inline' : 'none' }}
     >
