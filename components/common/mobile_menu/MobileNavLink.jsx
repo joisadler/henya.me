@@ -7,7 +7,7 @@ import Context from 'context/Context';
 import Link from 'next/link';
 import styles from './mobile_menu.module.scss';
 
-const NavLink = ({ name, url, scroll }) => {
+const NavLink = ({ name, url, scroll, open_in_new_tab }) => {
   const { hideMobileMenu } = useContext(Context);
 
   const onLinkClick = () => {
@@ -16,7 +16,11 @@ const NavLink = ({ name, url, scroll }) => {
 
   return (
     <Link href={url} scroll={scroll}>
-      <a className={styles.mobile_nav_link} onClick={onLinkClick}>
+      <a
+        className={styles.mobile_nav_link}
+        onClick={onLinkClick}
+        target={open_in_new_tab ? '_blank' : ''}
+      >
         {name}
       </a>
     </Link>
@@ -27,6 +31,7 @@ NavLink.propTypes = {
   name: string.isRequired,
   url: string.isRequired,
   scroll: bool.isRequired,
+  open_in_new_tab: bool.isRequired,
 };
 
 export default NavLink;

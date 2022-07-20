@@ -49,9 +49,17 @@
   height: auto;
   max-height: 50vh;
   object-fit: contain;
+  padding-block-start: toRem(40);
+
+  @include breakpoint(tablet) {
+    padding-inline: toRem(24);
+  }
 
   @include breakpoint(desktop) {
+    width: 50%;
     max-height: 75vh;
+    padding-inline: toRem(40);
+    padding-block-end: toRem(40);
   }
 }
 
@@ -62,7 +70,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: toRem(40) 0;
+  padding-block: toRem(40);
 
   @include breakpoint(tablet) {
     padding: toRem(40) toRem(24);
@@ -92,11 +100,11 @@
 .main_title {
   margin-block-start: toRem(16);
   margin-block-end: toRem(24);
-  font-family: 'Mulish';
+  font-family: $mulish;
   font-style: normal;
   font-weight: 900;
   font-size: toRem(24);
-  line-height: 150%;
+  line-height: 138%;
   color: $maastricht_blue;
 
   strong {
@@ -111,12 +119,12 @@
 
 .main_description {
   margin-block: 0;
-  font-family: $alata;
+  font-family: $mulish;
   font-style: normal;
   font-weight: 400;
   font-size: toRem(16);
-  line-height: 150%;
-  color: $text_gray;
+  line-height: 171%;
+  color: $black;
 
   @include breakpoint(desktop) {
     margin-inline-end: auto;
@@ -128,7 +136,6 @@
   margin-block-start: toRem(40);
 
   @include breakpoint(desktop) {
-    margin-block-start: auto;
     margin-inline-start: auto;
   }
 }
@@ -146,13 +153,16 @@
 }
 
 .additional_info_section_title {
+  height: toRem(62);
   margin: 0 0 toRem(40) 0;
-  font-family: 'Mulish';
+  padding: 1rem;
+  font-family: $mulish;
   font-style: normal;
   font-weight: 1000;
   font-size: 30px;
   line-height: 100%;
-  color: $maastricht_blue;
+  color: $white;
+  background: $maastricht_blue;
   text-align: center;
 
   @include breakpoint(desktop) {
@@ -171,18 +181,10 @@
     width: 50%;
     padding-inline: toRem(70);
   }
-
-  .info_item_subtitle {
-    color: $primary_pink;
-  }
 }
 
 .education {
   width: 100%;
-
-  .info_item_subtitle {
-    color: #7713D2;
-  }
 
   @include breakpoint(tablet) {
     padding-inline: toRem(24);
@@ -196,10 +198,22 @@
 
 .info_item {
   width: 100%;
-  margin-block-end: toRem(40);
+  margin-block-end: toRem(30);
 
-  @include breakpoint(desktop) {
-    margin-block-end: toRem(88);
+  &:nth-of-type(1) {
+    .info_item_title {
+      color: $primary_pink;
+    }
+  }
+  &:nth-of-type(2) {
+    .info_item_title {
+      color: $primary_yellow;
+    }
+  }
+  &:nth-of-type(3) {
+    .info_item_title {
+      color: $primary_violette;
+    }
   }
 }
 
@@ -211,17 +225,17 @@
   font-size: toRem(17);
   line-height: 120%;
   letter-spacing: toRem(0.1);
-  color: $black;
 }
 
 .info_item_subtitle {
-  margin: 0 0 toRem(17) 0;
-  font-family: 'Mulish';
+  margin: 0 0 toRem(15) 0;
+  font-family: $mulish;
   font-style: normal;
   font-weight: 900;
   font-size: toRem(19);
   line-height: 168%;
   letter-spacing: toRem(0.4);
+  color: $black;
 }
 
 .info_item_text {
@@ -229,9 +243,13 @@
   font-family: $mulish;
   font-style: normal;
   font-weight: 400;
-  font-size: toRem(17);
-  line-height: 188%;
+  font-size: toRem(16);
+  line-height: 160%;
   color: $black;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(20);
+  }
 }
 
 .info_item_list {

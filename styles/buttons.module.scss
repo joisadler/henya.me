@@ -29,6 +29,9 @@
 .action_button {
   @extend .button;
   color: $white;
+  font-family: $mulish;
+  font-weight: 900;
+  line-height: 120%;
   background: #EE3364;
   padding: toRem(12) toRem(15);
 }
