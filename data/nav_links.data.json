@@ -3,23 +3,27 @@
     "id": 1,
     "name": "Home",
     "url": "/",
-    "scroll": true
+    "scroll": true,
+    "open_in_new_tab": false
   },
   {
     "id": 2,
     "name": "About",
     "url": "/about",
-    "scroll": true
+    "scroll": true,
+    "open_in_new_tab": false
   },
   {
     "id": 3,
     "name": "UX/UI",
     "url": "/#uxui",
-    "scroll": false
+    "scroll": false,
+    "open_in_new_tab": false
   },  {
     "id": 4,
     "name": "My CV",
     "url": "/download/Henya_Adler_CV.pdf",
-    "scroll": false
+    "scroll": false,
+    "open_in_new_tab": true
   }
 ]

@@ -1,37 +1,43 @@
-import React, { useRef, useEffect } from 'react';
+import React, {
+  useRef,
+  // useEffect,
+} from 'react';
 import buttonStyles from 'styles/buttons.module.scss';
 import WebpPicture from 'components/common/WebpPicture';
-import { useMediaQuery } from 'react-responsive';
-import { desktop_breakpoint } from 'config/constants';
+import ScrollDownButton from 'components/common/ScrollDownButton';
+// import { useMediaQuery } from 'react-responsive';
+// import { desktop_breakpoint } from 'config/constants';
 import styles from './main.module.scss';
 
 const Main = () => {
   const cvLinkRef = useRef(null);
-  const pictureRef = useRef(null);
-  const textContentRef = useRef(null);
+  // const pictureRef = useRef(null);
+  // const textContentRef = useRef(null);
 
   const onDownloadCV = () => {
     if (!cvLinkRef.current) return;
     cvLinkRef.current.click();
   };
 
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${desktop_breakpoint}px)`,
-  });
+  // const isMobile = useMediaQuery({
+  //   query: `(max-width: ${desktop_breakpoint}px)`,
+  // });
 
-  useEffect(() => {
-    if (isMobile) return;
-    const picture = pictureRef.current;
-    const mainInfoTextContent = textContentRef.current;
-    if (!picture || !mainInfoTextContent) return;
-    const image = picture.querySelector('img');
-    const imageNaturalHeight = image.naturalHeight;
-    const imageNaturalWidth = image.naturalWidth;
-    const imageAspectRatio = imageNaturalWidth / imageNaturalHeight;
-    const imageClientWidth = image.clientWidth;
-    const imageRealHeight = imageClientWidth / imageAspectRatio;
-    mainInfoTextContent.style.height = `${imageRealHeight}px`;
-  }, []);
+  // useEffect(() => {
+  //   if (isMobile) return;
+  //   const picture = pictureRef.current;
+  //   const mainInfoTextContent = textContentRef.current;
+  //   if (!picture || !mainInfoTextContent) return;
+  //   console.log('picture:', picture);
+  //   console.log('mainInfoTextContent:', mainInfoTextContent);
+  //   const image = picture.querySelector('img');
+  //   const imageNaturalHeight = image.naturalHeight;
+  //   const imageNaturalWidth = image.naturalWidth;
+  //   const imageAspectRatio = imageNaturalWidth / imageNaturalHeight;
+  //   const imageClientWidth = image.clientWidth;
+  //   const imageRealHeight = imageClientWidth / imageAspectRatio;
+  //   mainInfoTextContent.style.height = `${imageRealHeight}px`;
+  // }, []);
 
   return (
     <main className={styles.container}>
@@ -42,9 +48,12 @@ const Main = () => {
           pathname="images/about/"
           filename="me"
           alt="Me"
-          ref={pictureRef}
+          // ref={pictureRef}
         />
-        <div className={styles.main_info_text_content} ref={textContentRef}>
+        <div
+          className={styles.main_info_text_content}
+          // ref={textContentRef}
+        >
           <h1 className={styles.page_title}>About Me</h1>
           <h2 className={styles.main_title}>
             Hi, my name is Henya Adler.
@@ -76,12 +85,11 @@ const Main = () => {
             Download Resume
           </button>
         </div>
+        <ScrollDownButton dark />
       </section>
       <section className={styles.additional_info}>
         <div className={styles.experience}>
-          <h2 className={styles.additional_info_section_title}>
-            My experience
-          </h2>
+          <h2 className={styles.additional_info_section_title}>Experience</h2>
           <article className={styles.info_item}>
             <h3 className={styles.info_item_title}>Rom Marketing</h3>
             <h4 className={styles.info_item_subtitle}>UX/UI Designer</h4>
@@ -124,7 +132,7 @@ const Main = () => {
           </article>
         </div>
         <div className={styles.education}>
-          <h2 className={styles.additional_info_section_title}>My education</h2>
+          <h2 className={styles.additional_info_section_title}>Education</h2>
           <article className={styles.info_item}>
             <h3 className={styles.info_item_title}>Netcraft Academy</h3>
             <h4 className={styles.info_item_subtitle}>UX/UI Design</h4>

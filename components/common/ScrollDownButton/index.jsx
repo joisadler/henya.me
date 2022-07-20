@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import { bool } from 'prop-types';
 import { desktop_breakpoint } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
 import styles from './scroll_down_button.module.scss';
 
-const ScrollDownButton = () => {
+const ScrollDownButton = ({ dark }) => {
   const isMobileOrTablet = useMediaQuery({
     query: `(max-width: ${desktop_breakpoint}px)`,
   });
@@ -48,11 +49,19 @@ const ScrollDownButton = () => {
       className={styles.scroll_downs}
       style={{ display: isVisible ? 'inline' : 'none' }}
     >
-      <div className={styles.mousey}>
-        <div className={styles.scroller} />
+      <div className={styles[dark ? 'mousey_dark' : 'mousey']}>
+        <div className={styles[dark ? 'scroller_dark' : 'scroller']} />
       </div>
     </div>
   );
+};
+
+ScrollDownButton.propTypes = {
+  dark: bool,
+};
+
+ScrollDownButton.defaultProps = {
+  dark: false,
 };
 
 export default ScrollDownButton;

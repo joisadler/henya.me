@@ -179,7 +179,7 @@
   width: 100%;
 
   .info_item_subtitle {
-    color: #7713D2;
+    color: $primary_violette;
   }
 
   @include breakpoint(tablet) {

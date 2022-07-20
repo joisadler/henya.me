@@ -56,6 +56,7 @@ Home.propTypes = {
       name: string.isRequired,
       url: string.isRequired,
       scroll: bool.isRequired,
+      open_in_new_tab: bool.isRequired,
     })
   ).isRequired,
   services: arrayOf(
