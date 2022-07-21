@@ -73,6 +73,7 @@
 }
 
 .project_preview {
+  position: relative;
   z-index: 0;
   display: flex;
   justify-content: center;
@@ -95,6 +96,15 @@
   border-radius: $border_radius_medium;
 }
 
+.project_preview_link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  // background: rgba(0);
+}
 
 .view_more_button {
   display: flex;

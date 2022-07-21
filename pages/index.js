@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { arrayOf, shape, string, number, bool } from 'prop-types';
 import Header from 'components/common/header';
-import Main from 'components/home/main';
 import MobileMenu from 'components/common/mobile_menu';
+import Main from 'components/home/main';
 import Services from 'components/home/services';
 import UxUi from 'components/home/UxUi';
 import Graphic from 'components/home/graphic';
