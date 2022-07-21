@@ -1,12 +1,12 @@
 import 'normalize.css';
 import '../styles/globals.scss';
 import GlobalState from 'context/GlobalState';
-import Script from 'next/script';
+// import Script from 'next/script';
 
 function MyApp({ Component, pageProps }) {
   return (
     <GlobalState>
-      <Script
+      {/* <Script
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
         page_path: window.location.pathname,
         });
     `}
-      </Script>
+      </Script> */}
       <Component {...pageProps} />
     </GlobalState>
   );

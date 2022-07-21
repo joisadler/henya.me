@@ -14,6 +14,9 @@ const UxUiProjectPreview = ({ preview_image_filename, name }) => {
         filename={preview_image_filename}
         alt={name}
       />
+      {/* <a href="" className={styles.project_preview_link}>
+        Name
+      </a> */}
     </li>
   );
 };

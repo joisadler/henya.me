@@ -1,0 +1,16 @@
+@import 'utils.scss';
+
+.container {
+  min-height: 100vh;
+  padding-block-start: $header_height_mobile;
+  padding-inline: toRem(10);
+
+  @include breakpoint(tablet) {
+    padding-inline: toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    padding-block-start: $header_height;
+    padding-inline: toRem(70);
+  }
+}
