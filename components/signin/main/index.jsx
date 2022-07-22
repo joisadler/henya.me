@@ -1,25 +1,18 @@
-import 'firebase/compat/auth';
+import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import firebase from 'firebase/compat/app';
 import { setUserCookie } from 'auth/userCookie';
 import { mapUserData } from 'auth/useUser';
-import initFirebase from 'config/firebaseConfig';
+import { useFirebase } from 'hooks/useFirebase';
 import styles from './main.module.scss';
 
 const Main = () => {
-  initFirebase();
+  const { auth, GoogleAuthProvider } = useFirebase();
+  if (!auth) return null;
 
   const signInSuccessUrl = '/manage';
-
   const firebaseAuthConfig = ({ signInSuccessUrl }) => ({
     signInFlow: 'popup',
-    signInOptions: [
-      // {
-      //   provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      //   requireDisplayName: false,
-      // },
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    ],
+    signInOptions: [GoogleAuthProvider.PROVIDER_ID],
     signInSuccessUrl,
     credentialHelper: 'none',
     callbacks: {
@@ -41,7 +34,7 @@ const Main = () => {
           <StyledFirebaseAuth
             className={styles.signin_button}
             uiConfig={firebaseAuthConfig({ signInSuccessUrl })}
-            firebaseAuth={firebase.auth()}
+            firebaseAuth={auth}
             signInSuccessUrl={signInSuccessUrl}
           />
         </div>
