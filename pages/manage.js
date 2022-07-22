@@ -17,7 +17,7 @@ const Manage = ({ nav_links }) => {
       return <AuthenticationWarning />;
     }
 
-    if (user?.email !== 'henyadesign@gmail.com') {
+    if (user?.email !== process.env.NEXT_PUBLIC_EMAIL) {
       return <NoPermissionWarning user={user} logout={logout} />;
     }
 

@@ -50,7 +50,7 @@ const MobileMenu = ({ nav_links }) => {
         <a
           className={styles.contact_link}
           aria-label="Email"
-          href="mailto:henyadesign@gmail.com"
+          href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
           target="_blank"
           rel="noopener noreferrer"
         >
