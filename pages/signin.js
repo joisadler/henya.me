@@ -1,41 +1,46 @@
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import initFirebase from 'config/firebaseConfig';
-import { setUserCookie } from 'auth/userCookie';
-import { mapUserData } from 'auth/useUser';
+import { arrayOf, shape, string, number, bool } from 'prop-types';
+import Head from 'next/head';
+import Header from 'components/common/header';
+import MobileMenu from 'components/common/mobile_menu';
+import Main from 'components/signin/main/';
+import Footer from 'components/common/footer';
 
-initFirebase();
-const firebaseAuthConfig = ({ signInSuccessUrl }) => ({
-  signInFlow: 'popup',
-  signInOptions: [
-    {
-      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      requireDisplayName: false,
-    },
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  ],
-  signInSuccessUrl,
-  credentialHelper: 'none',
-  callbacks: {
-    signInSuccessWithAuthResult: async ({ user }, redirectUrl) => {
-      const userData = await mapUserData(user);
-      setUserCookie(JSON.stringify(userData));
-    },
-  },
-});
-
-const FirebaseAuth = () => {
-  const signInSuccessUrl = '/manage';
+const Signin = ({ nav_links }) => {
   return (
-    <div>
-      <StyledFirebaseAuth
-        uiConfig={firebaseAuthConfig({ signInSuccessUrl })}
-        firebaseAuth={firebase.auth()}
-        signInSuccessUrl={signInSuccessUrl}
-      />
-    </div>
+    <>
+      <Head>
+        <title>Henya Adler | Manage Website</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Henya Adler | Manage Website" />
+      </Head>
+      <MobileMenu nav_links={nav_links} />
+      <Header nav_links={nav_links} />
+      <Main />
+      <Footer />
+    </>
   );
 };
 
-export default FirebaseAuth;
+export default Signin;
+
+Signin.propTypes = {
+  nav_links: arrayOf(
+    shape({
+      id: number.isRequired,
+      name: string.isRequired,
+      url: string.isRequired,
+      scroll: bool.isRequired,
+      open_in_new_tab: bool.isRequired,
+    })
+  ).isRequired,
+};
+
+export async function getStaticProps() {
+  const nav_links = require('data/nav_links.data.json');
+
+  return {
+    props: {
+      nav_links,
+    },
+  };
+}

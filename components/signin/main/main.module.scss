@@ -1,0 +1,75 @@
+@import 'utils.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-block-start: $header_height_mobile;
+  padding-inline: toRem(10);
+
+  @include breakpoint(tablet) {
+    padding-inline: toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    padding-block-start: $header_height;
+    padding-inline: toRem(70);
+  }
+}
+
+.signin_card {
+  z-index: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: calc(100vw - 2rem);
+  padding: 1rem;
+  aspect-ratio: 1/1;
+  background: $white;
+  border-radius: $border_raduis_large;
+  box-shadow: 15px 15px 61px rgba(46, 45, 58, 0.13);
+
+  @include breakpoint(tablet) {
+    width: auto;
+  }
+}
+
+.signin_titles {
+  //
+}
+
+.signin_title {
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 900;
+  font-size: toRem(24);
+  line-height: 138%;
+  text-align: center;
+  color: $maastricht_blue;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(36);
+  }
+}
+
+.signin_subtitle {
+  height: toRem(62);
+  margin: 0;
+  padding: 1rem;
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 900;
+  font-size: toRem(30);
+  line-height: 100%;
+  text-align: center;
+  color: $maastricht_blue;
+}
+
+.signin_button_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}

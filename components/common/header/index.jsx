@@ -35,7 +35,7 @@ const Header = ({ nav_links, transparent }) => {
     updateBackground();
     // adding the event when scroll change background
     window.addEventListener('scroll', updateBackground);
-    return () => window.removeEventListener('keyup', updateBackground);
+    return () => window.removeEventListener('scroll', updateBackground);
   }, [height, transparent]);
 
   useEffect(() => {

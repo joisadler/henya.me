@@ -17,8 +17,7 @@ const Manage = ({ nav_links }) => {
       return <AuthenticationWarning />;
     }
 
-    const { email } = user;
-    if (email !== 'henyadesign@gmail.com') {
+    if (user?.email !== 'henyadesign@gmail.com') {
       return <NoPermissionWarning user={user} logout={logout} />;
     }
 

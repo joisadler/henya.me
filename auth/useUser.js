@@ -1,20 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-
-import initFirebase from 'config/firebaseConfig';
+import { useFirebase } from 'hooks/useFirebase';
 import {
   removeUserCookie,
   setUserCookie,
   getUserFromCookie,
 } from './userCookie';
 
-initFirebase();
-
 export const mapUserData = async (user) => {
   const { uid, email, displayName } = user;
-  console.log('user from mapUserData:', user);
   const token = await user.getIdToken(true);
   return {
     id: uid,
@@ -25,12 +19,13 @@ export const mapUserData = async (user) => {
 };
 
 const useUser = () => {
+  const { auth, onIdTokenChanged } = useFirebase();
+
   const [user, setUser] = useState();
   const router = useRouter();
 
   const logout = async () => {
-    return firebase
-      .auth()
+    return auth
       .signOut()
       .then(() => {
         router.push('/');
@@ -41,19 +36,18 @@ const useUser = () => {
   };
 
   useEffect(() => {
+    if (!auth) return;
     (() => {
-      const cancelAuthListener = firebase
-        .auth()
-        .onIdTokenChanged(async (userToken) => {
-          if (userToken) {
-            const userData = await mapUserData(userToken);
-            setUserCookie(JSON.stringify(userData));
-            setUser(userData);
-          } else {
-            removeUserCookie();
-            setUser();
-          }
-        });
+      const cancelAuthListener = onIdTokenChanged(auth, async (userToken) => {
+        if (userToken) {
+          const userData = await mapUserData(userToken);
+          setUserCookie(JSON.stringify(userData));
+          setUser(userData);
+        } else {
+          removeUserCookie();
+          setUser();
+        }
+      });
 
       const userFromCookie = getUserFromCookie();
       if (!userFromCookie) {
@@ -62,7 +56,7 @@ const useUser = () => {
       setUser(userFromCookie);
       return () => cancelAuthListener;
     })();
-  }, []);
+  }, [auth, onIdTokenChanged]);
 
   return { user, logout };
 };
