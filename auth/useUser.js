@@ -14,7 +14,6 @@ initFirebase();
 
 export const mapUserData = async (user) => {
   const { uid, email, displayName } = user;
-  console.log('user from mapUserData:', user);
   const token = await user.getIdToken(true);
   return {
     id: uid,

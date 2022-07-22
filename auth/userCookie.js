@@ -5,7 +5,6 @@ export const getUserFromCookie = () => {
   if (!cookie) {
     return null;
   }
-  console.log('cookie:', cookie);
   return JSON.parse(cookie);
 };
 
