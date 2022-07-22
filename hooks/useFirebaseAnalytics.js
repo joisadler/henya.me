@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useFirebaseApp } from 'hooks/useFirebaseApp';
 import { getAnalytics } from 'firebase/analytics';
 
-export const useFirebase = () => {
+export const useFirebaseAnalytics = () => {
   const { app } = useFirebaseApp();
   const [analytics, setAnalytics] = useState();
 
