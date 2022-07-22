@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import router from 'next/router';
-import { useFirebase } from 'hooks/useFirebase';
+import { useFirebaseAuth } from 'hooks/useFirebaseAuth';
 
 const withAuth = (Component) => (props) => {
-  const { auth, onAuthStateChanged } = useFirebase();
+  const { auth, onAuthStateChanged } = useFirebaseAuth();
   useEffect(() => {
     if (!auth) return;
     onAuthStateChanged(auth, (authUser) => {

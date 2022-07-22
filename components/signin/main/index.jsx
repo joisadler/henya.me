@@ -2,11 +2,11 @@ import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { setUserCookie } from 'auth/userCookie';
 import { mapUserData } from 'auth/useUser';
-import { useFirebase } from 'hooks/useFirebase';
+import { useFirebaseAuth } from 'hooks/useFirebaseAuth';
 import styles from './main.module.scss';
 
 const Main = () => {
-  const { auth, GoogleAuthProvider } = useFirebase();
+  const { auth, GoogleAuthProvider } = useFirebaseAuth();
   if (!auth) return null;
 
   const signInSuccessUrl = '/manage';

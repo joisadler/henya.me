@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { useFirebase } from 'hooks/useFirebase';
+import { useFirebaseAuth } from 'hooks/useFirebaseAuth';
 import {
   removeUserCookie,
   setUserCookie,
@@ -19,7 +19,7 @@ export const mapUserData = async (user) => {
 };
 
 const useUser = () => {
-  const { auth, onIdTokenChanged } = useFirebase();
+  const { auth, onIdTokenChanged } = useFirebaseAuth();
 
   const [user, setUser] = useState();
   const router = useRouter();

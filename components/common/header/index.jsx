@@ -75,11 +75,11 @@ const Header = ({ nav_links, transparent }) => {
         <div className={styles.contact_info}>
           <a
             className={styles.contact_info_text}
-            href="mailto:henyadesign@gmail.com"
+            href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            henyadesign@gmail.com
+            {process.env.NEXT_PUBLIC_EMAIL}
           </a>
           <a
             className={styles.contact_info_text}

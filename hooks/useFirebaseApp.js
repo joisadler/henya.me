@@ -1,19 +1,8 @@
 import { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-import { getAnalytics } from 'firebase/analytics';
-import {
-  getAuth,
-  GoogleAuthProvider,
-  onIdTokenChanged,
-  onAuthStateChanged,
-} from 'firebase/auth';
 
-export const useFirebase = () => {
+export const useFirebaseApp = () => {
   const [app, setApp] = useState();
-  const [analytics, setAnalytics] = useState();
-  const [db, setDB] = useState();
-  const [auth, setAuth] = useState();
 
   useEffect(() => {
     const firebaseConfig = {
@@ -25,21 +14,10 @@ export const useFirebase = () => {
       appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
       measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
     };
-
     setApp(initializeApp(firebaseConfig));
-    if (!app) return;
-    setAnalytics(getAnalytics(app));
-    setDB(getFirestore(app));
-    setAuth(getAuth(app));
-  }, [app]);
+  }, []);
 
   return {
     app,
-    analytics,
-    db,
-    auth,
-    GoogleAuthProvider,
-    onIdTokenChanged,
-    onAuthStateChanged,
   };
 };
