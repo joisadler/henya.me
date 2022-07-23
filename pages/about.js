@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { arrayOf, shape, string, number } from 'prop-types';
 import Header from 'components/common/header';
@@ -6,6 +8,26 @@ import Main from 'components/about/main';
 import Footer from 'components/common/footer';
 
 const Home = ({ nav_links }) => {
+  const router = useRouter();
+  const pressCountRef = useRef(0);
+
+  const mmmEasterEgg = (e) => {
+    if (e.key === 'm') {
+      pressCountRef.current++;
+      console.log('pressCountRef.current', pressCountRef.current);
+      if (pressCountRef.current === 3) {
+        console.log('\n');
+        pressCountRef.current = 0;
+        router.push('/manage');
+      }
+    }
+  };
+
+  useEffect(() => {
+    document.body.addEventListener('keyup', mmmEasterEgg);
+    return () => document.body.removeEventListener('keyup', mmmEasterEgg);
+  }, []);
+
   return (
     <>
       <Head>

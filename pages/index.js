@@ -1,9 +1,11 @@
+import { useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { arrayOf, shape, string, number, bool } from 'prop-types';
 import Header from 'components/common/header';
 import MobileMenu from 'components/common/mobile_menu';
 import Main from 'components/home/main';
-import Services from 'components/home/services';
+// import Services from 'components/home/services';
 import UxUi from 'components/home/UxUi';
 import Graphic from 'components/home/graphic';
 import Footer from 'components/common/footer';
@@ -12,8 +14,28 @@ const Home = ({
   uxui_projects,
   graphic_design_projects,
   nav_links,
-  services,
+  // services,
 }) => {
+  const router = useRouter();
+  const pressCountRef = useRef(0);
+
+  const mmmEasterEgg = (e) => {
+    if (e.key === 'm') {
+      pressCountRef.current++;
+      console.log('pressCountRef.current', pressCountRef.current);
+      if (pressCountRef.current === 3) {
+        console.log('\n');
+        pressCountRef.current = 0;
+        router.push('/manage');
+      }
+    }
+  };
+
+  useEffect(() => {
+    document.body.addEventListener('keyup', mmmEasterEgg);
+    return () => document.body.removeEventListener('keyup', mmmEasterEgg);
+  }, []);
+
   return (
     <>
       <Head>
@@ -59,15 +81,15 @@ Home.propTypes = {
       open_in_new_tab: bool.isRequired,
     })
   ).isRequired,
-  services: arrayOf(
-    shape({
-      id: number.isRequired,
-      title: string.isRequired,
-      description: string.isRequired,
-      pathname: string.isRequired,
-      filename: string.isRequired,
-    })
-  ).isRequired,
+  // services: arrayOf(
+  //   shape({
+  //     id: number.isRequired,
+  //     title: string.isRequired,
+  //     description: string.isRequired,
+  //     pathname: string.isRequired,
+  //     filename: string.isRequired,
+  //   })
+  // ).isRequired,
 };
 
 export async function getStaticProps() {
