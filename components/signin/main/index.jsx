@@ -25,7 +25,7 @@ const Main = () => {
 
   return (
     <main className={styles.container}>
-      <section className={styles.signin_card}>
+      <div className={styles.signin_card}>
         <hgroup className={styles.signin_titles}>
           <h1 className={styles.signin_title}>Sign in</h1>
           <h2 className={styles.signin_subtitle}>to manage the site content</h2>
@@ -38,7 +38,7 @@ const Main = () => {
             signInSuccessUrl={signInSuccessUrl}
           />
         </div>
-      </section>
+      </div>
     </main>
   );
 };
