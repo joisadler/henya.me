@@ -1,0 +1,92 @@
+@import 'utils.scss';
+
+.container {
+  width: toRem(256);
+  height: 100%;
+  min-height: 100vh;
+  padding-block-start: $header_height_mobile;
+  background: $maastricht_blue;
+
+  @include breakpoint(desktop) {
+    padding-block-start: $header_height;
+  }
+}
+
+.nav_section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: toRem(10);
+  border-block-end: 1px solid $white;
+
+
+  @include breakpoint(tablet) {
+    padding: toRem(16);
+  }
+
+  @include breakpoint(desktop) {
+    //
+  }
+
+  &:first-child {
+    border-block-start: 2px solid $white;
+  }
+}
+
+.greeting {
+  flex: 1;
+  margin: 0;
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: toRem(18);
+  text-align: start;
+  color: $white;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.profile_image_container {
+  display: flex;
+  align-items: center;
+
+  &:hover .logout_button_container {
+    width: toRem(75);
+  }
+}
+
+.profile_image {
+  width: toRem(32);
+  height: toRem(32);
+  margin-inline-start: toRem(10);
+  border-radius: 100%;
+  border: 1px solid $white;
+}
+
+.logout_button_container {
+  width: 0;
+  margin-inline-start: toRem(10);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.logout_button {
+  width: toRem(75);
+}
+
+.nav_section_title {
+  flex: 1;
+  margin: 0;
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: toRem(18);
+  text-align: start;
+  color: $white;
+}
+
+.nav_section_title_active {
+  @extend .nav_section_title;
+  color: $text_blue;
+}

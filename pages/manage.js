@@ -1,27 +1,53 @@
+import { useState } from 'react';
 import { arrayOf, shape, string, number, bool } from 'prop-types';
 import Head from 'next/head';
 import AuthenticationWarning from 'components/manage/authenticationWarning';
 import NoPermissionWarning from 'components/manage/nopermissionWarning';
 import Header from 'components/common/header';
 import MobileMenu from 'components/common/mobile_menu';
+import Sidebar from 'components/manage/sidebar';
 import Main from 'components/manage/main';
 import Footer from 'components/common/footer';
 import withAuth from '../auth/withAuth';
 import { useUser } from '../auth/useUser';
+import styles from '../styles/manage.module.scss';
 
 const Manage = ({ nav_links }) => {
   const { user, logout } = useUser();
 
+  const [activePanel, setActivePanel] = useState('users');
+  console.log('activepanel:', activePanel)
+
   const renderMainComponent = () => {
     if (!user) {
-      return <AuthenticationWarning />;
+      return (
+        <>
+          <AuthenticationWarning />;
+          <Footer />
+        </>
+      );
     }
 
     if (user?.email !== process.env.NEXT_PUBLIC_EMAIL) {
-      return <NoPermissionWarning user={user} logout={logout} />;
+      return (
+        <>
+          <NoPermissionWarning user={user} logout={logout} />
+          <Footer />
+        </>
+      );
     }
 
-    return <Main user={user} logout={logout} />;
+    return (
+      <div className={styles.container}>
+        <Sidebar
+          user={user}
+          logout={logout}
+          activePanel={activePanel}
+          setActivePanel={setActivePanel}
+        />
+        <Main activePanel={activePanel} />
+      </div>
+    );
   };
 
   return (
@@ -34,7 +60,6 @@ const Manage = ({ nav_links }) => {
       <MobileMenu nav_links={nav_links} />
       <Header nav_links={nav_links} />
       {renderMainComponent()}
-      <Footer />
     </>
   );
 };
