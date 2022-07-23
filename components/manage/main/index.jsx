@@ -1,35 +1,18 @@
-import { useEffect } from 'react';
-import { useFirestore } from 'hooks/useFirestore';
+import Users from 'components/manage/users';
+import CV from 'components/manage/cv';
+import UxUiProjects from 'components/manage/UxUiProjects';
 import styles from './main.module.scss';
 
-const Main = ({ user, logout }) => {
-  const { email } = user;
+const Main = ({ activePanel }) => {
+  const panels = {
+    users: <Users />,
+    cv: <CV />,
+    UxUiProjects: <UxUiProjects />,
+  };
 
-  const { getDocuments } = useFirestore();
-  console.log('getDocuments:', getDocuments);
+  const renderActivePanel = () => panels[activePanel];
 
-  useEffect(() => {
-    (async () => {
-      const docs = await getDocuments('users', {
-        fieldPath: 'isAdmin',
-        opStr: '==',
-        value: true,
-      });
-      docs.forEach((doc) => {
-        console.log('doc data:', doc.data());
-      });
-    })();
-  });
-
-  return (
-    <main className={styles.container}>
-      <div>Manage</div>
-      <div>
-        <div>Email: {email}</div>
-        <button onClick={() => logout()}>Logout</button>
-      </div>
-    </main>
-  );
+  return <main className={styles.container}>{renderActivePanel()}</main>;
 };
 
 export default Main;
