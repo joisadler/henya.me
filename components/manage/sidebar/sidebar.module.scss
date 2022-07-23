@@ -1,7 +1,7 @@
 @import 'utils.scss';
 
 .container {
-  width: toRem(256);
+  width: toRem(300);
   height: 100%;
   min-height: 100vh;
   padding-block-start: $header_height_mobile;
@@ -18,7 +18,7 @@
   width: 100%;
   padding: toRem(10);
   border-block-end: 1px solid $white;
-
+  cursor: pointer;
 
   @include breakpoint(tablet) {
     padding: toRem(16);
@@ -31,6 +31,11 @@
   &:first-child {
     border-block-start: 2px solid $white;
   }
+}
+
+.header {
+  @extend .nav_section;
+  cursor: auto;
 }
 
 .greeting {
@@ -73,6 +78,7 @@
 
 .logout_button {
   width: toRem(75);
+  cursor: pointer;
 }
 
 .nav_section_title {
@@ -81,7 +87,7 @@
   font-family: $mulish;
   font-style: normal;
   font-weight: 600;
-  font-size: toRem(18);
+  font-size: toRem(16);
   text-align: start;
   color: $white;
 }

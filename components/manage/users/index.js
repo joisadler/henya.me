@@ -17,7 +17,13 @@ const Users = () => {
   //     });
   //   })();
   // });
-  return <div className={styles.container}>Users</div>;
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.page_title}>
+        Manage <strong>Users</strong>
+      </h1>
+    </div>
+  );
 };
 
 export default Users;

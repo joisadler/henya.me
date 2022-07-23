@@ -16,7 +16,6 @@ const Manage = ({ nav_links }) => {
   const { user, logout } = useUser();
 
   const [activePanel, setActivePanel] = useState('users');
-  console.log('activepanel:', activePanel)
 
   const renderMainComponent = () => {
     if (!user) {

@@ -1,9 +1,13 @@
 import Users from 'components/manage/users';
+import CV from 'components/manage/cv';
+import UxUiProjects from 'components/manage/UxUiProjects';
 import styles from './main.module.scss';
 
 const Main = ({ activePanel }) => {
   const panels = {
     users: <Users />,
+    cv: <CV />,
+    UxUiProjects: <UxUiProjects />,
   };
 
   const renderActivePanel = () => panels[activePanel];

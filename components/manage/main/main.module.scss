@@ -1,16 +1,20 @@
 @import 'utils.scss';
 
 .container {
-  min-height: 100vh;
-  padding-block-start: $header_height_mobile;
+  // min-height: calc(100vh - toRem(10));
+  width: 100%;
+  padding-block-start: calc($header_height_mobile + toRem(10));
+  padding-block-end: toRem(10);
   padding-inline: toRem(10);
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    // min-height: calc(100vh - toRem(16));
+    padding-block-start: calc($header_height_mobile + toRem(16));
+    padding-block-end: toRem(16);
+    padding-inline: toRem(16);
   }
 
   @include breakpoint(desktop) {
-    padding-block-start: $header_height;
-    padding-inline: toRem(70);
+    padding-block-start: calc($header_height + toRem(16));
   }
 }
