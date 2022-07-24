@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useFirebaseApp } from 'hooks/useFirebaseApp';
 import {
-  doc,
   getFirestore,
   collection,
   getDocs,
   addDoc,
   getDoc,
   updateDoc,
+  deleteDoc,
   query,
   where,
 } from 'firebase/firestore';
@@ -75,17 +75,32 @@ export const useFirestore = () => {
     }
   };
 
+  const updateDocument = async (docRef, data) => {
+    try {
+      const updatedDoc = await updateDoc(docRef, data);
+      return updatedDoc;
+    } catch (e) {
+      console.error('Error updating document: ', e);
+      return null;
+    }
+  };
+
+  const deleteDocument = async (docRef) => {
+    try {
+      const updatedDoc = await deleteDoc(docRef);
+      return updatedDoc;
+    } catch (e) {
+      console.error('Error deleting document: ', e);
+      return null;
+    }
+  };
+
   return {
     db,
-    // doc,
-    // collection,
-    // getDocs,
-    // addDoc,
-    // getDoc,
-    // updateDoc,
     getDocument,
     getDocuments,
     getAllDocuments,
     createDocument,
+    updateDocument,
   };
 };
