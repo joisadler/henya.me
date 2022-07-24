@@ -22,7 +22,6 @@ const Home = ({
   const mmmEasterEgg = (e) => {
     if (e.key === 'm') {
       pressCountRef.current++;
-      console.log('pressCountRef.current', pressCountRef.current);
       if (pressCountRef.current === 3) {
         console.log('\n');
         pressCountRef.current = 0;
