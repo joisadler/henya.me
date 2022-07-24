@@ -87,7 +87,7 @@ const Users = () => {
     const formData = new FormData(e.target);
     const displayName = formData.get('displayName');
     const email = formData.get('email');
-    const isAdmin = formData.get('isAdmin');
+    const isAdmin = !!formData.get('isAdmin');
     const data = {
       displayName,
       email,
