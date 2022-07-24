@@ -45,10 +45,6 @@ const Manage = ({ nav_links }) => {
       );
     }
 
-    console.log(
-      'managerEmails.includes(user?.email):',
-      managerEmails.includes(user?.email)
-    );
     if (!managerEmails.includes(user?.email)) {
       return (
         <>

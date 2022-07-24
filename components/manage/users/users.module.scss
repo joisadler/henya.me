@@ -93,3 +93,17 @@
     }
   }
 }
+
+.centered {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.delete_user_button {
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    color: $primary_pink;
+  }
+}

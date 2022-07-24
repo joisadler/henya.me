@@ -1,6 +1,16 @@
 import 'normalize.css';
 import '../styles/globals.scss';
 import GlobalState from 'context/GlobalState';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+// import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
+library.add(
+  // fab,
+  faTrash
+);
+
 // import Script from 'next/script';
 
 function MyApp({ Component, pageProps }) {

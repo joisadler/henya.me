@@ -1,31 +1,40 @@
 import { useState, useEffect } from 'react';
 import { shape, string, bool } from 'prop-types';
 import { useFirestore } from 'hooks/useFirestore';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './users.module.scss';
 
 const UsersItem = ({ user }) => {
-  console.log('user:', user);
   const { displayName, email, isAdmin } = user;
   const isHenya = email === process.env.NEXT_PUBLIC_EMAIL;
 
   const onDeleteUser = () => {};
 
+  const onToggleAdminCheckbox = ({ currentTarget }) => {
+    console.log(currentTarget);
+  };
+
   return (
     <tr>
       <td>{displayName}</td>
       <td>{email}</td>
-      <td>
+      <td className={styles.centered}>
         <input
           type="checkbox"
-          checked={isAdmin}
+          defaultChecked={isAdmin}
           disabled={isHenya}
           aria-label={`mark ${displayName} as admin`}
+          onClick={onToggleAdminCheckbox}
         />
       </td>
-      <td>
+      <td className={styles.centered}>
         {!isHenya && (
-          <button type="button" onClick={onDeleteUser}>
-            delete
+          <button
+            className={styles.delete_user_button}
+            type="button"
+            onClick={onDeleteUser}
+          >
+            <FontAwesomeIcon icon="fa-trash" />
           </button>
         )}
       </td>
@@ -41,9 +50,6 @@ const Users = () => {
     (async () => {
       const usersArr = [];
       const docs = await getAllDocuments('users');
-      docs.forEach((doc) => {
-        console.log('doc data:', doc.data());
-      });
       docs.forEach((doc) => {
         usersArr.push(doc.data());
       });

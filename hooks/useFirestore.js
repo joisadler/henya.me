@@ -35,7 +35,6 @@ export const useFirestore = () => {
   const getDocument = async (docRef) => {
     try {
       const document = await getDoc(docRef);
-      console.log('Got the document with ID: ', docRef.id);
       return document;
     } catch (e) {
       console.error('Error getting document: ', e);
@@ -55,7 +54,6 @@ export const useFirestore = () => {
 
     try {
       const docs = await getDocs(q);
-      console.log('Got the docs');
       return docs;
     } catch (e) {
       console.error('Error getting document: ', e);
@@ -70,7 +68,6 @@ export const useFirestore = () => {
 
     try {
       const docs = await getDocs(q);
-      console.log('Got the docs');
       return docs;
     } catch (e) {
       console.error('Error getting document: ', e);
