@@ -7,6 +7,7 @@
 
 .page_title {
   margin: 0;
+  margin-block-end: toRem(16);
   font-family: $mulish;
   font-style: normal;
   font-weight: 900;
@@ -19,5 +20,90 @@
 
   @include breakpoint(desktop) {
     font-size: toRem(36);
+  }
+}
+
+.td {
+  padding: toRem(16);
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: toRem(16);
+  color: $white;
+}
+
+.users_table {
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: 15px 15px 61px rgba(46, 45, 58, 0.13);
+
+  thead {
+    background-color: $maastricht_blue;
+    tr {
+      th {
+        @extend .td;
+        color: $white;
+
+        &:first-child {
+          border-top-left-radius: $border_radius_medium;
+        }
+        &:last-child {
+          border-top-right-radius: $border_radius_medium;
+        }
+      }
+    }
+  }
+
+  tbody {
+    border: 1px solid $maastricht_blue;
+    tr {
+      &:nth-child(2n) {
+        background-color: rgba(19, 26, 54, 0.1);
+      }
+      &:last-child {
+        td {
+          border-bottom: 1px solid $maastricht_blue;
+        }
+        td:first-child {
+          border-left: 1px solid $maastricht_blue;
+          border-bottom: 1px solid $maastricht_blue;
+          border-bottom-left-radius: $border_radius_medium;
+        }
+        td:last-child {
+          border-right: 1px solid $maastricht_blue;
+          border-bottom: 1px solid $maastricht_blue;
+          border-bottom-right-radius: $border_radius_medium;
+        }
+      }
+      &:not(:last-child) {
+        td:first-child {
+          border-left: 1px solid $maastricht_blue;
+        }
+        td:last-child {
+          border-right: 1px solid $maastricht_blue;
+        }
+      }
+      &:hover {
+        background-color: rgba(19, 26, 54, 0.2);
+      }
+      td {
+        @extend .td;
+        color: $black;
+      }
+    }
+  }
+}
+
+.centered {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.delete_user_button {
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    color: $primary_pink;
   }
 }

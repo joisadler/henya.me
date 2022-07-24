@@ -62,7 +62,7 @@ const Sidebar = ({ user, logout, activePanel, setActivePanel }) => {
         </div>
       </section>
       {navSections.map((section) => (
-        <NavSection name={section} />
+        <NavSection name={section} key={section} />
       ))}
     </nav>
   );

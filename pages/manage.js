@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useFirestore } from 'hooks/useFirestore';
 import { arrayOf, shape, string, number, bool } from 'prop-types';
 import Head from 'next/head';
 import AuthenticationWarning from 'components/manage/authenticationWarning';
@@ -13,9 +14,26 @@ import { useUser } from '../auth/useUser';
 import styles from '../styles/manage.module.scss';
 
 const Manage = ({ nav_links }) => {
+  const { db, getDocuments } = useFirestore();
   const { user, logout } = useUser();
 
   const [activePanel, setActivePanel] = useState('users');
+  const [managerEmails, setManagerEmails] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const emails = [];
+      const docs = await getDocuments('users', {
+        fieldPath: 'isAdmin',
+        opStr: '==',
+        value: true,
+      }).catch((e) => console.log('error:', e));
+      docs.forEach((doc) => {
+        emails.push(doc.data().email);
+      });
+      setManagerEmails(emails);
+    })();
+  }, [db]);
 
   const renderMainComponent = () => {
     if (!user) {
@@ -27,7 +45,7 @@ const Manage = ({ nav_links }) => {
       );
     }
 
-    if (user?.email !== process.env.NEXT_PUBLIC_EMAIL) {
+    if (!managerEmails.includes(user?.email)) {
       return (
         <>
           <NoPermissionWarning user={user} logout={logout} />

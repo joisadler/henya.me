@@ -35,7 +35,6 @@ export const useFirestore = () => {
   const getDocument = async (docRef) => {
     try {
       const document = await getDoc(docRef);
-      console.log('Got the document with ID: ', docRef.id);
       return document;
     } catch (e) {
       console.error('Error getting document: ', e);
@@ -55,7 +54,20 @@ export const useFirestore = () => {
 
     try {
       const docs = await getDocs(q);
-      console.log('Got the docs');
+      return docs;
+    } catch (e) {
+      console.error('Error getting document: ', e);
+      return null;
+    }
+  };
+
+  const getAllDocuments = async (collectionName = '') => {
+    if (!db) return [];
+
+    const q = query(collection(db, collectionName));
+
+    try {
+      const docs = await getDocs(q);
       return docs;
     } catch (e) {
       console.error('Error getting document: ', e);
@@ -64,7 +76,7 @@ export const useFirestore = () => {
   };
 
   return {
-    // db,
+    db,
     // doc,
     // collection,
     // getDocs,
@@ -73,6 +85,7 @@ export const useFirestore = () => {
     // updateDoc,
     getDocument,
     getDocuments,
+    getAllDocuments,
     createDocument,
   };
 };
