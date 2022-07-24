@@ -1,17 +1,25 @@
 import { useState, useEffect } from 'react';
-import { shape, string, bool } from 'prop-types';
+import { arrayOf, shape, string, bool } from 'prop-types';
 import { useFirestore } from 'hooks/useFirestore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './users.module.scss';
 
-const UsersItem = ({ user }) => {
-  const { displayName, email, isAdmin } = user;
+const UsersItem = ({ user, users }) => {
+  const { updateDocument, deleteDocument } = useFirestore();
+  const { displayName, email, isAdmin } = user.data();
   const isHenya = email === process.env.NEXT_PUBLIC_EMAIL;
 
-  const onDeleteUser = () => {};
+  const onToggleAdminCheckbox = async ({ currentTarget }) => {
+    const { checked } = currentTarget;
+    const docRef = users.find((usr) => usr.data().email === email).ref;
+    await updateDocument(docRef, {
+      isAdmin: checked,
+    });
+  };
 
-  const onToggleAdminCheckbox = ({ currentTarget }) => {
-    console.log(currentTarget);
+  const onDeleteUser = async () => {
+    const docRef = users.find((usr) => usr.data().email === email).ref;
+    await deleteDocument(docRef);
   };
 
   return (
@@ -24,6 +32,7 @@ const UsersItem = ({ user }) => {
           defaultChecked={isAdmin}
           disabled={isHenya}
           aria-label={`mark ${displayName} as admin`}
+          data-email={email}
           onClick={onToggleAdminCheckbox}
         />
       </td>
@@ -48,14 +57,14 @@ const Users = () => {
 
   useEffect(() => {
     (async () => {
-      const usersArr = [];
+      const userDocs = [];
       const docs = await getAllDocuments('users');
       docs.forEach((doc) => {
-        usersArr.push(doc.data());
+        userDocs.push(doc);
       });
       setUsers(
-        usersArr.sort((a) =>
-          a.email === process.env.NEXT_PUBLIC_EMAIL ? -1 : 1
+        userDocs.sort((a) =>
+          a.data().email === process.env.NEXT_PUBLIC_EMAIL ? -1 : 1
         )
       );
     })();
@@ -72,13 +81,13 @@ const Users = () => {
           <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Is admin</th>
+            <th>Admin</th>
             <th>Delete user</th>
           </tr>
         </thead>
         <tbody>
           {users.map((user) => (
-            <UsersItem user={user} key={user.email} />
+            <UsersItem user={user} users={users} key={user.data().email} />
           ))}
         </tbody>
       </table>
@@ -86,12 +95,15 @@ const Users = () => {
   );
 };
 
+const userType = shape({
+  displayName: string,
+  email: string,
+  isAdmin: bool,
+});
+
 UsersItem.propTypes = {
-  user: shape({
-    displayName: string,
-    email: string,
-    isAdmin: bool,
-  }).isRequired,
+  user: userType.isRequired,
+  users: arrayOf(userType).isRequired,
 };
 
 export default Users;
