@@ -63,8 +63,23 @@ export const useFirestore = () => {
     }
   };
 
+  const getAllDocuments = async (collectionName = '') => {
+    if (!db) return [];
+
+    const q = query(collection(db, collectionName));
+
+    try {
+      const docs = await getDocs(q);
+      console.log('Got the docs');
+      return docs;
+    } catch (e) {
+      console.error('Error getting document: ', e);
+      return null;
+    }
+  };
+
   return {
-    // db,
+    db,
     // doc,
     // collection,
     // getDocs,
@@ -73,6 +88,7 @@ export const useFirestore = () => {
     // updateDoc,
     getDocument,
     getDocuments,
+    getAllDocuments,
     createDocument,
   };
 };
