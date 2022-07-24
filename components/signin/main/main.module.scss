@@ -27,7 +27,7 @@
   padding: 1rem;
   aspect-ratio: 1/1;
   background: $white;
-  border-radius: $border_raduis_large;
+  border-radius: $border_radius_medium;
   box-shadow: 15px 15px 61px rgba(46, 45, 58, 0.13);
 
   @include breakpoint(tablet) {

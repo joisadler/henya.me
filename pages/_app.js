@@ -4,11 +4,12 @@ import GlobalState from 'context/GlobalState';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 // import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
   // fab,
-  faTrash
+  faTrash,
+  faPlus
 );
 
 // import Script from 'next/script';

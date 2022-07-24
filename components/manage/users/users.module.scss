@@ -102,8 +102,119 @@
 .delete_user_button {
   border: none;
   background-color: transparent;
+  cursor: pointer;
 
   &:hover {
     color: $primary_pink;
   }
+}
+
+.add_user_button {
+  width: 2rem;
+  height: 2rem;
+  margin-block: 1rem;
+  border: none;
+  background-color: rgba(60, 178, 124, 0.9);
+  border-radius: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(60, 178, 124, 1);
+  }
+}
+
+.add_user_form {
+  width: fit-content;
+  margin-block-start: toRem(16);
+  padding: 1rem;
+  background: $white;
+  border-radius: $border_radius_medium;
+  box-shadow: 15px 15px 61px rgba(46, 45, 58, 0.13);
+}
+
+.form_title {
+  width: fit-content;
+  margin: 0;
+  margin-block-end: toRem(16);
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 900;
+  font-size: toRem(18);
+  color: $maastricht_blue;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(24);
+  }
+}
+
+.form_inputs {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+}
+
+.input_container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  &:first-child {
+    margin-inline-end: toRem(16);
+  }
+}
+
+.label {
+  margin-block-end: toRem(10);
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: toRem(16);
+  line-height: 100%;
+  color: $black;
+}
+
+.input {
+  width: toRem(200);
+  height: toRem(35);
+  padding: toRem(5) toRem(10);
+}
+
+.checkbox_container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: toRem(50);
+}
+
+.checkbox {
+  height: toRem(35);
+  padding: toRem(5) toRem(10);
+}
+
+.save_button_container {
+  margin-block-start: 1rem;
+}
+
+.save_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: toRem(16);
+  padding: toRem(5) toRem(10);
+  border: 0.5px solid transparent;
+  border-radius: $border_radius_medium;
+  font-style: normal;
+  font-weight: 800;
+  font-size: toRem(18);
+  line-height: 120%;
+  cursor: pointer;
+  color: $white;
+  font-family: $mulish;
+  background: $primary_green;
+  transition: all .3s cubic-bezier(.25,.8,.25,1);
 }

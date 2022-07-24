@@ -102,5 +102,6 @@ export const useFirestore = () => {
     getAllDocuments,
     createDocument,
     updateDocument,
+    deleteDocument,
   };
 };
