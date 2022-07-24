@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-restricted-globals */
 import { useState, useEffect } from 'react';
 import { arrayOf, shape, string, bool } from 'prop-types';
 import { useFirestore } from 'hooks/useFirestore';
@@ -19,7 +21,9 @@ const UsersItem = ({ user, users }) => {
 
   const onDeleteUser = async () => {
     const docRef = users.find((usr) => usr.data().email === email).ref;
-    await deleteDocument(docRef);
+    if (confirm(`Are you sure you want to delete ${displayName}?`) === true) {
+      await deleteDocument(docRef);
+    }
   };
 
   return (
