@@ -98,86 +98,104 @@ const Users = () => {
     forceUpdate();
   };
 
+  const onDiscardAddingUser = () => {
+    setIsAddFormShown(false);
+  };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.page_title}>
         Manage <strong>Users</strong>
       </h1>
-      <table className={styles.users_table}>
-        <thead>
-          <tr>
-            <th>Full name</th>
-            <th>Email</th>
-            <th>Admin</th>
-            <th>Delete user</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <UsersItem
-              user={user}
-              users={users}
-              forceUpdate={forceUpdate}
-              key={user.data().email}
-            />
-          ))}
-        </tbody>
-      </table>
-      {!isAddFormShown && (
-        <button
-          type="button"
-          className={styles.add_user_button}
-          onClick={onAddUserButtonClick}
-          aria-label="Add user"
-        >
-          <FontAwesomeIcon icon="fa-plus" />
-        </button>
-      )}
-      {isAddFormShown && (
-        <form className={styles.add_user_form} onSubmit={onFormSubmit}>
-          <h2 className={styles.form_title}>Add user</h2>
-          <section className={styles.form_inputs}>
-            <div className={styles.input_container}>
-              <label htmlFor="displayName" className={styles.label}>
-                Full name
-              </label>
-              <input
-                className={styles.input}
-                type="text"
-                name="displayName"
-                id="displayName"
-                placeholder="John Snow"
-              />
-            </div>
-            <div className={styles.input_container}>
-              <label htmlFor="displayName" className={styles.label}>
-                Email
-              </label>
-              <input
-                className={styles.input}
-                type="email"
-                name="email"
-                id="email"
-                placeholder="johnsnow@gmail.com"
-              />
-            </div>
-            <div className={styles.checkbox_container}>
-              <label htmlFor="displayName" className={styles.label}>
-                Admin
-              </label>
-              <input
-                className={styles.checkbox}
-                type="checkbox"
-                name="isAdmin"
-                id="isAdmin"
-                defaultChecked={false}
-              />
-            </div>
-          </section>
-          <button type="submit" className={styles.save_button}>
-            Save
-          </button>
-        </form>
+      {users.length > 0 && (
+        <>
+          <table className={styles.users_table}>
+            <thead>
+              <tr>
+                <th>Full name</th>
+                <th>Email</th>
+                <th>Admin</th>
+                <th>Delete user</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map((user) => (
+                <UsersItem
+                  user={user}
+                  users={users}
+                  forceUpdate={forceUpdate}
+                  key={user.data().email}
+                />
+              ))}
+            </tbody>
+          </table>
+          {!isAddFormShown && (
+            <button
+              type="button"
+              className={styles.add_user_button}
+              onClick={onAddUserButtonClick}
+              aria-label="Add user"
+            >
+              <FontAwesomeIcon icon="fa-plus" />
+            </button>
+          )}
+          {isAddFormShown && (
+            <form className={styles.add_user_form} onSubmit={onFormSubmit}>
+              <h2 className={styles.form_title}>Add user</h2>
+              <section className={styles.form_inputs}>
+                <div className={styles.input_container}>
+                  <label htmlFor="displayName" className={styles.label}>
+                    Full name
+                  </label>
+                  <input
+                    className={styles.input}
+                    type="text"
+                    name="displayName"
+                    id="displayName"
+                    placeholder="John Snow"
+                  />
+                </div>
+                <div className={styles.input_container}>
+                  <label htmlFor="displayName" className={styles.label}>
+                    Email
+                  </label>
+                  <input
+                    className={styles.input}
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="johnsnow@gmail.com"
+                  />
+                </div>
+                <div className={styles.checkbox_container}>
+                  <label htmlFor="displayName" className={styles.label}>
+                    Admin
+                  </label>
+                  <input
+                    className={styles.checkbox}
+                    type="checkbox"
+                    name="isAdmin"
+                    id="isAdmin"
+                    defaultChecked={false}
+                  />
+                </div>
+              </section>
+              <br />
+              <div className={styles.buttons_container}>
+                <button type="submit" className={styles.save_button}>
+                  Save
+                </button>
+                <button
+                  type="button"
+                  className={styles.discard_button}
+                  onClick={onDiscardAddingUser}
+                >
+                  Discard
+                </button>
+              </div>
+            </form>
+          )}
+        </>
       )}
     </div>
   );
