@@ -25,6 +25,7 @@ const Home = ({ nav_links }) => {
   useEffect(() => {
     document.body.addEventListener('keyup', mmmEasterEgg);
     return () => document.body.removeEventListener('keyup', mmmEasterEgg);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

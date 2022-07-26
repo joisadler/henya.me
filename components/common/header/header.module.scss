@@ -12,7 +12,6 @@
   height: $header_height_mobile;
   padding-inline: toRem(10);
   color: $white;
-  // box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 
   @include breakpoint(tablet) {
     padding-inline: toRem(24);

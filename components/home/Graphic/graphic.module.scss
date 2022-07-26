@@ -103,7 +103,6 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  // background: rgba(0);
 }
 
 .view_more_button {
@@ -117,7 +116,6 @@
   border-radius: $border_radius_medium;
 
   @include breakpoint(tablet) {
-    // margin-inline: unset;
     margin-block-start: toRem(24);
   }
 

@@ -1,3 +1,4 @@
+import { string, shape, func } from 'prop-types';
 import styles from './no_permission_warning.module.scss';
 
 const NoPermissionWarning = ({ user, logout }) => {
@@ -30,6 +31,14 @@ const NoPermissionWarning = ({ user, logout }) => {
       </div>
     </main>
   );
+};
+
+NoPermissionWarning.propTypes = {
+  user: shape({
+    displayName: string,
+    email: string,
+  }).isRequired,
+  logout: func.isRequired,
 };
 
 export default NoPermissionWarning;

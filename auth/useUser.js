@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import { useFirebaseAuth } from 'hooks/useFirebaseAuth';
 import {
   removeUserCookie,
@@ -23,7 +23,7 @@ const useUser = () => {
   const { auth, onIdTokenChanged } = useFirebaseAuth();
 
   const [user, setUser] = useState();
-  const router = useRouter();
+  // const router = useRouter();
 
   const logout = async () => {
     return auth
