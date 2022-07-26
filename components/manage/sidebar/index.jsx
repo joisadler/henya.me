@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { shape, func, string } from 'prop-types';
 import styles from './sidebar.module.scss';
 
 const Sidebar = ({ user, logout, activePanel, setActivePanel }) => {
@@ -40,6 +40,10 @@ const Sidebar = ({ user, logout, activePanel, setActivePanel }) => {
     );
   };
 
+  NavSection.propTypes = {
+    name: string.isRequired,
+  };
+
   return (
     <nav className={styles.container}>
       <section className={styles.header}>
@@ -66,6 +70,16 @@ const Sidebar = ({ user, logout, activePanel, setActivePanel }) => {
       ))}
     </nav>
   );
+};
+
+Sidebar.propTypes = {
+  user: shape({
+    displayName: string,
+    email: string,
+  }).isRequired,
+  activePanel: string.isRequired,
+  setActivePanel: func.isRequired,
+  logout: func.isRequired,
 };
 
 export default Sidebar;

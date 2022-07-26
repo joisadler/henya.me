@@ -33,6 +33,7 @@ const Manage = ({ nav_links }) => {
       });
       setManagerEmails(emails);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [db]);
 
   const renderMainComponent = () => {

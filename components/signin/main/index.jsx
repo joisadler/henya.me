@@ -9,14 +9,18 @@ const Main = () => {
   const { auth, GoogleAuthProvider } = useFirebaseAuth();
   if (!auth) return null;
 
-  const signInSuccessUrl = '/manage';
+  const successUrl = '/manage';
   const firebaseAuthConfig = ({ signInSuccessUrl }) => ({
     signInFlow: 'popup',
     signInOptions: [GoogleAuthProvider.PROVIDER_ID],
     signInSuccessUrl,
     credentialHelper: 'none',
     callbacks: {
-      signInSuccessWithAuthResult: async ({ user }, redirectUrl) => {
+      signInSuccessWithAuthResult: async (
+        authResult
+        // redirectUrl,
+      ) => {
+        const { user } = authResult;
         const userData = await mapUserData(user);
         setUserCookie(JSON.stringify(userData));
       },
@@ -33,9 +37,9 @@ const Main = () => {
         <div className={styles.signin_button_container}>
           <StyledFirebaseAuth
             className={styles.signin_button}
-            uiConfig={firebaseAuthConfig({ signInSuccessUrl })}
+            uiConfig={firebaseAuthConfig({ signInSuccessUrl: successUrl })}
             firebaseAuth={auth}
-            signInSuccessUrl={signInSuccessUrl}
+            signInSuccessUrl={successUrl}
           />
         </div>
       </div>

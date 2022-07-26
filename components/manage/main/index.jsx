@@ -1,3 +1,4 @@
+import { string } from 'prop-types';
 import Users from 'components/manage/users';
 import CV from 'components/manage/cv';
 import UxUiProjects from 'components/manage/UxUiProjects';
@@ -13,6 +14,10 @@ const Main = ({ activePanel }) => {
   const renderActivePanel = () => panels[activePanel];
 
   return <main className={styles.container}>{renderActivePanel()}</main>;
+};
+
+Main.propTypes = {
+  activePanel: string.isRequired,
 };
 
 export default Main;
