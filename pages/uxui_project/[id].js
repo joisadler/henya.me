@@ -3,7 +3,7 @@ import { arrayOf, shape, string, number } from 'prop-types';
 import { useRouter } from 'next/router';
 import Header from 'components/common/header';
 import MobileMenu from 'components/common/mobile_menu';
-import Main from 'components/project/main';
+import Main from 'components/uxui_project/main';
 import Footer from 'components/common/footer';
 
 const Project = ({ nav_links, projectsData }) => {
