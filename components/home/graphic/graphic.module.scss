@@ -78,7 +78,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  // width: 100%;
 
   @include breakpoint(desktop) {
     width: calc((100% - toRem(20) * 3) / 4);

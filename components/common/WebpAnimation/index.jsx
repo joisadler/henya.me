@@ -13,11 +13,11 @@ const WebpPicture = React.forwardRef((props, ref) => {
   return (
     <picture className={containerClassName} {...restProps} ref={ref}>
       <source srcSet={`${pathname}${filename}.webp`} type="image/webp" />
-      <source srcSet={`${pathname}${filename}.png`} type="image/png" />
+      <source srcSet={`${pathname}${filename}.gif`} type="image/gif" />
       <img
         className={imgClassName}
         // style={{ width: '100%', height: '100%' }}
-        src={`${pathname}${filename}.png`}
+        src={`${pathname}${filename}.gif`}
         alt={alt || filename}
       />
     </picture>

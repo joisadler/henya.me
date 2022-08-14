@@ -11,7 +11,7 @@ module.exports = [
     short_about:
       'Book Exchange app. You can give your book and get a new one instead',
     summary: [
-      'BookX makes it easy for you Get in touch with readers As well as Talk about books, get suggestions of new books to read, recommend new books to other people, and share your experiences reading new books.',
+      'BookX makes it easy for you get in touch with readers as well as talk about books, get suggestions of new books to read, recommend new books to other people, and share your experiences reading new books.',
       'BookX provides options for book exchange by connecting with people in your locality, you can engage in book discussions in person and receive new books.',
     ],
     roles: [
@@ -41,7 +41,20 @@ module.exports = [
     ],
     fonts: ['Roboto'],
     color_palette: ['#3CB27B', '#4F008C', '#FFFFFF'],
-    icons: [],
+    icons: [
+      'BookX_icon_01',
+      'BookX_icon_02',
+      'BookX_icon_03',
+      'BookX_icon_04',
+      'BookX_icon_05',
+      'BookX_icon_06',
+      'BookX_icon_07',
+      'BookX_icon_08',
+      'BookX_icon_09',
+      'BookX_icon_10',
+      'BookX_icon_11',
+      'BookX_icon_12',
+    ],
     button_icons: [],
     screens: [
       {
@@ -140,6 +153,7 @@ module.exports = [
     tags: ['UX/UI', 'Website'],
     short_about: 'Trading Website',
     summary: [],
+    roles: [],
     team: [],
     tools: [],
     duration: [],
@@ -164,6 +178,7 @@ module.exports = [
     short_about:
       'Mobile app for an Italian restaurant. Customise your true Italian pizza, pasta, salat, desserts and drinks.',
     summary: [],
+    roles: [],
     team: [],
     tools: [],
     duration: [],
