@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { arrayOf, shape, string, number } from 'prop-types';
+import { arrayOf, shape, string, number, oneOfType } from 'prop-types';
 import { useRouter } from 'next/router';
 import GoogleFontLoader from 'react-google-font-loader';
 import Header from 'components/common/header';
@@ -72,6 +72,13 @@ Project.propTypes = {
       color_palette: arrayOf(string).isRequired,
       icons: arrayOf(string).isRequired,
       button_icons: arrayOf(string).isRequired,
+      screens: arrayOf(
+        shape({
+          name: string.isRequired,
+          description: arrayOf(oneOfType([string, arrayOf(string)])).isRequired,
+          img_filename: string.isRequired,
+        })
+      ),
     })
   ).isRequired,
 };

@@ -1,14 +1,17 @@
-import { arrayOf, shape, string } from 'prop-types';
+import { arrayOf, shape, string, oneOfType } from 'prop-types';
 import { desktop_breakpoint } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
 import WebpPicture from 'components/common/WebpPicture';
 import WebpAnimation from 'components/common/WebpAnimation';
+import useWindowSize from 'hooks/useWindowSize';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
   const isDesktop = useMediaQuery({
     minWidth: desktop_breakpoint,
   });
+  const size = useWindowSize();
+  const { width: windowWidth, height: windowHeight } = size;
 
   const {
     name,
@@ -26,6 +29,7 @@ const Main = ({ project }) => {
     color_palette,
     icons,
     button_icons,
+    screens,
   } = project;
 
   const renderSummary = () => {
@@ -145,6 +149,56 @@ const Main = ({ project }) => {
     ));
   };
 
+  const renderScreens = () => {
+    return screens.map((screen) => {
+      const { name: screenName, description, img_filename } = screen;
+      return (
+        <div key={screenName} className={styles.screen_container}>
+          <WebpPicture
+            containerClassName={styles.screen_picture}
+            imgClassName={styles.screen_image}
+            pathname="/images/portfolio/uxui/"
+            filename={img_filename}
+            alt={screenName}
+          />
+          <div className={styles.screen_info}>
+            <h3 className={styles.screen_name}>{screenName}</h3>
+            {description.map((p) => {
+              if (Array.isArray(p)) {
+                return (
+                  <ul key={p}>
+                    {p.map((item) => (
+                      <li
+                        key={item
+                          .split(' ')
+                          .map((word) => word[0])
+                          .join('')}
+                        className={styles.screen_description}
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                );
+              }
+              return (
+                <p
+                  key={p
+                    .split(' ')
+                    .map((word) => word[0])
+                    .join('')}
+                  className={styles.screen_description}
+                >
+                  {p}
+                </p>
+              );
+            })}
+          </div>
+        </div>
+      );
+    });
+  };
+
   return (
     <main className={styles.container}>
       <section className={styles.logo_picture_container}>
@@ -242,6 +296,28 @@ const Main = ({ project }) => {
           <div className={styles.button_icons}>{renderButtonIcons()}</div>
         </div>
       </section>
+      <section className={styles.screens}>{renderScreens()}</section>
+      <section className={styles.final_prototype}>
+        <h2 className={styles.final_prototype_title}>
+          Final&nbsp;<span className={styles.text_red}>Prototype</span>
+        </h2>
+        <div className={styles.prototype_container}>
+          <iframe
+            className={styles.prototype}
+            title="Final Prototype"
+            // width="800"
+            // height="450"
+
+            // width={isDesktop ? '380' : '100%'}
+            // height="865"
+
+            width="100%"
+            height="865"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F00j1BWvErmArrRCUQqLRWK%2FUntitled%3Fnode-id%3D3%253A38"
+            allowFullScreen
+          />
+        </div>
+      </section>
     </main>
   );
 };
@@ -262,6 +338,13 @@ Main.propTypes = {
     color_palette: arrayOf(string).isRequired,
     icons: arrayOf(string).isRequired,
     button_icons: arrayOf(string).isRequired,
+    screens: arrayOf(
+      shape({
+        name: string.isRequired,
+        description: arrayOf(oneOfType([string, arrayOf(string)])).isRequired,
+        img_filename: string.isRequired,
+      })
+    ),
   }).isRequired,
 };
 

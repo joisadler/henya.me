@@ -55,10 +55,15 @@ module.exports = [
       'BookX_icon_11',
       'BookX_icon_12',
     ],
-    button_icons: [],
+    button_icons: [
+      'BookX_button_icon_01',
+      'BookX_button_icon_02',
+      'BookX_button_icon_03',
+      'BookX_button_icon_04',
+    ],
     screens: [
       {
-        name: 'Sign up',
+        name: 'Sign up screen',
         description: ['Easy signing up/in through social networks or as usual'],
         img_filename: 'BookX_signup_screen',
       },
