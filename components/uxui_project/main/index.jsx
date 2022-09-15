@@ -305,15 +305,11 @@ const Main = ({ project }) => {
           <iframe
             className={styles.prototype}
             title="Final Prototype"
-            // width="800"
-            // height="450"
-
-            // width={isDesktop ? '380' : '100%'}
-            // height="865"
-
+            // frameBorder="0"
+            style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
             width="100%"
-            height="865"
-            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F00j1BWvErmArrRCUQqLRWK%2FUntitled%3Fnode-id%3D3%253A38"
+            height={isDesktop ? '800px' : ''}
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fse7JR93jBnQvSH2pN7JCos%2FUntitled%3Fpage-id%3D0%253A1%26node-id%3D15%253A1058%26viewport%3D473%252C346%252C0.14%26scaling%3Dscale-down%26starting-point-node-id%3D15%253A1058"
             allowFullScreen
           />
         </div>
