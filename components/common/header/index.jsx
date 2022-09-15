@@ -26,7 +26,7 @@ const Header = ({ nav_links, transparent }) => {
   useEffect(() => {
     const updateBackground = () => {
       if (window.scrollY >= height) {
-        setBackground('rgba(19, 26, 54, 0.3)');
+        setBackground('rgba(19, 26, 54, 0.7)');
       } else {
         setBackground(transparent ? 'transparent' : 'rgba(19, 26, 54, 1)');
       }
