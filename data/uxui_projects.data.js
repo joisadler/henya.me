@@ -2,7 +2,6 @@ module.exports = [
   {
     id: 1,
     comingSoon: true,
-    // name: 'BookX 📚',
     name: 'BookX',
     preview_image_filename: 'BookX_preview_image',
     preview_animation_filename: 'BookX_preview_animation',
@@ -125,7 +124,6 @@ module.exports = [
   {
     id: 2,
     comingSoon: true,
-    // name: 'Recycle Conference ♻️',
     name: 'Recycle Conference',
     preview_image_filename: 'ReCon_preview_image',
     preview_animation_filename: 'Recon_preview_animation',
@@ -150,7 +148,6 @@ module.exports = [
   {
     id: 3,
     comingSoon: true,
-    // name: 'Crocoin 🪙',
     name: 'Crocoin',
     preview_image_filename: 'Crocoin_preview_image',
     preview_animation_filename: 'Crocoin_preview_animation',
@@ -174,7 +171,6 @@ module.exports = [
   {
     id: 4,
     comingSoon: true,
-    // name: 'Sapori 🍕',
     name: 'Sapori',
     preview_image_filename: 'Sapori_preview_image',
     preview_animation_filename: 'Sapori_preview_animation',

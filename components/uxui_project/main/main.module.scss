@@ -270,6 +270,7 @@ $preview_animation_width: toRem(250);
 
   @include breakpoint(desktop) {
     flex-flow: row nowrap;
+    justify-content: space-between;
     margin-inline-start: -#{toRem(130)};
     padding-inline: toRem(130);
   }
@@ -370,7 +371,8 @@ $preview_animation_width: toRem(250);
   width: 100%;
 
   @include breakpoint(desktop) {
-    width: 35%;
+    width: 30%;
+    max-width: toRem(500);
   }
 }
 
