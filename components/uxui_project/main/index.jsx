@@ -70,28 +70,44 @@ const Main = ({ project }) => {
 
   const renderSummarySection = () => (
     <>
-      {!isDesktop && (
-        <section className={styles.preview_animation_picture_mobile_container}>
-          <WebpAnimation
-            containerClassName={styles.preview_animation_picture_mobile}
-            imgClassName={styles.preview_animation_image_mobile}
-            pathname="/images/portfolio/uxui/"
-            filename={preview_animation_filename}
-            alt={`${name} preview`}
-          />
-        </section>
-      )}
-      <section className={styles.summary_container}>
-        {renderSummary()}
-        {isDesktop && (
-          <WebpAnimation
-            containerClassName={styles.preview_animation_picture}
-            imgClassName={styles.preview_animation_image}
-            pathname="/images/portfolio/uxui/"
-            filename={preview_animation_filename}
-            alt={`${name} preview`}
-          />
+      {!isDesktop &&
+        preview_animation_filename &&
+        preview_animation_filename.length > 0 && (
+          <section
+            className={styles.preview_animation_picture_mobile_container}
+          >
+            <WebpAnimation
+              containerClassName={styles.preview_animation_picture_mobile}
+              imgClassName={styles.preview_animation_image_mobile}
+              pathname="/images/portfolio/uxui/"
+              filename={preview_animation_filename}
+              alt={`${name} preview`}
+            />
+          </section>
         )}
+      <section
+        className={styles.summary_container}
+        style={{
+          marginBlockStart:
+            !isDesktop &&
+            (!preview_animation_filename ||
+              preview_animation_filename.length < 1)
+              ? 20
+              : 0,
+        }}
+      >
+        {renderSummary()}
+        {isDesktop &&
+          preview_animation_filename &&
+          preview_animation_filename.length > 0 && (
+            <WebpAnimation
+              containerClassName={styles.preview_animation_picture}
+              imgClassName={styles.preview_animation_image}
+              pathname="/images/portfolio/uxui/"
+              filename={preview_animation_filename}
+              alt={`${name} preview`}
+            />
+          )}
       </section>
     </>
   );
@@ -110,42 +126,116 @@ const Main = ({ project }) => {
     );
   };
 
-  const renderTeam = () => {
-    return team.map((teammate) => (
-      <p className={styles.metadata_text} key={teammate}>
-        {teammate}
-      </p>
-    ));
+  const renderTeamSection = () => {
+    if (!team || team.length < 1) return null;
+    return (
+      <div className={styles.metadata_item}>
+        <h2 className={styles.metadata_title}>Team</h2>
+        {team.map((teammate) => (
+          <p className={styles.metadata_text} key={teammate}>
+            {teammate}
+          </p>
+        ))}
+      </div>
+    );
   };
 
-  const renderDuration = () => {
-    return duration.map((year) => (
-      <p className={styles.metadata_text} key={year}>
-        {year}
-      </p>
-    ));
+  const renderDurationSection = () => {
+    if (!duration || duration.length < 1) return null;
+    return (
+      <div className={styles.metadata_item}>
+        <h2 className={styles.metadata_title}>Duration</h2>
+        {duration.map((year) => (
+          <p className={styles.metadata_text} key={year}>
+            {year}
+          </p>
+        ))}
+      </div>
+    );
   };
 
-  const renderTools = () => {
-    return tools.map((tool) => (
-      <p className={styles.metadata_text} key={tool}>
-        {tool}
-      </p>
-    ));
+  const renderToolsSection = () => {
+    if (!tools || tools.length < 1) return null;
+    return (
+      <div className={styles.metadata_item}>
+        <h2 className={styles.metadata_title}>Tools</h2>
+        {tools.map((tool) => (
+          <p className={styles.metadata_text} key={tool}>
+            {tool}
+          </p>
+        ))}
+      </div>
+    );
   };
 
-  const renderMainFeatures = () => {
-    return main_features.map((feature) => (
-      <li
-        className={styles.main_features_item}
-        key={feature
-          .split(' ')
-          .map((word) => word[0])
-          .join('')}
-      >
-        {feature}
-      </li>
-    ));
+  const renderMetadataSection = () => {
+    if (
+      (!roles || roles.length < 1) &&
+      (!team || team.length < 1) &&
+      (!duration || duration.length < 1) &&
+      (!tools || tools.length < 1)
+    )
+      return null;
+    return (
+      <section className={styles.metadata_container}>
+        <div className={styles.metadata}>
+          {renderRolesSection()}
+          {((team && team.length > 0) || (duration && duration.length > 0)) && (
+            <div>
+              {renderTeamSection()}
+              {renderDurationSection()}
+            </div>
+          )}
+          {renderToolsSection()}
+        </div>
+      </section>
+    );
+  };
+
+  const renderProblemSection = () => {
+    if (!problem || problem.length < 1) return null;
+    return (
+      <section className={styles.problem_container}>
+        <h2 className={styles.problem_title}>
+          The&nbsp;<span className={styles.text_red}>Problem</span>
+        </h2>
+        <p className={styles.problem_text}>{problem}</p>
+      </section>
+    );
+  };
+
+  const renderSolutionSection = () => {
+    if (!solution || solution.length < 1) return null;
+    return (
+      <section className={styles.solution_container}>
+        <h2 className={styles.solution_title}>
+          The&nbsp;<span className={styles.text_green}>Solution</span>
+        </h2>
+        <p className={styles.solution_text}>{solution}</p>
+      </section>
+    );
+  };
+
+  const renderMainFeaturesSection = () => {
+    if (!main_features || main_features.length < 1) return null;
+    return (
+      <section className={styles.main_features_container}>
+        <h2 className={styles.main_features_title}>The main features are:</h2>
+        <ul className={styles.main_features_lish}>
+          {main_features.map((feature) => (
+            <li
+              className={styles.main_features_item}
+              key={feature
+                .split(' ')
+                .map((word) => word[0])
+                .join('')}
+            >
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
   };
 
   const renderFonts = () => {
@@ -179,30 +269,54 @@ const Main = ({ project }) => {
     );
   };
 
-  const renderIcons = () => {
-    return icons.map((filename) => (
-      <WebpPicture
-        containerClassName={styles.icon_picture}
-        imgClassName={styles.icon_image}
-        pathname="/images/portfolio/uxui/"
-        filename={filename}
-        alt={filename}
-        key={filename}
-      />
-    ));
+  const renderIconsSection = () => {
+    if (!icons || icons.length < 1) return null;
+    return (
+      <div className={styles.icons}>
+        {icons.map((filename) => (
+          <WebpPicture
+            containerClassName={styles.icon_picture}
+            imgClassName={styles.icon_image}
+            pathname="/images/portfolio/uxui/"
+            filename={filename}
+            alt={filename}
+            key={filename}
+          />
+        ))}
+      </div>
+    );
   };
 
-  const renderButtonIcons = () => {
-    return button_icons.map((filename) => (
-      <WebpPicture
-        containerClassName={styles.button_icon_picture}
-        imgClassName={styles.button_icon_image}
-        pathname="/images/portfolio/uxui/"
-        filename={filename}
-        alt={filename}
-        key={filename}
-      />
-    ));
+  const renderButtonIconsSection = () => {
+    if (!button_icons || button_icons.length < 1) return null;
+    return (
+      <div className={styles.button_icons}>
+        {button_icons.map((filename) => (
+          <WebpPicture
+            containerClassName={styles.button_icon_picture}
+            imgClassName={styles.button_icon_image}
+            pathname="/images/portfolio/uxui/"
+            filename={filename}
+            alt={filename}
+            key={filename}
+          />
+        ))}
+      </div>
+    );
+  };
+
+  const renderUiKitIconsSection = () => {
+    if (
+      (!icons || icons.length < 0) &&
+      (!button_icons || button_icons.length < 0)
+    )
+      return null;
+    return (
+      <div className={styles.ui_kit_icons}>
+        {renderIconsSection()}
+        {renderButtonIconsSection()}
+      </div>
+    );
   };
 
   const renderScreens = () => {
@@ -259,41 +373,10 @@ const Main = ({ project }) => {
     <main className={styles.container}>
       {renderLogoPictureSection()}
       {renderSummarySection()}
-      <section className={styles.metadata_container}>
-        <div className={styles.metadata}>
-          {renderRolesSection()}
-          <div>
-            <div className={styles.metadata_item}>
-              <h2 className={styles.metadata_title}>Team</h2>
-              {renderTeam()}
-            </div>
-            <div className={styles.metadata_item}>
-              <h2 className={styles.metadata_title}>Duration</h2>
-              {renderDuration()}
-            </div>
-          </div>
-          <div className={styles.metadata_item}>
-            <h2 className={styles.metadata_title}>Tools</h2>
-            {renderTools()}
-          </div>
-        </div>
-      </section>
-      <section className={styles.problem_container}>
-        <h2 className={styles.problem_title}>
-          The&nbsp;<span className={styles.text_red}>Problem</span>
-        </h2>
-        <p className={styles.problem_text}>{problem}</p>
-      </section>
-      <section className={styles.solution_container}>
-        <h2 className={styles.solution_title}>
-          The&nbsp;<span className={styles.text_green}>Solution</span>
-        </h2>
-        <p className={styles.solution_text}>{solution}</p>
-      </section>
-      <section className={styles.main_features_container}>
-        <h2 className={styles.main_features_title}>The main features are:</h2>
-        <ul className={styles.main_features_lish}>{renderMainFeatures()}</ul>
-      </section>
+      {renderMetadataSection()}
+      {renderProblemSection()}
+      {renderSolutionSection()}
+      {renderMainFeaturesSection()}
       <section className={styles.ui_kit_container}>
         <div className={styles.ui_kit_info}>
           <h2 className={styles.ui_kit_title}>
@@ -313,10 +396,7 @@ const Main = ({ project }) => {
           <h3 className={styles.color_palette_title}>COLOR PALETTE</h3>
           {renderColorPalette()}
         </div>
-        <div className={styles.ui_kit_icons}>
-          <div className={styles.icons}>{renderIcons()}</div>
-          <div className={styles.button_icons}>{renderButtonIcons()}</div>
-        </div>
+        {renderUiKitIconsSection()}
       </section>
       <section className={styles.screens}>{renderScreens()}</section>
       <section className={styles.final_prototype}>
@@ -327,7 +407,6 @@ const Main = ({ project }) => {
           <iframe
             className={styles.prototype}
             title="Final Prototype"
-            // frameBorder="0"
             style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
             width="100%"
             height={isDesktop ? '800px' : ''}
@@ -343,19 +422,20 @@ const Main = ({ project }) => {
 Main.propTypes = {
   project: shape({
     name: string.isRequired,
+    preview_animation_filename: string,
     logo_image_filename: string,
     summary: arrayOf(string),
     roles: arrayOf(string),
-    team: arrayOf(string).isRequired,
-    tools: arrayOf(string).isRequired,
-    duration: arrayOf(string).isRequired,
-    problem: arrayOf(string).isRequired,
-    solution: arrayOf(string).isRequired,
-    main_features: arrayOf(string).isRequired,
+    team: arrayOf(string),
+    duration: arrayOf(string),
+    tools: arrayOf(string),
+    problem: arrayOf(string),
+    solution: arrayOf(string),
+    main_features: arrayOf(string),
     fonts: arrayOf(string).isRequired,
     color_palette: arrayOf(string).isRequired,
-    icons: arrayOf(string).isRequired,
-    button_icons: arrayOf(string).isRequired,
+    icons: arrayOf(string),
+    button_icons: arrayOf(string),
     screens: arrayOf(
       shape({
         name: string.isRequired,

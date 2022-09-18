@@ -59,19 +59,20 @@ Project.propTypes = {
   projectsData: arrayOf(
     shape({
       name: string.isRequired,
+      preview_animation_filename: string,
       logo_image_filename: string,
       summary: arrayOf(string),
       roles: arrayOf(string),
-      team: arrayOf(string).isRequired,
-      tools: arrayOf(string).isRequired,
-      duration: arrayOf(string).isRequired,
-      problem: arrayOf(string).isRequired,
-      solution: arrayOf(string).isRequired,
+      team: arrayOf(string),
+      tools: arrayOf(string),
+      duration: arrayOf(string),
+      problem: arrayOf(string),
+      solution: arrayOf(string),
       main_features: arrayOf(string).isRequired,
       fonts: arrayOf(string).isRequired,
       color_palette: arrayOf(string).isRequired,
-      icons: arrayOf(string).isRequired,
-      button_icons: arrayOf(string).isRequired,
+      icons: arrayOf(string),
+      button_icons: arrayOf(string),
       screens: arrayOf(
         shape({
           name: string.isRequired,
