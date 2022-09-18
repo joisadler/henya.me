@@ -60,7 +60,7 @@ Project.propTypes = {
     shape({
       name: string.isRequired,
       logo_image_filename: string,
-      summary: arrayOf(string).isRequired,
+      summary: arrayOf(string),
       roles: arrayOf(string).isRequired,
       team: arrayOf(string).isRequired,
       tools: arrayOf(string).isRequired,

@@ -59,6 +59,7 @@ $preview_animation_width: toRem(250);
   @include breakpoint(desktop) {
     margin-inline-start: -#{toRem(130)};
     padding-inline: toRem(130);
+    min-height: toRem(300);
   }
 }
 

@@ -49,18 +49,52 @@ const Main = ({ project }) => {
   };
 
   const renderSummary = () => {
-    return summary.map((paragraph) => (
-      <p
-        className={styles.summary_text}
-        key={paragraph
-          .split(' ')
-          .map((word) => word[0])
-          .join('')}
-      >
-        {paragraph}
-      </p>
-    ));
+    if (!summary || summary.length < 1) return null;
+    return (
+      <div className={styles.summary}>
+        <h2 className={styles.summary_title}>Project Summary:</h2>
+        {summary.map((paragraph) => (
+          <p
+            className={styles.summary_text}
+            key={paragraph
+              .split(' ')
+              .map((word) => word[0])
+              .join('')}
+          >
+            {paragraph}
+          </p>
+        ))}
+      </div>
+    );
   };
+
+  const renderSummarySection = () => (
+    <>
+      {!isDesktop && (
+        <section className={styles.preview_animation_picture_mobile_container}>
+          <WebpAnimation
+            containerClassName={styles.preview_animation_picture_mobile}
+            imgClassName={styles.preview_animation_image_mobile}
+            pathname="/images/portfolio/uxui/"
+            filename={preview_animation_filename}
+            alt={`${name} preview`}
+          />
+        </section>
+      )}
+      <section className={styles.summary_container}>
+        {renderSummary()}
+        {isDesktop && (
+          <WebpAnimation
+            containerClassName={styles.preview_animation_picture}
+            imgClassName={styles.preview_animation_image}
+            pathname="/images/portfolio/uxui/"
+            filename={preview_animation_filename}
+            alt={`${name} preview`}
+          />
+        )}
+      </section>
+    </>
+  );
 
   const renderRoles = () => {
     return roles.map((role) => (
@@ -218,32 +252,7 @@ const Main = ({ project }) => {
   return (
     <main className={styles.container}>
       {renderLogoPictureSection()}
-      {!isDesktop && (
-        <section className={styles.preview_animation_picture_mobile_container}>
-          <WebpAnimation
-            containerClassName={styles.preview_animation_picture_mobile}
-            imgClassName={styles.preview_animation_image_mobile}
-            pathname="/images/portfolio/uxui/"
-            filename={preview_animation_filename}
-            alt={`${name} preview`}
-          />
-        </section>
-      )}
-      <section className={styles.summary_container}>
-        <div className={styles.summary}>
-          <h2 className={styles.summary_title}>Project Summary:</h2>
-          {renderSummary()}
-        </div>
-        {isDesktop && (
-          <WebpAnimation
-            containerClassName={styles.preview_animation_picture}
-            imgClassName={styles.preview_animation_image}
-            pathname="/images/portfolio/uxui/"
-            filename={preview_animation_filename}
-            alt={`${name} preview`}
-          />
-        )}
-      </section>
+      {renderSummarySection()}
       <section className={styles.metadata_container}>
         <div className={styles.metadata}>
           <div className={styles.metadata_item}>
@@ -332,7 +341,7 @@ Main.propTypes = {
   project: shape({
     name: string.isRequired,
     logo_image_filename: string,
-    summary: arrayOf(string).isRequired,
+    summary: arrayOf(string),
     roles: arrayOf(string).isRequired,
     team: arrayOf(string).isRequired,
     tools: arrayOf(string).isRequired,
