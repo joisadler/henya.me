@@ -96,12 +96,18 @@ const Main = ({ project }) => {
     </>
   );
 
-  const renderRoles = () => {
-    return roles.map((role) => (
-      <p className={styles.metadata_text} key={role}>
-        {role}
-      </p>
-    ));
+  const renderRolesSection = () => {
+    if (!roles || roles.length < 1) return null;
+    return (
+      <div className={styles.metadata_item}>
+        <h2 className={styles.metadata_title}>Roles</h2>
+        {roles.map((role) => (
+          <p className={styles.metadata_text} key={role}>
+            {role}
+          </p>
+        ))}
+      </div>
+    );
   };
 
   const renderTeam = () => {
@@ -255,10 +261,7 @@ const Main = ({ project }) => {
       {renderSummarySection()}
       <section className={styles.metadata_container}>
         <div className={styles.metadata}>
-          <div className={styles.metadata_item}>
-            <h2 className={styles.metadata_title}>Roles</h2>
-            {renderRoles()}
-          </div>
+          {renderRolesSection()}
           <div>
             <div className={styles.metadata_item}>
               <h2 className={styles.metadata_title}>Team</h2>
@@ -342,7 +345,7 @@ Main.propTypes = {
     name: string.isRequired,
     logo_image_filename: string,
     summary: arrayOf(string),
-    roles: arrayOf(string).isRequired,
+    roles: arrayOf(string),
     team: arrayOf(string).isRequired,
     tools: arrayOf(string).isRequired,
     duration: arrayOf(string).isRequired,

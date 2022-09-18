@@ -61,7 +61,7 @@ Project.propTypes = {
       name: string.isRequired,
       logo_image_filename: string,
       summary: arrayOf(string),
-      roles: arrayOf(string).isRequired,
+      roles: arrayOf(string),
       team: arrayOf(string).isRequired,
       tools: arrayOf(string).isRequired,
       duration: arrayOf(string).isRequired,
