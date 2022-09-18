@@ -59,7 +59,7 @@ Project.propTypes = {
   projectsData: arrayOf(
     shape({
       name: string.isRequired,
-      logo_image_filename: string.isRequired,
+      logo_image_filename: string,
       summary: arrayOf(string).isRequired,
       roles: arrayOf(string).isRequired,
       team: arrayOf(string).isRequired,

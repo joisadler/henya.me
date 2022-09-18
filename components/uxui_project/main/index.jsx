@@ -32,6 +32,22 @@ const Main = ({ project }) => {
     screens,
   } = project;
 
+  const renderLogoPictureSection = () => {
+    return (
+      <section className={styles.logo_picture_container}>
+        {logo_image_filename && logo_image_filename.length > 0 && (
+          <WebpPicture
+            containerClassName={styles.logo_picture}
+            imgClassName={styles.logo_image}
+            pathname="/images/portfolio/uxui/"
+            filename={logo_image_filename}
+            alt={name}
+          />
+        )}
+      </section>
+    );
+  };
+
   const renderSummary = () => {
     return summary.map((paragraph) => (
       <p
@@ -201,15 +217,7 @@ const Main = ({ project }) => {
 
   return (
     <main className={styles.container}>
-      <section className={styles.logo_picture_container}>
-        <WebpPicture
-          containerClassName={styles.logo_picture}
-          imgClassName={styles.logo_image}
-          pathname="/images/portfolio/uxui/"
-          filename={logo_image_filename}
-          alt={name}
-        />
-      </section>
+      {renderLogoPictureSection()}
       {!isDesktop && (
         <section className={styles.preview_animation_picture_mobile_container}>
           <WebpAnimation
@@ -279,13 +287,15 @@ const Main = ({ project }) => {
           <h2 className={styles.ui_kit_title}>
             <span className={styles.text_red}>UI</span>&nbsp;Kit
           </h2>
-          <WebpPicture
-            containerClassName={styles.ui_kit_logo_picture}
-            imgClassName={styles.ui_kit_logo_image}
-            pathname="/images/portfolio/uxui/"
-            filename={logo_image_filename}
-            alt={name}
-          />
+          {logo_image_filename && logo_image_filename.length > 0 && (
+            <WebpPicture
+              containerClassName={styles.ui_kit_logo_picture}
+              imgClassName={styles.ui_kit_logo_image}
+              pathname="/images/portfolio/uxui/"
+              filename={logo_image_filename}
+              alt={name}
+            />
+          )}
           <h3 className={styles.typography_title}>FONTS / TYPOGRAPHY</h3>
           {renderFonts()}
           <h3 className={styles.color_palette_title}>COLOR PALETTE</h3>
@@ -321,7 +331,7 @@ const Main = ({ project }) => {
 Main.propTypes = {
   project: shape({
     name: string.isRequired,
-    logo_image_filename: string.isRequired,
+    logo_image_filename: string,
     summary: arrayOf(string).isRequired,
     roles: arrayOf(string).isRequired,
     team: arrayOf(string).isRequired,
