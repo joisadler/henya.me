@@ -3,10 +3,11 @@ import { desktop_breakpoint } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
 import WebpPicture from 'components/common/WebpPicture';
 import LogoImage from '../logoImage';
-import SummarySection from '../summarySection';
+import SummarySection from '../summary_section';
 import Metadata from '../metadata';
 import Problem from '../problem';
 import Solution from '../solution';
+import MainFeatures from '../main_features';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
@@ -36,8 +37,6 @@ const Main = ({ project }) => {
 
   const shouldRenderLogoImage =
     logo_image_filename && logo_image_filename.length > 0;
-  const shouldRenderSolution = solution && solution.length > 0;
-  const shouldRenderMainFeatures = main_features && main_features.length > 0;
   const shouldRenderFonts = fonts && fonts.length > 0;
   const shouldRenderIcons = icons && icons.length > 0;
   const shouldRenderButtonIcons = button_icons && button_icons.length > 0;
@@ -50,28 +49,6 @@ const Main = ({ project }) => {
     shouldRenderLogoImage || shouldRenderFonts || shouldRenderColorPalette;
   const shuldRenderUiKitIcons = shouldRenderIcons || shouldRenderButtonIcons;
   const shouldRenderUiKit = shouldRenderUiKitInfo || shuldRenderUiKitIcons;
-
-  const renderMainFeaturesSection = () => {
-    if (!shouldRenderMainFeatures) return null;
-    return (
-      <section className={styles.main_features_container}>
-        <h2 className={styles.main_features_title}>The main features are:</h2>
-        <ul className={styles.main_features_lish}>
-          {main_features.map((feature) => (
-            <li
-              className={styles.main_features_item}
-              key={feature
-                .split(' ')
-                .map((word) => word[0])
-                .join('')}
-            >
-              {feature}
-            </li>
-          ))}
-        </ul>
-      </section>
-    );
-  };
 
   const renderFontsSection = () => {
     if (!shouldRenderFonts) return null;
@@ -281,7 +258,7 @@ const Main = ({ project }) => {
       <Metadata roles={roles} team={team} duration={duration} tools={tools} />
       <Problem problem={problem} />
       <Solution solution={solution} />
-      {renderMainFeaturesSection()}
+      <MainFeatures main_features={main_features} />
       {renderUiKitSection()}
       {renderScreensSection()}
       {renderFinalPrototypeSection()}
