@@ -24,15 +24,17 @@ const UiKit = ({
   if (!shouldRenderUiKit) return null;
 
   return (
-    <section className={styles.container}>
-      <UiKitInfo
-        name={name}
-        logo_image_filename={logo_image_filename}
-        fonts={fonts}
-        color_palette={color_palette}
-      />
-      <UiKitIcons icons={icons} button_icons={button_icons} />
-    </section>
+    <div className={styles.background}>
+      <section className={styles.container}>
+        <UiKitInfo
+          name={name}
+          logo_image_filename={logo_image_filename}
+          fonts={fonts}
+          color_palette={color_palette}
+        />
+        <UiKitIcons icons={icons} button_icons={button_icons} />
+      </section>
+    </div>
   );
 };
 

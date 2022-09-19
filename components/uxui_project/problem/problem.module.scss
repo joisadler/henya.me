@@ -1,5 +1,10 @@
 @import 'utils';
 
+.container {
+  max-width: 1660px;
+  margin-inline: auto;
+}
+
 .title {
   margin-block: toRem(20);
   font-family: $mulish;

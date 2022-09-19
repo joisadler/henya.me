@@ -6,6 +6,8 @@
   align-items: flex-end;
   height: $header_height_mobile;
   min-height: $header_height_mobile;
+  max-width: 1660px;
+  margin-inline: auto;
 
   @include breakpoint(desktop) {
     justify-content: flex-start;

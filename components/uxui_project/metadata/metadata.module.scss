@@ -3,6 +3,8 @@
 .metadata_container {
   position: relative;
   width: 100vw;
+  max-width: 1660px;
+  margin-inline: auto;
   margin-inline-start: -#{toRem(10)};
   padding-inline: toRem(10);
 
@@ -14,6 +16,11 @@
   @include breakpoint(desktop) {
     margin-inline-start: -#{toRem(130)};
     padding-inline: toRem(130);
+  }
+
+  @include breakpoint(large_desktop) {
+    margin-inline: auto;
+    padding-inline: 0;
   }
 }
 

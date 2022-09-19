@@ -6,7 +6,7 @@ const Solution = ({ solution }) => {
   if (!shouldRenderSolution) return null;
 
   return (
-    <section className={styles.solution_container}>
+    <section className={styles.container}>
       <h2 className={styles.title}>
         The&nbsp;<span className={styles.text_green}>Solution</span>
       </h2>
