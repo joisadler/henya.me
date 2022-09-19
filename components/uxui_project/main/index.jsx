@@ -6,6 +6,8 @@ import LogoImage from '../logoImage';
 import SummarySection from '../summarySection';
 import Roles from '../roles';
 import Tools from '../tools';
+import Team from '../team';
+import Duration from '../duration';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
@@ -60,34 +62,6 @@ const Main = ({ project }) => {
   const shuldRenderUiKitIcons = shouldRenderIcons || shouldRenderButtonIcons;
   const shouldRenderUiKit = shouldRenderUiKitInfo || shuldRenderUiKitIcons;
 
-  const renderTeamSection = () => {
-    if (!shouldRenderTeam) return null;
-    return (
-      <div className={styles.metadata_item}>
-        <h2 className={styles.metadata_title}>Team</h2>
-        {team.map((teammate) => (
-          <p className={styles.metadata_text} key={teammate}>
-            {teammate}
-          </p>
-        ))}
-      </div>
-    );
-  };
-
-  const renderDurationSection = () => {
-    if (!shouldRenderDuration) return null;
-    return (
-      <div className={styles.metadata_item}>
-        <h2 className={styles.metadata_title}>Duration</h2>
-        {duration.map((year) => (
-          <p className={styles.metadata_text} key={year}>
-            {year}
-          </p>
-        ))}
-      </div>
-    );
-  };
-
   const renderMetadataSection = () => {
     if (!shouldRenderMetadata) return null;
     return (
@@ -96,8 +70,8 @@ const Main = ({ project }) => {
           <Roles roles={roles} />
           {(shouldRenderTeam || shouldRenderDuration) && (
             <div>
-              {renderTeamSection()}
-              {renderDurationSection()}
+              <Team team={team} />
+              <Duration duration={duration} />
             </div>
           )}
           <Tools tools={tools} />
