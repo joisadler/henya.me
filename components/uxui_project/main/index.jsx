@@ -1,7 +1,6 @@
 import { arrayOf, shape, string, oneOfType } from 'prop-types';
 import { desktop_breakpoint } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
-import WebpPicture from 'components/common/WebpPicture';
 import LogoImage from '../logoImage';
 import SummarySection from '../summary_section';
 import Metadata from '../metadata';
@@ -9,6 +8,7 @@ import Problem from '../problem';
 import Solution from '../solution';
 import MainFeatures from '../main_features';
 import UiKit from '../ui_kit';
+import Screens from '../screens';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
@@ -36,64 +36,8 @@ const Main = ({ project }) => {
     final_prototype,
   } = project;
 
-  const shouldRenderScreens = screens && screens.length > 0;
   const shouldRenderFinalPrototype =
     final_prototype && final_prototype.src.length > 0;
-
-  const renderScreensSection = () => {
-    if (!shouldRenderScreens) return null;
-    return (
-      <section className={styles.screens}>
-        {screens.map((screen) => {
-          const { name: screenName, description, img_filename } = screen;
-          return (
-            <div key={screenName} className={styles.screen_container}>
-              <WebpPicture
-                containerClassName={styles.screen_picture}
-                imgClassName={styles.screen_image}
-                pathname="/images/portfolio/uxui/"
-                filename={img_filename}
-                alt={screenName}
-              />
-              <div className={styles.screen_info}>
-                <h3 className={styles.screen_name}>{screenName}</h3>
-                {description.map((p) => {
-                  if (Array.isArray(p)) {
-                    return (
-                      <ul key={p}>
-                        {p.map((item) => (
-                          <li
-                            key={item
-                              .split(' ')
-                              .map((word) => word[0])
-                              .join('')}
-                            className={styles.screen_description}
-                          >
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    );
-                  }
-                  return (
-                    <p
-                      key={p
-                        .split(' ')
-                        .map((word) => word[0])
-                        .join('')}
-                      className={styles.screen_description}
-                    >
-                      {p}
-                    </p>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
-      </section>
-    );
-  };
 
   const renderFinalPrototypeSection = () => {
     const { src } = final_prototype;
@@ -138,7 +82,7 @@ const Main = ({ project }) => {
         button_icons={button_icons}
         color_palette={color_palette}
       />
-      {renderScreensSection()}
+      <Screens screens={screens} />
       {renderFinalPrototypeSection()}
     </main>
   );
