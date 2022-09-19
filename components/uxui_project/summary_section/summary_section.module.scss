@@ -1,0 +1,81 @@
+@import 'utils';
+
+.container {
+  position: relative;
+  width: 100vw;
+  margin-inline-start: -#{toRem(10)};
+  padding-inline: toRem(10);
+  background-color: $summary_violette;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @include breakpoint(tablet) {
+    margin-inline-start: -#{toRem(24)};
+    padding-inline: toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    margin-inline-start: -#{toRem(130)};
+    padding-inline: toRem(130);
+    min-height: toRem(300);
+  }
+}
+
+.summary {
+  padding-block: toRem(24);
+
+  @include breakpoint(desktop) {
+    width: calc(100% - $preview_animation_width);
+    padding-inline-end: toRem(64);
+    padding-block: toRem(64);
+  }
+}
+
+.summary_title {
+  width: 100%;
+  margin: 0;
+  font-family: $mulish;
+  font-weight: 700;
+  font-size: toRem(24);
+  line-height: 125%;
+  color: $white;
+  text-align: center;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(40);
+    text-align: start;
+  }
+}
+
+.summary_text {
+  font-family: $mulish;
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 125%;
+  color: $white;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(20);
+  }
+}
+
+.preview_animation_picture {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: toRem(130);
+  width: $preview_animation_width;
+}
+
+.preview_animation_image {
+  width: 100%;
+  height: 100%;
+}
+
+.preview_animation_picture_mobile_container {
+  display: flex;
+  justify-content: center;
+}
+
+.preview_animation_image_mobile {
+  height: 75vh;
+}

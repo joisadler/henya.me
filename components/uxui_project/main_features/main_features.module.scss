@@ -1,0 +1,29 @@
+@import 'utils';
+
+.container {
+  margin-block-end: toRem(50);
+}
+
+.title {
+  font-family: $mulish;
+  font-weight: 700;
+  font-size: toRem(20);
+  line-height: 125%;
+  color: $black;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(32);
+  }
+}
+
+.item {
+  font-family: $mulish;
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 125%;
+  color: $black;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(20);
+  }
+}

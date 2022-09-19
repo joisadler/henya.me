@@ -1,0 +1,29 @@
+@import 'utils';
+
+.title {
+  margin-block: toRem(20);
+  font-family: $mulish;
+  font-weight: 700;
+  font-size: toRem(24);
+  line-height: 125%;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(40);
+  }
+}
+
+.prototype_container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.prototype {
+  aspect-ratio: 736/1800;
+  margin-block-end: toRem(50);
+}
+
+.text_red {
+  color: $red;
+}
