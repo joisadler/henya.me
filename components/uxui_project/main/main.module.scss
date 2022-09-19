@@ -15,19 +15,15 @@
   }
 }
 
-.text {
-  font-family: $mulish;
-  font-weight: 400;
-  font-size: toRem(16);
-  line-height: 125%;
-  color: $black;
-
-  @include breakpoint(desktop) {
-    font-size: toRem(20);
-  }
+.text_red {
+  color: $red;
 }
 
-.problem_title {
+.text_green {
+  color: $text_green;
+}
+
+.solution_title {
   margin-block: toRem(20);
   font-family: $mulish;
   font-weight: 700;
@@ -39,26 +35,17 @@
   }
 }
 
-.problem_text {
-  @extend .text;
-  margin-block-end: toRem(50);
-}
-
-.text_red {
-  color: $red;
-}
-
-.text_green {
-  color: $text_green;
-}
-
-.solution_title {
-  @extend .problem_title;
-}
-
 .solution_text {
-  @extend .text;
   margin-block-end: toRem(50);
+  font-family: $mulish;
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 125%;
+  color: $black;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(20);
+  }
 }
 
 .main_features_container {
@@ -78,7 +65,15 @@
 }
 
 .main_features_item {
-  @extend .text;
+  font-family: $mulish;
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 125%;
+  color: $black;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(20);
+  }
 }
 
 .ui_kit_container {
@@ -114,10 +109,16 @@
 }
 
 .ui_kit_title {
-  @extend .problem_title;
-
   margin: 0;
   margin-block-end: toRem(28);
+  font-family: $mulish;
+  font-weight: 700;
+  font-size: toRem(24);
+  line-height: 125%;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(40);
+  }
 }
 
 .ui_kit_logo_image {
@@ -315,11 +316,27 @@
 }
 
 .screen_description {
-  @extend .text;
+  font-family: $mulish;
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 125%;
+  color: $black;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(20);
+  }
 }
 
 .final_prototype_title {
-  @extend .problem_title;
+  margin-block: toRem(20);
+  font-family: $mulish;
+  font-weight: 700;
+  font-size: toRem(24);
+  line-height: 125%;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(40);
+  }
 }
 
 .prototype_container {

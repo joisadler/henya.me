@@ -4,6 +4,7 @@ import styles from './problem.module.scss';
 const Problem = ({ problem }) => {
   const shouldRenderProblem = problem && problem.length > 0;
   if (!shouldRenderProblem) return null;
+
   return (
     <section className={styles.problem_container}>
       <h2 className={styles.title}>

@@ -6,6 +6,7 @@ import LogoImage from '../logoImage';
 import SummarySection from '../summarySection';
 import Metadata from '../metadata';
 import Problem from '../problem';
+import Solution from '../solution';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
@@ -49,20 +50,6 @@ const Main = ({ project }) => {
     shouldRenderLogoImage || shouldRenderFonts || shouldRenderColorPalette;
   const shuldRenderUiKitIcons = shouldRenderIcons || shouldRenderButtonIcons;
   const shouldRenderUiKit = shouldRenderUiKitInfo || shuldRenderUiKitIcons;
-
-
-
-  const renderSolutionSection = () => {
-    if (!shouldRenderSolution) return null;
-    return (
-      <section className={styles.solution_container}>
-        <h2 className={styles.solution_title}>
-          The&nbsp;<span className={styles.text_green}>Solution</span>
-        </h2>
-        <p className={styles.solution_text}>{solution}</p>
-      </section>
-    );
-  };
 
   const renderMainFeaturesSection = () => {
     if (!shouldRenderMainFeatures) return null;
@@ -293,7 +280,7 @@ const Main = ({ project }) => {
       />
       <Metadata roles={roles} team={team} duration={duration} tools={tools} />
       <Problem problem={problem} />
-      {renderSolutionSection()}
+      <Solution solution={solution} />
       {renderMainFeaturesSection()}
       {renderUiKitSection()}
       {renderScreensSection()}
