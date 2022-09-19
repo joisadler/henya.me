@@ -4,10 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import WebpPicture from 'components/common/WebpPicture';
 import LogoImage from '../logoImage';
 import SummarySection from '../summarySection';
-import Roles from '../roles';
-import Tools from '../tools';
-import Team from '../team';
-import Duration from '../duration';
+import Metadata from '../metadata';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
@@ -37,10 +34,6 @@ const Main = ({ project }) => {
 
   const shouldRenderLogoImage =
     logo_image_filename && logo_image_filename.length > 0;
-  const shouldRenderRoles = roles && roles.length > 0;
-  const shouldRenderTeam = team && team.length > 0;
-  const shouldRenderDuration = duration && duration.length > 0;
-  const shouldRenderTools = tools && tools.length > 0;
   const shouldRenderProblem = problem && problem.length > 0;
   const shouldRenderSolution = solution && solution.length > 0;
   const shouldRenderMainFeatures = main_features && main_features.length > 0;
@@ -52,33 +45,10 @@ const Main = ({ project }) => {
   const shouldRenderFinalPrototype =
     final_prototype && final_prototype.src.length > 0;
 
-  const shouldRenderMetadata =
-    shouldRenderRoles ||
-    shouldRenderTeam ||
-    shouldRenderDuration ||
-    shouldRenderTools;
   const shouldRenderUiKitInfo =
     shouldRenderLogoImage || shouldRenderFonts || shouldRenderColorPalette;
   const shuldRenderUiKitIcons = shouldRenderIcons || shouldRenderButtonIcons;
   const shouldRenderUiKit = shouldRenderUiKitInfo || shuldRenderUiKitIcons;
-
-  const renderMetadataSection = () => {
-    if (!shouldRenderMetadata) return null;
-    return (
-      <section className={styles.metadata_container}>
-        <div className={styles.metadata}>
-          <Roles roles={roles} />
-          {(shouldRenderTeam || shouldRenderDuration) && (
-            <div>
-              <Team team={team} />
-              <Duration duration={duration} />
-            </div>
-          )}
-          <Tools tools={tools} />
-        </div>
-      </section>
-    );
-  };
 
   const renderProblemSection = () => {
     if (!shouldRenderProblem) return null;
@@ -331,7 +301,7 @@ const Main = ({ project }) => {
         name={name}
         preview_animation_filename={preview_animation_filename}
       />
-      {renderMetadataSection()}
+      <Metadata roles={roles} team={team} duration={duration} tools={tools} />
       {renderProblemSection()}
       {renderSolutionSection()}
       {renderMainFeaturesSection()}

@@ -1,5 +1,5 @@
 import { arrayOf, string } from 'prop-types';
-import styles from './duration.module.scss';
+import styles from './metadata.module.scss';
 
 const Duration = ({ duration }) => {
   const shouldRenderDuration = duration && duration.length > 0;

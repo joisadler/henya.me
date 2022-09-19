@@ -1,5 +1,5 @@
 import { arrayOf, string } from 'prop-types';
-import styles from './team.module.scss';
+import styles from './metadata.module.scss';
 
 const Team = ({ team }) => {
   const shouldRenderTeam = team && team.length > 0;

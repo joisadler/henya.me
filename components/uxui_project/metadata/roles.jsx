@@ -1,5 +1,5 @@
 import { arrayOf, string } from 'prop-types';
-import styles from './roles.module.scss';
+import styles from './metadata.module.scss';
 
 const Roles = ({ roles }) => {
   const shouldRenderRoles = roles && roles.length > 0;

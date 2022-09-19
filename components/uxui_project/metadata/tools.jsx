@@ -1,5 +1,5 @@
 import { arrayOf, string } from 'prop-types';
-import styles from './tools.module.scss';
+import styles from './metadata.module.scss';
 
 const Tools = ({ tools }) => {
   const shouldRenderTools = tools && tools.length > 0;
