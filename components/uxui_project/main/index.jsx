@@ -1,6 +1,4 @@
 import { arrayOf, shape, string, oneOfType } from 'prop-types';
-import { desktop_breakpoint } from 'config/constants';
-import { useMediaQuery } from 'react-responsive';
 import LogoImage from '../logoImage';
 import SummarySection from '../summary_section';
 import Metadata from '../metadata';
@@ -9,13 +7,10 @@ import Solution from '../solution';
 import MainFeatures from '../main_features';
 import UiKit from '../ui_kit';
 import Screens from '../screens';
+import FinalPrototype from '../final_prototype';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
-  const isDesktop = useMediaQuery({
-    minWidth: desktop_breakpoint,
-  });
-
   const {
     name,
     logo_image_filename,
@@ -35,32 +30,6 @@ const Main = ({ project }) => {
     screens,
     final_prototype,
   } = project;
-
-  const shouldRenderFinalPrototype =
-    final_prototype && final_prototype.src.length > 0;
-
-  const renderFinalPrototypeSection = () => {
-    const { src } = final_prototype;
-    if (!shouldRenderFinalPrototype) return null;
-    return (
-      <section className={styles.final_prototype}>
-        <h2 className={styles.final_prototype_title}>
-          Final&nbsp;<span className={styles.text_red}>Prototype</span>
-        </h2>
-        <div className={styles.prototype_container}>
-          <iframe
-            className={styles.prototype}
-            title="Final Prototype"
-            style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
-            width="100%"
-            height={isDesktop ? '800px' : ''}
-            src={src}
-            allowFullScreen
-          />
-        </div>
-      </section>
-    );
-  };
 
   return (
     <main className={styles.container}>
@@ -83,7 +52,7 @@ const Main = ({ project }) => {
         color_palette={color_palette}
       />
       <Screens screens={screens} />
-      {renderFinalPrototypeSection()}
+      <FinalPrototype final_prototype={final_prototype} />
     </main>
   );
 };
