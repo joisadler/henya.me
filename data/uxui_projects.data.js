@@ -120,6 +120,10 @@ module.exports = [
         img_filename: 'BookX_book_giver_screen',
       },
     ],
+    final_prototype: {
+      src: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fse7JR93jBnQvSH2pN7JCos%2FUntitled%3Fpage-id%3D0%253A1%26node-id%3D15%253A1058%26viewport%3D473%252C346%252C0.14%26scaling%3Dscale-down%26starting-point-node-id%3D15%253A1058',
+      device_type: 'mobile',
+    },
   },
   {
     id: 2,

@@ -14,10 +14,12 @@ const Project = ({ nav_links, projectsData }) => {
   const project = projectsData.find((p) => p.id === Number(id));
   const { fonts } = project;
 
-  const fontsToLoad = fonts.map((fontName) => ({
-    font: fontName,
-    weights: [400, 700],
-  }));
+  const fontsToLoad = fonts
+    ? fonts.map((fontName) => ({
+        font: fontName,
+        weights: [400, 700],
+      }))
+    : [];
 
   // Hydration failed error fix
   const [showing, setShowing] = useState(false);
@@ -68,9 +70,9 @@ Project.propTypes = {
       duration: arrayOf(string),
       problem: arrayOf(string),
       solution: arrayOf(string),
-      main_features: arrayOf(string).isRequired,
-      fonts: arrayOf(string).isRequired,
-      color_palette: arrayOf(string).isRequired,
+      main_features: arrayOf(string),
+      fonts: arrayOf(string),
+      color_palette: arrayOf(string),
       icons: arrayOf(string),
       button_icons: arrayOf(string),
       screens: arrayOf(
@@ -80,6 +82,10 @@ Project.propTypes = {
           img_filename: string.isRequired,
         })
       ),
+      final_prototype: shape({
+        src: string,
+        device_type: string,
+      }),
     })
   ).isRequired,
 };
