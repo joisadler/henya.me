@@ -8,6 +8,7 @@ import Metadata from '../metadata';
 import Problem from '../problem';
 import Solution from '../solution';
 import MainFeatures from '../main_features';
+import UiKit from '../ui_kit';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
@@ -35,139 +36,9 @@ const Main = ({ project }) => {
     final_prototype,
   } = project;
 
-  const shouldRenderLogoImage =
-    logo_image_filename && logo_image_filename.length > 0;
-  const shouldRenderFonts = fonts && fonts.length > 0;
-  const shouldRenderIcons = icons && icons.length > 0;
-  const shouldRenderButtonIcons = button_icons && button_icons.length > 0;
-  const shouldRenderColorPalette = color_palette && color_palette.length > 0;
   const shouldRenderScreens = screens && screens.length > 0;
   const shouldRenderFinalPrototype =
     final_prototype && final_prototype.src.length > 0;
-
-  const shouldRenderUiKitInfo =
-    shouldRenderLogoImage || shouldRenderFonts || shouldRenderColorPalette;
-  const shuldRenderUiKitIcons = shouldRenderIcons || shouldRenderButtonIcons;
-  const shouldRenderUiKit = shouldRenderUiKitInfo || shuldRenderUiKitIcons;
-
-  const renderFontsSection = () => {
-    if (!shouldRenderFonts) return null;
-    return (
-      <>
-        <h3 className={styles.typography_title}>FONTS / TYPOGRAPHY</h3>
-        {fonts.map((font) => (
-          <article key={font}>
-            <h4 className={styles.font_name} style={{ '--font_family': font }}>
-              {font}
-            </h4>
-            <p
-              className={styles.font_demonstration}
-              style={{ '--font_family': font }}
-            >
-              ABCDEFGHIJKLMOPQRSTUVWXZ abcdefghijklmnopqrstuvwxyz 1234567890
-            </p>
-          </article>
-        ))}
-      </>
-    );
-  };
-
-  const renderColorPaletteSection = () => {
-    if (!shouldRenderColorPalette) return null;
-    return (
-      <>
-        <h3 className={styles.color_palette_title}>COLOR PALETTE</h3>
-        <div className={styles.color_palette}>
-          {color_palette.map((color) => (
-            <div
-              className={styles.color}
-              key={color}
-              aria-label={color}
-              style={{ '--color': color }}
-            />
-          ))}
-        </div>
-      </>
-    );
-  };
-
-  const renderUiKitInfoSection = () => {
-    if (!shouldRenderUiKitInfo) return null;
-    return (
-      <div className={styles.ui_kit_info}>
-        <h2 className={styles.ui_kit_title}>
-          <span className={styles.text_red}>UI</span>&nbsp;Kit
-        </h2>
-        {shouldRenderLogoImage && (
-          <WebpPicture
-            containerClassName={styles.ui_kit_logo_picture}
-            imgClassName={styles.ui_kit_logo_image}
-            pathname="/images/portfolio/uxui/"
-            filename={logo_image_filename}
-            alt={name}
-          />
-        )}
-        {renderFontsSection()}
-        {renderColorPaletteSection()}
-      </div>
-    );
-  };
-
-  const renderIconsSection = () => {
-    if (!shouldRenderIcons) return null;
-    return (
-      <div className={styles.icons}>
-        {icons.map((filename) => (
-          <WebpPicture
-            containerClassName={styles.icon_picture}
-            imgClassName={styles.icon_image}
-            pathname="/images/portfolio/uxui/"
-            filename={filename}
-            alt={filename}
-            key={filename}
-          />
-        ))}
-      </div>
-    );
-  };
-
-  const renderButtonIconsSection = () => {
-    if (!shouldRenderButtonIcons) return null;
-    return (
-      <div className={styles.button_icons}>
-        {button_icons.map((filename) => (
-          <WebpPicture
-            containerClassName={styles.button_icon_picture}
-            imgClassName={styles.button_icon_image}
-            pathname="/images/portfolio/uxui/"
-            filename={filename}
-            alt={filename}
-            key={filename}
-          />
-        ))}
-      </div>
-    );
-  };
-
-  const renderUiKitIconsSection = () => {
-    if (!shuldRenderUiKitIcons) return null;
-    return (
-      <div className={styles.ui_kit_icons}>
-        {renderIconsSection()}
-        {renderButtonIconsSection()}
-      </div>
-    );
-  };
-
-  const renderUiKitSection = () => {
-    if (!shouldRenderUiKit) return null;
-    return (
-      <section className={styles.ui_kit_container}>
-        {renderUiKitInfoSection()}
-        {renderUiKitIconsSection()}
-      </section>
-    );
-  };
 
   const renderScreensSection = () => {
     if (!shouldRenderScreens) return null;
@@ -259,7 +130,14 @@ const Main = ({ project }) => {
       <Problem problem={problem} />
       <Solution solution={solution} />
       <MainFeatures main_features={main_features} />
-      {renderUiKitSection()}
+      <UiKit
+        name={name}
+        logo_image_filename={logo_image_filename}
+        fonts={fonts}
+        icons={icons}
+        button_icons={button_icons}
+        color_palette={color_palette}
+      />
       {renderScreensSection()}
       {renderFinalPrototypeSection()}
     </main>
