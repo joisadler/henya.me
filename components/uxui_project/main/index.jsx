@@ -2,10 +2,10 @@ import { arrayOf, shape, string, oneOfType } from 'prop-types';
 import { desktop_breakpoint } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
 import WebpPicture from 'components/common/WebpPicture';
-import LogoImage from '../LogoImage';
-import SummarySection from '../SummarySection';
-import Roles from '../Roles';
-import Tools from '../Tools';
+import LogoImage from '../logoImage';
+import SummarySection from '../summarySection';
+import Roles from '../roles';
+import Tools from '../tools';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {

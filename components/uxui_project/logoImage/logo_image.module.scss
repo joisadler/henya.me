@@ -1,0 +1,27 @@
+@import 'utils';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: $header_height_mobile;
+  min-height: $header_height_mobile;
+
+  @include breakpoint(desktop) {
+    justify-content: flex-start;
+    align-items: center;
+    height: $header_height;
+  }
+}
+
+.logo_picture {
+  height: 75%;
+
+  @include breakpoint(desktop) {
+    height: 60%;
+  }
+}
+
+.logo_image {
+  height: 100%;
+}
