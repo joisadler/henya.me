@@ -2,7 +2,8 @@ import { arrayOf, shape, string, oneOfType } from 'prop-types';
 import { desktop_breakpoint } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
 import WebpPicture from 'components/common/WebpPicture';
-import WebpAnimation from 'components/common/WebpAnimation';
+import LogoImage from '../LogoImage';
+import SummarySection from '../SummarySection';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
@@ -59,76 +60,6 @@ const Main = ({ project }) => {
     shouldRenderLogoImage || shouldRenderFonts || shouldRenderColorPalette;
   const shuldRenderUiKitIcons = shouldRenderIcons || shouldRenderButtonIcons;
   const shouldRenderUiKit = shouldRenderUiKitInfo || shuldRenderUiKitIcons;
-
-  const renderLogoPictureSection = () => {
-    return (
-      <section className={styles.logo_picture_container}>
-        {shouldRenderLogoImage && (
-          <WebpPicture
-            containerClassName={styles.logo_picture}
-            imgClassName={styles.logo_image}
-            pathname="/images/portfolio/uxui/"
-            filename={logo_image_filename}
-            alt={name}
-          />
-        )}
-      </section>
-    );
-  };
-
-  const renderSummary = () => {
-    if (!shouldRenderSummary) return null;
-    return (
-      <div className={styles.summary}>
-        <h2 className={styles.summary_title}>Project Summary:</h2>
-        {summary.map((paragraph) => (
-          <p
-            className={styles.summary_text}
-            key={paragraph
-              .split(' ')
-              .map((word) => word[0])
-              .join('')}
-          >
-            {paragraph}
-          </p>
-        ))}
-      </div>
-    );
-  };
-
-  const renderSummarySection = () => (
-    <>
-      {!isDesktop && shouldRenderPreviewAnimation && (
-        <section className={styles.preview_animation_picture_mobile_container}>
-          <WebpAnimation
-            containerClassName={styles.preview_animation_picture_mobile}
-            imgClassName={styles.preview_animation_image_mobile}
-            pathname="/images/portfolio/uxui/"
-            filename={preview_animation_filename}
-            alt={`${name} preview`}
-          />
-        </section>
-      )}
-      <section
-        className={styles.summary_container}
-        style={{
-          marginBlockStart:
-            !isDesktop && !shouldRenderPreviewAnimation ? 20 : 0,
-        }}
-      >
-        {renderSummary()}
-        {isDesktop && shouldRenderPreviewAnimation && (
-          <WebpAnimation
-            containerClassName={styles.preview_animation_picture}
-            imgClassName={styles.preview_animation_image}
-            pathname="/images/portfolio/uxui/"
-            filename={preview_animation_filename}
-            alt={`${name} preview`}
-          />
-        )}
-      </section>
-    </>
-  );
 
   const renderRolesSection = () => {
     if (!shouldRenderRoles) return null;
@@ -449,8 +380,12 @@ const Main = ({ project }) => {
 
   return (
     <main className={styles.container}>
-      {renderLogoPictureSection()}
-      {renderSummarySection()}
+      <LogoImage logo_image_filename={logo_image_filename} name={name} />
+      <SummarySection
+        summary={summary}
+        name={name}
+        preview_animation_filename={preview_animation_filename}
+      />
       {renderMetadataSection()}
       {renderProblemSection()}
       {renderSolutionSection()}
