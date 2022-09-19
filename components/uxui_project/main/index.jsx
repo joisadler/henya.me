@@ -5,6 +5,7 @@ import WebpPicture from 'components/common/WebpPicture';
 import LogoImage from '../logoImage';
 import SummarySection from '../summarySection';
 import Metadata from '../metadata';
+import Problem from '../problem';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
@@ -34,7 +35,6 @@ const Main = ({ project }) => {
 
   const shouldRenderLogoImage =
     logo_image_filename && logo_image_filename.length > 0;
-  const shouldRenderProblem = problem && problem.length > 0;
   const shouldRenderSolution = solution && solution.length > 0;
   const shouldRenderMainFeatures = main_features && main_features.length > 0;
   const shouldRenderFonts = fonts && fonts.length > 0;
@@ -50,17 +50,7 @@ const Main = ({ project }) => {
   const shuldRenderUiKitIcons = shouldRenderIcons || shouldRenderButtonIcons;
   const shouldRenderUiKit = shouldRenderUiKitInfo || shuldRenderUiKitIcons;
 
-  const renderProblemSection = () => {
-    if (!shouldRenderProblem) return null;
-    return (
-      <section className={styles.problem_container}>
-        <h2 className={styles.problem_title}>
-          The&nbsp;<span className={styles.text_red}>Problem</span>
-        </h2>
-        <p className={styles.problem_text}>{problem}</p>
-      </section>
-    );
-  };
+
 
   const renderSolutionSection = () => {
     if (!shouldRenderSolution) return null;
@@ -302,7 +292,7 @@ const Main = ({ project }) => {
         preview_animation_filename={preview_animation_filename}
       />
       <Metadata roles={roles} team={team} duration={duration} tools={tools} />
-      {renderProblemSection()}
+      <Problem problem={problem} />
       {renderSolutionSection()}
       {renderMainFeaturesSection()}
       {renderUiKitSection()}

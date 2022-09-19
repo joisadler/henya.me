@@ -39,7 +39,7 @@
   }
 }
 
-.problem_text, .solution_text {
+.problem_text {
   @extend .text;
   margin-block-end: toRem(50);
 }
@@ -54,6 +54,11 @@
 
 .solution_title {
   @extend .problem_title;
+}
+
+.solution_text {
+  @extend .text;
+  margin-block-end: toRem(50);
 }
 
 .main_features_container {
