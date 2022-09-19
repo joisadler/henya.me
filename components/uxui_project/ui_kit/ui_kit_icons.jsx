@@ -10,7 +10,7 @@ const UiKitIcons = ({ icons, button_icons }) => {
   if (!shouldRenderUiKitIcons) return null;
 
   return (
-    <div className={styles.icons}>
+    <div className={styles.ui_kit_icons}>
       <Icons icons={icons} />
       <ButtonIcons button_icons={button_icons} />
     </div>

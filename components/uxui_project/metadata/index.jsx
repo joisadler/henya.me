@@ -15,8 +15,8 @@ const Metadata = ({ roles, team, duration, tools }) => {
     shouldRenderTeam ||
     shouldRenderDuration ||
     shouldRenderTools;
-
   if (!shouldRenderMetadata) return null;
+
   return (
     <section className={styles.metadata_container}>
       <div className={styles.metadata}>

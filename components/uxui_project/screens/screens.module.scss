@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   margin: toRem(50) auto;
-  max-width: toRem(800);
+  max-width: 800px;
 
   @include breakpoint(tablet) {
     width: 90%;

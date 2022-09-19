@@ -6,7 +6,7 @@ const Problem = ({ problem }) => {
   if (!shouldRenderProblem) return null;
 
   return (
-    <section className={styles.problem_container}>
+    <section className={styles.container}>
       <h2 className={styles.title}>
         The&nbsp;<span className={styles.text_red}>Problem</span>
       </h2>

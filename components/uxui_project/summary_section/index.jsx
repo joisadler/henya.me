@@ -45,24 +45,26 @@ const SummarySection = ({ summary, name, preview_animation_filename }) => {
           />
         </section>
       )}
-      <section
-        className={styles.container}
-        style={{
-          marginBlockStart:
-            !isDesktop && !shouldRenderPreviewAnimation ? 20 : 0,
-        }}
-      >
-        <Summary summary={summary} />
-        {isDesktop && shouldRenderPreviewAnimation && (
-          <WebpAnimation
-            containerClassName={styles.preview_animation_picture}
-            imgClassName={styles.preview_animation_image}
-            pathname="/images/portfolio/uxui/"
-            filename={preview_animation_filename}
-            alt={`${name} preview`}
-          />
-        )}
-      </section>
+      <div className={styles.background}>
+        <section
+          className={styles.container}
+          style={{
+            marginBlockStart:
+              !isDesktop && !shouldRenderPreviewAnimation ? 20 : 0,
+          }}
+        >
+          <Summary summary={summary} />
+          {isDesktop && shouldRenderPreviewAnimation && (
+            <WebpAnimation
+              containerClassName={styles.preview_animation_picture}
+              imgClassName={styles.preview_animation_image}
+              pathname="/images/portfolio/uxui/"
+              filename={preview_animation_filename}
+              alt={`${name} preview`}
+            />
+          )}
+        </section>
+      </div>
     </>
   );
 };
