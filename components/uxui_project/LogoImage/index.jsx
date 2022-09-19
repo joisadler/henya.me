@@ -7,7 +7,7 @@ const LogoImage = ({ name, logo_image_filename }) => {
     logo_image_filename && logo_image_filename.length > 0;
 
   return (
-    <section className={styles.logo_picture_container}>
+    <section className={styles.container}>
       {isLogoImageShown && (
         <WebpPicture
           containerClassName={styles.logo_picture}

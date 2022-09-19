@@ -46,7 +46,7 @@ const SummarySection = ({ summary, name, preview_animation_filename }) => {
         </section>
       )}
       <section
-        className={styles.summary_container}
+        className={styles.container}
         style={{
           marginBlockStart:
             !isDesktop && !shouldRenderPreviewAnimation ? 20 : 0,

@@ -4,6 +4,8 @@ import { useMediaQuery } from 'react-responsive';
 import WebpPicture from 'components/common/WebpPicture';
 import LogoImage from '../LogoImage';
 import SummarySection from '../SummarySection';
+import Roles from '../Roles';
+import Tools from '../Tools';
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {
@@ -33,9 +35,6 @@ const Main = ({ project }) => {
 
   const shouldRenderLogoImage =
     logo_image_filename && logo_image_filename.length > 0;
-  const shouldRenderSummary = summary && summary.length > 0;
-  const shouldRenderPreviewAnimation =
-    preview_animation_filename && preview_animation_filename.length > 0;
   const shouldRenderRoles = roles && roles.length > 0;
   const shouldRenderTeam = team && team.length > 0;
   const shouldRenderDuration = duration && duration.length > 0;
@@ -60,20 +59,6 @@ const Main = ({ project }) => {
     shouldRenderLogoImage || shouldRenderFonts || shouldRenderColorPalette;
   const shuldRenderUiKitIcons = shouldRenderIcons || shouldRenderButtonIcons;
   const shouldRenderUiKit = shouldRenderUiKitInfo || shuldRenderUiKitIcons;
-
-  const renderRolesSection = () => {
-    if (!shouldRenderRoles) return null;
-    return (
-      <div className={styles.metadata_item}>
-        <h2 className={styles.metadata_title}>Roles</h2>
-        {roles.map((role) => (
-          <p className={styles.metadata_text} key={role}>
-            {role}
-          </p>
-        ))}
-      </div>
-    );
-  };
 
   const renderTeamSection = () => {
     if (!shouldRenderTeam) return null;
@@ -103,33 +88,19 @@ const Main = ({ project }) => {
     );
   };
 
-  const renderToolsSection = () => {
-    if (!shouldRenderTools) return null;
-    return (
-      <div className={styles.metadata_item}>
-        <h2 className={styles.metadata_title}>Tools</h2>
-        {tools.map((tool) => (
-          <p className={styles.metadata_text} key={tool}>
-            {tool}
-          </p>
-        ))}
-      </div>
-    );
-  };
-
   const renderMetadataSection = () => {
     if (!shouldRenderMetadata) return null;
     return (
       <section className={styles.metadata_container}>
         <div className={styles.metadata}>
-          {renderRolesSection()}
-          {((team && team.length > 0) || (duration && duration.length > 0)) && (
+          <Roles roles={roles} />
+          {(shouldRenderTeam || shouldRenderDuration) && (
             <div>
               {renderTeamSection()}
               {renderDurationSection()}
             </div>
           )}
-          {renderToolsSection()}
+          <Tools tools={tools} />
         </div>
       </section>
     );
