@@ -60,7 +60,6 @@ Home.propTypes = {
       id: number.isRequired,
       preview_image_filename: string.isRequired,
       name: string.isRequired,
-      tags: arrayOf(string).isRequired,
       short_about: string.isRequired,
       comingSoon: bool.isRequired,
     })
