@@ -6,7 +6,6 @@ module.exports = [
     preview_image_filename: 'BookX_preview_image',
     preview_animation_filename: 'BookX_preview_animation',
     logo_image_filename: 'BookX_logo',
-    // tags: ['UX/UI', 'Mobile'],
     short_about:
       'Book Exchange app. You can give your book and get a new one instead',
     summary: [
@@ -132,7 +131,6 @@ module.exports = [
     preview_image_filename: 'ReCon_preview_image',
     preview_animation_filename: 'Recon_preview_animation',
     logo_image_filename: 'ReCon_logo',
-    // tags: ['UX/UI', 'Website'],
     short_about: 'Responsive website for conference',
     summary: [],
     roles: [],
@@ -156,7 +154,6 @@ module.exports = [
     preview_image_filename: 'Crocoin_preview_image',
     preview_animation_filename: 'Crocoin_preview_animation',
     logo_image_filename: 'Crocoin_logo',
-    // tags: ['UX/UI', 'Website'],
     short_about: 'Trading Website',
     summary: [],
     roles: [],
@@ -179,7 +176,6 @@ module.exports = [
     preview_image_filename: 'Sapori_preview_image',
     preview_animation_filename: 'Sapori_preview_animation',
     logo_image_filename: 'Sapori_logo',
-    // tags: ['UX/UI', 'Mobile'],
     short_about:
       'Mobile app for an Italian restaurant. Customise your true Italian pizza, pasta, salat, desserts and drinks.',
     summary: [],
