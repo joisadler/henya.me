@@ -17,8 +17,7 @@ const UiKit = ({
   const shouldRenderIcons = icons && icons.length > 0;
   const shouldRenderButtonIcons = button_icons && button_icons.length > 0;
   const shouldRenderColorPalette = color_palette && color_palette.length > 0;
-  const shouldRenderUiKitInfo =
-    shouldRenderLogoImage || shouldRenderFonts || shouldRenderColorPalette;
+  const shouldRenderUiKitInfo = shouldRenderFonts || shouldRenderColorPalette;
   const shouldRenderUiKitIcons = shouldRenderIcons || shouldRenderButtonIcons;
   const shouldRenderUiKit = shouldRenderUiKitInfo || shouldRenderUiKitIcons;
   if (!shouldRenderUiKit) return null;

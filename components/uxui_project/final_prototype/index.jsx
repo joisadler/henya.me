@@ -14,7 +14,7 @@ const FinalPrototype = ({ final_prototype }) => {
   const { src } = final_prototype;
 
   return (
-    <section className={styles.final_prototype}>
+    <section className={styles.final_prototype} id="final_prototype">
       <h2 className={styles.title}>
         Final&nbsp;<span className={styles.text_red}>Prototype</span>
       </h2>

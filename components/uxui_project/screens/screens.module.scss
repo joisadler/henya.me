@@ -5,8 +5,12 @@
   flex-wrap: nowrap;
   align-items: center;
   width: 100%;
-  margin: toRem(50) auto;
+  margin: auto;
   max-width: 800px;
+
+  &:has(img[src]:not([src=""])) {
+    margin-block: toRem(50);
+  }
 
   @include breakpoint(tablet) {
     width: 90%;

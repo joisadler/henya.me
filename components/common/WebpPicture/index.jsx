@@ -10,16 +10,18 @@ const WebpPicture = React.forwardRef((props, ref) => {
     imgClassName,
     ...restProps
   } = props;
+
+  const canConstructSrc =
+    pathname && pathname.length > 0 && filename && filename.length > 0;
+
+  const webpSrc = canConstructSrc ? `${pathname}${filename}.webp` : '';
+  const pngSrc = canConstructSrc ? `${pathname}${filename}.jpg` : '';
+
   return (
     <picture className={containerClassName} {...restProps} ref={ref}>
-      <source srcSet={`${pathname}${filename}.webp`} type="image/webp" />
-      <source srcSet={`${pathname}${filename}.png`} type="image/png" />
-      <img
-        className={imgClassName}
-        // style={{ width: '100%', height: '100%' }}
-        src={`${pathname}${filename}.png`}
-        alt={alt || filename}
-      />
+      <source srcSet={webpSrc} type="image/webp" />
+      <source srcSet={pngSrc} type="image/png" />
+      <img className={imgClassName} src={pngSrc} alt={alt || filename} />
     </picture>
   );
 });
