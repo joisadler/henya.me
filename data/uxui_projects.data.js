@@ -126,10 +126,10 @@ module.exports = [
   },
   {
     id: 2,
-    comingSoon: true,
+    comingSoon: false,
     name: 'Recycle Conference',
     preview_image_filename: 'ReCon_preview_image',
-    preview_animation_filename: 'Recon_preview_animation',
+    // preview_animation_filename: 'Recon_preview_animation',
     logo_image_filename: 'ReCon_logo',
     short_about: 'Responsive website for conference',
     summary: [],
@@ -144,7 +144,11 @@ module.exports = [
     color_palette: [],
     icons: [],
     button_icons: [],
-    screens: [{ name: '', description: [''], img_filename: '' }],
+    screens: [],
+    final_prototype: {
+      src: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fi0hclST61ruN69Q6SB0Jnj%2FReConference-Landing-Page%3Fpage-id%3D0%253A1%26node-id%3D0%253A2%26viewport%3D470%252C45%252C0.12%26scaling%3Dscale-down',
+      device_type: 'desktop',
+    },
   },
 
   {
@@ -152,7 +156,7 @@ module.exports = [
     comingSoon: true,
     name: 'Crocoin',
     preview_image_filename: 'Crocoin_preview_image',
-    preview_animation_filename: 'Crocoin_preview_animation',
+    // preview_animation_filename: 'Crocoin_preview_animation',
     logo_image_filename: 'Crocoin_logo',
     short_about: 'Trading Website',
     summary: [],
@@ -167,14 +171,18 @@ module.exports = [
     color_palette: [],
     icons: [],
     button_icons: [],
-    screens: [{ name: '', description: [''], img_filename: '' }],
+    screens: [],
+    final_prototype: {
+      src: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F8jTnR5UoBdBjuovsZJDnNt%2FDesktop%3Fnode-id%3D108%253A2397',
+      device_type: 'desktop',
+    },
   },
   {
     id: 4,
-    comingSoon: true,
+    comingSoon: false,
     name: 'Sapori',
     preview_image_filename: 'Sapori_preview_image',
-    preview_animation_filename: 'Sapori_preview_animation',
+    // preview_animation_filename: 'Sapori_preview_animation',
     logo_image_filename: 'Sapori_logo',
     short_about:
       'Mobile app for an Italian restaurant. Customise your true Italian pizza, pasta, salat, desserts and drinks.',
@@ -190,6 +198,10 @@ module.exports = [
     color_palette: [],
     icons: [],
     button_icons: [],
-    screens: [{ name: '', description: [''], img_filename: '' }],
+    screens: [],
+    final_prototype: {
+      src: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FWh9OQHPZEzxmqG1NttVi0v%2FItalian-restaurant%3Fpage-id%3D0%253A1%26node-id%3D208%253A3867%26viewport%3D867%252C871%252C0.11%26scaling%3Dscale-down%26starting-point-node-id%3D208%253A3867',
+      device_type: 'mobile',
+    },
   },
 ];

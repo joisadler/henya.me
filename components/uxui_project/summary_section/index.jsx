@@ -4,10 +4,23 @@ import { useMediaQuery } from 'react-responsive';
 import WebpAnimation from 'components/common/WebpAnimation';
 import styles from './summary_section.module.scss';
 
-const Summary = ({ summary }) => {
+const Summary = ({ summary, name }) => {
   const shouldRenderSummary = summary && summary.length > 0;
 
-  if (!shouldRenderSummary) return null;
+  if (!shouldRenderSummary)
+    return (
+      <div className={styles.summary}>
+        <h2 className={styles.summary_title}>Oh no!</h2>
+        <p className={styles.summary_text}>
+          {`The case study for the ${name} project is not yet complete.
+But you can take a look at the `}
+          <a href="#final_prototype" className={styles.summary_link}>
+            prototype
+          </a>
+        </p>
+      </div>
+    );
+
   return (
     <div className={styles.summary}>
       <h2 className={styles.summary_title}>Project Summary:</h2>
@@ -53,7 +66,7 @@ const SummarySection = ({ summary, name, preview_animation_filename }) => {
               !isDesktop && !shouldRenderPreviewAnimation ? 20 : 0,
           }}
         >
-          <Summary summary={summary} />
+          <Summary summary={summary} name={name} />
           {isDesktop && shouldRenderPreviewAnimation && (
             <WebpAnimation
               containerClassName={styles.preview_animation_picture}
@@ -71,10 +84,12 @@ const SummarySection = ({ summary, name, preview_animation_filename }) => {
 
 Summary.propTypes = {
   summary: arrayOf(string),
+  name: string,
 };
 
 Summary.defaultProps = {
   summary: [],
+  name: '',
 };
 
 SummarySection.propTypes = {
