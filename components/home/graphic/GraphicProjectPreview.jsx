@@ -1,10 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from 'react';
-import { string } from 'prop-types';
+import { string, func } from 'prop-types';
 import WebpPicture from 'components/common/WebpPicture';
 import styles from './graphic.module.scss';
 
-const UxUiProjectPreview = ({ preview_image_filename, name }) => {
+const GraphicProjectPreview = ({ preview_image_filename, name, openModal }) => {
   return (
     <li className={styles.project_preview}>
       <WebpPicture
@@ -14,16 +13,21 @@ const UxUiProjectPreview = ({ preview_image_filename, name }) => {
         filename={preview_image_filename}
         alt={name}
       />
-      {/* <a href="" className={styles.project_preview_link}>
-        Name
-      </a> */}
+      <button
+        type="button"
+        onClick={() => openModal({ name, preview_image_filename })}
+        className={styles.project_preview_button}
+      >
+        <h3 className={styles.project_name}>{name}</h3>
+      </button>
     </li>
   );
 };
 
-UxUiProjectPreview.propTypes = {
+GraphicProjectPreview.propTypes = {
   preview_image_filename: string.isRequired,
   name: string.isRequired,
+  openModal: func.isRequired,
 };
 
-export default UxUiProjectPreview;
+export default GraphicProjectPreview;

@@ -78,31 +78,63 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // width: 100%;
+  border-radius: $border_radius_medium;
 
   @include breakpoint(desktop) {
     width: calc((100% - toRem(20) * 3) / 4);
+
+    &:hover {
+      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+
+      .project_name {
+        color: $white;
+      }
+
+      .project_preview_image {
+        transform: translate3d(0px, 0px, 0px) scale3d(1.05, 1.05, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      }
+
+      .project_preview_button {
+        background: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+      }
+    }
   }
 }
 
 .project_preview_picture {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: $border_radius_medium;
+  overflow: hidden;
 }
 
 .project_preview_image {
   width: 100%;
-  height: auto;
   border-radius: $border_radius_medium;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  object-fit: contain;
 }
 
-.project_preview_link {
+.project_name {
+  color: transparent;
+}
+
+.project_preview_button {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: toRem(10) toRem(20);
+  border: none;
+  border-radius: $border_radius_medium;
+  background: transparent;
 }
 
 .view_more_button {
@@ -152,4 +184,55 @@
   height: 24px;
   padding-left: 8px;
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1200px;
+  border-radius: $border_radius_medium;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: $maastricht_blue url('/images/icons-background.svg');
+}
+
+.project_preview_picture_enlarged {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border_radius_medium;
+  overflow: hidden;
+}
+
+.project_preview_image_enlarged {
+  width: 100%;
+  border-radius: $border_radius_medium;
+  object-fit: contain;
+}
+
+.close_modal_button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: toRem(40);
+  height: toRem(40);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: toRem(10);
+  border: none;
+  border-radius: $border_radius_medium;
+  background: transparent;
+  cursor: pointer;
 }

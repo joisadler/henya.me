@@ -1,37 +1,37 @@
 module.exports = [
   {
     id: 1,
-    name: 'Recycle Conference',
+    name: 'Recycle Conference - logo',
     preview_image_filename: 'ReCon',
   },
   {
     id: 2,
-    name: 'Watoto Kids',
+    name: 'Watoto Kids - logo',
     preview_image_filename: 'Watoto_Kids',
   },
   {
     id: 3,
-    name: 'BookX',
+    name: 'BookX - logo',
     preview_image_filename: 'BookX',
   },
   {
     id: 4,
-    name: 'Hike & Guide',
+    name: 'Hike & Guide - logo',
     preview_image_filename: 'Hike_and_guide',
   },
   {
     id: 5,
-    name: 'Purim t-shirt logo',
+    name: 'Purim - t-shirt',
     preview_image_filename: 'Purim_t-shirt_logo',
   },
   {
     id: 6,
-    name: 'Major',
+    name: 'Major - flyer',
     preview_image_filename: 'Major',
   },
   {
     id: 7,
-    name: 'Win - woman in need',
+    name: 'Woman In Need - flyer',
     preview_image_filename: 'Win',
   },
   {
@@ -41,7 +41,7 @@ module.exports = [
   },
   {
     id: 9,
-    name: 'Psychology servise Ashdod',
+    name: 'Psychology servise of Ashdod - logo',
     preview_image_filename: 'Psychology',
   },
   {

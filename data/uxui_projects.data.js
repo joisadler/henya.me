@@ -150,7 +150,6 @@ module.exports = [
       device_type: 'desktop',
     },
   },
-
   {
     id: 3,
     comingSoon: true,
