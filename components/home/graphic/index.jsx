@@ -33,16 +33,13 @@ const Graphic = ({ projects }) => {
   const getModalChildren = () => {
     const { name, preview_image_filename } = modalState;
     return (
-      <>
-        {/* <button className={styles.close_modal_button} onClick={closeModal}>close</button> */}
-        <WebpPicture
-          containerClassName={styles.project_preview_picture_enlarged}
-          imgClassName={styles.project_preview_image_enlarged}
-          pathname="/images/portfolio/graphic/"
-          filename={preview_image_filename}
-          alt={name}
-        />
-      </>
+      <WebpPicture
+        containerClassName={styles.project_preview_picture_enlarged}
+        imgClassName={styles.project_preview_image_enlarged}
+        pathname="/images/portfolio/graphic/"
+        filename={preview_image_filename}
+        alt={name}
+      />
     );
   };
 

@@ -80,25 +80,25 @@
   align-items: center;
   border-radius: $border_radius_medium;
 
+  &:hover {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+
+    .project_name {
+      color: $white;
+    }
+
+    .project_preview_image {
+      transform: translate3d(0px, 0px, 0px) scale3d(1.05, 1.05, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    }
+
+    .project_preview_button {
+      background: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+  }
+
   @include breakpoint(desktop) {
     width: calc((100% - toRem(20) * 3) / 4);
-
-    &:hover {
-      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-
-      .project_name {
-        color: $white;
-      }
-
-      .project_preview_image {
-        transform: translate3d(0px, 0px, 0px) scale3d(1.05, 1.05, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-      }
-
-      .project_preview_button {
-        background: rgba(0, 0, 0, 0.5);
-        cursor: pointer;
-      }
-    }
   }
 }
 
@@ -152,6 +152,7 @@
   }
 
   @include breakpoint(desktop) {
+    width: toRem(140);
     margin-block-start: toRem(40);
 
     &:hover {
@@ -159,10 +160,6 @@
         transform: translate3d(4px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
       }
     }
-  }
-
-  @include breakpoint(desktop) {
-    width: toRem(140);
   }
 }
 
@@ -190,9 +187,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
+  height: auto;
   max-width: 1200px;
+  transform: translate(-50%, -50%);
   border-radius: $border_radius_medium;
 }
 
@@ -219,20 +217,4 @@
   width: 100%;
   border-radius: $border_radius_medium;
   object-fit: contain;
-}
-
-.close_modal_button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: toRem(40);
-  height: toRem(40);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: toRem(10);
-  border: none;
-  border-radius: $border_radius_medium;
-  background: transparent;
-  cursor: pointer;
 }
