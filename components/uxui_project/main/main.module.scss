@@ -11,6 +11,6 @@
 
   @include breakpoint(desktop) {
     padding-block-start: $header_height;
-    padding-inline: toRem(130);
+    padding-inline: toRem(70);
   }
 }

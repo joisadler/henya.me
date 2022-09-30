@@ -1,11 +1,47 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { arrayOf, shape, number, string } from 'prop-types';
 import RightArrowIcon from 'components/icons/RightArrowIcon';
-import ProjectPreview from './ProjectPreview';
+import Modal from 'components/common/Modal';
+import WebpPicture from 'components/common/WebpPicture';
+import ProjectPreview from './GraphicProjectPreview';
 import styles from './graphic.module.scss';
 
 const Graphic = ({ projects }) => {
   const [isAllItemsShown, setIsAllItemsShown] = useState(false);
+  const [modalState, setModalState] = useState({
+    isOpen: false,
+    name: '',
+    preview_image_filename: '',
+  });
+
+  const openModal = ({ name, preview_image_filename }) => {
+    setModalState({
+      isOpen: true,
+      name,
+      preview_image_filename,
+    });
+  };
+
+  const closeModal = () => {
+    setModalState({
+      isOpen: false,
+      name: '',
+      preview_image_filename: '',
+    });
+  };
+
+  const getModalChildren = () => {
+    const { name, preview_image_filename } = modalState;
+    return (
+      <WebpPicture
+        containerClassName={styles.project_preview_picture_enlarged}
+        imgClassName={styles.project_preview_image_enlarged}
+        pathname="/images/portfolio/graphic/"
+        filename={preview_image_filename}
+        alt={name}
+      />
+    );
+  };
 
   const onShowMoreClick = () => {
     setIsAllItemsShown(true);
@@ -23,7 +59,9 @@ const Graphic = ({ projects }) => {
         <ul className={styles.projects_list}>
           {itemsToShow.map((project) => {
             const { id } = project;
-            return <ProjectPreview key={id} {...project} />;
+            return (
+              <ProjectPreview key={id} openModal={openModal} {...project} />
+            );
           })}
         </ul>
         {!isAllItemsShown && (
@@ -37,6 +75,15 @@ const Graphic = ({ projects }) => {
           </div>
         )}
       </div>
+      <Modal
+        className={styles.modal}
+        overlayClassName={styles.overlay}
+        isOpen={modalState.isOpen}
+        onRequestClose={closeModal}
+        contentLabel={modalState.name}
+      >
+        {getModalChildren()}
+      </Modal>
     </section>
   );
 };

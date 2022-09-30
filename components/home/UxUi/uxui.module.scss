@@ -2,7 +2,7 @@
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: $max_content_width;
   margin-inline: auto;
   padding-block-start: $header_height_mobile;
   padding-inline: toRem(10);

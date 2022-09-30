@@ -13,8 +13,8 @@
   }
 
   @include breakpoint(desktop) {
-    margin-inline-start: -#{toRem(130)};
-    padding-inline: toRem(130);
+    margin-inline-start: -#{toRem(70)};
+    padding-inline: toRem(70);
     min-height: toRem(300);
   }
 }
@@ -22,7 +22,7 @@
 .container {
   position: relative;
   width: 100%;
-  max-width: 1660px;
+  max-width: $max_content_width;
   margin-inline: auto;
   background-color: $summary_violette;
 

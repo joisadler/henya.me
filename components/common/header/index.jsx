@@ -57,7 +57,9 @@ const Header = ({ nav_links, transparent }) => {
   return (
     <section className={styles.container} style={{ background }}>
       <div className={styles.logo_container}>
-        <LogoIcon className={styles.logo} />
+        <a href="/">
+          <LogoIcon className={styles.logo} />
+        </a>
       </div>
       <div className={styles.nav_container}>
         <nav className={styles.nav}>
