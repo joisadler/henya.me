@@ -23,7 +23,7 @@
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  max-width: 1660px;
+  max-width: $max_content_width;
   margin-inline: auto;
 
   @include breakpoint(desktop) {

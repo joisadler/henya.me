@@ -4,16 +4,10 @@
   min-height: 100vh;
   height: 100vh;
   padding-block-start: $header_height_mobile;
-  padding-inline: toRem(10);
-  background: $maastricht_blue;
-
-  @include breakpoint(tablet) {
-    padding-inline: toRem(24);
-  }
+  background: $maastricht_blue url('/images/icons-background.svg');
 
   @include breakpoint(desktop) {
     padding-block-start: $header_height;
-    padding-inline: toRem(70);
   }
 }
 
@@ -23,8 +17,18 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: $max_content_width;
   height: 90%;
-  background: url('/images/icons-background.svg');
+  margin-inline: auto;
+  padding-inline: toRem(10);
+
+  @include breakpoint(tablet) {
+    padding-inline: toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    padding-inline: toRem(70);
+  }
 
   @include breakpoint(desktop) {
     flex-flow: row nowrap;

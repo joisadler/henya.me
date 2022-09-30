@@ -2,7 +2,7 @@
 
 .wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: $max_content_width;
   margin-inline: auto;
   margin-block: toRem(100);
   padding-inline: toRem(10);
@@ -189,9 +189,20 @@
   left: 50%;
   width: 100%;
   height: auto;
-  max-width: 1200px;
+  max-width: $max_content_width;
   transform: translate(-50%, -50%);
   border-radius: $border_radius_medium;
+
+  padding-inline: toRem(10);
+
+
+  @include breakpoint(tablet) {
+    padding-inline: toRem(24);
+  }
+
+  @include breakpoint(desktop) {
+    padding-inline: toRem(70);
+  }
 }
 
 .overlay {

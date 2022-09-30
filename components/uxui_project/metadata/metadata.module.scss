@@ -3,7 +3,7 @@
 .metadata_container {
   position: relative;
   width: 100vw;
-  max-width: 1660px;
+  max-width: $max_content_width;
   margin-inline: auto;
   margin-inline-start: -#{toRem(10)};
   padding-inline: toRem(10);
@@ -18,7 +18,7 @@
     padding-inline: toRem(130);
   }
 
-  @include breakpoint(large_desktop) {
+  @media (min-width: 1440px) {
     margin-inline: auto;
     padding-inline: 0;
   }
