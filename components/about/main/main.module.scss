@@ -26,6 +26,7 @@
   @include breakpoint(desktop) {
     flex-flow: row nowrap;
     align-items: center;
+    justify-content: space-between;
     min-height: calc(100vh - $header_height);
     height: calc(100vh - $header_height);
   }
@@ -52,6 +53,7 @@
   @include breakpoint(desktop) {
     max-height: 75vh;
     padding-block-end: toRem(40);
+    padding-inline: 0;
   }
 }
 
@@ -70,7 +72,8 @@
 
   @include breakpoint(desktop) {
     width: 50%;
-    padding-block: toRem(40)
+    padding-block: toRem(40);
+    padding-inline: 0;
   }
 }
 
@@ -171,7 +174,8 @@
 
   @include breakpoint(desktop) {
     width: 50%;
-    padding-inline: toRem(70);
+    padding-inline-start: toRem(70);
+    padding-inline-end: 0;
   }
 }
 
@@ -184,7 +188,8 @@
 
   @include breakpoint(desktop) {
     width: 50%;
-    padding-inline: toRem(70);
+    padding-inline-start: 0;
+    padding-inline-end: toRem(70);
   }
 }
 
