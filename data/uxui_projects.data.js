@@ -6,8 +6,7 @@ module.exports = [
     preview_image_filename: 'BookX_preview_image',
     preview_animation_filename: 'BookX_preview_animation',
     logo_image_filename: 'BookX_logo',
-    short_about:
-      'Book Exchange app. You can give your book and get a new one instead',
+    short_about: 'Exchange App for booklovers',
     summary: [
       'BookX makes it easy for you get in touch with readers as well as talk about books, get suggestions of new books to read, recommend new books to other people, and share your experiences reading new books.',
       'BookX provides options for book exchange by connecting with people in your locality, you can engage in book discussions in person and receive new books.',

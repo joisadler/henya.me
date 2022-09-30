@@ -12,7 +12,7 @@ const Project = ({ nav_links, projectsData }) => {
   const router = useRouter();
   const { id } = router.query;
   const project = projectsData.find((p) => p.id === Number(id));
-  const { fonts } = project;
+  const { fonts, name, short_about } = project;
 
   const fontsToLoad = fonts
     ? fonts.map((fontName) => ({
@@ -34,9 +34,12 @@ const Project = ({ nav_links, projectsData }) => {
   return (
     <>
       <Head>
-        <title>{project.name}</title>
+        <title>{name}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content="Henya Adler - UX/UI designer" />
+        <meta
+          name="description"
+          content={`Henya Adler - UX/UI designer | ${name} — ${short_about}`}
+        />
       </Head>
       <GoogleFontLoader
         fonts={fontsToLoad}
@@ -61,6 +64,7 @@ Project.propTypes = {
   projectsData: arrayOf(
     shape({
       name: string.isRequired,
+      short_about: string.isRequired,
       preview_animation_filename: string,
       logo_image_filename: string,
       summary: arrayOf(string),

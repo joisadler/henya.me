@@ -13,6 +13,7 @@ import styles from './main.module.scss';
 const Main = ({ project }) => {
   const {
     name,
+    short_about,
     logo_image_filename,
     preview_animation_filename,
     summary,
@@ -33,7 +34,11 @@ const Main = ({ project }) => {
 
   return (
     <main className={styles.container}>
-      <LogoImage logo_image_filename={logo_image_filename} name={name} />
+      <LogoImage
+        logo_image_filename={logo_image_filename}
+        name={name}
+        short_about={short_about}
+      />
       <SummarySection
         summary={summary}
         name={name}
@@ -60,6 +65,7 @@ const Main = ({ project }) => {
 Main.propTypes = {
   project: shape({
     name: string.isRequired,
+    short_about: string.isRequired,
     preview_animation_filename: string,
     logo_image_filename: string,
     summary: arrayOf(string),

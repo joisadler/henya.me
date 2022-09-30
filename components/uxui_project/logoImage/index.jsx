@@ -2,7 +2,7 @@ import { string } from 'prop-types';
 import WebpPicture from 'components/common/WebpPicture';
 import styles from './logo_image.module.scss';
 
-const LogoImage = ({ name, logo_image_filename }) => {
+const LogoImage = ({ name, short_about, logo_image_filename }) => {
   const isLogoImageShown =
     logo_image_filename && logo_image_filename.length > 0;
 
@@ -17,12 +17,16 @@ const LogoImage = ({ name, logo_image_filename }) => {
           alt={name}
         />
       )}
+      <h1 className={styles.heading}>
+        {name}&nbsp;&mdash;&nbsp;{short_about}
+      </h1>
     </section>
   );
 };
 
 LogoImage.propTypes = {
   name: string.isRequired,
+  short_about: string.isRequired,
   logo_image_filename: string,
 };
 
