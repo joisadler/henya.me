@@ -1,4 +1,3 @@
-import React from 'react';
 import dynamic from 'next/dynamic';
 import { arrayOf, shape, number, string, bool } from 'prop-types';
 import styles from './uxui.module.scss';
