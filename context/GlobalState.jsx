@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { node } from 'prop-types';
 import Context, { initialState } from './Context';
 

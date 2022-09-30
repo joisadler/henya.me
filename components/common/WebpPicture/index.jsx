@@ -1,7 +1,7 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import { string } from 'prop-types';
 
-const WebpPicture = React.forwardRef((props, ref) => {
+const WebpPicture = forwardRef((props, ref) => {
   const {
     pathname,
     filename,

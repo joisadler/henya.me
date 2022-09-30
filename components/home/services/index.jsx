@@ -1,4 +1,3 @@
-import React from 'react';
 import { arrayOf, shape, string, number } from 'prop-types';
 import ServiceCard from './ServiceCard';
 import styles from './services.module.scss';

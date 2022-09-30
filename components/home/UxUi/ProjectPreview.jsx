@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { string, number, bool, node } from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
 import { desktop_breakpoint } from 'config/constants';

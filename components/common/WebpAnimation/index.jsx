@@ -1,7 +1,7 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import { string } from 'prop-types';
 
-const WebpPicture = React.forwardRef((props, ref) => {
+const WebpPicture = forwardRef((props, ref) => {
   const {
     pathname,
     filename,
@@ -16,7 +16,6 @@ const WebpPicture = React.forwardRef((props, ref) => {
       <source srcSet={`${pathname}${filename}.gif`} type="image/gif" />
       <img
         className={imgClassName}
-        // style={{ width: '100%', height: '100%' }}
         src={`${pathname}${filename}.gif`}
         alt={alt || filename}
       />
