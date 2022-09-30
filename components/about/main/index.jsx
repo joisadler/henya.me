@@ -91,74 +91,83 @@ const Main = () => {
         <div className={styles.experience}>
           <h2 className={styles.additional_info_section_title}>Experience</h2>
           <article className={styles.info_item}>
-            <h3 className={styles.info_item_title}>Rom Marketing</h3>
+            <h3 className={styles.info_item_title}>
+              Rom Marketing (2021 - 2022)
+            </h3>
             <h4 className={styles.info_item_subtitle}>UX/UI Designer</h4>
             <ul className={styles.info_item_list}>
-              <li>Designed all wireframes and UI.</li>
+              <li>Designed wireframes and UI.</li>
               <li>Designed brand identity.</li>
+              <li>Created animations and videos.</li>
             </ul>
           </article>
           <article className={styles.info_item}>
-            <h3 className={styles.info_item_title}>Nail Pharm</h3>
+            <h3 className={styles.info_item_title}>Nail Pharm (2017 - 2019)</h3>
             <h4 className={styles.info_item_subtitle}>Graphic Designer</h4>
             <ul className={styles.info_item_list}>
               <li>
-                Created and gained solid abilities in marking, branding and many
-                more.
+                Developed and honed skills in marketing, branding, and other
+                areas.
               </li>
               <li>
-                Delivering advertising materials - social media, invitations,
-                banners, calendars, print and packaging materials.
+                Delivered advertising materials: social media, banners, print
+                and packaging materials.
               </li>
               <li>
-                Working across different undertakings while overseeing and
+                Worked across different undertakings while overseeing and
                 regarding project&apos;s deadlines.
               </li>
             </ul>
           </article>
           <article className={styles.info_item}>
-            <h3 className={styles.info_item_title}>Henya Design</h3>
+            <h3 className={styles.info_item_title}>
+              Henya Design (2017 - present)
+            </h3>
             <h4 className={styles.info_item_subtitle}>
               Freelance Graphic Designer
             </h4>
             <ul className={styles.info_item_list}>
-              <li>Creating brand identity (logos, flyers, etc.).</li>
+              <li>Created brand identity (logos, flyers, etc.).</li>
               <li>
-                Creating print materials(calendars, book design, invitations and
+                Created print materials(calendars, book design, invitations and
                 many more).
               </li>
-              <li>Creating websites in Wordpress via Elementor/Gutenberg.</li>
+              <li>Created Wordpress websites using Elementor/Gutenberg. </li>
             </ul>
           </article>
         </div>
         <div className={styles.education}>
           <h2 className={styles.additional_info_section_title}>Education</h2>
           <article className={styles.info_item}>
-            <h3 className={styles.info_item_title}>Netcraft Academy</h3>
+            <h3 className={styles.info_item_title}>
+              Netcraft academy (2020 - 2021)
+            </h3>
             <h4 className={styles.info_item_subtitle}>UX/UI Design</h4>
             <p className={styles.info_item_text}>
-              I had participated in several exercises — both visual and
-              non-visual — where I applied acquired knowledge, from organizing
-              and structuring screen-based content, defining goals and strategy,
-              to creating wireframes and visual mockups.
-            </p>
-          </article>
-          <article className={styles.info_item}>
-            <h3 className={styles.info_item_title}>Shenkar Handesaim</h3>
-            <h4 className={styles.info_item_subtitle}>Graphic Design</h4>
-            <p className={styles.info_item_text}>
-              I had learned a rich variety of courses that gave me a
-              comprehensive overview of the field of graphic design and
-              printing. I had completed my studies with a portfolio and a
-              Shenkar College certificate.
+              In this course, I&apos;ve participated in several exercises (both
+              visual and non-visual) to apply acquired knowledge, from
+              organizing and structuring screen-based content, defining goals
+              and strategy, to creating wireframes and visual mockups.
             </p>
           </article>
           <article className={styles.info_item}>
             <h3 className={styles.info_item_title}>
-              International Institute for Economics and Humanities
+              Shenkar Handesaim (2016 - 2017)
+            </h3>
+            <h4 className={styles.info_item_subtitle}>Graphic Design</h4>
+            <p className={styles.info_item_text}>
+              Through visual examples, I&apos;ve learned fundamental principles
+              of graphic design: imagemaking, typography, composition, working
+              with color and shape foundational skills that are common in all
+              areas of graphic design practice.
+            </p>
+          </article>
+          <article className={styles.info_item}>
+            <h3 className={styles.info_item_title}>
+              International Institute for Economics and Humanities (2009 - 2014)
             </h3>
             <h4 className={styles.info_item_subtitle}>
-              B.A. in Advertising and Public Relations
+              Advertising & Brand Communication (B.A.)
             </h4>
             <p className={styles.info_item_text}>
               We were trained to design formal and aesthetic aspects in written,
