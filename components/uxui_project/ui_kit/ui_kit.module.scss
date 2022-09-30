@@ -14,8 +14,8 @@
   }
 
   @include breakpoint(desktop) {
-    margin-inline-start: -#{toRem(130)};
-    padding-inline: toRem(130);
+    margin-inline-start: -#{toRem(70)};
+    padding-inline: toRem(70);
   }
 }
 
