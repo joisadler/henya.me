@@ -5,6 +5,9 @@ $header_height: toRem(106);
 $header_height_mobile: toRem(86);
 $preview_animation_width: toRem(250);
 $max_content_width: toRem(1440);
+$padding_inline_desktop: toRem(70);
+$padding_inline_tablet: toRem(24);
+$padding_inline_mobile: toRem(10);
 
 /* Breakpoints */
 $mobile: 360px;
@@ -36,8 +39,8 @@ $alata: 'Alata', sans-serif;
 $mulish: 'Mulish', sans-serif;
 
 /* Border-radius */
-$border_radius_medium: toRem(10);
+$border_radius_medium: $padding_inline_mobile;
 $border_radius_small: toRem(4);
-$border_raduis_large: toRem(24);
+$border_raduis_large: $padding_inline_tablet;
 $border_raduis_xlarge: toRem(42);
 

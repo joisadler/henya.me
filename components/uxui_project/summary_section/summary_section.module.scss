@@ -1,20 +1,21 @@
 @import 'utils';
 
 .background {
-  width: 100vw;
-  margin-inline-start: -#{toRem(10)};
-  padding-inline: toRem(10);
+  box-sizing: content-box;
+  width: 100%;
+  margin-inline-start: -#{$padding_inline_mobile};
+  padding-inline: $padding_inline_mobile;
   background-color: $summary_violette;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   @include breakpoint(tablet) {
-    margin-inline-start: -#{toRem(24)};
-    padding-inline: toRem(24);
+    margin-inline-start: -#{$padding_inline_tablet};
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
-    margin-inline-start: -#{toRem(70)};
-    padding-inline: toRem(70);
+    margin-inline-start: -#{$padding_inline_desktop};
+    padding-inline: $padding_inline_desktop;
     min-height: toRem(300);
   }
 }
@@ -32,7 +33,7 @@
 }
 
 .summary {
-  padding-block: toRem(24);
+  padding-block: $padding_inline_tablet;
 
   @include breakpoint(desktop) {
     width: calc(100% - $preview_animation_width);
@@ -46,7 +47,7 @@
   margin: 0;
   font-family: $mulish;
   font-weight: 700;
-  font-size: toRem(24);
+  font-size: $padding_inline_tablet;
   line-height: 125%;
   color: $white;
   text-align: center;
@@ -103,7 +104,7 @@
   justify-content: center;
   align-items: center;
   width: toRem(160);
-  padding: toRem(13) toRem(10);
+  padding: toRem(13) $padding_inline_mobile;
   background: $primary_pink;
   border-radius: $border_radius_medium;
   font-family: $mulish;
@@ -117,7 +118,7 @@
     width: toRem(195);
     margin-block-start: auto;
     font-size: toRem(18);
-    line-height: toRem(24);
+    line-height: $padding_inline_tablet;
   }
 
   &:hover {

@@ -6,15 +6,15 @@
   align-items: center;
   min-height: 100vh;
   padding-block-start: $header_height_mobile;
-  padding-inline: toRem(10);
+  padding-inline: $padding_inline_mobile;
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
     padding-block-start: $header_height;
-    padding-inline: toRem(70);
+    padding-inline: $padding_inline_desktop;
   }
 }
 
@@ -39,7 +39,7 @@
   font-family: $mulish;
   font-style: normal;
   font-weight: 900;
-  font-size: toRem(24);
+  font-size: $padding_inline_tablet;
   line-height: 138%;
   text-align: center;
   color: $maastricht_blue;

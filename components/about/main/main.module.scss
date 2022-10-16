@@ -3,15 +3,15 @@
 .container {
   min-height: 100vh;
   padding-block-start: $header_height_mobile;
-  padding-inline: toRem(10);
+  padding-inline: $padding_inline_mobile;
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
     padding-block-start: $header_height;
-    padding-inline: toRem(70);
+    padding-inline: $padding_inline_desktop;
   }
 }
 
@@ -47,7 +47,7 @@
   padding-block-start: toRem(40);
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
@@ -67,7 +67,7 @@
   padding-block: toRem(40);
 
   @include breakpoint(tablet) {
-    padding: toRem(40) toRem(24);
+    padding: toRem(40) $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
@@ -88,17 +88,17 @@
 
   @include breakpoint(desktop) {
     margin-inline-end: auto;
-    font-size: toRem(24);
+    font-size: $padding_inline_tablet;
   }
 }
 
 .main_title {
   margin-block-start: toRem(16);
-  margin-block-end: toRem(24);
+  margin-block-end: $padding_inline_tablet;
   font-family: $mulish;
   font-style: normal;
   font-weight: 900;
-  font-size: toRem(24);
+  font-size: $padding_inline_tablet;
   line-height: 138%;
   color: $maastricht_blue;
 
@@ -169,12 +169,12 @@
   width: 100%;
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
     width: 50%;
-    padding-inline-start: toRem(70);
+    padding-inline-start: $padding_inline_desktop;
     padding-inline-end: 0;
   }
 }
@@ -183,13 +183,13 @@
   width: 100%;
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
     width: 50%;
     padding-inline-start: 0;
-    padding-inline-end: toRem(70);
+    padding-inline-end: $padding_inline_desktop;
   }
 }
 

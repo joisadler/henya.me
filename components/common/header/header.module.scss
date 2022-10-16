@@ -10,16 +10,16 @@
   align-items: flex-start;
   width: 100%;
   height: $header_height_mobile;
-  padding-inline: toRem(10);
+  padding-inline: $padding_inline_mobile;
   color: $white;
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
     height: $header_height;
-    padding-inline: toRem(70);
+    padding-inline: $padding_inline_desktop;
   }
 }
 
@@ -75,7 +75,7 @@
   color: $white;
   font-family: $mulish;
   font-size: toRem(16);
-  line-height: toRem(24);
+  line-height: $padding_inline_tablet;
   font-style: normal;
   font-weight: 600;
 }

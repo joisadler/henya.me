@@ -2,25 +2,23 @@
 
 .metadata_container {
   position: relative;
-  width: 100vw;
   max-width: $max_content_width;
-  margin-inline: auto;
-  margin-inline-start: -#{toRem(10)};
-  padding-inline: toRem(10);
+  margin-inline-start: -#{$padding_inline_mobile};
+  padding-inline: $padding_inline_mobile;
 
   @include breakpoint(tablet) {
-    margin-inline-start: -#{toRem(24)};
-    padding-inline: toRem(24);
+    margin-inline-start: -#{$padding_inline_tablet};
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
-    margin-inline-start: -#{toRem(70)};
-    padding-inline: toRem(70);
+    margin-inline-start: -#{$padding_inline_desktop};
+    padding-inline: $padding_inline_desktop;
   }
 
   @media (min-width: 1440px) {
     margin-inline: auto;
-    padding-inline: 0;
+    padding-inline: 0 $padding_inline_desktop;
   }
 }
 
@@ -36,7 +34,6 @@
 
   @include breakpoint(desktop) {
     width: calc(100% - $preview_animation_width);
-    padding-inline-end: toRem(64);
   }
 }
 
