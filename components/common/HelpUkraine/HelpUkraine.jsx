@@ -4,7 +4,7 @@ import styles from './help_ukraine.module.scss';
 const HelpUkraine = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   return (
-    <div contentLabel="Help Ukraine!" className={styles.container}>
+    <div content-label="Help Ukraine!" className={styles.container}>
       <button type="button" onClick={onClose} className={styles.close_button}>
         &#x2715;
       </button>
