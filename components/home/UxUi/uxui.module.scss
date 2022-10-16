@@ -151,8 +151,16 @@
     margin-block-start: auto;
   }
 
+  &:hover {
+    box-shadow: 0px 2px 24px rgba(79, 0, 140, 0.5);
+  }
+
   &[data-autowidth="true"] {
     width: fit-content;
+
+    &:hover {
+      box-shadow: none;
+    }
   }
 }
 
