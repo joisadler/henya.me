@@ -105,8 +105,8 @@
   align-items: center;
   width: toRem(160);
   padding: toRem(13) $padding_inline_mobile;
-  background: $primary_pink;
   border-radius: $border_radius_medium;
+  background: $primary_pink;
   font-family: $mulish;
   font-size: toRem(14);
   line-height: toRem(20);
@@ -128,7 +128,10 @@
 
 .preview_animation_picture_mobile_container {
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
+  align-items: center;
+  padding-block-end: toRem(32);
 }
 
 .preview_animation_image_mobile {
