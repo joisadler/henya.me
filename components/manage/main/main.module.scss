@@ -2,9 +2,9 @@
 
 .container {
   width: 100%;
-  padding-block-start: calc($header_height_mobile + toRem(10));
-  padding-block-end: toRem(10);
-  padding-inline: toRem(10);
+  padding-block-start: calc($header_height_mobile + $padding_inline_mobile);
+  padding-block-end: $padding_inline_mobile;
+  padding-inline: $padding_inline_mobile;
 
   @include breakpoint(tablet) {
     padding-block-start: calc($header_height_mobile + toRem(16));

@@ -6,15 +6,15 @@
   margin-block-start: -150px;
   margin-inline: auto;
 
-  padding-inline: toRem(10);
+  padding-inline: $padding_inline_mobile;
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
     margin-block-start: -50px;
-    padding-inline: toRem(70);
+    padding-inline: $padding_inline_desktop;
   }
 }
 
@@ -27,17 +27,17 @@
   list-style-type: none;
 
   @include breakpoint(tablet) {
-    gap: toRem(24);
+    gap: $padding_inline_tablet;
     flex-flow: row nowrap;
   }
 
   @include breakpoint(desktop) {
-    gap: toRem(70);
+    gap: $padding_inline_desktop;
   }
 }
 
 .service_card {
-  padding: 0 toRem(24) toRem(24);
+  padding: 0 $padding_inline_tablet $padding_inline_tablet;
   border-radius: $border_radius_medium;
   background: $white;
   box-shadow: 0px 0px toRem(4) rgba(0, 0, 0, 0.25);
@@ -45,11 +45,11 @@
   width: 100%;
 
   @include breakpoint(tablet) {
-    width: calc((100% - toRem(24) * 2) / 3);
+    width: calc((100% - $padding_inline_tablet * 2) / 3);
   }
 
   @include breakpoint(desktop) {
-    width: calc((100% - toRem(70) * 2) / 3);
+    width: calc((100% - $padding_inline_desktop * 2) / 3);
   }
 }
 
@@ -75,7 +75,7 @@
 
 .service_card_title {
   width: 100%;
-  margin-block: toRem(24);
+  margin-block: $padding_inline_tablet;
   font-family: $mulish;
   font-style: normal;
   font-weight: 900;

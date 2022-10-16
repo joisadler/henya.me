@@ -20,14 +20,14 @@
   max-width: $max_content_width;
   height: 90%;
   margin-inline: auto;
-  padding-inline: toRem(10);
+  padding-inline: $padding_inline_mobile;
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
-    padding-inline: toRem(70);
+    padding-inline: $padding_inline_desktop;
   }
 
   @include breakpoint(desktop) {
@@ -65,7 +65,7 @@
 
   @include breakpoint(tablet) {
     font-size: 6vw;
-    margin-block-end: toRem(70);
+    margin-block-end: $padding_inline_desktop;
   }
 
   @include breakpoint(desktop) {
@@ -111,13 +111,13 @@
   transform: translateX(-50%);
   width: 100%;
 
-  padding-inline: toRem(10);
+  padding-inline: $padding_inline_mobile;
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
-    padding-inline: toRem(70);
+    padding-inline: $padding_inline_desktop;
   }
 }

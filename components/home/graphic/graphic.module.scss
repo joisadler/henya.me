@@ -5,30 +5,30 @@
   max-width: $max_content_width;
   margin-inline: auto;
   margin-block: toRem(100);
-  padding-inline: toRem(10);
+  padding-inline: $padding_inline_mobile;
 
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
-    padding-inline: toRem(70);
+    padding-inline: $padding_inline_desktop;
   }
 }
 
 .container {
-  padding: toRem(10);
+  padding: $padding_inline_mobile;
   border-radius: $border_raduis_large;
   background: $white;
   box-shadow: 0px 0px 30px rgba(16, 32, 57, 0.15);
 
   @include breakpoint(tablet) {
-    padding: toRem(24);
+    padding: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
-    padding: toRem(40) toRem(70);
+    padding: toRem(40) $padding_inline_desktop;
   }
 
   * {
@@ -131,7 +131,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: toRem(10) toRem(20);
+  padding: $padding_inline_mobile toRem(20);
   border: none;
   border-radius: $border_radius_medium;
   background: transparent;
@@ -141,14 +141,14 @@
   display: flex;
   align-items: center;
   width: toRem(120);
-  margin-block-start: toRem(10);
+  margin-block-start: $padding_inline_mobile;
   margin-inline: auto;
-  padding: toRem(13) toRem(10);
+  padding: toRem(13) $padding_inline_mobile;
   background: $primary_pink;
   border-radius: $border_radius_medium;
 
   @include breakpoint(tablet) {
-    margin-block-start: toRem(24);
+    margin-block-start: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
@@ -156,6 +156,8 @@
     margin-block-start: toRem(40);
 
     &:hover {
+      box-shadow: 0px 5px 10px -5px rgba(79, 0, 140, 0.5);
+
       .right_arrow_icon {
         transform: translate3d(4px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
       }
@@ -172,7 +174,7 @@
 
   @include breakpoint(desktop) {
     font-size: toRem(18);
-    line-height: toRem(24);
+    line-height: $padding_inline_tablet;
   }
 }
 
@@ -193,15 +195,15 @@
   transform: translate(-50%, -50%);
   border-radius: $border_radius_medium;
 
-  padding-inline: toRem(10);
+  padding-inline: $padding_inline_mobile;
 
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
-    padding-inline: toRem(70);
+    padding-inline: $padding_inline_desktop;
   }
 }
 

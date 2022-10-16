@@ -68,13 +68,21 @@ const SummarySection = ({ summary, name, preview_animation_filename }) => {
         >
           <Summary summary={summary} name={name} />
           {isDesktop && shouldRenderPreviewAnimation && (
-            <WebpAnimation
-              containerClassName={styles.preview_animation_picture}
-              imgClassName={styles.preview_animation_image}
-              pathname="/images/portfolio/uxui/"
-              filename={preview_animation_filename}
-              alt={`${name} preview`}
-            />
+            <div className={styles.preview_animation_picture_container}>
+              <WebpAnimation
+                containerClassName={styles.preview_animation_picture}
+                imgClassName={styles.preview_animation_image}
+                pathname="/images/portfolio/uxui/"
+                filename={preview_animation_filename}
+                alt={`${name} preview`}
+              />
+              <a
+                href="#final_prototype"
+                className={styles.preview_animation_link_to_prototype}
+              >
+                Go to Prototype
+              </a>
+            </div>
           )}
         </section>
       </div>

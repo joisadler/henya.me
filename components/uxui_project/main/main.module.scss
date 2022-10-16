@@ -3,14 +3,14 @@
 .container {
   min-height: 100vh;
   padding-block-start: $header_height_mobile;
-  padding-inline: toRem(10);
+  padding-inline: $padding_inline_mobile;
 
   @include breakpoint(tablet) {
-    padding-inline: toRem(24);
+    padding-inline: $padding_inline_tablet;
   }
 
   @include breakpoint(desktop) {
     padding-block-start: $header_height;
-    padding-inline: toRem(70);
+    padding-inline: $padding_inline_desktop;
   }
 }
