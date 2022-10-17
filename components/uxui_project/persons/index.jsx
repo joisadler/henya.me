@@ -39,6 +39,7 @@ const Persons = ({ persons }) => {
               <p className={styles.family}>{`Family: ${family}`}</p>
               <p className={styles.hometown}>{`Hometown: ${hometown}`}</p>
             </div>
+            <q className={styles.quote}>{`"${quote}"`}</q>
             <div className={styles.about}>
               {about.map((p) => (
                 <p
@@ -62,7 +63,6 @@ const Persons = ({ persons }) => {
                 ))}
               </ul>
             </div>
-            <q className={styles.quote}>{`"${quote}"`}</q>
             <div className={styles.pain_points}>
               <h4 className={styles.pain_points_title}>Pain points</h4>
               <ul className={styles.pain_points_list}>
