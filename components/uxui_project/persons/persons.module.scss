@@ -1,0 +1,221 @@
+@import 'utils';
+
+.container {
+  position: relative;
+  max-width: $max_content_width;
+  margin-inline: auto;
+
+  @include breakpoint(tablet) {
+    margin-block: toRem(30) toRem(50);
+  }
+
+  @media (min-width: 1440px) {
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+}
+
+.person {
+  display: grid;
+  gap: $padding_inline_mobile;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  padding: $padding_inline_mobile;
+  min-height: 600px;
+  max-width: 1200px;
+  background: linear-gradient(126.22deg, #FEFCFB 26.93%, #FFEDEA 59.37%);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  font-family: $mulish;
+  font-style: normal;
+
+  @include breakpoint(tablet) {
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: repeat(24, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+
+    &:nth-child(odd) {
+      margin-inline-start: auto;
+    }
+    &:nth-child(even) {
+      margin-inline-end: auto;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-block-end: $padding_inline_mobile;
+
+    @include breakpoint(tablet) {
+      margin-block-end: toRem(50);
+    }
+  }
+}
+
+.main_info {
+  width: 100%;
+
+  @include border;
+}
+
+.main, .about, .goals, .pain_points, .quote {
+  padding: toRem(20) toRem(25);
+  box-shadow: 0px 0px 7px 1px rgba(180, 135, 105, 0.3);
+
+  @include breakpoint(tablet) {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: toRem(20) toRem(25);
+    box-shadow: 0px 0px 15px 7px rgba(180, 135, 105, 0.3);
+  }
+}
+
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: toRem(35) toRem(30);
+  border-radius: toRem(10);
+  background: #FEE4D2;
+  color: $text_dark_violette;
+  text-align: center;
+
+  @include breakpoint(tablet) {
+    grid-area: 4 / 2 / 22 / 8;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: toRem(10);
+}
+
+.name {
+  margin: toRem(10) 0 0;
+  font-size: toRem(20);
+  line-height: 117%;
+  font-weight: 900;
+}
+
+.position {
+  margin: 0 0 toRem(10);
+  font-size: 17px;
+  line-height: 123%;
+  font-weight: 600;
+
+  @include breakpoint(tablet) {
+    font-size: toRem(13);
+  }
+}
+
+.age,
+.education,
+.family,
+.hometown  {
+  margin: 0;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  color: $text_dark_violette;
+
+  @include breakpoint(tablet) {
+    font-size: 12px;
+  }
+}
+
+.about {
+  border-radius: toRem(20);
+  background: $white;
+
+  @include breakpoint(tablet) {
+    grid-area: 2 / 9 / 12 / 16;
+  }
+}
+
+.about_paragraph {
+  width: 100%;
+  margin: 0;
+  color: $text_dark_violette;
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 125%;
+  text-align: start;
+  color: $black;
+
+  @include breakpoint(tablet) {
+    font-size: 18px;
+    line-height: 117%;
+  }
+}
+
+.goals, .pain_points {
+  background: $white;
+  border-radius: toRem(20);
+}
+
+.goals {
+
+  @include breakpoint(tablet) {
+    grid-area: 13 / 10 / 24 / 17;
+  }
+}
+
+.pain_points {
+
+  @include breakpoint(tablet) {
+    grid-area: 10 / 18 / 22 / 24;
+  }
+}
+
+.goals_title, .pain_points_title {
+  width: 100%;
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: start;
+  color: $text_green;
+}
+
+.pain_points_title {
+  color: $text_red;
+}
+
+.goals_item, .pain_points_item {
+  margin: 0;
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 125%;
+  color: $black;
+
+  @include breakpoint(tablet) {
+    font-size: 18px;
+    line-height: 120%;
+  }
+}
+
+.quote {
+  background: $quote_background;
+  border-radius: toRem(20);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 125%;
+  color: $text_dark_violette;
+
+  @include breakpoint(tablet) {
+    grid-area: 3 / 17 / 9 / 23;
+    font-size: 20px;
+    line-height: 114%;
+  }
+
+  &::before, &::after {
+    content: '';
+    display: none;
+  }
+}

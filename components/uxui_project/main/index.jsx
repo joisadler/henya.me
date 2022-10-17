@@ -2,6 +2,7 @@ import { arrayOf, shape, string, oneOfType } from 'prop-types';
 import LogoImage from '../logoImage';
 import SummarySection from '../summary_section';
 import Metadata from '../metadata';
+import Persons from '../persons';
 import Problem from '../problem';
 import Solution from '../solution';
 import MainFeatures from '../main_features';
@@ -21,6 +22,7 @@ const Main = ({ project }) => {
     team,
     duration,
     tools,
+    persons,
     problem,
     solution,
     main_features,
@@ -45,6 +47,7 @@ const Main = ({ project }) => {
         preview_animation_filename={preview_animation_filename}
       />
       <Metadata roles={roles} team={team} duration={duration} tools={tools} />
+      <Persons persons={persons} />
       <Problem problem={problem} />
       <Solution solution={solution} />
       <MainFeatures main_features={main_features} />
@@ -73,6 +76,21 @@ Main.propTypes = {
     team: arrayOf(string),
     duration: arrayOf(string),
     tools: arrayOf(string),
+    persons: arrayOf(
+      shape({
+        image_filename: string,
+        name: string,
+        position: string,
+        age: string,
+        education: string,
+        family: string,
+        hometown: string,
+        about: arrayOf(string),
+        goals: arrayOf(string),
+        quote: string,
+        painPoints: arrayOf(string),
+      })
+    ),
     problem: arrayOf(string),
     solution: arrayOf(string),
     main_features: arrayOf(string),

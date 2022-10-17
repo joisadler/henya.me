@@ -71,6 +71,21 @@ Project.propTypes = {
       roles: arrayOf(string),
       team: arrayOf(string),
       tools: arrayOf(string),
+      persons: arrayOf(
+        shape({
+          image_filename: string,
+          name: string,
+          position: string,
+          age: string,
+          education: string,
+          family: string,
+          hometown: string,
+          about: arrayOf(string),
+          goals: arrayOf(string),
+          quote: string,
+          painPoints: arrayOf(string),
+        })
+      ),
       duration: arrayOf(string),
       problem: arrayOf(string),
       solution: arrayOf(string),
