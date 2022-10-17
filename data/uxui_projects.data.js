@@ -21,6 +21,67 @@ module.exports = [
     tools: ['Figma', 'Illustrator', 'Photoshop'],
     duration: ['2021'],
     team: ['Self-Directed, with feedback from the mentor and peers'],
+    persons: [
+      {
+        image_filename: 'BookX_person1',
+        name: 'Gina',
+        position: 'Student',
+        age: '24',
+        education: 'University',
+        family: 'Parents',
+        hometown: 'Tel Aviv',
+        about: [
+          'Gina always had been a passionate reader.',
+          'Eco activist, sorts her trash.',
+          'Conciders books as her inspiration and escape.',
+          'Chooses to read her next book based on her mood.',
+          'Loves to explore and experiment with new books and genres.',
+        ],
+        goals: [
+          'Combination of physical, e-book, and audiobooks to a mixture of genres.',
+          'Check out new and old books.',
+          'Read multiple books at one time.',
+          'Make new friends who read the same books as her.',
+        ],
+        quote:
+          'Reading is very important for me. Whenever I have free time, I sit down with a book to relax.',
+        painPoints: [
+          'Does not possess money and has to depend on parents.',
+          'Environmental impact from production.',
+          'Trouble finding the right people to hangout with who are interested in books and literature in the same way as her.',
+        ],
+      },
+      {
+        image_filename: 'BookX_person2',
+        name: 'Nash',
+        position: 'Lawyer',
+        age: '45',
+        education: 'M.A',
+        family: 'Married, 2 kids',
+        hometown: 'Chicago',
+        about: [
+          'Nash has huge love and respect for books hence taking up a career in the same time.',
+          'Collecting and reading books are his favourite hobbies.',
+          'Pays attention to every small detail.',
+          'Likes his books and takes extra care of them.',
+          'Spends a lot of his leisure time with his books.',
+        ],
+        goals: [
+          'Read 2-5 books per month.',
+          'Discuss and analyse characters, plot and literary aspects of a book.',
+          'Collect all kinds of books and expand his personal library.',
+          'Only reads one book at a time.',
+        ],
+        quote:
+          'I mostly choose books based on what is new, coworker suggestions, or articles I see on the Internet.',
+        painPoints: [
+          'Does not want to throw away the read book but also has no space to store them.',
+          'No time for searching “used books” store.',
+          'Hard to exchange a book.',
+          'Problem with finding with whom to exchange.',
+        ],
+      },
+    ],
     problem: [
       "Many people prefer material books and don't like electronic ones. But the material books need a lot of space at bookshelves, and people don't want to store the books after they finish reading them. Beside this, material books have a quietly high price and it becomes a big amount of money for the people who love to read.",
     ],

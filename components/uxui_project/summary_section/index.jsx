@@ -56,6 +56,12 @@ const SummarySection = ({ summary, name, preview_animation_filename }) => {
             filename={preview_animation_filename}
             alt={`${name} preview`}
           />
+          <a
+            href="#final_prototype"
+            className={styles.preview_animation_link_to_prototype}
+          >
+            Go to Prototype
+          </a>
         </section>
       )}
       <div className={styles.background}>

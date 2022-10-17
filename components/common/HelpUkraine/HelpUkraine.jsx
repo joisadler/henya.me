@@ -1,5 +1,6 @@
 import { bool, func } from 'prop-types';
 import styles from './help_ukraine.module.scss';
+import WebpPicture from '../WebpAnimation';
 
 const HelpUkraine = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
@@ -14,8 +15,13 @@ const HelpUkraine = ({ isOpen, onClose }) => {
         className={styles.link}
         rel="noreferrer"
       >
-        <span className={styles.top}>SUPPORT</span>
-        <span className={styles.bottom}>UKRAINE</span>
+        <WebpPicture
+          containerClassName={styles.picture}
+          imgClassName={styles.image}
+          pathname="/images/"
+          filename="support_ukraine"
+          alt="Support Ukraine!"
+        />
       </a>
     </div>
   );
