@@ -8,7 +8,7 @@ module.exports = [
     logo_image_filename: 'BookX_logo',
     short_about: 'Exchange App for booklovers',
     summary: [
-      'BookX makes it easy for you get in touch with readers as well as talk about books, get suggestions of new books to read, recommend new books to other people, and share your experiences reading new books.',
+      'BookX makes it easy for you to get in touch with readers as well as talk about books, get suggestions of new books to read, recommend new books to other people, and share your experiences reading new books.',
       'BookX provides options for book exchange by connecting with people in your locality, you can engage in book discussions in person and receive new books.',
     ],
     roles: [
