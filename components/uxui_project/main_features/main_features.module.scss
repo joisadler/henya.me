@@ -14,7 +14,7 @@
   color: $black;
 
   @include breakpoint(desktop) {
-    font-size: toRem(32);
+    font-size: toRem(40);
   }
 }
 
