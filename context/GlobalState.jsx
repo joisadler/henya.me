@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { node } from 'prop-types';
 import Context, { initialState } from './Context';
 
@@ -26,12 +26,15 @@ const GlobalState = ({ children }) => {
     }));
   };
 
-  const Value = {
-    ...state,
-    setIsMobileMenuOpen,
-    showMobileMenu,
-    hideMobileMenu,
-  };
+  const Value = useMemo(
+    () => ({
+      ...state,
+      setIsMobileMenuOpen,
+      showMobileMenu,
+      hideMobileMenu,
+    }),
+    [state]
+  );
 
   return <Context.Provider value={Value}>{children}</Context.Provider>;
 };
