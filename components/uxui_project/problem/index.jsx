@@ -10,7 +10,9 @@ const Problem = ({ problem }) => {
       <h2 className={styles.title}>
         The&nbsp;<span className={styles.text_red}>Problem</span>
       </h2>
-      <p className={styles.text}>{problem}</p>
+      {problem.map((p) => (
+        <p className={styles.text}>{p}</p>
+      ))}
     </section>
   );
 };

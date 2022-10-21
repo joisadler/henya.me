@@ -7,6 +7,7 @@ import Problem from '../problem';
 import Solution from '../solution';
 import MainFeatures from '../main_features';
 import Wireframes from '../wireframes';
+import UserFlow from '../UserFlow';
 import UiKit from '../ui_kit';
 import Screens from '../screens';
 import FinalPrototype from '../final_prototype';
@@ -29,6 +30,7 @@ const Main = ({ project }) => {
     solution,
     main_features,
     wireframes,
+    user_flow,
     fonts,
     color_palette,
     icons,
@@ -56,6 +58,7 @@ const Main = ({ project }) => {
       <Solution solution={solution} />
       <MainFeatures main_features={main_features} />
       <Wireframes wireframes={wireframes} />
+      <UserFlow user_flow={user_flow} />
       <UiKit
         name={name}
         logo_image_filename={logo_image_filename}
@@ -101,6 +104,7 @@ Main.propTypes = {
     solution: arrayOf(string),
     main_features: arrayOf(string),
     wireframes: arrayOf(string),
+    user_flow: arrayOf(string),
     fonts: arrayOf(string),
     color_palette: arrayOf(string),
     icons: arrayOf(string),

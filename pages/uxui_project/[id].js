@@ -92,6 +92,7 @@ Project.propTypes = {
       solution: arrayOf(string),
       main_features: arrayOf(string),
       wireframes: arrayOf(string),
+      user_flow: arrayOf(string),
       fonts: arrayOf(string),
       color_palette: arrayOf(string),
       icons: arrayOf(string),

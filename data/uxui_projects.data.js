@@ -104,6 +104,10 @@ module.exports = [
       'BookX_wireframe3',
       'BookX_wireframe4',
     ],
+    user_flow: [
+      'The user flow which I created, gives a clear idea how the intended actions are taken by the user and how do they achieve their goals. Plotting the user flows allows me to track whether the goals are accomplished by the user.',
+      "With very minimal steps, user can search for the used book from the homepage and send request for buying or exchanging. If he can't be able to find the perfect match, user can also post a request mentioning the book name and other details. Once a match is found, user get the message and both users will be able to chat and share the location for exchanging or selling the book.",
+    ],
     fonts: ['Roboto'],
     color_palette: ['#3CB27B', '#4F008C', '#FFFFFF'],
     icons: [
