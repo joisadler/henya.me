@@ -1,3 +1,5 @@
+const toRem = require('../utils/toRem');
+
 module.exports = [
   {
     id: 1,
@@ -110,20 +112,33 @@ module.exports = [
     ],
     fonts: ['Roboto'],
     color_palette: ['#3CB27B', '#4F008C', '#FFFFFF'],
-    icons: [
-      'BookX_icon_01',
-      'BookX_icon_02',
-      'BookX_icon_03',
-      'BookX_icon_04',
-      'BookX_icon_05',
-      'BookX_icon_06',
-      'BookX_icon_07',
-      'BookX_icon_08',
-      'BookX_icon_09',
-      'BookX_icon_10',
-      'BookX_icon_11',
-      'BookX_icon_12',
-    ],
+    icons: {
+      container_styles: {
+        display: 'flex',
+        gap: '1rem',
+        flexFlow: 'row wrap',
+        width: '100%',
+        marginBlockEnd: 50,
+      },
+      icon_picture_styles: {
+        width: 'calc((100% - 4rem) / 5)',
+      },
+      icon_image_styles: {
+        width: '100%',
+      },
+      filenames: [
+        'BookX_icon_01',
+        'BookX_icon_02',
+        'BookX_icon_03',
+        'BookX_icon_04',
+        'BookX_icon_05',
+        'BookX_icon_06',
+        'BookX_icon_07',
+        'BookX_icon_08',
+        'BookX_icon_09',
+        'BookX_icon_10',
+      ],
+    },
     button_icons: [
       'BookX_button_icon_01',
       'BookX_button_icon_02',

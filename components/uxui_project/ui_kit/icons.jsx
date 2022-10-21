@@ -1,17 +1,30 @@
-import { arrayOf, string } from 'prop-types';
+import {
+  arrayOf,
+  shape,
+  string,
+  number,
+  objectOf,
+  oneOfType,
+} from 'prop-types';
 import WebpPicture from 'components/common/WebpPicture';
-import styles from './ui_kit.module.scss';
 
 const Icons = ({ icons }) => {
-  const shouldRenderIcons = icons && icons.length > 0;
+  if (!icons) return null;
+  const {
+    container_styles,
+    icon_picture_styles,
+    icon_image_styles,
+    filenames,
+  } = icons;
+  const shouldRenderIcons = filenames && filenames.length > 0;
   if (!shouldRenderIcons) return null;
 
   return (
-    <div className={styles.icons}>
-      {icons.map((filename) => (
+    <div style={container_styles}>
+      {filenames.map((filename) => (
         <WebpPicture
-          containerClassName={styles.icon_picture}
-          imgClassName={styles.icon_image}
+          containerStyles={icon_picture_styles}
+          imgStyles={icon_image_styles}
           pathname="/images/portfolio/uxui/"
           filename={filename}
           alt={filename}
@@ -23,11 +36,16 @@ const Icons = ({ icons }) => {
 };
 
 Icons.propTypes = {
-  icons: arrayOf(string),
+  icons: shape({
+    container_styles: objectOf(oneOfType([string, number])),
+    icon_picture_styles: objectOf(oneOfType([string, number])),
+    icon_image_styles: objectOf(oneOfType([string, number])),
+    filenames: arrayOf(string),
+  }),
 };
 
 Icons.defaultProps = {
-  icons: [],
+  icons: {},
 };
 
 export default Icons;

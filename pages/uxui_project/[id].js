@@ -1,6 +1,13 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { arrayOf, shape, string, number, oneOfType } from 'prop-types';
+import {
+  arrayOf,
+  shape,
+  string,
+  number,
+  objectOf,
+  oneOfType,
+} from 'prop-types';
 import { useRouter } from 'next/router';
 import GoogleFontLoader from 'react-google-font-loader';
 import Header from 'components/common/header';
@@ -95,7 +102,12 @@ Project.propTypes = {
       user_flow: arrayOf(string),
       fonts: arrayOf(string),
       color_palette: arrayOf(string),
-      icons: arrayOf(string),
+      icons: shape({
+        container_styles: objectOf(oneOfType([string, number])),
+        icon_picture_styles: objectOf(oneOfType([string, number])),
+        icon_image_styles: objectOf(oneOfType([string, number])),
+        filenames: arrayOf(string),
+      }),
       button_icons: arrayOf(string),
       screens: arrayOf(
         shape({

@@ -1,4 +1,11 @@
-import { arrayOf, shape, string, oneOfType } from 'prop-types';
+import {
+  arrayOf,
+  shape,
+  string,
+  number,
+  objectOf,
+  oneOfType,
+} from 'prop-types';
 import LogoImage from '../logoImage';
 import SummarySection from '../summary_section';
 import Metadata from '../metadata';
@@ -107,7 +114,12 @@ Main.propTypes = {
     user_flow: arrayOf(string),
     fonts: arrayOf(string),
     color_palette: arrayOf(string),
-    icons: arrayOf(string),
+    icons: shape({
+      container_styles: objectOf(oneOfType([string, number])),
+      icon_picture_styles: objectOf(oneOfType([string, number])),
+      icon_image_styles: objectOf(oneOfType([string, number])),
+      filenames: arrayOf(string),
+    }),
     button_icons: arrayOf(string),
     screens: arrayOf(
       shape({
