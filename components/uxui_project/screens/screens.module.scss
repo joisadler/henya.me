@@ -1,5 +1,13 @@
 @import 'utils';
 
+.screens {
+  margin-block-start: toRem(50);
+
+  @include breakpoint(desktop) {
+    margin-block-start: toRem(100);
+  }
+}
+
 .screen_container {
   display: flex;
   flex-wrap: nowrap;

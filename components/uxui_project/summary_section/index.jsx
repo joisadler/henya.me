@@ -1,5 +1,5 @@
 import { string, arrayOf } from 'prop-types';
-import { desktop_breakpoint } from 'config/constants';
+import { desktop_breakpoint, maastricht_blue } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
 import WebpAnimation from 'components/common/WebpAnimation';
 import styles from './summary_section.module.scss';
@@ -39,7 +39,12 @@ But you can take a look at the `}
   );
 };
 
-const SummarySection = ({ summary, name, preview_animation_filename }) => {
+const SummarySection = ({
+  summary,
+  name,
+  preview_animation_filename,
+  summary_bg_color,
+}) => {
   const isDesktop = useMediaQuery({
     minWidth: desktop_breakpoint,
   });
@@ -64,12 +69,16 @@ const SummarySection = ({ summary, name, preview_animation_filename }) => {
           </a>
         </section>
       )}
-      <div className={styles.background}>
+      <div
+        className={styles.background}
+        style={{ '--background-color': summary_bg_color }}
+      >
         <section
           className={styles.container}
           style={{
             marginBlockStart:
               !isDesktop && !shouldRenderPreviewAnimation ? 20 : 0,
+            '--background-color': summary_bg_color,
           }}
         >
           <Summary summary={summary} name={name} />
@@ -108,6 +117,7 @@ Summary.defaultProps = {
 
 SummarySection.propTypes = {
   summary: arrayOf(string),
+  summary_bg_color: string,
   name: string,
   preview_animation_filename: string,
 };
@@ -116,6 +126,7 @@ SummarySection.defaultProps = {
   summary: [],
   name: '',
   preview_animation_filename: '',
+  summary_bg_color: maastricht_blue,
 };
 
 export default SummarySection;

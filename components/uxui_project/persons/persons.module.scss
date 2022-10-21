@@ -4,6 +4,7 @@
   position: relative;
   max-width: $max_content_width;
   margin-inline: auto;
+  margin-block: 0 toRem(50);
 
   @include breakpoint(tablet) {
     margin-block: toRem(30) toRem(50);

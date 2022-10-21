@@ -6,6 +6,8 @@ import Persons from '../persons';
 import Problem from '../problem';
 import Solution from '../solution';
 import MainFeatures from '../main_features';
+import Wireframes from '../wireframes';
+import UserFlow from '../UserFlow';
 import UiKit from '../ui_kit';
 import Screens from '../screens';
 import FinalPrototype from '../final_prototype';
@@ -18,6 +20,7 @@ const Main = ({ project }) => {
     logo_image_filename,
     preview_animation_filename,
     summary,
+    summary_bg_color,
     roles,
     team,
     duration,
@@ -26,6 +29,8 @@ const Main = ({ project }) => {
     problem,
     solution,
     main_features,
+    wireframes,
+    user_flow,
     fonts,
     color_palette,
     icons,
@@ -45,12 +50,15 @@ const Main = ({ project }) => {
         summary={summary}
         name={name}
         preview_animation_filename={preview_animation_filename}
+        summary_bg_color={summary_bg_color}
       />
       <Metadata roles={roles} team={team} duration={duration} tools={tools} />
       <Persons persons={persons} />
       <Problem problem={problem} />
       <Solution solution={solution} />
       <MainFeatures main_features={main_features} />
+      <Wireframes wireframes={wireframes} />
+      <UserFlow user_flow={user_flow} />
       <UiKit
         name={name}
         logo_image_filename={logo_image_filename}
@@ -72,6 +80,7 @@ Main.propTypes = {
     preview_animation_filename: string,
     logo_image_filename: string,
     summary: arrayOf(string),
+    summary_bg_color: string,
     roles: arrayOf(string),
     team: arrayOf(string),
     duration: arrayOf(string),
@@ -94,6 +103,8 @@ Main.propTypes = {
     problem: arrayOf(string),
     solution: arrayOf(string),
     main_features: arrayOf(string),
+    wireframes: arrayOf(string),
+    user_flow: arrayOf(string),
     fonts: arrayOf(string),
     color_palette: arrayOf(string),
     icons: arrayOf(string),
