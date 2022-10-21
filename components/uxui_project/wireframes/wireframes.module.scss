@@ -1,0 +1,37 @@
+@import 'utils';
+
+.container {
+  margin-block-end: toRem(50);
+  max-width: $max_content_width;
+  margin-inline: auto;
+}
+
+.list {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0;
+  list-style-type: none;
+
+  @include breakpoint(tablet) {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: toRem(16);
+  }
+}
+
+.item {
+  width: 100%;
+
+  @include breakpoint(tablet) {
+    width: calc(50% - #{toRem(16)});
+  }
+
+  @include breakpoint(desktop) {
+    width: calc(25% - #{toRem(16)});
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}

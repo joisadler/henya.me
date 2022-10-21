@@ -15,12 +15,14 @@ const WebpPicture = forwardRef((props, ref) => {
     pathname && pathname.length > 0 && filename && filename.length > 0;
 
   const webpSrc = canConstructSrc ? `${pathname}${filename}.webp` : '';
-  const pngSrc = canConstructSrc ? `${pathname}${filename}.jpg` : '';
+  const pngSrc = canConstructSrc ? `${pathname}${filename}.png` : '';
+  const jpgSrc = canConstructSrc ? `${pathname}${filename}.jpg` : '';
 
   return (
     <picture className={containerClassName} {...restProps} ref={ref}>
       <source srcSet={webpSrc} type="image/webp" />
       <source srcSet={pngSrc} type="image/png" />
+      <source srcSet={jpgSrc} type="image/jpg" />
       <img className={imgClassName} src={pngSrc} alt={alt || filename} />
     </picture>
   );
