@@ -33,12 +33,17 @@
   }
 
   @include breakpoint(desktop) {
+    gap: toRem(36);
     &[data-device-type="mobile"] {
       width: calc(100% - #{$preview_animation_width_mobile});
     }
     &[data-device-type="desktop"] {
       width: calc(100% - #{$preview_animation_width_desktop});
     }
+  }
+
+  @include breakpoint(macbook_pro) {
+    gap: toRem(70);
   }
 }
 
@@ -76,6 +81,7 @@
   font-size: toRem(16);
   line-height: 125%;
   color: $black;
+  white-space: pre;
 
   @include breakpoint(tablet) {
     width: 75%;

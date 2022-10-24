@@ -7,7 +7,7 @@ const Tools = ({ tools }) => {
 
   return (
     <div className={styles.metadata_item}>
-      <h2 className={styles.metadata_title}>Tools</h2>
+      <h2 className={styles.metadata_title}>Tools:</h2>
       {tools.map((tool) => (
         <p className={styles.metadata_text} key={tool}>
           {tool}

@@ -20,14 +20,10 @@ const Metadata = ({ roles, team, duration, tools, device_type }) => {
   return (
     <section className={styles.metadata_container}>
       <div className={styles.metadata} data-device-type={device_type}>
-        <Roles roles={roles} />
-        {(shouldRenderTeam || shouldRenderDuration) && (
-          <div>
-            <Team team={team} />
-            <Duration duration={duration} />
-          </div>
-        )}
-        <Tools tools={tools} />
+        {shouldRenderRoles && <Roles roles={roles} />}
+        {shouldRenderTeam && <Team team={team} />}
+        {shouldRenderDuration && <Duration duration={duration} />}
+        {shouldRenderTools && <Tools tools={tools} />}
       </div>
     </section>
   );

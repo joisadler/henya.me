@@ -18,7 +18,8 @@ const LogoImage = ({ name, short_about, logo_image_filename, device_type }) => {
         />
       )}
       <h1 className={styles.heading} data-device-type={device_type}>
-        {name}&nbsp;&mdash;&nbsp;{short_about}
+        {name}&nbsp;&mdash;&nbsp;
+        {short_about.slice(0, 1).toLowerCase() + short_about.slice(1)}
       </h1>
     </section>
   );
