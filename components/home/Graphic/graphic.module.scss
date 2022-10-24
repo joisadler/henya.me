@@ -106,15 +106,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  aspect-ratio: 1.76;
   border-radius: $border_radius_medium;
   overflow: hidden;
+  background-color: $background_gray;
+
+  &[data-fullscreen-enabled="true"] img {
+    object-fit: contain;
+  }
+
+  @include breakpoint(desktop) {
+    aspect-ratio: 1.76;
+  }
 }
 
 .project_preview_image {
   width: 100%;
+  height: 100%;
   border-radius: $border_radius_medium;
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-  object-fit: contain;
+  object-fit: cover;
+
+  @include breakpoint(desktop) {
+    object-fit: cover;
+  }
 }
 
 .project_name {
@@ -228,6 +244,8 @@
 
 .project_preview_image_enlarged {
   width: 100%;
+  height: 100%;
   border-radius: $border_radius_medium;
   object-fit: contain;
+  max-height: 80vh;
 }

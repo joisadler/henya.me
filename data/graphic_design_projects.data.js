@@ -49,4 +49,14 @@ module.exports = [
     name: 'Wall Calendar',
     preview_image_filename: 'Calendar',
   },
+  {
+    id: 11,
+    name: 'Breaking news - gif',
+    preview_image_filename: 'Breaking_news',
+  },
+  {
+    id: 12,
+    name: 'Coindaddy - gif',
+    preview_image_filename: 'Coindaddy',
+  },
 ];
