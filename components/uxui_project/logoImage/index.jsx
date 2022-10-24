@@ -2,7 +2,7 @@ import { string } from 'prop-types';
 import WebpPicture from 'components/common/WebpPicture';
 import styles from './logo_image.module.scss';
 
-const LogoImage = ({ name, short_about, logo_image_filename }) => {
+const LogoImage = ({ name, short_about, logo_image_filename, device_type }) => {
   const isLogoImageShown =
     logo_image_filename && logo_image_filename.length > 0;
 
@@ -17,7 +17,7 @@ const LogoImage = ({ name, short_about, logo_image_filename }) => {
           alt={name}
         />
       )}
-      <h1 className={styles.heading}>
+      <h1 className={styles.heading} data-device-type={device_type}>
         {name}&nbsp;&mdash;&nbsp;{short_about}
       </h1>
     </section>
@@ -25,6 +25,7 @@ const LogoImage = ({ name, short_about, logo_image_filename }) => {
 };
 
 LogoImage.propTypes = {
+  device_type: string.isRequired,
   name: string.isRequired,
   short_about: string.isRequired,
   logo_image_filename: string,

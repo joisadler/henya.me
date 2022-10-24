@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { string } from 'prop-types';
+import { string, number, objectOf, oneOfType } from 'prop-types';
 
 const WebpPicture = forwardRef((props, ref) => {
   const {
@@ -8,6 +8,8 @@ const WebpPicture = forwardRef((props, ref) => {
     alt,
     containerClassName,
     imgClassName,
+    containerStyles,
+    imgStyles,
     ...restProps
   } = props;
 
@@ -19,11 +21,21 @@ const WebpPicture = forwardRef((props, ref) => {
   const jpgSrc = canConstructSrc ? `${pathname}${filename}.jpg` : '';
 
   return (
-    <picture className={containerClassName} {...restProps} ref={ref}>
+    <picture
+      className={containerClassName}
+      style={containerStyles}
+      {...restProps}
+      ref={ref}
+    >
       <source srcSet={webpSrc} type="image/webp" />
       <source srcSet={pngSrc} type="image/png" />
       <source srcSet={jpgSrc} type="image/jpg" />
-      <img className={imgClassName} src={pngSrc} alt={alt || filename} />
+      <img
+        className={imgClassName}
+        style={imgStyles}
+        src={pngSrc}
+        alt={alt || filename}
+      />
     </picture>
   );
 });
@@ -34,12 +46,16 @@ WebpPicture.propTypes = {
   alt: string,
   containerClassName: string,
   imgClassName: string,
+  containerStyles: objectOf(oneOfType([string, number])),
+  imgStyles: objectOf(oneOfType([string, number])),
 };
 
 WebpPicture.defaultProps = {
   alt: '',
   containerClassName: '',
   imgClassName: '',
+  containerStyles: {},
+  imgStyles: {},
 };
 
 export default WebpPicture;

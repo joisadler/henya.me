@@ -1,6 +1,7 @@
 module.exports = [
   {
     id: 1,
+    device_type: 'mobile',
     comingSoon: false,
     name: 'BookX',
     preview_image_filename: 'BookX_preview_image',
@@ -110,20 +111,33 @@ module.exports = [
     ],
     fonts: ['Roboto'],
     color_palette: ['#3CB27B', '#4F008C', '#FFFFFF'],
-    icons: [
-      'BookX_icon_01',
-      'BookX_icon_02',
-      'BookX_icon_03',
-      'BookX_icon_04',
-      'BookX_icon_05',
-      'BookX_icon_06',
-      'BookX_icon_07',
-      'BookX_icon_08',
-      'BookX_icon_09',
-      'BookX_icon_10',
-      'BookX_icon_11',
-      'BookX_icon_12',
-    ],
+    icons: {
+      container_styles: {
+        display: 'flex',
+        gap: '1rem',
+        flexFlow: 'row wrap',
+        width: '100%',
+        marginBlockEnd: 50,
+      },
+      icon_picture_styles: {
+        width: 'calc((100% - 4rem) / 5)',
+      },
+      icon_image_styles: {
+        width: '100%',
+      },
+      filenames: [
+        'BookX_icon_01',
+        'BookX_icon_02',
+        'BookX_icon_03',
+        'BookX_icon_04',
+        'BookX_icon_05',
+        'BookX_icon_06',
+        'BookX_icon_07',
+        'BookX_icon_08',
+        'BookX_icon_09',
+        'BookX_icon_10',
+      ],
+    },
     button_icons: [
       'BookX_button_icon_01',
       'BookX_button_icon_02',
@@ -197,10 +211,11 @@ module.exports = [
   },
   {
     id: 2,
+    device_type: 'desktop',
     comingSoon: false,
     name: 'Recycle Conference',
     preview_image_filename: 'ReCon_preview_image',
-    // preview_animation_filename: 'Recon_preview_animation',
+    preview_animation_filename: 'Recon_preview_animation',
     logo_image_filename: 'ReCon_logo',
     short_about: 'Responsive website for conference',
     summary: [],
@@ -225,6 +240,7 @@ module.exports = [
   },
   {
     id: 3,
+    device_type: 'desktop',
     comingSoon: true,
     name: 'Crocoin',
     preview_image_filename: 'Crocoin_preview_image',
@@ -253,6 +269,7 @@ module.exports = [
   },
   {
     id: 4,
+    device_type: 'mobile',
     comingSoon: false,
     name: 'Sapori',
     preview_image_filename: 'Sapori_preview_image',

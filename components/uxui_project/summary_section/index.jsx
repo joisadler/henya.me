@@ -4,12 +4,12 @@ import { useMediaQuery } from 'react-responsive';
 import WebpAnimation from 'components/common/WebpAnimation';
 import styles from './summary_section.module.scss';
 
-const Summary = ({ summary, name }) => {
+const Summary = ({ summary, name, device_type }) => {
   const shouldRenderSummary = summary && summary.length > 0;
 
   if (!shouldRenderSummary)
     return (
-      <div className={styles.summary}>
+      <div className={styles.summary} data-device-type={device_type}>
         <h2 className={styles.summary_title}>Oh no!</h2>
         <p className={styles.summary_text}>
           {`The case study for the ${name} project is not yet complete.
@@ -22,7 +22,7 @@ But you can take a look at the `}
     );
 
   return (
-    <div className={styles.summary}>
+    <div className={styles.summary} data-device-type={device_type}>
       <h2 className={styles.summary_title}>Project Summary:</h2>
       {summary.map((paragraph) => (
         <p
@@ -44,6 +44,7 @@ const SummarySection = ({
   name,
   preview_animation_filename,
   summary_bg_color,
+  device_type,
 }) => {
   const isDesktop = useMediaQuery({
     minWidth: desktop_breakpoint,
@@ -53,13 +54,17 @@ const SummarySection = ({
   return (
     <>
       {!isDesktop && shouldRenderPreviewAnimation && (
-        <section className={styles.preview_animation_picture_mobile_container}>
+        <section
+          className={styles.preview_animation_picture_mobile_container}
+          data-device-type={device_type}
+        >
           <WebpAnimation
             containerClassName={styles.preview_animation_picture_mobile}
             imgClassName={styles.preview_animation_image_mobile}
             pathname="/images/portfolio/uxui/"
             filename={preview_animation_filename}
             alt={`${name} preview`}
+            data-device-type={device_type}
           />
           <a
             href="#final_prototype"
@@ -81,9 +86,12 @@ const SummarySection = ({
             '--background-color': summary_bg_color,
           }}
         >
-          <Summary summary={summary} name={name} />
+          <Summary summary={summary} name={name} device_type={device_type} />
           {isDesktop && shouldRenderPreviewAnimation && (
-            <div className={styles.preview_animation_picture_container}>
+            <div
+              className={styles.preview_animation_picture_container}
+              data-device-type={device_type}
+            >
               <WebpAnimation
                 containerClassName={styles.preview_animation_picture}
                 imgClassName={styles.preview_animation_image}
@@ -108,6 +116,7 @@ const SummarySection = ({
 Summary.propTypes = {
   summary: arrayOf(string),
   name: string,
+  device_type: string.isRequired,
 };
 
 Summary.defaultProps = {
@@ -120,6 +129,7 @@ SummarySection.propTypes = {
   summary_bg_color: string,
   name: string,
   preview_animation_filename: string,
+  device_type: string.isRequired,
 };
 
 SummarySection.defaultProps = {
