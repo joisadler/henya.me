@@ -51,12 +51,12 @@ module.exports = [
   },
   {
     id: 11,
-    name: 'Breaking news - gif',
+    name: 'Breaking news - GIF',
     preview_image_filename: 'Breaking_news',
   },
   {
     id: 12,
-    name: 'Coindaddy - gif',
+    name: 'Coindaddy - GIF',
     preview_image_filename: 'Coindaddy',
   },
 ];
