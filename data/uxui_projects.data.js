@@ -110,7 +110,7 @@ module.exports = [
       "With very minimal steps, user can search for the used book from the homepage and send request for buying or exchanging. If he can't be able to find the perfect match, user can also post a request mentioning the book name and other details. Once a match is found, user get the message and both users will be able to chat and share the location for exchanging or selling the book.",
     ],
     fonts: ['Roboto'],
-    color_palette: ['#3CB27B', '#4F008C', '#FFFFFF'],
+    color_palette: ['#3CB27B', '#4F008C', '#FFFFFF', '#000000', '#ACB1B6'],
     icons: {
       container_styles: {
         display: 'flex',
@@ -228,8 +228,8 @@ module.exports = [
     solution: [],
     main_features: [],
     wireframes: [],
-    fonts: [],
-    color_palette: [],
+    fonts: ['Barlow'],
+    color_palette: ['#26264B', '#03A01B', '#FFFFFF', '#000000'],
     icons: [],
     button_icons: [],
     screens: [],

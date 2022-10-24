@@ -108,7 +108,7 @@
 
 .color_palette {
   display: flex;
-  gap: 1rem;
+  gap: toRem(10);
   flex-flow: row wrap;
   width: 100%;
   margin-block-end: toRem(30);
@@ -121,10 +121,11 @@
 }
 
 .color {
-  width: calc((100% - 2rem) / 3);
-  aspect-ratio: 1.5/1;
+  width: calc((100% - toRem(10 * 4)) / 5);
+  aspect-ratio: 1/1;
   background-color: var(--color);
-  border: 1px solid #0C6CA5;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
 }
 
 .ui_kit_icons {

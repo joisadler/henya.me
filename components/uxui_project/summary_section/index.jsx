@@ -12,7 +12,7 @@ const Summary = ({ summary, name, device_type }) => {
       <div className={styles.summary} data-device-type={device_type}>
         <h2 className={styles.summary_title}>Oh no!</h2>
         <p className={styles.summary_text}>
-          {`The case study for the ${name} project is not yet complete.
+          {`The full case study for the ${name} project is not yet complete.
 But you can take a look at the `}
           <a href="#final_prototype" className={styles.summary_link}>
             prototype
