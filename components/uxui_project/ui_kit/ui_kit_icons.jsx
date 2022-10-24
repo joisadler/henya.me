@@ -4,7 +4,7 @@ import ButtonIcons from './button_icons';
 import styles from './ui_kit.module.scss';
 
 const UiKitIcons = ({ icons, button_icons }) => {
-  const shouldRenderIcons = icons && icons.length > 0;
+  const shouldRenderIcons = icons.filenames && icons.filenames.length > 0;
   const shouldRenderButtonIcons = button_icons && button_icons.length > 0;
   const shouldRenderUiKitIcons = shouldRenderIcons || shouldRenderButtonIcons;
   if (!shouldRenderUiKitIcons) return null;

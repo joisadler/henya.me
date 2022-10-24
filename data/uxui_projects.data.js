@@ -230,7 +230,30 @@ module.exports = [
     wireframes: [],
     fonts: ['Barlow'],
     color_palette: ['#26264B', '#03A01B', '#FFFFFF', '#000000'],
-    icons: [],
+    icons: {
+      container_styles: {
+        display: 'flex',
+        gap: '1rem',
+        flexFlow: 'row wrap',
+        width: 300,
+        marginBlock: 50,
+        marginInline: 'auto',
+      },
+      icon_picture_styles: {
+        width: 'calc((100% - 2rem) / 3)',
+      },
+      icon_image_styles: {
+        width: '100%',
+      },
+      filenames: [
+        'ReCon_icon_01',
+        'ReCon_icon_02',
+        'ReCon_icon_03',
+        'ReCon_icon_04',
+        'ReCon_icon_05',
+        'ReCon_icon_06',
+      ],
+    },
     button_icons: [],
     screens: [],
     final_prototype: {
