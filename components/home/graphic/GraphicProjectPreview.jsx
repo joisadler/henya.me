@@ -11,9 +11,10 @@ const GraphicProjectPreview = ({ preview_image_filename, name, openModal }) => {
     maxWidth: tablet_breakpoint - 1,
   });
   const fullscreenContainerRef = useRef(null);
-  const { isFullscreenAvailable, toggleFullscreen } = useFullscreen({
-    target: fullscreenContainerRef,
-  });
+  const { isFullscreenAvailable, isFullscreenEnabled, toggleFullscreen } =
+    useFullscreen({
+      target: fullscreenContainerRef,
+    });
 
   const onPreviewButtonClick = () => {
     if (isMobile && isFullscreenAvailable) {
@@ -32,6 +33,7 @@ const GraphicProjectPreview = ({ preview_image_filename, name, openModal }) => {
         pathname="/images/portfolio/graphic/"
         filename={preview_image_filename}
         alt={name}
+        data-fullscreen-enabled={isFullscreenEnabled}
       />
       <button
         type="button"

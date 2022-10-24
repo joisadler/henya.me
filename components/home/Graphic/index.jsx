@@ -39,6 +39,7 @@ const Graphic = ({ projects }) => {
         pathname="/images/portfolio/graphic/"
         filename={preview_image_filename}
         alt={name}
+        onClick={closeModal}
       />
     );
   };
