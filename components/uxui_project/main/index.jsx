@@ -22,6 +22,7 @@ import styles from './main.module.scss';
 
 const Main = ({ project }) => {
   const {
+    device_type,
     name,
     short_about,
     logo_image_filename,
@@ -52,14 +53,22 @@ const Main = ({ project }) => {
         logo_image_filename={logo_image_filename}
         name={name}
         short_about={short_about}
+        device_type={device_type}
       />
       <SummarySection
         summary={summary}
         name={name}
         preview_animation_filename={preview_animation_filename}
         summary_bg_color={summary_bg_color}
+        device_type={device_type}
       />
-      <Metadata roles={roles} team={team} duration={duration} tools={tools} />
+      <Metadata
+        roles={roles}
+        team={team}
+        duration={duration}
+        tools={tools}
+        device_type={device_type}
+      />
       <Persons persons={persons} />
       <Problem problem={problem} />
       <Solution solution={solution} />
@@ -82,6 +91,7 @@ const Main = ({ project }) => {
 
 Main.propTypes = {
   project: shape({
+    device_type: string,
     name: string.isRequired,
     short_about: string.isRequired,
     preview_animation_filename: string,

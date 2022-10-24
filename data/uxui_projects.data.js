@@ -1,8 +1,7 @@
-const toRem = require('../utils/toRem');
-
 module.exports = [
   {
     id: 1,
+    device_type: 'mobile',
     comingSoon: false,
     name: 'BookX',
     preview_image_filename: 'BookX_preview_image',
@@ -212,10 +211,11 @@ module.exports = [
   },
   {
     id: 2,
+    device_type: 'desktop',
     comingSoon: false,
     name: 'Recycle Conference',
     preview_image_filename: 'ReCon_preview_image',
-    // preview_animation_filename: 'Recon_preview_animation',
+    preview_animation_filename: 'Recon_preview_animation',
     logo_image_filename: 'ReCon_logo',
     short_about: 'Responsive website for conference',
     summary: [],
@@ -240,6 +240,7 @@ module.exports = [
   },
   {
     id: 3,
+    device_type: 'desktop',
     comingSoon: true,
     name: 'Crocoin',
     preview_image_filename: 'Crocoin_preview_image',
@@ -268,6 +269,7 @@ module.exports = [
   },
   {
     id: 4,
+    device_type: 'mobile',
     comingSoon: false,
     name: 'Sapori',
     preview_image_filename: 'Sapori_preview_image',

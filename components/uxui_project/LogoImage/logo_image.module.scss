@@ -41,10 +41,16 @@
   margin-block-end: 0;
 
   @include breakpoint(desktop) {
-    width: calc(100% - #{$preview_animation_width});
     margin-block-start: 0;
     padding-inline-end: toRem(16);
     font-size: toRem(30);
     text-align: start;
+
+    &[data-device-type="mobile"] {
+      width: calc(100% - #{$preview_animation_width_mobile});
+    }
+    &[data-device-type="desktop"] {
+      width: calc(100% - #{$preview_animation_width_desktop});
+    }
   }
 }

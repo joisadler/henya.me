@@ -33,7 +33,12 @@
   }
 
   @include breakpoint(desktop) {
-    width: calc(100% - $preview_animation_width);
+    &[data-device-type="mobile"] {
+      width: calc(100% - #{$preview_animation_width_mobile});
+    }
+    &[data-device-type="desktop"] {
+      width: calc(100% - #{$preview_animation_width_desktop});
+    }
   }
 }
 

@@ -70,6 +70,7 @@ Project.propTypes = {
   ).isRequired,
   projectsData: arrayOf(
     shape({
+      device_type: string.isRequired,
       name: string.isRequired,
       short_about: string.isRequired,
       preview_animation_filename: string,

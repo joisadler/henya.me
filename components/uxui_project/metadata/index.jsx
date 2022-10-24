@@ -5,7 +5,7 @@ import Team from './team';
 import Duration from './duration';
 import styles from './metadata.module.scss';
 
-const Metadata = ({ roles, team, duration, tools }) => {
+const Metadata = ({ roles, team, duration, tools, device_type }) => {
   const shouldRenderRoles = roles && roles.length > 0;
   const shouldRenderTeam = team && team.length > 0;
   const shouldRenderDuration = duration && duration.length > 0;
@@ -19,7 +19,7 @@ const Metadata = ({ roles, team, duration, tools }) => {
 
   return (
     <section className={styles.metadata_container}>
-      <div className={styles.metadata}>
+      <div className={styles.metadata} data-device-type={device_type}>
         <Roles roles={roles} />
         {(shouldRenderTeam || shouldRenderDuration) && (
           <div>
@@ -38,6 +38,7 @@ Metadata.propTypes = {
   team: arrayOf(string),
   duration: arrayOf(string),
   tools: arrayOf(string),
+  device_type: string.isRequired,
 };
 
 Metadata.defaultProps = {
