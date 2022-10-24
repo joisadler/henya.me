@@ -7,7 +7,7 @@ const Roles = ({ roles }) => {
 
   return (
     <div className={styles.metadata_item}>
-      <h2 className={styles.metadata_title}>Roles</h2>
+      <h2 className={styles.metadata_title}>Roles:</h2>
       {roles.map((role) => (
         <p className={styles.metadata_text} key={role}>
           {role}
