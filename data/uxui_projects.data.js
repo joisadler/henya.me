@@ -287,7 +287,12 @@ module.exports = [
     wireframes: [],
     fonts: [],
     color_palette: [],
-    icons: [],
+    icons: {
+      container_styles: {},
+      icon_picture_styles: {},
+      icon_image_styles: {},
+      filenames: [],
+    },
     button_icons: [],
     screens: [],
     final_prototype: {
@@ -316,7 +321,12 @@ module.exports = [
     wireframes: [],
     fonts: [],
     color_palette: [],
-    icons: [],
+    icons: {
+      container_styles: {},
+      icon_picture_styles: {},
+      icon_image_styles: {},
+      filenames: [],
+    },
     button_icons: [],
     screens: [],
     final_prototype: {
