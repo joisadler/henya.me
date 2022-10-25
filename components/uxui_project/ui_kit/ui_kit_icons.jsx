@@ -1,4 +1,11 @@
-import { arrayOf, string } from 'prop-types';
+import {
+  arrayOf,
+  string,
+  shape,
+  objectOf,
+  oneOfType,
+  number,
+} from 'prop-types';
 import Icons from './icons';
 import ButtonIcons from './button_icons';
 import styles from './ui_kit.module.scss';
@@ -19,7 +26,16 @@ const UiKitIcons = ({ icons, button_icons }) => {
 
 UiKitIcons.propTypes = {
   icons: arrayOf(string),
-  button_icons: arrayOf(string),
+  button_icons: shape({
+    container_styles: objectOf(oneOfType([string, number])),
+    icon_picture_common_styles: objectOf(oneOfType([string, number])),
+    icon_image_common_styles: objectOf(oneOfType([string, number])),
+    icons: shape({
+      filename: string,
+      icon_picture_styles: objectOf(oneOfType([string, number])),
+      icon_image_styles: objectOf(oneOfType([string, number])),
+    }),
+  }),
 };
 
 UiKitIcons.defaultProps = {
