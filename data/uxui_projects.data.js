@@ -362,7 +362,7 @@ module.exports = [
     comingSoon: false,
     name: 'Recycle Conference',
     preview_image_filename: 'ReCon_preview_image',
-    preview_animation_filename: 'Recon_preview_animation',
+    preview_animation_filename: 'ReCon_preview_animation',
     logo_image_filename: 'ReCon_logo',
     short_about: 'Landing page for conference',
     summary: [
@@ -446,7 +446,48 @@ module.exports = [
         },
       ],
     },
-    screens: [],
+    screens: [
+      {
+        name: 'Registration',
+        description: ['Easy ticket booking and registration'],
+        img_filename: 'ReCon_registration_screen',
+      },
+      {
+        name: 'Agenda',
+        description: ['...'],
+        img_filename: 'ReCon_agenda_screen',
+      },
+      {
+        name: 'Speakers',
+        description: ['...'],
+        img_filename: 'ReCon_speakers_screen',
+      },
+      {
+        name: 'Ticket plan',
+        description: ['...'],
+        img_filename: 'ReCon_ticket_plan_screen',
+      },
+      {
+        name: 'Sponsors',
+        description: ['...'],
+        img_filename: 'ReCon_sponsors_screen',
+      },
+      {
+        name: 'Latest news',
+        description: ['...'],
+        img_filename: 'ReCon_latest_news_screen',
+      },
+      {
+        name: 'Photo gallery',
+        description: ['...'],
+        img_filename: 'ReCon_photo_gallery_screen',
+      },
+      {
+        name: 'Place details',
+        description: ['...'],
+        img_filename: 'ReCon_place_details_screen',
+      },
+    ],
     final_prototype: {
       src: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fi0hclST61ruN69Q6SB0Jnj%2FReConference-Landing-Page%3Fpage-id%3D0%253A1%26node-id%3D0%253A2%26viewport%3D470%252C45%252C0.12%26scaling%3Dscale-down',
       device_type: 'desktop',
