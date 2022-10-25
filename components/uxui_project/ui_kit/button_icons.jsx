@@ -1,29 +1,58 @@
-import { arrayOf, string } from 'prop-types';
+import {
+  string,
+  shape,
+  objectOf,
+  arrayOf,
+  oneOfType,
+  number,
+} from 'prop-types';
 import WebpPicture from 'components/common/WebpPicture';
-import styles from './ui_kit.module.scss';
 
 const ButtonIcons = ({ button_icons }) => {
-  const shouldRenderButtonIcons = button_icons && button_icons.length > 0;
+  if (!button_icons) return null;
+  const {
+    container_styles,
+    icon_picture_common_styles,
+    icon_image_common_styles,
+    icons,
+  } = button_icons;
+  const shouldRenderButtonIcons = icons && icons.length > 0;
   if (!shouldRenderButtonIcons) return null;
-
   return (
-    <div className={styles.button_icons}>
-      {button_icons.map((filename) => (
-        <WebpPicture
-          containerClassName={styles.button_icon_picture}
-          imgClassName={styles.button_icon_image}
-          pathname="/images/portfolio/uxui/"
-          filename={filename}
-          alt={filename}
-          key={filename}
-        />
-      ))}
+    <div style={container_styles}>
+      {icons.map((icon) => {
+        const { filename, icon_picture_styles, icon_image_styles } = icon;
+        return (
+          <WebpPicture
+            containerStyles={{
+              ...icon_picture_common_styles,
+              ...icon_picture_styles,
+            }}
+            imgStyles={{ ...icon_image_common_styles, ...icon_image_styles }}
+            pathname="/images/portfolio/uxui/"
+            filename={filename}
+            alt={filename}
+            key={filename}
+          />
+        );
+      })}
     </div>
   );
 };
 
 ButtonIcons.propTypes = {
-  button_icons: arrayOf(string),
+  button_icons: shape({
+    container_styles: objectOf(oneOfType([string, number])),
+    icon_picture_common_styles: objectOf(oneOfType([string, number])),
+    icon_image_common_styles: objectOf(oneOfType([string, number])),
+    icons: arrayOf(
+      shape({
+        filename: string,
+        icon_picture_styles: objectOf(oneOfType([string, number])),
+        icon_image_styles: objectOf(oneOfType([string, number])),
+      })
+    ),
+  }),
 };
 
 ButtonIcons.defaultProps = {

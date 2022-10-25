@@ -126,11 +126,28 @@ Main.propTypes = {
     color_palette: arrayOf(string),
     icons: shape({
       container_styles: objectOf(oneOfType([string, number])),
-      icon_picture_styles: objectOf(oneOfType([string, number])),
-      icon_image_styles: objectOf(oneOfType([string, number])),
-      filenames: arrayOf(string),
+      icon_picture_common_styles: objectOf(oneOfType([string, number])),
+      icon_image_common_styles: objectOf(oneOfType([string, number])),
+      icons: arrayOf(
+        shape({
+          filename: string,
+          icon_picture_styles: objectOf(oneOfType([string, number])),
+          icon_image_styles: objectOf(oneOfType([string, number])),
+        })
+      ),
     }),
-    button_icons: arrayOf(string),
+    button_icons: shape({
+      container_styles: objectOf(oneOfType([string, number])),
+      icon_picture_common_styles: objectOf(oneOfType([string, number])),
+      icon_image_common_styles: objectOf(oneOfType([string, number])),
+      icons: arrayOf(
+        shape({
+          filename: string,
+          icon_picture_styles: objectOf(oneOfType([string, number])),
+          icon_image_styles: objectOf(oneOfType([string, number])),
+        })
+      ),
+    }),
     screens: arrayOf(
       shape({
         name: string.isRequired,

@@ -121,31 +121,176 @@ module.exports = [
         width: '100%',
         marginBlockEnd: 50,
       },
-      icon_picture_styles: {
+      icon_picture_common_styles: {
         width: 'calc((100% - 4rem) / 5)',
       },
-      icon_image_styles: {
+      icon_image_common_styles: {
         width: '100%',
       },
-      filenames: [
-        'BookX_icon_01',
-        'BookX_icon_02',
-        'BookX_icon_03',
-        'BookX_icon_04',
-        'BookX_icon_05',
-        'BookX_icon_06',
-        'BookX_icon_07',
-        'BookX_icon_08',
-        'BookX_icon_09',
-        'BookX_icon_10',
+      icons: [
+        {
+          filename: 'BookX_icon_01',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_02',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_03',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_04',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_05',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_06',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_07',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_08',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_09',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_10',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
       ],
     },
-    button_icons: [
-      'BookX_button_icon_01',
-      'BookX_button_icon_02',
-      'BookX_button_icon_03',
-      'BookX_button_icon_04',
-    ],
+    button_icons: {
+      container_styles: {
+        display: 'flex',
+        flexFlow: 'row wrap',
+        width: '100%',
+        marginBlockEnd: 50,
+      },
+      icon_picture_common_styles: {
+        width: 'calc((100% - 110px) / 6)',
+        marginBlockEnd: 10,
+      },
+      icon_image_common_styles: {
+        width: '100%',
+      },
+      icons: [
+        {
+          filename: 'BookX_button_icon_01',
+          icon_picture_styles: {
+            marginInlineEnd: 10,
+          },
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_02',
+          icon_picture_styles: {
+            marginInlineEnd: 40,
+          },
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_03',
+          icon_picture_styles: {
+            marginInlineEnd: 10,
+          },
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_04',
+          icon_picture_styles: {
+            marginInlineEnd: 40,
+          },
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_05',
+          icon_picture_styles: {
+            marginInlineEnd: 10,
+          },
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_06',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_07',
+          icon_picture_styles: {
+            marginInlineEnd: 10,
+          },
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_08',
+          icon_picture_styles: {
+            marginInlineEnd: 40,
+          },
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_09',
+          icon_picture_styles: {
+            marginInlineEnd: 10,
+          },
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_10',
+          icon_picture_styles: {
+            marginInlineEnd: 40,
+          },
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_11',
+          icon_picture_styles: {
+            marginInlineEnd: 10,
+          },
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_12',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_13',
+          icon_picture_styles: {
+            marginInlineEnd: 10,
+          },
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_button_icon_14',
+          icon_picture_styles: {
+            marginInlineEnd: 40,
+          },
+          icon_image_styles: {},
+        },
+      ],
+    },
     screens: [
       {
         name: 'Sign up screen',
@@ -244,22 +389,51 @@ module.exports = [
         marginBlock: 50,
         marginInline: 'auto',
       },
-      icon_picture_styles: {
+      icon_picture_common_styles: {
         width: 'calc((100% - 2rem) / 3)',
       },
-      icon_image_styles: {
+      icon_image_common_styles: {
         width: '100%',
       },
-      filenames: [
-        'ReCon_icon_01',
-        'ReCon_icon_02',
-        'ReCon_icon_03',
-        'ReCon_icon_04',
-        'ReCon_icon_05',
-        'ReCon_icon_06',
+      icons: [
+        {
+          filename: 'ReCon_icon_01',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'ReCon_icon_02',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'ReCon_icon_03',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'ReCon_icon_04',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'ReCon_icon_05',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'ReCon_icon_06',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
       ],
     },
-    button_icons: [],
+    button_icons: {
+      container_styles: {},
+      icon_picture_common_styles: {},
+      icon_image_common_styles: {},
+      icons: [],
+    },
     screens: [],
     final_prototype: {
       src: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fi0hclST61ruN69Q6SB0Jnj%2FReConference-Landing-Page%3Fpage-id%3D0%253A1%26node-id%3D0%253A2%26viewport%3D470%252C45%252C0.12%26scaling%3Dscale-down',
@@ -291,9 +465,14 @@ module.exports = [
       container_styles: {},
       icon_picture_styles: {},
       icon_image_styles: {},
-      filenames: [],
+      icons: [],
     },
-    button_icons: [],
+    button_icons: {
+      container_styles: {},
+      icon_picture_common_styles: {},
+      icon_image_common_styles: {},
+      icons: [],
+    },
     screens: [],
     final_prototype: {
       src: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F8jTnR5UoBdBjuovsZJDnNt%2FDesktop%3Fnode-id%3D108%253A2397',
@@ -325,9 +504,14 @@ module.exports = [
       container_styles: {},
       icon_picture_styles: {},
       icon_image_styles: {},
-      filenames: [],
+      icons: [],
     },
-    button_icons: [],
+    button_icons: {
+      container_styles: {},
+      icon_picture_common_styles: {},
+      icon_image_common_styles: {},
+      icons: [],
+    },
     screens: [],
     final_prototype: {
       src: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FWh9OQHPZEzxmqG1NttVi0v%2FItalian-restaurant%3Fpage-id%3D0%253A1%26node-id%3D208%253A3867%26viewport%3D867%252C871%252C0.11%26scaling%3Dscale-down%26starting-point-node-id%3D208%253A3867',
