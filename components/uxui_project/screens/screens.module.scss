@@ -14,17 +14,16 @@
   align-items: center;
   width: 100%;
   margin: auto;
-  max-width: 800px;
 
   &:has(img[src]:not([src=""])) {
-    margin-block: toRem(50);
+    margin-block: toRem(100);
   }
 
   @include breakpoint(tablet) {
     width: 90%;
   }
   @include breakpoint(desktop) {
-    width: 60%;
+    width: 100%;
   }
 
   &:nth-child(odd) {
@@ -33,23 +32,40 @@
       transform: matrix(0.98, -0.17, 0.17, 0.98, 50, 0);
     }
     @include breakpoint(tablet) {
+      flex-direction: row;
+      & .screen_picture {
+        display: flex;
+        justify-content: flex-start;
+      }
       & .screen_image {
         transform: matrix(0.98, -0.17, 0.17, 0.98, 0, 0);
       }
-      flex-direction: row;
     }
   }
 
   &:nth-child(even) {
     flex-direction: column;
+    & .screen_picture {
+      justify-content: flex-end;
+    }
     & .screen_image {
       transform: matrix(0.98, 0.17, -0.17, 0.98, 50, 0);
     }
     @include breakpoint(tablet) {
       flex-direction: row-reverse;
+      & .screen_picture {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 
+  &[data-device-type="mobile"] {
+    max-width: 800px;
+  }
+  &[data-device-type="desktop"] {
+    max-width: $max_content_width;
+  }
 }
 
 .screen_picture {
@@ -61,6 +77,19 @@
     width: 50%;
     margin-block-end: 0;
   };
+
+  &[data-device-type="mobile"] {
+    @include breakpoint(tablet) {
+      width: 50%;
+      margin-block-end: 0;
+    };
+  }
+  &[data-device-type="desktop"] {
+    @include breakpoint(tablet) {
+      width: 65%;
+      margin-block-end: 0;
+    };
+  }
 }
 
 .screen_image {
@@ -70,8 +99,15 @@
 .screen_info {
   width: 100%;
 
-  @include breakpoint(tablet) {
-    width: 40%;
+  &[data-device-type="mobile"] {
+    @include breakpoint(tablet) {
+      width: 40%;
+    };
+  }
+  &[data-device-type="desktop"] {
+    @include breakpoint(tablet) {
+      width: 35%;
+    };
   }
 }
 

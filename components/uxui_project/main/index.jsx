@@ -83,7 +83,7 @@ const Main = ({ project }) => {
         button_icons={button_icons}
         color_palette={color_palette}
       />
-      <Screens screens={screens} />
+      <Screens screens={screens} device_type={device_type} />
       <FinalPrototype final_prototype={final_prototype} />
     </main>
   );

@@ -294,7 +294,9 @@ module.exports = [
     screens: [
       {
         name: 'Sign up screen',
-        description: ['Easy signing up/in through social networks or as usual'],
+        description: [
+          'Easy signing up/in through social networks or as usual.',
+        ],
         img_filename: 'BookX_signup_screen',
       },
       {
@@ -317,9 +319,9 @@ module.exports = [
         description: [
           'You have three options:',
           [
-            'Add the book details by yourself',
-            'Scan the code that printed on the book',
-            'Find in Google',
+            'Add the book details by yourself.',
+            'Scan the code that printed on the book.',
+            'Find in Google.',
           ],
         ],
         img_filename: 'BookX_add_book_screen',
@@ -327,7 +329,7 @@ module.exports = [
       {
         name: 'Book screen',
         description: [
-          'For each book there is a page with all book details and short part from the book',
+          'For each book there is a page with all book details and short part from the book.',
         ],
         img_filename: 'BookX_book_screen',
       },
@@ -346,7 +348,7 @@ module.exports = [
       {
         name: "Book giver's page",
         description: [
-          'On this page user can see details of the book giver and the additional books he/she gives away',
+          'On this page user can see details of the book giver and the additional books he/she gives away.',
         ],
         img_filename: 'BookX_book_giver_screen',
       },
@@ -362,7 +364,7 @@ module.exports = [
     comingSoon: false,
     name: 'Recycle Conference',
     preview_image_filename: 'ReCon_preview_image',
-    preview_animation_filename: 'Recon_preview_animation',
+    preview_animation_filename: 'ReCon_preview_animation',
     logo_image_filename: 'ReCon_logo',
     short_about: 'Landing page for conference',
     summary: [
@@ -446,7 +448,54 @@ module.exports = [
         },
       ],
     },
-    screens: [],
+    screens: [
+      {
+        name: 'Registration',
+        description: ['Easy ticket booking and registration.'],
+        img_filename: 'ReCon_registration_screen',
+      },
+      {
+        name: 'Agenda',
+        description: ['Description of the conference and its details.'],
+        img_filename: 'ReCon_agenda_screen',
+      },
+      {
+        name: 'Speakers',
+        description: ['Some important details about attending speakers.'],
+        img_filename: 'ReCon_speakers_screen',
+      },
+      {
+        name: 'Ticket plan',
+        description: [
+          'Participant can choose the price and attendence that suits him.',
+        ],
+        img_filename: 'ReCon_ticket_plan_screen',
+      },
+      {
+        name: 'Sponsors',
+        description: [
+          'List of all sponsors divided depending on on their contribution in the conference',
+        ],
+        img_filename: 'ReCon_sponsors_screen',
+      },
+      {
+        name: 'Latest news',
+        description: ['Latest news and updates from Eco world.'],
+        img_filename: 'ReCon_latest_news_screen',
+      },
+      {
+        name: 'Photo gallery',
+        description: ['Photos from previous years'],
+        img_filename: 'ReCon_photo_gallery_screen',
+      },
+      {
+        name: 'Place details',
+        description: [
+          'Map and conference details including phone, address and email',
+        ],
+        img_filename: 'ReCon_place_details_screen',
+      },
+    ],
     final_prototype: {
       src: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fi0hclST61ruN69Q6SB0Jnj%2FReConference-Landing-Page%3Fpage-id%3D0%253A1%26node-id%3D0%253A2%26viewport%3D470%252C45%252C0.12%26scaling%3Dscale-down',
       device_type: 'desktop',
