@@ -1,4 +1,11 @@
-import { string, shape, objectOf, oneOfType, number } from 'prop-types';
+import {
+  string,
+  shape,
+  objectOf,
+  arrayOf,
+  oneOfType,
+  number,
+} from 'prop-types';
 import WebpPicture from 'components/common/WebpPicture';
 
 const ButtonIcons = ({ button_icons }) => {
@@ -38,16 +45,18 @@ ButtonIcons.propTypes = {
     container_styles: objectOf(oneOfType([string, number])),
     icon_picture_common_styles: objectOf(oneOfType([string, number])),
     icon_image_common_styles: objectOf(oneOfType([string, number])),
-    icons: shape({
-      filename: string,
-      icon_picture_styles: objectOf(oneOfType([string, number])),
-      icon_image_styles: objectOf(oneOfType([string, number])),
-    }),
+    icons: arrayOf(
+      shape({
+        filename: string,
+        icon_picture_styles: objectOf(oneOfType([string, number])),
+        icon_image_styles: objectOf(oneOfType([string, number])),
+      })
+    ),
   }),
 };
 
 ButtonIcons.defaultProps = {
-  button_icons: {},
+  button_icons: [],
 };
 
 export default ButtonIcons;

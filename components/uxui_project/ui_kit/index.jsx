@@ -48,19 +48,27 @@ UiKit.propTypes = {
   fonts: arrayOf(string),
   icons: shape({
     container_styles: objectOf(oneOfType([string, number])),
-    icon_picture_styles: objectOf(oneOfType([string, number])),
-    icon_image_styles: objectOf(oneOfType([string, number])),
-    filenames: arrayOf(string),
+    icon_picture_common_styles: objectOf(oneOfType([string, number])),
+    icon_image_common_styles: objectOf(oneOfType([string, number])),
+    icons: arrayOf(
+      shape({
+        filename: string,
+        icon_picture_styles: objectOf(oneOfType([string, number])),
+        icon_image_styles: objectOf(oneOfType([string, number])),
+      })
+    ),
   }),
   button_icons: shape({
     container_styles: objectOf(oneOfType([string, number])),
     icon_picture_common_styles: objectOf(oneOfType([string, number])),
     icon_image_common_styles: objectOf(oneOfType([string, number])),
-    icons: shape({
-      filename: string,
-      icon_picture_styles: objectOf(oneOfType([string, number])),
-      icon_image_styles: objectOf(oneOfType([string, number])),
-    }),
+    icons: arrayOf(
+      shape({
+        filename: string,
+        icon_picture_styles: objectOf(oneOfType([string, number])),
+        icon_image_styles: objectOf(oneOfType([string, number])),
+      })
+    ),
   }),
   color_palette: arrayOf(string),
 };

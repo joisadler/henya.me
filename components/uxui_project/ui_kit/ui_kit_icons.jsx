@@ -11,8 +11,9 @@ import ButtonIcons from './button_icons';
 import styles from './ui_kit.module.scss';
 
 const UiKitIcons = ({ icons, button_icons }) => {
-  const shouldRenderIcons = icons.filenames && icons.filenames.length > 0;
-  const shouldRenderButtonIcons = button_icons && button_icons.length > 0;
+  const shouldRenderIcons = icons.icons && icons.icons.length > 0;
+  const shouldRenderButtonIcons =
+    button_icons.icons && button_icons.icons.length > 0;
   const shouldRenderUiKitIcons = shouldRenderIcons || shouldRenderButtonIcons;
   if (!shouldRenderUiKitIcons) return null;
 
@@ -25,16 +26,29 @@ const UiKitIcons = ({ icons, button_icons }) => {
 };
 
 UiKitIcons.propTypes = {
-  icons: arrayOf(string),
+  icons: shape({
+    container_styles: objectOf(oneOfType([string, number])),
+    icon_picture_common_styles: objectOf(oneOfType([string, number])),
+    icon_image_common_styles: objectOf(oneOfType([string, number])),
+    icons: arrayOf(
+      shape({
+        filename: string,
+        icon_picture_styles: objectOf(oneOfType([string, number])),
+        icon_image_styles: objectOf(oneOfType([string, number])),
+      })
+    ),
+  }),
   button_icons: shape({
     container_styles: objectOf(oneOfType([string, number])),
     icon_picture_common_styles: objectOf(oneOfType([string, number])),
     icon_image_common_styles: objectOf(oneOfType([string, number])),
-    icons: shape({
-      filename: string,
-      icon_picture_styles: objectOf(oneOfType([string, number])),
-      icon_image_styles: objectOf(oneOfType([string, number])),
-    }),
+    icons: arrayOf(
+      shape({
+        filename: string,
+        icon_picture_styles: objectOf(oneOfType([string, number])),
+        icon_image_styles: objectOf(oneOfType([string, number])),
+      })
+    ),
   }),
 };
 

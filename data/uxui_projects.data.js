@@ -121,23 +121,63 @@ module.exports = [
         width: '100%',
         marginBlockEnd: 50,
       },
-      icon_picture_styles: {
+      icon_picture_common_styles: {
         width: 'calc((100% - 4rem) / 5)',
       },
-      icon_image_styles: {
+      icon_image_common_styles: {
         width: '100%',
       },
-      filenames: [
-        'BookX_icon_01',
-        'BookX_icon_02',
-        'BookX_icon_03',
-        'BookX_icon_04',
-        'BookX_icon_05',
-        'BookX_icon_06',
-        'BookX_icon_07',
-        'BookX_icon_08',
-        'BookX_icon_09',
-        'BookX_icon_10',
+      icons: [
+        {
+          filename: 'BookX_icon_01',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_02',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_03',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_04',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_05',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_06',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_07',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_08',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_09',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'BookX_icon_10',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
       ],
     },
     button_icons: {
@@ -349,19 +389,43 @@ module.exports = [
         marginBlock: 50,
         marginInline: 'auto',
       },
-      icon_picture_styles: {
+      icon_picture_common_styles: {
         width: 'calc((100% - 2rem) / 3)',
       },
-      icon_image_styles: {
+      icon_image_common_styles: {
         width: '100%',
       },
-      filenames: [
-        'ReCon_icon_01',
-        'ReCon_icon_02',
-        'ReCon_icon_03',
-        'ReCon_icon_04',
-        'ReCon_icon_05',
-        'ReCon_icon_06',
+      icons: [
+        {
+          filename: 'ReCon_icon_01',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'ReCon_icon_02',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'ReCon_icon_03',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'ReCon_icon_04',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'ReCon_icon_05',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+        {
+          filename: 'ReCon_icon_06',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
       ],
     },
     button_icons: {
@@ -401,7 +465,7 @@ module.exports = [
       container_styles: {},
       icon_picture_styles: {},
       icon_image_styles: {},
-      filenames: [],
+      icons: [],
     },
     button_icons: {
       container_styles: {},
@@ -440,7 +504,7 @@ module.exports = [
       container_styles: {},
       icon_picture_styles: {},
       icon_image_styles: {},
-      filenames: [],
+      icons: [],
     },
     button_icons: {
       container_styles: {},
