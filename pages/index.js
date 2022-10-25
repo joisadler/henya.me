@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { arrayOf, shape, string, number, bool } from 'prop-types';
@@ -9,6 +9,7 @@ import Main from 'components/home/main';
 import UxUi from 'components/home/UxUi';
 import Graphic from 'components/home/graphic';
 import Footer from 'components/common/footer';
+import HelpUkraine from 'components/common/HelpUkraine/HelpUkraine';
 
 const Home = ({
   uxui_projects,
@@ -18,6 +19,12 @@ const Home = ({
 }) => {
   const router = useRouter();
   const pressCountRef = useRef(0);
+
+  const [isHelpUkraineShown, setIsHelpUkraineShown] = useState(true);
+
+  const closeHelpUkraine = () => {
+    setIsHelpUkraineShown(false);
+  };
 
   const mmmEasterEgg = (e) => {
     if (e.key === 'm') {
@@ -50,6 +57,7 @@ const Home = ({
       <UxUi projects={uxui_projects} />
       <Graphic projects={graphic_design_projects} />
       <Footer />
+      <HelpUkraine isOpen={isHelpUkraineShown} onClose={closeHelpUkraine} />
     </>
   );
 };
