@@ -1,8 +1,12 @@
 @import 'utils';
 
 .final_prototype {
-  max-width: $max_content_width;
+  max-width: 80vw;
   margin-inline: auto;
+
+  @include breakpoint(tablet) {
+    max-width: $max_content_width;
+  }
 }
 
 .title {
