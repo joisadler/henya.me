@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { shape, elementType } from 'prop-types';
 import 'normalize.css';
 import '../styles/globals.scss';

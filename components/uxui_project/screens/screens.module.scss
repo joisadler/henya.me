@@ -16,7 +16,7 @@
   margin: auto;
 
   &:has(img[src]:not([src=""])) {
-    margin-block: toRem(100);
+    margin-block: toRem(50);
   }
 
   @include breakpoint(tablet) {
@@ -24,6 +24,9 @@
   }
   @include breakpoint(desktop) {
     width: 100%;
+    &:has(img[src]:not([src=""])) {
+      margin-block: toRem(100);
+    }
   }
 
   &:nth-child(odd) {
@@ -112,7 +115,7 @@
 }
 
 .screen_name {
-  margin: 0;
+  margin-block: toRem(20) 0;
   font-family: $mulish;
   font-weight: 700;
   font-size: toRem(20);
@@ -120,6 +123,7 @@
   color: $black;
 
   @include breakpoint(desktop) {
+    margin: 0;
     font-size: toRem(32);
   }
 }
