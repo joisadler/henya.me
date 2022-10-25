@@ -429,10 +429,22 @@ module.exports = [
       ],
     },
     button_icons: {
-      container_styles: {},
-      icon_picture_common_styles: {},
-      icon_image_common_styles: {},
-      icons: [],
+      container_styles: {
+        width: 300,
+      },
+      icon_picture_common_styles: {
+        width: '100%',
+      },
+      icon_image_common_styles: {
+        width: '100%',
+      },
+      icons: [
+        {
+          filename: 'ReCon_button_icon_01',
+          icon_picture_styles: {},
+          icon_image_styles: {},
+        },
+      ],
     },
     screens: [],
     final_prototype: {
