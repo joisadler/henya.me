@@ -1,4 +1,5 @@
 import { arrayOf, string } from 'prop-types';
+import textToKey from 'utils/textToKey';
 import styles from './user_flow.module.scss';
 
 const UserFlow = ({ user_flow }) => {
@@ -8,8 +9,10 @@ const UserFlow = ({ user_flow }) => {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>UserFlow</h2>
-      {user_flow.map((p) => (
-        <p className={styles.text}>{p}</p>
+      {user_flow.map(p => (
+        <p className={styles.text} key={textToKey(p)}>
+          {p}
+        </p>
       ))}
     </section>
   );

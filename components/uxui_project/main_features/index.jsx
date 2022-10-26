@@ -1,4 +1,5 @@
 import { arrayOf, string } from 'prop-types';
+import textToKey from 'utils/textToKey';
 import styles from './main_features.module.scss';
 
 const MainFeatures = ({ main_features }) => {
@@ -8,14 +9,8 @@ const MainFeatures = ({ main_features }) => {
     <section className={styles.container}>
       <h2 className={styles.title}>The main features are:</h2>
       <ul className={styles.list}>
-        {main_features.map((feature) => (
-          <li
-            className={styles.item}
-            key={feature
-              .split(' ')
-              .map((word) => word[0])
-              .join('')}
-          >
+        {main_features.map(feature => (
+          <li className={styles.item} key={textToKey(feature)}>
             {feature}
           </li>
         ))}

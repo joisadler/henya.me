@@ -2,6 +2,7 @@ import { string, arrayOf } from 'prop-types';
 import { desktop_breakpoint, maastricht_blue } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
 import WebpAnimation from 'components/common/WebpAnimation';
+import textToKey from 'utils/textToKey';
 import styles from './summary_section.module.scss';
 
 const Summary = ({ summary, name, device_type }) => {
@@ -24,15 +25,9 @@ But you can take a look at the `}
   return (
     <div className={styles.summary} data-device-type={device_type}>
       <h2 className={styles.summary_title}>Project Summary:</h2>
-      {summary.map((paragraph) => (
-        <p
-          className={styles.summary_text}
-          key={paragraph
-            .split(' ')
-            .map((word) => word[0])
-            .join('')}
-        >
-          {paragraph}
+      {summary.map(p => (
+        <p className={styles.summary_text} key={textToKey(p)}>
+          {p}
         </p>
       ))}
     </div>
