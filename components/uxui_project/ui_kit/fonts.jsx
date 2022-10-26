@@ -8,7 +8,7 @@ const Fonts = ({ fonts }) => {
   return (
     <>
       <h3 className={styles.typography_title}>FONTS / TYPOGRAPHY</h3>
-      {fonts.map((font) => (
+      {fonts.map(font => (
         <article key={font}>
           <h4 className={styles.font_name} style={{ '--font_family': font }}>
             {font}

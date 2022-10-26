@@ -14,7 +14,7 @@ const UxUi = ({ projects }) => {
     <section id="uxui" className={styles.container}>
       <h2 className={styles.section_title}>UX/UI Design</h2>
       <ul className={styles.projects_list}>
-        {projects.map((project) => {
+        {projects.map(project => {
           const { id } = project;
           return <ProjectPreview key={id} {...project} />;
         })}

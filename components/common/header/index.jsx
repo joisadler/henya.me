@@ -46,7 +46,7 @@ const Header = ({ nav_links, transparent }) => {
     }
   }, [isMobileMenuOpen]);
 
-  const onHamburgerButtonClick = (toggled) => {
+  const onHamburgerButtonClick = toggled => {
     if (toggled) {
       showMobileMenu();
     } else {

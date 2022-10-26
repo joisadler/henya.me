@@ -32,7 +32,7 @@ export const useFirestore = () => {
     }
   };
 
-  const getDocument = async (docRef) => {
+  const getDocument = async docRef => {
     try {
       const document = await getDoc(docRef);
       return document;
@@ -85,7 +85,7 @@ export const useFirestore = () => {
     }
   };
 
-  const deleteDocument = async (docRef) => {
+  const deleteDocument = async docRef => {
     try {
       const updatedDoc = await deleteDoc(docRef);
       return updatedDoc;

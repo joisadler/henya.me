@@ -6,21 +6,21 @@ const GlobalState = ({ children }) => {
   const [state, setState] = useState(initialState);
 
   const setIsMobileMenuOpen = () => {
-    setState((prevState) => ({
+    setState(prevState => ({
       ...prevState,
       isMobileMenuOpen: true,
     }));
   };
 
   const showMobileMenu = () => {
-    setState((prevState) => ({
+    setState(prevState => ({
       ...prevState,
       isMobileMenuOpen: true,
     }));
   };
 
   const hideMobileMenu = () => {
-    setState((prevState) => ({
+    setState(prevState => ({
       ...prevState,
       isMobileMenuOpen: false,
     }));

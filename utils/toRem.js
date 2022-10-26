@@ -1,1 +1,1 @@
-export default (value) => value / 16;
+export default value => value / 16;

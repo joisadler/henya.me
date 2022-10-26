@@ -9,7 +9,7 @@ const ColorPalette = ({ color_palette }) => {
     <>
       <h3 className={styles.color_palette_title}>COLOR PALETTE</h3>
       <div className={styles.color_palette}>
-        {color_palette.map((color) => (
+        {color_palette.map(color => (
           <div
             className={styles.color}
             key={color}

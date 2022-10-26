@@ -58,7 +58,7 @@ const Graphic = ({ projects }) => {
       <div className={styles.container}>
         <h2 className={styles.section_title}>Graphic Design</h2>
         <ul className={styles.projects_list}>
-          {itemsToShow.map((project) => {
+          {itemsToShow.map(project => {
             const { id } = project;
             return (
               <ProjectPreview key={id} openModal={openModal} {...project} />
