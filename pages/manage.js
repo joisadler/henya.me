@@ -27,8 +27,8 @@ const Manage = ({ nav_links }) => {
         fieldPath: 'isAdmin',
         opStr: '==',
         value: true,
-      }).catch((e) => console.log('error:', e));
-      docs.forEach((doc) => {
+      }).catch(e => console.log('error:', e));
+      docs.forEach(doc => {
         emails.push(doc.data().email);
       });
       setManagerEmails(emails);

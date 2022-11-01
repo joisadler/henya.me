@@ -8,7 +8,7 @@ const Duration = ({ duration }) => {
   return (
     <div className={styles.metadata_item}>
       <h2 className={styles.metadata_title}>Duration:</h2>
-      {duration.map((year) => (
+      {duration.map(year => (
         <p className={styles.metadata_text} key={year}>
           {year}
         </p>

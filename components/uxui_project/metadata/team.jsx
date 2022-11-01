@@ -8,7 +8,7 @@ const Team = ({ team }) => {
   return (
     <div className={styles.metadata_item}>
       <h2 className={styles.metadata_title}>Team:</h2>
-      {team.map((teammate) => (
+      {team.map(teammate => (
         <p className={styles.metadata_text} key={teammate}>
           {teammate}
         </p>

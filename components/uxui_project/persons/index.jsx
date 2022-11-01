@@ -1,5 +1,6 @@
 import { arrayOf, shape, string } from 'prop-types';
 import WebpPicture from 'components/common/WebpPicture';
+import textToKey from 'utils/textToKey';
 import styles from './persons.module.scss';
 
 const Persons = ({ persons }) => {
@@ -8,7 +9,7 @@ const Persons = ({ persons }) => {
 
   return (
     <section className={styles.container}>
-      {persons.map((person) => {
+      {persons.map(person => {
         const {
           image_filename,
           name,
@@ -41,14 +42,8 @@ const Persons = ({ persons }) => {
             </div>
             <q className={styles.quote}>{`"${quote}"`}</q>
             <div className={styles.about}>
-              {about.map((p) => (
-                <p
-                  key={p
-                    .split(' ')
-                    .map((word) => word[0])
-                    .join('')}
-                  className={styles.about_paragraph}
-                >
+              {about.map(p => (
+                <p key={textToKey(p)} className={styles.about_paragraph}>
                   {p}
                 </p>
               ))}
@@ -56,7 +51,7 @@ const Persons = ({ persons }) => {
             <div className={styles.goals}>
               <h4 className={styles.goals_title}>Goals</h4>
               <ul className={styles.goals_list}>
-                {goals.map((goal) => (
+                {goals.map(goal => (
                   <li key={goal} className={styles.goals_item}>
                     {goal}
                   </li>
@@ -66,7 +61,7 @@ const Persons = ({ persons }) => {
             <div className={styles.pain_points}>
               <h4 className={styles.pain_points_title}>Pain points</h4>
               <ul className={styles.pain_points_list}>
-                {painPoints.map((point) => (
+                {painPoints.map(point => (
                   <li key={point} className={styles.pain_points_item}>
                     {point}
                   </li>

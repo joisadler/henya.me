@@ -26,7 +26,7 @@ const Home = ({
     setIsHelpUkraineShown(false);
   };
 
-  const mmmEasterEgg = (e) => {
+  const mmmEasterEgg = e => {
     if (e.key === 'm') {
       pressCountRef.current++;
       if (pressCountRef.current === 3) {

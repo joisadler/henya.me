@@ -7,7 +7,7 @@ import {
   getUserFromCookie,
 } from './userCookie';
 
-export const mapUserData = async (user) => {
+export const mapUserData = async user => {
   const { uid, email, displayName, photoURL } = user;
   const token = await user.getIdToken(true);
   return {
@@ -31,7 +31,7 @@ const useUser = () => {
       .then(() => {
         // router.push('/');
       })
-      .catch((e) => {
+      .catch(e => {
         console.error(e);
       });
   };
@@ -39,7 +39,7 @@ const useUser = () => {
   useEffect(() => {
     if (!auth) return;
     (() => {
-      const cancelAuthListener = onIdTokenChanged(auth, async (userToken) => {
+      const cancelAuthListener = onIdTokenChanged(auth, async userToken => {
         if (userToken) {
           const userData = await mapUserData(userToken);
           setUserCookie(JSON.stringify(userData));

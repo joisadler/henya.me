@@ -1,4 +1,5 @@
 import { arrayOf, string } from 'prop-types';
+import textToKey from 'utils/textToKey';
 import styles from './solution.module.scss';
 
 const Solution = ({ solution }) => {
@@ -10,8 +11,10 @@ const Solution = ({ solution }) => {
       <h2 className={styles.title}>
         The&nbsp;<span className={styles.text_green}>Solution</span>
       </h2>
-      {solution.map((p) => (
-        <p className={styles.text}>{p}</p>
+      {solution.map(p => (
+        <p className={styles.text} key={textToKey(p)}>
+          {p}
+        </p>
       ))}
     </section>
   );

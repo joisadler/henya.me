@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import Typed from 'react-typed';
-import WebpPicture from 'components/common/WebpPicture';
+// import WebpPicture from 'components/common/WebpPicture';
+import WebpAnimation from 'components/common/WebpAnimation';
 import ScrollDownButton from 'components/common/ScrollDownButton';
 import buttonStyles from 'styles/buttons.module.scss';
 import styles from './main.module.scss';
@@ -49,7 +50,14 @@ const Main = () => {
             Download Resume
           </button>
         </div>
-        <WebpPicture
+        {/* <WebpPicture
+          containerClassName={styles.image_container}
+          imgClassName={styles.image}
+          pathname="images/"
+          filename="preview"
+          alt="Projects Preview"
+        /> */}
+        <WebpAnimation
           containerClassName={styles.image_container}
           imgClassName={styles.image}
           pathname="images/"

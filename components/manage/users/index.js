@@ -13,14 +13,14 @@ const UsersItem = ({ user, users, forceUpdate }) => {
 
   const onToggleAdminCheckbox = async ({ currentTarget }) => {
     const { checked } = currentTarget;
-    const docRef = users.find((usr) => usr.data().email === email).ref;
+    const docRef = users.find(usr => usr.data().email === email).ref;
     await updateDocument(docRef, {
       isAdmin: checked,
     });
   };
 
   const onDeleteUser = async () => {
-    const docRef = users.find((usr) => usr.data().email === email).ref;
+    const docRef = users.find(usr => usr.data().email === email).ref;
     if (confirm(`Are you sure you want to delete ${displayName}?`) === true) {
       await deleteDocument(docRef);
       forceUpdate();
@@ -57,7 +57,7 @@ const UsersItem = ({ user, users, forceUpdate }) => {
 };
 
 const Users = () => {
-  const [updated, forceUpdate] = useReducer((x) => x + 1, 0);
+  const [updated, forceUpdate] = useReducer(x => x + 1, 0);
   const { db, getAllDocuments, createDocument } = useFirestore();
   const [users, setUsers] = useState([]);
   const [isAddFormShown, setIsAddFormShown] = useState(false);
@@ -66,11 +66,11 @@ const Users = () => {
     (async () => {
       const userDocs = [];
       const docs = await getAllDocuments('users');
-      docs.forEach((doc) => {
+      docs.forEach(doc => {
         userDocs.push(doc);
       });
       setUsers(
-        userDocs.sort((a) =>
+        userDocs.sort(a =>
           a.data().email === process.env.NEXT_PUBLIC_EMAIL ? -1 : 1
         )
       );
@@ -82,7 +82,7 @@ const Users = () => {
     setIsAddFormShown(true);
   };
 
-  const onFormSubmit = async (e) => {
+  const onFormSubmit = async e => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const displayName = formData.get('displayName');
@@ -119,7 +119,7 @@ const Users = () => {
               </tr>
             </thead>
             <tbody>
-              {users.map((user) => (
+              {users.map(user => (
                 <UsersItem
                   user={user}
                   users={users}

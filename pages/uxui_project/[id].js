@@ -18,11 +18,11 @@ import Footer from 'components/common/footer';
 const Project = ({ nav_links, projectsData }) => {
   const router = useRouter();
   const { id } = router.query;
-  const project = projectsData.find((p) => p.id === Number(id));
+  const project = projectsData.find(p => p.id === Number(id));
   const { fonts, name, short_about } = project;
 
   const fontsToLoad = fonts
-    ? fonts.map((fontName) => ({
+    ? fonts.map(fontName => ({
         font: fontName,
         weights: [400, 700],
       }))
@@ -145,7 +145,7 @@ Project.propTypes = {
 export async function getStaticPaths() {
   const projects = require('data/uxui_projects.data');
 
-  const paths = projects.map((project) => ({
+  const paths = projects.map(project => ({
     params: { id: project.id.toString() },
   }));
 

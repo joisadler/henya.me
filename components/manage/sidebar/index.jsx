@@ -12,7 +12,7 @@ const Sidebar = ({ user, logout, activePanel, setActivePanel }) => {
     UxUiProjects: 'UX/UI Projects',
   };
 
-  const onNavSectionClick = (e) => {
+  const onNavSectionClick = e => {
     const { currentTarget } = e;
     const { dataset } = currentTarget;
     const { name } = dataset;
@@ -65,7 +65,7 @@ const Sidebar = ({ user, logout, activePanel, setActivePanel }) => {
           </div>
         </div>
       </section>
-      {navSections.map((section) => (
+      {navSections.map(section => (
         <NavSection name={section} key={section} />
       ))}
     </nav>

@@ -1,5 +1,6 @@
 import { arrayOf, shape, oneOfType, string } from 'prop-types';
 import WebpPicture from 'components/common/WebpPicture';
+import textToKey from 'utils/textToKey';
 import styles from './screens.module.scss';
 
 const Screens = ({ screens, device_type }) => {
@@ -8,7 +9,7 @@ const Screens = ({ screens, device_type }) => {
 
   return (
     <section className={styles.screens}>
-      {screens.map((screen) => {
+      {screens.map(screen => {
         const { name: screenName, description, img_filename } = screen;
         return (
           <div
@@ -26,16 +27,13 @@ const Screens = ({ screens, device_type }) => {
             />
             <div className={styles.screen_info} data-device-type={device_type}>
               <h3 className={styles.screen_name}>{screenName}</h3>
-              {description.map((p) => {
+              {description.map(p => {
                 if (Array.isArray(p)) {
                   return (
                     <ul key={p}>
-                      {p.map((item) => (
+                      {p.map(item => (
                         <li
-                          key={item
-                            .split(' ')
-                            .map((word) => word[0])
-                            .join('')}
+                          key={textToKey(item)}
                           className={styles.screen_description}
                         >
                           {item}
@@ -45,13 +43,7 @@ const Screens = ({ screens, device_type }) => {
                   );
                 }
                 return (
-                  <p
-                    key={p
-                      .split(' ')
-                      .map((word) => word[0])
-                      .join('')}
-                    className={styles.screen_description}
-                  >
+                  <p key={textToKey(p)} className={styles.screen_description}>
                     {p}
                   </p>
                 );

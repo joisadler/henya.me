@@ -21,7 +21,7 @@ const Icons = ({ icons }) => {
 
   return (
     <div style={container_styles}>
-      {icon_objects.map((icon_object) => {
+      {icon_objects.map(icon_object => {
         const { filename, icon_picture_styles, icon_image_styles } =
           icon_object;
         return (

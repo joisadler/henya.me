@@ -20,7 +20,7 @@ const ButtonIcons = ({ button_icons }) => {
   if (!shouldRenderButtonIcons) return null;
   return (
     <div style={container_styles}>
-      {icons.map((icon) => {
+      {icons.map(icon => {
         const { filename, icon_picture_styles, icon_image_styles } = icon;
         return (
           <WebpPicture

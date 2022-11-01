@@ -11,7 +11,7 @@ const Home = ({ nav_links }) => {
   const router = useRouter();
   const pressCountRef = useRef(0);
 
-  const mmmEasterEgg = (e) => {
+  const mmmEasterEgg = e => {
     if (e.key === 'm') {
       pressCountRef.current++;
       if (pressCountRef.current === 3) {
