@@ -57,20 +57,22 @@ export default function Document() {
           rel="stylesheet"
         />
 
-        <Script
-          strategy="lazyOnload"
-          src={`script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
         />
-
-        <Script strategy="lazyOnload">
-          {`
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-
-         gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
-    `}
-        </Script>
+        <script
+          type="text/javascript"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+   `,
+          }}
+        />
       </Head>
       <body>
         <Main />
