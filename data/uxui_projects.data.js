@@ -504,7 +504,7 @@ module.exports = [
   {
     id: 3,
     device_type: 'desktop',
-    comingSoon: true,
+    comingSoon: false,
     name: 'Crocoin',
     preview_image_filename: 'Crocoin_preview_image',
     // preview_animation_filename: 'Crocoin_preview_animation',
@@ -536,7 +536,7 @@ module.exports = [
     },
     screens: [],
     final_prototype: {
-      src: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F8jTnR5UoBdBjuovsZJDnNt%2FDesktop%3Fnode-id%3D108%253A2397',
+      src: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F8jTnR5UoBdBjuovsZJDnNt%2FDesktop%3Fpage-id%3D0%253A1%26node-id%3D927%253A8975%26viewport%3D1306%252C443%252C0.18%26scaling%3Dscale-down%26starting-point-node-id%3D927%253A8975',
       device_type: 'desktop',
     },
   },
