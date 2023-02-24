@@ -31,8 +31,10 @@
 
   &:nth-child(odd) {
     flex-direction: column;
-    & .screen_image {
-      transform: matrix(0.98, -0.17, 0.17, 0.98, 50, 0);
+    & .screen_picture {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
     @include breakpoint(tablet) {
       flex-direction: row;
@@ -40,19 +42,15 @@
         display: flex;
         justify-content: flex-start;
       }
-      & .screen_image {
-        transform: matrix(0.98, -0.17, 0.17, 0.98, 0, 0);
-      }
     }
   }
 
   &:nth-child(even) {
     flex-direction: column;
     & .screen_picture {
-      justify-content: flex-end;
-    }
-    & .screen_image {
-      transform: matrix(0.98, 0.17, -0.17, 0.98, 50, 0);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
     @include breakpoint(tablet) {
       flex-direction: row-reverse;
@@ -89,7 +87,7 @@
   }
   &[data-device-type="desktop"] {
     @include breakpoint(tablet) {
-      width: 65%;
+      width: 100%;
       margin-block-end: 0;
     };
   }
@@ -104,12 +102,12 @@
 
   &[data-device-type="mobile"] {
     @include breakpoint(tablet) {
-      width: 40%;
+      width: 60%;
     };
   }
   &[data-device-type="desktop"] {
     @include breakpoint(tablet) {
-      width: 35%;
+      width: 50%;
     };
   }
 }

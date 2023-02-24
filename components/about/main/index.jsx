@@ -62,12 +62,13 @@ const Main = () => {
           </h2>
           <p className={styles.main_description}>
             I&apos;m a graphic and UX/UI designer from Israel. Passionate about
-            product design and user experience. Skilled at designing, animating,
-            branding, prototyping, and coding, yet continuously looking for the
-            solution to how might I make the design more likable and more
-            user-friendly. I have 4 years of experience in branding and printing
-            design. I&apos;m a self-learner and always trying to learn something
-            new.
+            exceptional product designs that prioritize user experience. I
+            possess a diverse skill set that includes designing, animating,
+            branding, prototyping, and coding. However, I remain dedicated to
+            finding solutions that enhance the appeal and user-friendliness of
+            my designs. With four years of experience in branding and printing
+            design, I am constantly seeking opportunities to expand my knowledge
+            and skill set through self-directed learning.
           </p>
           <a
             href="/download/Henya_Adler_CV.pdf"

@@ -18,12 +18,15 @@
 }
 
 .text {
-  margin-block-end: toRem(50);
   font-family: $mulish;
   font-weight: 400;
   font-size: toRem(16);
   line-height: 125%;
   color: $black;
+
+  &:last-child {
+    margin-block-end: toRem(50);
+  }
 
   @include breakpoint(desktop) {
     font-size: toRem(20);

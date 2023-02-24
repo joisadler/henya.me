@@ -76,7 +76,6 @@ Project.propTypes = {
       preview_animation_filename: string,
       logo_image_filename: string,
       summary: arrayOf(string),
-      summary_bg_color: string,
       roles: arrayOf(string),
       team: arrayOf(string),
       tools: arrayOf(string),

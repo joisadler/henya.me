@@ -38,7 +38,6 @@ const SummarySection = ({
   summary,
   name,
   preview_animation_filename,
-  summary_bg_color,
   device_type,
 }) => {
   const isDesktop = useMediaQuery({
@@ -69,16 +68,12 @@ const SummarySection = ({
           </a>
         </section>
       )}
-      <div
-        className={styles.background}
-        style={{ '--background-color': summary_bg_color }}
-      >
+      <div className={styles.background}>
         <section
           className={styles.container}
           style={{
             marginBlockStart:
               !isDesktop && !shouldRenderPreviewAnimation ? 20 : 0,
-            '--background-color': summary_bg_color,
           }}
         >
           <Summary summary={summary} name={name} device_type={device_type} />
@@ -121,7 +116,6 @@ Summary.defaultProps = {
 
 SummarySection.propTypes = {
   summary: arrayOf(string),
-  summary_bg_color: string,
   name: string,
   preview_animation_filename: string,
   device_type: string.isRequired,
@@ -131,7 +125,6 @@ SummarySection.defaultProps = {
   summary: [],
   name: '',
   preview_animation_filename: '',
-  summary_bg_color: maastricht_blue,
 };
 
 export default SummarySection;

@@ -45,7 +45,9 @@
 
 
   @include breakpoint(desktop) {
-    align-items: flex-start;
+    align-items: center;
+    // TODO: uncomment when the image is fixed
+    // align-items: flex-start;
     width: 50%;
     padding-block-start: toRem(56);
     margin-block-start: -$header_height;
@@ -70,12 +72,12 @@
 
   @include breakpoint(desktop) {
     font-size: 29px;
-    text-align: start;
+    // text-align: start; // TODO: uncomment when the image is fixed
   }
 
   @media (min-width: 1440px) {
     font-size: 40px;
-    text-align: start;
+    // text-align: start; // TODO: uncomment when the image is fixed
   }
 }
 
