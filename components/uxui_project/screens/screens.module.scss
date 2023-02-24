@@ -104,12 +104,12 @@
 
   &[data-device-type="mobile"] {
     @include breakpoint(tablet) {
-      width: 40%;
+      width: 60%;
     };
   }
   &[data-device-type="desktop"] {
     @include breakpoint(tablet) {
-      width: 35%;
+      width: 50%;
     };
   }
 }

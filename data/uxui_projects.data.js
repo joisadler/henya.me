@@ -9,10 +9,11 @@ module.exports = [
     logo_image_filename: 'BookX_logo',
     short_about: 'Exchange App for booklovers',
     summary: [
-      'BookX makes it easy for you to get in touch with readers as well as talk about books, get suggestions of new books to read, recommend new books to other people, and share your experiences reading new books.',
-      'BookX provides options for book exchange by connecting with people in your locality, you can engage in book discussions in person and receive new books.',
+      'BookX is a application that can serve as a social network, book club, and book exchange platform, all designed to bring people together and foster a love of reading.',
+      'Through BookX, you can engage in discussions about your favorite books, discover new titles, and connect with other book enthusiasts.',
+      'One of the unique features of BookX is the book exchange option, which allows users to trade books with people in their local area. This feature not only expands personal libraries but also encourages the reuse and recycling of books.',
+      'With BookX, you can access a wealth of book-related content, from reviews to recommendations, and connect with a community of readers who share your passion for books.',
     ],
-    summary_bg_color: '#38265E',
     roles: [
       'UX Design (Research,',
       'Interaction Design,',
@@ -87,19 +88,24 @@ module.exports = [
       },
     ],
     problem: [
-      "Many people prefer material books and don't like electronic ones. But the material books need a lot of space at bookshelves, and people don't want to store the books after they finish reading them. Beside this, material books have a quietly high price and it becomes a big amount of money for the people who love to read.",
+      'The debate over physical books versus electronic books presents a problem for readers who are struggling to decide which format is right for them. Physical books require space and can be costly, while electronic books may lack the tactile experience that some readers enjoy.',
+      'This leaves many readers feeling conflicted about which option to choose, and unsure about how to reconcile the benefits and drawbacks of each format. Ultimately, this problem highlights the need for individuals to carefully consider their own needs and preferences when making a decision about which format to choose.',
     ],
     solution: [
-      'Find the people who love the same books as you, and exchange books with them. Or buy from them used books that you were looking for. There are also chats for connecting with other people. This way you can make free space on your bookshelves. By buying used books you can save a lot of money.',
+      'Moreover, exchanging books with others can introduce you to new titles and authors that you might not have discovered otherwise. By sharing your own favorite books with others and receiving recommendations in return, you can broaden your literary horizons and gain new perspectives on the world.',
+      'Buying used books from local secondhand stores or online marketplaces can also be an eco-friendly option, as it reduces the environmental impact of producing new books. In addition, supporting small, independent bookstores and sellers can help to build a sense of community and sustain local economies.',
+      "Overall, connecting with other readers and buying used books can be a win-win situation for both your wallet and the environment. So next time you're looking for a new read, consider exploring these options to discover a world of new books and fellow bookworms!",
     ],
     main_features: [
-      'Join a local community of readers.',
-      'Meet other readers and talk about books.',
-      'Discover new books to read.',
-      'Encourage fellow readers to read your favourite books.',
-      'Examine new as well as old books, from famous books to not so famous books.',
-      'Trade softcover/hardcover books with book lovers close to you.',
-      'Meet close book lovers face to face to trade books.',
+      'Here are some additional ways to connect with other readers and exchange or discover new books:',
+      'Attend book festivals or author events in your area.',
+      'Participate in online book clubs or discussion forums.',
+      'Host a book exchange party with friends or neighbors.',
+      'Use social media platforms to connect with other book lovers and exchange book recommendations.',
+      'Take advantage of library lending programs or book swaps in your community.',
+      'Explore book subscription services that provide a curated selection of books based on your interests.',
+      'Share your own book reviews and recommendations on websites like Goodreads or Amazon.',
+      "Whether you prefer to connect with other readers in person or online, there are many ways to expand your literary circle and find new books to enjoy. So don't be afraid to reach out and start a conversation with other book lovers – you never know what you might discover!",
     ],
     wireframes: [
       'BookX_wireframe1',
@@ -108,8 +114,9 @@ module.exports = [
       'BookX_wireframe4',
     ],
     user_flow: [
-      'The user flow which I created, gives a clear idea how the intended actions are taken by the user and how do they achieve their goals. Plotting the user flows allows me to track whether the goals are accomplished by the user.',
-      "With very minimal steps, user can search for the used book from the homepage and send request for buying or exchanging. If he can't be able to find the perfect match, user can also post a request mentioning the book name and other details. Once a match is found, user get the message and both users will be able to chat and share the location for exchanging or selling the book.",
+      "Furthermore, tracking the user flow not only helps to ensure that the user's goals are met, but it can also provide valuable insights into user behavior and preferences. By analyzing the flow of actions taken by users, it is possible to identify patterns and pain points in the user journey, and make improvements to the overall user experience.",
+      'In addition, the ease and simplicity of the user flow for buying or exchanging used books can help to encourage more people to adopt sustainable and eco-friendly practices when it comes to reading. By making it easy and accessible to connect with other book lovers and exchange books, we can reduce waste and promote a culture of sharing and reuse.',
+      'Overall, creating a well-designed user flow for buying or exchanging used books can benefit both the user and the environment. By streamlining the process and making it easy to use, we can encourage more people to get involved in book swapping and support sustainable reading practices.',
     ],
     fonts: ['Roboto'],
     color_palette: ['#3CB27B', '#4F008C', '#FFFFFF', '#000000', '#ACB1B6'],
@@ -295,22 +302,24 @@ module.exports = [
       {
         name: 'Sign up screen',
         description: [
-          'Easy signing up/in through social networks or as usual.',
+          'With social media sign-up, users can save time and effort by logging in with their existing accounts and avoiding the need to remember yet another set of login details.',
+          'Alternatively, traditional registration provides a more familiar experience for users who may prefer to sign up with their email address and a unique password.',
         ],
         img_filename: 'BookX_signup_screen',
       },
       {
         name: 'Home screen',
         description: [
-          'There is oppotunity to get the notification about added book that user was looking for.',
-          'Also user can see recently added books.',
+          "Our platform also offers features that help users stay up-to-date with the latest additions to our book exchange community. Users can opt in to receive notifications when a book they have been looking for becomes available, ensuring they don't miss out on the opportunity to acquire the book they want.",
+          'Furthermore, our platform provides a "Recently Added" section that allows users to see the latest books that have been added to the exchange, giving them the chance to discover new titles and authors they may be interested in. By staying connected and informed, users can make the most of our book exchange community and find the books they love.',
         ],
         img_filename: 'BookX_home_screen',
       },
       {
         name: 'Bookshelf - Wishlist tab',
         description: [
-          'User can add the book he liked to wishlist and get back to them later.',
+          'In addition, having a wishlist can also help you budget your book purchases. Rather than impulsively buying every book that catches your eye, you can add it to your wishlist and prioritize which ones you want to buy first. This can help you save money and make more intentional choices about your book purchases.',
+          'Furthermore, wishlists can be a great way to keep track of books you want to recommend to others. When a friend asks for a book recommendation, you can easily pull up your wishlist and suggest some titles you think they would enjoy.',
         ],
         img_filename: 'BookX_bookshelf_screen',
       },
@@ -319,9 +328,10 @@ module.exports = [
         description: [
           'You have three options:',
           [
-            'Add the book details by yourself.',
-            'Scan the code that printed on the book.',
-            'Find in Google.',
+            'Budget management: Prioritize which books you want to buy first and avoid overspending.',
+            'Discover new books: Use your wishlist to browse recommendations from friends or similar readers.',
+            'Simplify book buying: Scan barcodes or use search engines to add books to your wishlist.',
+            'Quick recommendations: Share your wishlist with friends to easily suggest books they might enjoy.',
           ],
         ],
         img_filename: 'BookX_add_book_screen',
@@ -329,14 +339,14 @@ module.exports = [
       {
         name: 'Book screen',
         description: [
-          'For each book there is a page with all book details and short part from the book.',
+          'BookX provides a dedicated page for each book that features comprehensive details about the book, including its author, publisher, publication date, and more. In addition to this information, there is also a short excerpt from the book included on the page, allowing readers to get a taste of the writing style and content before committing to reading the entire work.',
         ],
         img_filename: 'BookX_book_screen',
       },
       {
         name: 'Following screen',
         description: [
-          'User can follow people with similar tastes in books and see their updates. ',
+          'Users on BookX can follow others with similar book tastes and interests, allowing them to see updates and recommendations from those they follow. This social aspect of the app encourages users to connect with others and discover new books that they might not have found otherwise.',
         ],
         img_filename: 'BookX_following_screen',
       },
@@ -348,7 +358,7 @@ module.exports = [
       {
         name: "Book giver's page",
         description: [
-          'On this page user can see details of the book giver and the additional books he/she gives away.',
+          "On each book's dedicated page, users can also view details about the book giver, including their profile information and any additional books they may be giving away. This feature is designed to promote book sharing and exchange among users, creating a vibrant community of book lovers who can connect with each other and share their favorite works.",
         ],
         img_filename: 'BookX_book_giver_screen',
       },
@@ -371,7 +381,6 @@ module.exports = [
       'This landing page is for Eco conference. It contains: agenda, conference details( as date, time and place), list of speakers(with short explanation who they are), schedule, prices, list of sponsors.',
       'Also it has some last news from eco field and pictures from previous conferences.',
     ],
-    summary_bg_color: '#26264B',
     roles: ['UI Design', 'Branding', 'Wireframing', 'Prototyping'],
     tools: ['Figma', 'Illustrator', 'Photoshop'],
     duration: ['2021'],
@@ -511,7 +520,6 @@ module.exports = [
     logo_image_filename: 'Crocoin_logo',
     short_about: 'Trading Website',
     summary: [],
-    summary_bg_color: '#C67E1C',
     roles: [],
     tools: [],
     duration: [],
@@ -550,7 +558,6 @@ module.exports = [
     logo_image_filename: 'Sapori_logo',
     short_about: 'Mobile app for an Italian restaurant.',
     summary: [],
-    summary_bg_color: '#0B9409',
     roles: [],
     team: [],
     tools: [],

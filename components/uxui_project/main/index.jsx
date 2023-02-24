@@ -28,7 +28,6 @@ const Main = ({ project }) => {
     logo_image_filename,
     preview_animation_filename,
     summary,
-    summary_bg_color,
     roles,
     team,
     duration,
@@ -59,7 +58,6 @@ const Main = ({ project }) => {
         summary={summary}
         name={name}
         preview_animation_filename={preview_animation_filename}
-        summary_bg_color={summary_bg_color}
         device_type={device_type}
       />
       <Metadata
@@ -97,7 +95,6 @@ Main.propTypes = {
     preview_animation_filename: string,
     logo_image_filename: string,
     summary: arrayOf(string),
-    summary_bg_color: string,
     roles: arrayOf(string),
     team: arrayOf(string),
     duration: arrayOf(string),
