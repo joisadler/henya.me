@@ -50,20 +50,13 @@ const Main = () => {
             Download Resume
           </button>
         </div>
-        {/* <WebpPicture
+        {/* <WebpAnimation
           containerClassName={styles.image_container}
           imgClassName={styles.image}
           pathname="images/"
           filename="preview"
           alt="Projects Preview"
         /> */}
-        <WebpAnimation
-          containerClassName={styles.image_container}
-          imgClassName={styles.image}
-          pathname="images/"
-          filename="preview"
-          alt="Projects Preview"
-        />
       </div>
 
       <ScrollDownButton />
