@@ -8,7 +8,7 @@ const UserFlow = ({ user_flow }) => {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>UserFlow</h2>
+      <h2 className={styles.title}>User Flow</h2>
       {user_flow.map(p => (
         <p className={styles.text} key={textToKey(p)}>
           {p}
