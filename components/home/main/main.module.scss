@@ -123,3 +123,39 @@
     padding-inline: $padding_inline_desktop;
   }
 }
+
+.tool_icons_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  aspect-ratio: 1/1;
+  max-height: 75vh;
+}
+
+.tool_icons {
+  display: none;
+
+  @include breakpoint(desktop) {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.tool_icon_container {
+  position: relative;
+}
+
+.tool_icon {
+  position: absolute;
+  animation: scale_animation1 5s alternate infinite linear;
+  animation-delay: var(--animationDelay);
+  visibility: hidden;
+}
+
+@keyframes scale_animation1 {
+  0%   {transform: scale(1);}
+  100% {transform: scale(0);}
+}
