@@ -1,9 +1,10 @@
 import { useRef } from 'react';
 import Typed from 'react-typed';
 // import WebpPicture from 'components/common/WebpPicture';
-import WebpAnimation from 'components/common/WebpAnimation';
+// import WebpAnimation from 'components/common/WebpAnimation';
 import ScrollDownButton from 'components/common/ScrollDownButton';
 import buttonStyles from 'styles/buttons.module.scss';
+import ToolIcons from './ToolIcons';
 import styles from './main.module.scss';
 
 const Main = () => {
@@ -50,6 +51,7 @@ const Main = () => {
             Download Resume
           </button>
         </div>
+        <ToolIcons />
         {/* <WebpAnimation
           containerClassName={styles.image_container}
           imgClassName={styles.image}

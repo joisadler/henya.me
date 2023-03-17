@@ -37,7 +37,7 @@ const Graphic = ({ projects }) => {
         containerClassName={styles.project_preview_picture_enlarged}
         imgClassName={styles.project_preview_image_enlarged}
         pathname="/images/portfolio/graphic/"
-        filename={preview_image_filename}
+        filename={`${preview_image_filename}`}
         alt={name}
         onClick={closeModal}
       />
