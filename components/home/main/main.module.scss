@@ -4,7 +4,8 @@
   min-height: 100vh;
   height: 100vh;
   padding-block-start: $header_height_mobile;
-  background: $maastricht_blue url('/images/icons-background.svg');
+  background-color: $maastricht_blue;
+  // background-image: url('/images/icons-background.svg');
 
   @include breakpoint(desktop) {
     padding-block-start: $header_height;

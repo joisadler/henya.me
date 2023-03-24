@@ -230,7 +230,8 @@
   right: 0;
   bottom: 0;
   z-index: 100;
-  background: $maastricht_blue url('/images/icons-background.svg');
+  background-color: $maastricht_blue;
+  // background-image: url('/images/icons-background.svg');
 }
 
 .project_preview_picture_enlarged {
