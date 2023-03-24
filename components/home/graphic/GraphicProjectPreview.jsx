@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 import WebpPicture from 'components/common/WebpPicture';
 import styles from './graphic.module.scss';
 
-const GraphicProjectPreview = ({ preview_image_filename, name, openModal }) => {
+const GraphicProjectPreview = ({ image_filename, name, openModal }) => {
   const isMobile = useMediaQuery({
     maxWidth: tablet_breakpoint - 1,
   });
@@ -20,7 +20,7 @@ const GraphicProjectPreview = ({ preview_image_filename, name, openModal }) => {
     if (isMobile && isFullscreenAvailable) {
       toggleFullscreen();
     } else {
-      openModal({ name, preview_image_filename });
+      openModal({ name, image_filename });
     }
   };
 
@@ -31,7 +31,7 @@ const GraphicProjectPreview = ({ preview_image_filename, name, openModal }) => {
         containerClassName={styles.project_preview_picture}
         imgClassName={styles.project_preview_image}
         pathname="/images/portfolio/graphic/"
-        filename={preview_image_filename}
+        filename={`${image_filename}_preview`}
         alt={name}
         data-fullscreen-enabled={isFullscreenEnabled}
       />
@@ -47,7 +47,7 @@ const GraphicProjectPreview = ({ preview_image_filename, name, openModal }) => {
 };
 
 GraphicProjectPreview.propTypes = {
-  preview_image_filename: string.isRequired,
+  image_filename: string.isRequired,
   name: string.isRequired,
   openModal: func.isRequired,
 };

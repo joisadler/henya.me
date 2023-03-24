@@ -75,7 +75,7 @@ Home.propTypes = {
   graphic_design_projects: arrayOf(
     shape({
       id: number.isRequired,
-      preview_image_filename: string.isRequired,
+      image_filename: string.isRequired,
       name: string.isRequired,
     })
   ).isRequired,
