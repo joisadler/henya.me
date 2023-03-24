@@ -8,7 +8,7 @@ module.exports = [
     preview_animation_filename: 'BookX_preview_animation',
     logo_image_filename: 'BookX_logo',
     short_about:
-      'BookX is a multi-functional app that functions as a social network, a book club, and a book exchange platform, with the goal of connecting people and promoting a passion for reading.',
+      'a multi-functional app that functions as a social network, a book club, and a book exchange platform, with the goal of connecting people and promoting a passion for reading.',
     summary: [
       'BookX is a application that can serve as a social network, book club, and book exchange platform, all designed to bring people together and foster a love of reading.',
       'Through BookX, you can engage in discussions about your favorite books, discover new titles, and connect with other book enthusiasts.',
@@ -378,7 +378,7 @@ module.exports = [
     preview_animation_filename: 'ReCon_preview_animation',
     logo_image_filename: 'ReCon_logo',
     short_about:
-      'A responsive website for the upcoming conference, which will ensure that attendees can easily access important information from any device.',
+      'a responsive website for the upcoming conference, which will ensure that attendees can easily access important information from any device.',
     summary: [
       'This landing page is for Eco conference. It contains: agenda, conference details( as date, time and place), list of speakers(with short explanation who they are), schedule, prices, list of sponsors.',
       'Also it has some last news from eco field and pictures from previous conferences.',
@@ -560,7 +560,7 @@ module.exports = [
     // preview_animation_filename: 'Sapori_preview_animation',
     logo_image_filename: 'Sapori_logo',
     short_about:
-      "Mobile app for your favorite Italian restaurant! With just a few taps, you can now customize your true Italian pizza, pasta, salad, desserts, and drinks to your heart's content.",
+      "A mobile app for your favorite Italian restaurant! With just a few taps, you can now customize your true Italian pizza, pasta, salad, desserts, and drinks to your heart's content.",
     summary: [],
     roles: [],
     team: [],

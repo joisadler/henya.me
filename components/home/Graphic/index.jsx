@@ -11,14 +11,14 @@ const Graphic = ({ projects }) => {
   const [modalState, setModalState] = useState({
     isOpen: false,
     name: '',
-    preview_image_filename: '',
+    image_filename: '',
   });
 
-  const openModal = ({ name, preview_image_filename }) => {
+  const openModal = ({ name, image_filename }) => {
     setModalState({
       isOpen: true,
       name,
-      preview_image_filename,
+      image_filename,
     });
   };
 
@@ -26,18 +26,18 @@ const Graphic = ({ projects }) => {
     setModalState({
       isOpen: false,
       name: '',
-      preview_image_filename: '',
+      image_filename: '',
     });
   };
 
   const getModalChildren = () => {
-    const { name, preview_image_filename } = modalState;
+    const { name, image_filename } = modalState;
     return (
       <WebpPicture
         containerClassName={styles.project_preview_picture_enlarged}
         imgClassName={styles.project_preview_image_enlarged}
         pathname="/images/portfolio/graphic/"
-        filename={`${preview_image_filename}`}
+        filename={`${image_filename}_full`}
         alt={name}
         onClick={closeModal}
       />
@@ -93,7 +93,7 @@ Graphic.propTypes = {
   projects: arrayOf(
     shape({
       id: number.isRequired,
-      preview_image_filename: string.isRequired,
+      image_filename: string.isRequired,
       name: string.isRequired,
     })
   ).isRequired,
