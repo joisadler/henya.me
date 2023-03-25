@@ -92,10 +92,25 @@ const Main = () => {
         <div className={styles.experience}>
           <h2 className={styles.additional_info_section_title}>Experience</h2>
           <article className={styles.info_item}>
-            <h3 className={styles.info_item_title}>
+            <h3 className={styles.info_item_title}>Product Designer</h3>
+            <h4 className={styles.info_item_subtitle}>
+              Castro-Hoodies (2023 - present)
+            </h4>
+            <h4 className={styles.info_item_note}>
+              Replacement for maternity leave
+            </h4>
+            <ul className={styles.info_item_list}>
+              <li>Designed ads, banners, newsletters.</li>
+              <li>Designed brand identity.</li>
+              <li>Created animations and videos.</li>
+              <li>Redesigning from scratch e-commerce websites.</li>
+            </ul>
+          </article>
+          <article className={styles.info_item}>
+            <h3 className={styles.info_item_title}>UX/UI Designer</h3>
+            <h4 className={styles.info_item_subtitle}>
               Rom Marketing (2021 - 2022)
-            </h3>
-            <h4 className={styles.info_item_subtitle}>UX/UI Designer</h4>
+            </h4>
             <ul className={styles.info_item_list}>
               <li>Designed wireframes and UI.</li>
               <li>Designed brand identity.</li>
@@ -103,8 +118,10 @@ const Main = () => {
             </ul>
           </article>
           <article className={styles.info_item}>
-            <h3 className={styles.info_item_title}>Nail Pharm (2017 - 2019)</h3>
-            <h4 className={styles.info_item_subtitle}>Graphic Designer</h4>
+            <h3 className={styles.info_item_title}>Graphic Designer</h3>
+            <h4 className={styles.info_item_subtitle}>
+              Nail Pharm (2017 - 2019)
+            </h4>
             <ul className={styles.info_item_list}>
               <li>
                 Developed and honed skills in marketing, branding, and other
@@ -114,23 +131,19 @@ const Main = () => {
                 Delivered advertising materials: social media, banners, print
                 and packaging materials.
               </li>
-              <li>
-                Worked across different undertakings while overseeing and
-                regarding project&apos;s deadlines.
-              </li>
             </ul>
           </article>
           <article className={styles.info_item}>
             <h3 className={styles.info_item_title}>
-              Henya Design (2017 - present)
+              Freelance Graphic Designer
             </h3>
             <h4 className={styles.info_item_subtitle}>
-              Freelance Graphic Designer
+              Henya Design (2017 - present)
             </h4>
             <ul className={styles.info_item_list}>
               <li>Created brand identity (logos, flyers, etc.).</li>
               <li>
-                Created print materials(calendars, book design, invitations and
+                Created print materials (calendars, book design, invitations and
                 many more).
               </li>
               <li>Created Wordpress websites using Elementor/Gutenberg. </li>
@@ -140,10 +153,10 @@ const Main = () => {
         <div className={styles.education}>
           <h2 className={styles.additional_info_section_title}>Education</h2>
           <article className={styles.info_item}>
-            <h3 className={styles.info_item_title}>
+            <h3 className={styles.info_item_title}>UX/UI Design</h3>
+            <h4 className={styles.info_item_subtitle}>
               Netcraft academy (2020 - 2021)
-            </h3>
-            <h4 className={styles.info_item_subtitle}>UX/UI Design</h4>
+            </h4>
             <p className={styles.info_item_text}>
               In this course, I&apos;ve participated in several exercises (both
               visual and non-visual) to apply acquired knowledge, from
@@ -152,10 +165,10 @@ const Main = () => {
             </p>
           </article>
           <article className={styles.info_item}>
-            <h3 className={styles.info_item_title}>
+            <h3 className={styles.info_item_title}>Graphic Design</h3>
+            <h4 className={styles.info_item_subtitle}>
               Shenkar Handesaim (2016 - 2017)
-            </h3>
-            <h4 className={styles.info_item_subtitle}>Graphic Design</h4>
+            </h4>
             <p className={styles.info_item_text}>
               Through visual examples, I&apos;ve learned fundamental principles
               of graphic design: imagemaking, typography, composition, working
@@ -165,10 +178,10 @@ const Main = () => {
           </article>
           <article className={styles.info_item}>
             <h3 className={styles.info_item_title}>
-              International Institute for Economics and Humanities (2009 - 2014)
+              Advertising & Brand Communication (B.A.)
             </h3>
             <h4 className={styles.info_item_subtitle}>
-              Advertising & Brand Communication (B.A.)
+              International Institute for Economics and Humanities (2009 - 2014)
             </h4>
             <p className={styles.info_item_text}>
               We were trained to design formal and aesthetic aspects in written,

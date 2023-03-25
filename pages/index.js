@@ -8,12 +8,14 @@ import Main from 'components/home/main';
 // import Services from 'components/home/services';
 import UxUi from 'components/home/UxUi';
 import Graphic from 'components/home/graphic';
+import Motion from 'components/home/motion';
 import Footer from 'components/common/footer';
 import HelpUkraine from 'components/common/HelpUkraine/HelpUkraine';
 
 const Home = ({
   uxui_projects,
   graphic_design_projects,
+  motion_design_projects,
   nav_links,
   // services,
 }) => {
@@ -55,6 +57,7 @@ const Home = ({
       <Main />
       {/* <Services services={services} /> */}
       <UxUi projects={uxui_projects} />
+      <Motion projects={motion_design_projects} />
       <Graphic projects={graphic_design_projects} />
       <Footer />
       <HelpUkraine isOpen={isHelpUkraineShown} onClose={closeHelpUkraine} />
@@ -73,6 +76,13 @@ Home.propTypes = {
     })
   ).isRequired,
   graphic_design_projects: arrayOf(
+    shape({
+      id: number.isRequired,
+      image_filename: string.isRequired,
+      name: string.isRequired,
+    })
+  ).isRequired,
+  motion_design_projects: arrayOf(
     shape({
       id: number.isRequired,
       image_filename: string.isRequired,
@@ -102,6 +112,7 @@ Home.propTypes = {
 export async function getStaticProps() {
   const uxui_projects = require('data/uxui_projects.data');
   const graphic_design_projects = require('data/graphic_design_projects.data');
+  const motion_design_projects = require('data/motion_design_projects.data');
   const nav_links = require('data/nav_links.data.json');
   const services = require('data/services.data.json');
 
@@ -109,6 +120,7 @@ export async function getStaticProps() {
     props: {
       uxui_projects,
       graphic_design_projects,
+      motion_design_projects,
       nav_links,
       services,
     },
