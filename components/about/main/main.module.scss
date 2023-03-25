@@ -197,46 +197,60 @@
   width: 100%;
   margin-block-end: toRem(30);
 
-  &:nth-of-type(1) {
-    .info_item_title {
-      color: $primary_pink;
-    }
-  }
-  &:nth-of-type(2) {
-    .info_item_title {
-      color: $primary_yellow;
-    }
-  }
-  &:nth-of-type(3) {
-    .info_item_title {
-      color: $primary_violette;
-    }
-  }
+  // &:nth-of-type(1) {
+  //   .info_item_title {
+  //     color: $primary_pink;
+  //   }
+  // }
+  // &:nth-of-type(2) {
+  //   .info_item_title {
+  //     color: $primary_yellow;
+  //   }
+  // }
+  // &:nth-of-type(3) {
+  //   .info_item_title {
+  //     color: $primary_violette;
+  //   }
+  // }
 }
 
 .info_item_title {
+  // margin: 0;
+  // font-family: $mulish;
+  // font-style: normal;
+  // font-weight: 400;
+  // font-size: toRem(17);
+  // line-height: 120%;
+  // letter-spacing: toRem(0.1);
   margin: 0;
   font-family: $mulish;
   font-style: normal;
-  font-weight: 400;
-  font-size: toRem(17);
-  line-height: 120%;
-  letter-spacing: toRem(0.1);
+  font-weight: 500;
+  font-size: toRem(18);
+  line-height: 167%;
+  color: $primary_pink;
 }
 
 .info_item_subtitle {
-  margin: 0 0 toRem(15) 0;
+  // margin: 0 0 toRem(15) 0;
+  // font-family: $mulish;
+  // font-style: normal;
+  // font-weight: 900;
+  // font-size: toRem(19);
+  // line-height: 168%;
+  // letter-spacing: toRem(0.4);
+  // color: $black;
+  margin: 0;
   font-family: $mulish;
   font-style: normal;
-  font-weight: 900;
-  font-size: toRem(19);
-  line-height: 168%;
-  letter-spacing: toRem(0.4);
+  font-weight: 700;
+  font-size: toRem(22);
+  line-height: 136%;
   color: $black;
 }
 
 .info_item_text {
-  margin: 0;
+  margin-block: toRem(16);
   font-family: $mulish;
   font-style: normal;
   font-weight: 400;
@@ -245,15 +259,22 @@
   color: $black;
 
   @include breakpoint(desktop) {
-    font-size: toRem(20);
+    font-size: toRem(19);
   }
 }
 
+.info_item_note {
+  @extend .info_item_text;
+  margin: 0;
+}
+
 .info_item_list {
+  margin-block: toRem(16);
   padding: 0;
   list-style-type: disc;
 
   li {
+    margin-block: 0;
     margin-inline-start: 1em;
     @extend .info_item_text;
   }
