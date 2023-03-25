@@ -1,27 +1,27 @@
 module.exports = [
   {
     id: 1,
-    name: 'Kiko - flyer',
+    name: 'KIKO - flyer',
     image_filename: 'Kiko',
   },
   {
     id: 2,
-    name: 'Kiko - banner',
+    name: 'KIKO - banner',
     image_filename: 'Kiko_2',
   },
   {
     id: 3,
-    name: 'Topten - flyer',
+    name: 'TOPTEN - flyer',
     image_filename: 'Topten_2',
   },
   {
     id: 4,
-    name: 'Topten - banner',
+    name: 'TOPTEN - banner',
     image_filename: 'Topten',
   },
   {
     id: 5,
-    name: 'Urbanica winter collection - story',
+    name: 'URBANICA winter collection - story',
     image_filename: 'Urbanica_winter_collection',
   },
   {
