@@ -6,7 +6,6 @@ import ProjectPreview from './MotionProjectPreview';
 import styles from './motion.module.scss';
 
 const Motion = ({ projects }) => {
-  console.log('Motion', projects);
   const [isAllItemsShown, setIsAllItemsShown] = useState(false);
   const [modalState, setModalState] = useState({
     isOpen: false,
