@@ -8,9 +8,9 @@ module.exports = [
     preview_animation_filename: 'BookX_preview_animation',
     logo_image_filename: 'BookX_logo',
     short_about:
-      'a multi-functional app that functions as a social network, a book club, and a book exchange platform, with the goal of connecting people and promoting a passion for reading.',
+      'A multi-functional app that functions as a social network, a book club, and a book exchange platform, with the goal of connecting people and promoting a passion for reading.',
     summary: [
-      'BookX is a application that can serve as a social network, book club, and book exchange platform, all designed to bring people together and foster a love of reading.',
+      'BookX is an application that can serve as a social network, book club, and book exchange platform, all designed to bring people together and foster a love of reading.',
       'Through BookX, you can engage in discussions about your favorite books, discover new titles, and connect with other book enthusiasts.',
       'One of the unique features of BookX is the book exchange option, which allows users to trade books with people in their local area. This feature not only expands personal libraries but also encourages the reuse and recycling of books.',
       'With BookX, you can access a wealth of book-related content, from reviews to recommendations, and connect with a community of readers who share your passion for books.',
@@ -378,7 +378,7 @@ module.exports = [
     preview_animation_filename: 'ReCon_preview_animation',
     logo_image_filename: 'ReCon_logo',
     short_about:
-      'a responsive website for the upcoming conference, which will ensure that attendees can easily access important information from any device.',
+      'A responsive website for the upcoming conference, which will ensure that attendees can easily access important information from any device.',
     summary: [
       'This landing page is for Eco conference. It contains: agenda, conference details( as date, time and place), list of speakers(with short explanation who they are), schedule, prices, list of sponsors.',
       'Also it has some last news from eco field and pictures from previous conferences.',
