@@ -16,24 +16,28 @@ const GraphicProjectPreview = ({ media_filename, name, openModal }) => {
       target: fullscreenContainerRef,
     });
 
+  // const onPreviewButtonClick = () => {
+  //   if (isMobile && isFullscreenAvailable) {
+  //     toggleFullscreen();
+  //   } else {
+  //     openModal({ name, media_filename });
+  //   }
+  // };
+
   const onPreviewButtonClick = () => {
-    if (isMobile && isFullscreenAvailable) {
-      toggleFullscreen();
-    } else {
-      openModal({ name, media_filename });
-    }
+    openModal({ name, media_filename });
   };
 
   return (
     <li className={styles.project_preview}>
       <WebpPicture
-        ref={fullscreenContainerRef}
+        // ref={fullscreenContainerRef}
         containerClassName={styles.project_preview_picture}
         imgClassName={styles.project_preview_image}
         pathname="/videos/portfolio/motion/"
         filename={`${media_filename}_preview`}
         alt={name}
-        data-fullscreen-enabled={isFullscreenEnabled}
+        // data-fullscreen-enabled={isFullscreenEnabled}
       />
       <button
         type="button"
