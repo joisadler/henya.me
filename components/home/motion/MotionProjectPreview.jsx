@@ -1,20 +1,20 @@
-import { useRef } from 'react';
-import { useFullscreen } from 'rooks';
+// import { useRef } from 'react';
+// import { useFullscreen } from 'rooks';
 import { string, func } from 'prop-types';
-import { tablet_breakpoint } from 'config/constants';
-import { useMediaQuery } from 'react-responsive';
+// import { tablet_breakpoint } from 'config/constants';
+// import { useMediaQuery } from 'react-responsive';
 import WebpPicture from 'components/common/WebpPicture';
 import styles from './motion.module.scss';
 
 const GraphicProjectPreview = ({ media_filename, name, openModal }) => {
-  const isMobile = useMediaQuery({
-    maxWidth: tablet_breakpoint - 1,
-  });
-  const fullscreenContainerRef = useRef(null);
-  const { isFullscreenAvailable, isFullscreenEnabled, toggleFullscreen } =
-    useFullscreen({
-      target: fullscreenContainerRef,
-    });
+  // const isMobile = useMediaQuery({
+  //   maxWidth: tablet_breakpoint - 1,
+  // });
+  // const fullscreenContainerRef = useRef(null);
+  // const { isFullscreenAvailable, isFullscreenEnabled, toggleFullscreen } =
+  //   useFullscreen({
+  //     target: fullscreenContainerRef,
+  //   });
 
   // const onPreviewButtonClick = () => {
   //   if (isMobile && isFullscreenAvailable) {
