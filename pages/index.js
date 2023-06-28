@@ -5,7 +5,6 @@ import { arrayOf, shape, string, number, bool } from 'prop-types';
 import Header from 'components/common/header';
 import MobileMenu from 'components/common/mobile_menu';
 import Main from 'components/home/main';
-// import Services from 'components/home/services';
 import UxUi from 'components/home/UxUi';
 import Graphic from 'components/home/graphic';
 import Motion from 'components/home/motion';
@@ -17,7 +16,6 @@ const Home = ({
   graphic_design_projects,
   motion_design_projects,
   nav_links,
-  // services,
 }) => {
   const router = useRouter();
   const pressCountRef = useRef(0);
@@ -85,7 +83,7 @@ Home.propTypes = {
   motion_design_projects: arrayOf(
     shape({
       id: number.isRequired,
-      image_filename: string.isRequired,
+      media_filename: string.isRequired,
       name: string.isRequired,
     })
   ).isRequired,
@@ -98,15 +96,6 @@ Home.propTypes = {
       open_in_new_tab: bool.isRequired,
     })
   ).isRequired,
-  // services: arrayOf(
-  //   shape({
-  //     id: number.isRequired,
-  //     title: string.isRequired,
-  //     description: string.isRequired,
-  //     pathname: string.isRequired,
-  //     filename: string.isRequired,
-  //   })
-  // ).isRequired,
 };
 
 export async function getStaticProps() {

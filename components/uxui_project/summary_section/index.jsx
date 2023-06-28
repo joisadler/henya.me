@@ -1,23 +1,26 @@
 import { string, arrayOf } from 'prop-types';
-import { desktop_breakpoint, maastricht_blue } from 'config/constants';
+import { desktop_breakpoint } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
 import WebpAnimation from 'components/common/WebpAnimation';
-import textToKey from 'utils/textToKey';
 import styles from './summary_section.module.scss';
 
-const Summary = ({ summary, name, device_type }) => {
-  // const shouldRenderSummary = summary && summary.length > 0;
-
+const Summary = ({ summary, device_type }) => {
+  const renderSummary = () => {
+    return summary.map(paragraph => (
+      <p
+        className={styles.summary_text}
+        key={paragraph
+          .split(' ')
+          .map(word => word[0])
+          .join('')}
+      >
+        {paragraph}
+      </p>
+    ));
+  };
   return (
     <div className={styles.summary} data-device-type={device_type}>
-      <h2 className={styles.summary_title}>Oh no!</h2>
-      <p className={styles.summary_text}>
-        {`The full case study for the ${name} project is not yet complete.
-    But you can take a look at the `}
-        <a href="#final_prototype" className={styles.summary_link}>
-          prototype
-        </a>
-      </p>
+      {renderSummary()}
     </div>
   );
 };
@@ -66,7 +69,7 @@ const SummarySection = ({
                 !isDesktop && !shouldRenderPreviewAnimation ? 20 : 0,
             }}
           >
-            <Summary summary={summary} name={name} device_type={device_type} />
+            <Summary summary={summary} device_type={device_type} />
             {isDesktop && shouldRenderPreviewAnimation && (
               <div
                 className={styles.preview_animation_picture_container}
@@ -96,13 +99,11 @@ const SummarySection = ({
 
 Summary.propTypes = {
   summary: arrayOf(string),
-  name: string,
   device_type: string.isRequired,
 };
 
 Summary.defaultProps = {
   summary: [],
-  name: '',
 };
 
 SummarySection.propTypes = {
