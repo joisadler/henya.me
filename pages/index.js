@@ -54,7 +54,6 @@ const Home = ({
       <MobileMenu nav_links={nav_links} />
       <Header nav_links={nav_links} transparent />
       <Main />
-      {/* <Services services={services} /> */}
       <UxUi projects={uxui_projects} />
       <Motion projects={motion_design_projects} />
       <Graphic projects={graphic_design_projects} />
@@ -104,7 +103,6 @@ export async function getStaticProps() {
   const graphic_design_projects = require('data/graphic_design_projects.data');
   const motion_design_projects = require('data/motion_design_projects.data');
   const nav_links = require('data/nav_links.data.json');
-  const services = require('data/services.data.json');
 
   return {
     props: {
@@ -112,7 +110,6 @@ export async function getStaticProps() {
       graphic_design_projects,
       motion_design_projects,
       nav_links,
-      services,
     },
   };
 }
