@@ -69,13 +69,6 @@ const Header = ({ nav_links, transparent }) => {
           {nav_links.map(({ id, ...linkProps }) => (
             <NavLink key={id} {...linkProps} />
           ))}
-          {/* <NavLink
-            id="manage_link"
-            name="Manage"
-            url="/manage"
-            scroll
-            open_in_new_tab={false}
-          /> */}
         </nav>
         <div className={styles.contact_info}>
           <a
