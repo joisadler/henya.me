@@ -1,15 +1,16 @@
-import { useEffect, useState, useRef } from 'react';
-import { useRouter } from 'next/router';
+import { useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
-import { arrayOf, shape, string, number, bool } from 'prop-types';
-import Header from 'components/common/header';
-import MobileMenu from 'components/common/mobile_menu';
-import Main from 'components/home/main';
+import { useRouter } from 'next/router';
+import { arrayOf, bool, number, shape, string } from 'prop-types';
+
+import Footer from 'components/common/Footer';
+import Header from 'components/common/Header';
+import HelpUkraine from 'components/common/HelpUkraine';
+import MobileMenu from 'components/common/MobileMenu';
+import Graphic from 'components/home/Graphic';
+import Main from 'components/home/Main';
+import Motion from 'components/home/Motion';
 import UxUi from 'components/home/UxUi';
-import Graphic from 'components/home/graphic';
-import Motion from 'components/home/motion';
-import Footer from 'components/common/footer';
-import HelpUkraine from 'components/common/HelpUkraine/HelpUkraine';
 
 const Home = ({
   uxui_projects,
@@ -53,7 +54,6 @@ const Home = ({
       <MobileMenu nav_links={nav_links} />
       <Header nav_links={nav_links} transparent />
       <Main />
-      {/* <Services services={services} /> */}
       <UxUi projects={uxui_projects} />
       <Motion projects={motion_design_projects} />
       <Graphic projects={graphic_design_projects} />
@@ -103,7 +103,6 @@ export async function getStaticProps() {
   const graphic_design_projects = require('data/graphic_design_projects.data');
   const motion_design_projects = require('data/motion_design_projects.data');
   const nav_links = require('data/nav_links.data.json');
-  const services = require('data/services.data.json');
 
   return {
     props: {
@@ -111,7 +110,6 @@ export async function getStaticProps() {
       graphic_design_projects,
       motion_design_projects,
       nav_links,
-      services,
     },
   };
 }

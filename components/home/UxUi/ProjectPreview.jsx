@@ -1,11 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useRef, useEffect } from 'react';
-import { string, number, bool, node } from 'prop-types';
+import { useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { desktop_breakpoint } from 'config/constants';
+import { bool, node, number, string } from 'prop-types';
+
 import WebpPicture from 'components/common/WebpPicture';
-import styles from './uxui.module.scss';
+
 import RightArrowIcon from '../../icons/RightArrowIcon';
+
+import styles from './uxui.module.scss';
 
 const UxUiProjectPreview = ({
   id,

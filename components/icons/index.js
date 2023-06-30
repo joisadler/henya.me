@@ -1,12 +1,12 @@
 import AdobeIllustratorIcon from './AdobeIllustratorIcon';
 import AfterEffectsIcon from './AfterEffectsIcon';
-import CSSIcon from './PhotoshopIcon';
+import PhotoshopIcon from './CSSIcon';
 import FigmaIcon from './FigmaIcon';
 import HTMLIcon from './HTMLIcon';
 import IconsBackground from './IconsBackground';
 import InDesignIcon from './InDesignIcon';
 import LogoIcon from './LogoIcon';
-import PhotoshopIcon from './CSSIcon';
+import CSSIcon from './PhotoshopIcon';
 import PremiereIcon from './PremiereIcon';
 import RightArrowIcon from './RightArrowIcon';
 

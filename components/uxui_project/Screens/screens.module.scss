@@ -1,0 +1,139 @@
+@import 'utils';
+
+.screens {
+  margin-block-start: toRem(50);
+
+  @include breakpoint(desktop) {
+    margin-block-start: toRem(100);
+  }
+}
+
+.screen_container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+
+  &:has(img[src]:not([src=""])) {
+    margin-block: toRem(50);
+  }
+
+  @include breakpoint(tablet) {
+    width: 90%;
+  }
+  @include breakpoint(desktop) {
+    width: 100%;
+    &:has(img[src]:not([src=""])) {
+      margin-block: toRem(100);
+    }
+  }
+
+  &:nth-child(odd) {
+    flex-direction: column;
+    & .screen_picture {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    @include breakpoint(tablet) {
+      flex-direction: row;
+      & .screen_picture {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    flex-direction: column;
+    & .screen_picture {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    @include breakpoint(tablet) {
+      flex-direction: row-reverse;
+      & .screen_picture {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &[data-device-type="mobile"] {
+    max-width: 800px;
+  }
+  &[data-device-type="desktop"] {
+    max-width: $max_content_width;
+  }
+}
+
+.screen_picture {
+  width: 100%;
+  height: auto;
+  margin-block-end: toRem(16);
+
+  @include breakpoint(tablet) {
+    width: 50%;
+    margin-block-end: 0;
+  };
+
+  &[data-device-type="mobile"] {
+    @include breakpoint(tablet) {
+      width: 50%;
+      margin-block-end: 0;
+    };
+  }
+  &[data-device-type="desktop"] {
+    @include breakpoint(tablet) {
+      width: 100%;
+      margin-block-end: 0;
+    };
+  }
+}
+
+.screen_image {
+  width: 75%;
+}
+
+.screen_info {
+  width: 100%;
+
+  &[data-device-type="mobile"] {
+    @include breakpoint(tablet) {
+      width: 60%;
+    };
+  }
+  &[data-device-type="desktop"] {
+    @include breakpoint(tablet) {
+      width: 50%;
+    };
+  }
+}
+
+.screen_name {
+  margin-block: toRem(20) 0;
+  font-family: $mulish;
+  font-weight: 700;
+  font-size: toRem(20);
+  line-height: 125%;
+  color: $black;
+
+  @include breakpoint(desktop) {
+    margin: 0;
+    font-size: toRem(32);
+  }
+}
+
+.screen_description {
+  font-family: $mulish;
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 125%;
+  color: $black;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(20);
+  }
+}

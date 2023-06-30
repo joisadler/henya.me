@@ -1,0 +1,227 @@
+@import 'utils';
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.page_title {
+  margin: 0;
+  margin-block-end: toRem(16);
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 900;
+  font-size: $padding_inline_tablet;
+  color: $maastricht_blue;
+
+  strong {
+    color: $text_red;
+  }
+
+  @include breakpoint(desktop) {
+    font-size: toRem(36);
+  }
+}
+
+.td {
+  padding: toRem(16);
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: toRem(16);
+  color: $white;
+}
+
+.users_table {
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: 15px 15px 61px rgba(46, 45, 58, 0.13);
+
+  thead {
+    background-color: $maastricht_blue;
+    tr {
+      th {
+        @extend .td;
+        color: $white;
+
+        &:first-child {
+          border-top-left-radius: $border_radius_medium;
+        }
+        &:last-child {
+          border-top-right-radius: $border_radius_medium;
+        }
+      }
+    }
+  }
+
+  tbody {
+    border: 1px solid $maastricht_blue;
+    tr {
+      &:nth-child(2n) {
+        background-color: rgba(19, 26, 54, 0.1);
+      }
+      &:last-child {
+        td {
+          border-bottom: 1px solid $maastricht_blue;
+        }
+        td:first-child {
+          border-left: 1px solid $maastricht_blue;
+          border-bottom: 1px solid $maastricht_blue;
+          border-bottom-left-radius: $border_radius_medium;
+        }
+        td:last-child {
+          border-right: 1px solid $maastricht_blue;
+          border-bottom: 1px solid $maastricht_blue;
+          border-bottom-right-radius: $border_radius_medium;
+        }
+      }
+      &:not(:last-child) {
+        td:first-child {
+          border-left: 1px solid $maastricht_blue;
+        }
+        td:last-child {
+          border-right: 1px solid $maastricht_blue;
+        }
+      }
+      &:hover {
+        background-color: rgba(19, 26, 54, 0.2);
+      }
+      td {
+        @extend .td;
+        color: $black;
+      }
+    }
+  }
+}
+
+.centered {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.delete_user_button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary_pink;
+  }
+}
+
+.add_user_button {
+  width: 2rem;
+  height: 2rem;
+  margin-block: 1rem;
+  border: none;
+  background-color: rgba(60, 178, 124, 0.9);
+  border-radius: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(60, 178, 124, 1);
+  }
+}
+
+.add_user_form {
+  width: fit-content;
+  margin-block-start: toRem(16);
+  padding: 1rem;
+  background: $white;
+  border-radius: $border_radius_medium;
+  box-shadow: 15px 15px 61px rgba(46, 45, 58, 0.13);
+}
+
+.form_title {
+  width: fit-content;
+  margin: 0;
+  margin-block-end: toRem(16);
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 900;
+  font-size: toRem(18);
+  color: $maastricht_blue;
+
+  @include breakpoint(desktop) {
+    font-size: $padding_inline_tablet;
+  }
+}
+
+.form_inputs {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+}
+
+.input_container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  &:first-child {
+    margin-inline-end: toRem(16);
+  }
+}
+
+.label {
+  margin-block-end: $padding_inline_mobile;
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: toRem(16);
+  line-height: 100%;
+  color: $black;
+}
+
+.input {
+  width: toRem(200);
+  height: toRem(35);
+  padding: toRem(5) $padding_inline_mobile;
+}
+
+.checkbox_container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: toRem(50);
+}
+
+.checkbox {
+  height: toRem(35);
+  padding: toRem(5) $padding_inline_mobile;
+}
+
+.buttons_container {
+  margin-block-start: toRem(16);
+  display: inline-flex;
+  flex-flow: row nowrap;
+}
+
+.save_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: toRem(5) $padding_inline_mobile;
+  border: 0.5px solid transparent;
+  border-radius: $border_radius_medium;
+  font-style: normal;
+  font-weight: 800;
+  font-size: toRem(18);
+  line-height: 120%;
+  cursor: pointer;
+  color: $white;
+  font-family: $mulish;
+  background: $primary_green;
+  transition: all .3s cubic-bezier(.25,.8,.25,1);
+}
+
+.discard_button {
+  @extend .save_button;
+  background-color: $primary_pink;
+  margin-inline-start: $padding_inline_mobile;
+}
