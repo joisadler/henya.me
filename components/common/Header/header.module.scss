@@ -42,24 +42,27 @@
 
   @include breakpoint(desktop) {
     display: flex;
+    flex: 1;
     height: 100%;
   }
 }
 
 .nav {
   display: flex;
+  flex: 1;
   align-items: center;
   height: 100%;
-  margin-inline-end: toRem(12);
+  margin-inline-start: toRem(70);
 }
 
 .nav_link {
   margin-inline-end: toRem(30);
   font-family: $mulish;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 900;
   font-size: toRem(18);
   line-height: toRem(22);
+  text-transform: uppercase;
   color: $white;
 }
 

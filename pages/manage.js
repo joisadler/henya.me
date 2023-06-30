@@ -31,7 +31,7 @@ const Manage = ({ nav_links }) => {
         opStr: '==',
         value: true,
       }).catch(e => console.log('error:', e));
-      docs.forEach(doc => {
+      docs?.forEach(doc => {
         emails.push(doc.data().email);
       });
       setManagerEmails(emails);
