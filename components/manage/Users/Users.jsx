@@ -67,7 +67,7 @@ const Users = () => {
     (async () => {
       const userDocs = [];
       const docs = await getAllDocuments('users');
-      docs.forEach(doc => {
+      docs?.forEach(doc => {
         userDocs.push(doc);
       });
       setUsers(
