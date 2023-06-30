@@ -3,8 +3,8 @@ import { useFirestore } from 'hooks/useFirestore';
 import Head from 'next/head';
 import { arrayOf, bool, number, shape, string } from 'prop-types';
 
-import Footer from 'components/common/Footer';
-import Header from 'components/common/Header';
+import Footer from '@/components/common/Footer';
+import Header from '@/components/common/Header';
 import MobileMenu from 'components/common/MobileMenu';
 import AuthenticationWarning from 'components/manage/AuthenticationWarning';
 import Main from 'components/manage/Main';

@@ -11,8 +11,8 @@ import {
   string,
 } from 'prop-types';
 
-import Footer from 'components/common/Footer';
-import Header from 'components/common/Header';
+import Footer from '@/components/common/Footer';
+import Header from '@/components/common/Header';
 import MobileMenu from 'components/common/MobileMenu';
 import Main from '@/components/uxui_project/Main';
 
