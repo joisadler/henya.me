@@ -2,12 +2,14 @@ import {
   useRef,
   // useEffect,
 } from 'react';
-import buttonStyles from 'styles/buttons.module.scss';
-import WebpPicture from 'components/common/WebpPicture';
+
 import ScrollDownButton from 'components/common/ScrollDownButton';
+import WebpPicture from 'components/common/WebpPicture';
+
 // import { useMediaQuery } from 'react-responsive';
 // import { desktop_breakpoint } from 'config/constants';
 import styles from './main.module.scss';
+import buttonStyles from 'styles/buttons.module.scss';
 
 const Main = () => {
   const cvLinkRef = useRef(null);

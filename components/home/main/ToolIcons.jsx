@@ -1,14 +1,16 @@
-import { useState, useEffect, useRef } from 'react';
-import AfterEffectsIcon from 'components/icons/AfterEffectsIcon';
-import InDesignIcon from 'components/icons/InDesignIcon';
-import AdobeIllustratorIcon from 'components/icons/AdobeIllustratorIcon';
-import FigmaIcon from 'components/icons/FigmaIcon';
-import PremiereIcon from 'components/icons/PremiereIcon';
-import HTMLIcon from 'components/icons/HTMLIcon';
-import CSSIcon from 'components/icons/CSSIcon';
-import PhotoshopIcon from 'components/icons/PhotoshopIcon';
+import { useEffect, useRef, useState } from 'react';
 import useWindowSize from 'hooks/useWindowSize';
 import getRandomNumber from 'utils/getRandomNumber';
+
+import AdobeIllustratorIcon from 'components/icons/AdobeIllustratorIcon';
+import AfterEffectsIcon from 'components/icons/AfterEffectsIcon';
+import CSSIcon from 'components/icons/CSSIcon';
+import FigmaIcon from 'components/icons/FigmaIcon';
+import HTMLIcon from 'components/icons/HTMLIcon';
+import InDesignIcon from 'components/icons/InDesignIcon';
+import PhotoshopIcon from 'components/icons/PhotoshopIcon';
+import PremiereIcon from 'components/icons/PremiereIcon';
+
 import styles from './main.module.scss';
 
 const ToolIcons = () => {

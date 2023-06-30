@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { useFirebaseApp } from 'hooks/useFirebaseApp';
+import { useEffect, useState } from 'react';
 import { getStorage, ref, uploadBytes } from 'firebase/storage';
+import { useFirebaseApp } from 'hooks/useFirebaseApp';
 
 export const useFirebaseStorage = () => {
   const { app } = useFirebaseApp();

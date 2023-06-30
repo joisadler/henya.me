@@ -1,5 +1,7 @@
 import { string } from 'prop-types';
+
 import WebpPicture from 'components/common/WebpPicture';
+
 import styles from './logo_image.module.scss';
 
 const LogoImage = ({ name, short_about, logo_image_filename, device_type }) => {

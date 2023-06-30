@@ -1,4 +1,5 @@
 import { arrayOf, string } from 'prop-types';
+
 import styles from './ui_kit.module.scss';
 
 const Fonts = ({ fonts }) => {

@@ -1,8 +1,10 @@
 import { arrayOf, string } from 'prop-types';
-import Roles from './roles';
-import Tools from './tools';
-import Team from './team';
+
 import Duration from './duration';
+import Roles from './roles';
+import Team from './team';
+import Tools from './tools';
+
 import styles from './metadata.module.scss';
 
 const Metadata = ({ roles, team, duration, tools, device_type }) => {

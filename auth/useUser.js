@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 // import { useRouter } from 'next/router';
 import { useFirebaseAuth } from 'hooks/useFirebaseAuth';
+
 import {
+  getUserFromCookie,
   removeUserCookie,
   setUserCookie,
-  getUserFromCookie,
 } from './userCookie';
 
 export const mapUserData = async user => {

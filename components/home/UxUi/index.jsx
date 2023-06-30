@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
-import { arrayOf, shape, number, string, bool } from 'prop-types';
+import { arrayOf, bool, number, shape, string } from 'prop-types';
+
 import styles from './uxui.module.scss';
 
 const ProjectPreview = dynamic(

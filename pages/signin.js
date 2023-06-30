@@ -1,9 +1,10 @@
-import { arrayOf, shape, string, number, bool } from 'prop-types';
 import Head from 'next/head';
+import { arrayOf, bool, number, shape, string } from 'prop-types';
+
+import Footer from 'components/common/footer';
 import Header from 'components/common/header';
 import MobileMenu from 'components/common/mobile_menu';
 import Main from 'components/signin/main/';
-import Footer from 'components/common/footer';
 
 const Signin = ({ nav_links }) => {
   return (

@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { arrayOf, shape, number, string } from 'prop-types';
-import RightArrowIcon from 'components/icons/RightArrowIcon';
+import { arrayOf, number, shape, string } from 'prop-types';
+
 import Modal from 'components/common/Modal';
+import RightArrowIcon from 'components/icons/RightArrowIcon';
+
 import ProjectPreview from './MotionProjectPreview';
+
 import styles from './motion.module.scss';
 
 const Motion = ({ projects }) => {

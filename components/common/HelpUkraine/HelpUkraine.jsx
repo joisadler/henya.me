@@ -1,6 +1,8 @@
 import { bool, func } from 'prop-types';
-import styles from './help_ukraine.module.scss';
+
 import WebpPicture from '../WebpAnimation';
+
+import styles from './help_ukraine.module.scss';
 
 const HelpUkraine = ({ isOpen, onClose }) => {
   if (!isOpen) return null;

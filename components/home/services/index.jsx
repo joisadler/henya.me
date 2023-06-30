@@ -1,5 +1,7 @@
-import { arrayOf, shape, string, number } from 'prop-types';
+import { arrayOf, number, shape, string } from 'prop-types';
+
 import ServiceCard from './ServiceCard';
+
 import styles from './services.module.scss';
 
 const Services = ({ services }) => {

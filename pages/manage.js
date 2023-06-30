@@ -1,16 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useFirestore } from 'hooks/useFirestore';
-import { arrayOf, shape, string, number, bool } from 'prop-types';
 import Head from 'next/head';
-import AuthenticationWarning from 'components/manage/authenticationWarning';
-import NoPermissionWarning from 'components/manage/nopermissionWarning';
+import { arrayOf, bool, number, shape, string } from 'prop-types';
+
+import Footer from 'components/common/footer';
 import Header from 'components/common/header';
 import MobileMenu from 'components/common/mobile_menu';
-import Sidebar from 'components/manage/sidebar';
+import AuthenticationWarning from 'components/manage/authenticationWarning';
 import Main from 'components/manage/main';
-import Footer from 'components/common/footer';
-import withAuth from '../auth/withAuth';
+import NoPermissionWarning from 'components/manage/nopermissionWarning';
+import Sidebar from 'components/manage/sidebar';
+
 import { useUser } from '../auth/useUser';
+import withAuth from '../auth/withAuth';
+
 import styles from '../styles/manage.module.scss';
 
 const Manage = ({ nav_links }) => {

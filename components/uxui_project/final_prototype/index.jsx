@@ -1,6 +1,7 @@
-import { shape, string } from 'prop-types';
-import { desktop_breakpoint } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
+import { desktop_breakpoint } from 'config/constants';
+import { shape, string } from 'prop-types';
+
 import styles from './final_prototype.module.scss';
 
 const FinalPrototype = ({ final_prototype }) => {

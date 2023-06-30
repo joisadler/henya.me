@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { string, number, objectOf, oneOfType } from 'prop-types';
+import { number, objectOf, oneOfType, string } from 'prop-types';
 
 const WebpPicture = forwardRef((props, ref) => {
   const {

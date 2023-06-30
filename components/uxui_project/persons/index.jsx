@@ -1,6 +1,8 @@
 import { arrayOf, shape, string } from 'prop-types';
-import WebpPicture from 'components/common/WebpPicture';
 import textToKey from 'utils/textToKey';
+
+import WebpPicture from 'components/common/WebpPicture';
+
 import styles from './persons.module.scss';
 
 const Persons = ({ persons }) => {

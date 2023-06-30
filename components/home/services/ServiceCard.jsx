@@ -1,5 +1,7 @@
 import { string } from 'prop-types';
+
 import WebpPicture from 'components/common/WebpPicture';
+
 import styles from './services.module.scss';
 
 const ServiceCard = ({ title, description, pathname, filename }) => {

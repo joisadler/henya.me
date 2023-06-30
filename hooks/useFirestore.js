@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
-import { useFirebaseApp } from 'hooks/useFirebaseApp';
+import { useEffect, useState } from 'react';
 import {
-  getFirestore,
-  collection,
-  getDocs,
   addDoc,
-  getDoc,
-  updateDoc,
+  collection,
   deleteDoc,
+  getDoc,
+  getDocs,
+  getFirestore,
   query,
+  updateDoc,
   where,
 } from 'firebase/firestore';
+import { useFirebaseApp } from 'hooks/useFirebaseApp';
 
 export const useFirestore = () => {
   const { app } = useFirebaseApp();

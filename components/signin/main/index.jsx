@@ -1,8 +1,10 @@
-import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { setUserCookie } from 'auth/userCookie';
 import { mapUserData } from 'auth/useUser';
 import { useFirebaseAuth } from 'hooks/useFirebaseAuth';
+
+import 'firebase/auth';
+
 import styles from './main.module.scss';
 
 const Main = () => {

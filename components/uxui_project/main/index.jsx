@@ -1,23 +1,25 @@
 import {
   arrayOf,
-  shape,
-  string,
   number,
   objectOf,
   oneOfType,
+  shape,
+  string,
 } from 'prop-types';
+
+import FinalPrototype from '../final_prototype';
 import LogoImage from '../logoImage';
-import SummarySection from '../summary_section';
+import MainFeatures from '../main_features';
 import Metadata from '../metadata';
 import Persons from '../persons';
 import Problem from '../problem';
-import Solution from '../solution';
-import MainFeatures from '../main_features';
-import Wireframes from '../wireframes';
-import UserFlow from '../UserFlow';
-import UiKit from '../ui_kit';
 import Screens from '../screens';
-import FinalPrototype from '../final_prototype';
+import Solution from '../solution';
+import SummarySection from '../summary_section';
+import UiKit from '../ui_kit';
+import UserFlow from '../UserFlow';
+import Wireframes from '../wireframes';
+
 import styles from './main.module.scss';
 
 const Main = ({ project }) => {

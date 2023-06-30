@@ -1,5 +1,5 @@
 import ReactModal from 'react-modal';
-import { oneOfType, arrayOf, node } from 'prop-types';
+import { arrayOf, node, oneOfType } from 'prop-types';
 
 ReactModal.setAppElement('#__next');
 

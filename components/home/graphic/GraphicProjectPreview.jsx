@@ -1,9 +1,11 @@
 import { useRef } from 'react';
-import { useFullscreen } from 'rooks';
-import { string, func } from 'prop-types';
-import { tablet_breakpoint } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
+import { tablet_breakpoint } from 'config/constants';
+import { func, string } from 'prop-types';
+import { useFullscreen } from 'rooks';
+
 import WebpPicture from 'components/common/WebpPicture';
+
 import styles from './graphic.module.scss';
 
 const GraphicProjectPreview = ({ image_filename, name, openModal }) => {

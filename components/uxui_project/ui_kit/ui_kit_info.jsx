@@ -1,7 +1,10 @@
 import { arrayOf, string } from 'prop-types';
+
 import WebpPicture from 'components/common/WebpPicture';
-import Fonts from './fonts';
+
 import ColorPalette from './color_palette';
+import Fonts from './fonts';
+
 import styles from './ui_kit.module.scss';
 
 const UiKitInfo = ({ name, logo_image_filename, fonts, color_palette }) => {

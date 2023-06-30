@@ -1,11 +1,13 @@
-import { useEffect, useRef, useContext } from 'react';
-import Context from 'context/Context';
-import { arrayOf, shape, string, number, bool } from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { useContext, useEffect, useRef } from 'react';
+import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import styles from './mobile_menu.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Context from 'context/Context';
+import { arrayOf, bool, number, shape, string } from 'prop-types';
+
 import MobileNavLink from './MobileNavLink';
+
+import styles from './mobile_menu.module.scss';
 
 const MobileMenu = ({ nav_links }) => {
   const { isMobileMenuOpen, hideMobileMenu } = useContext(Context);

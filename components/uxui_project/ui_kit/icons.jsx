@@ -1,11 +1,12 @@
 import {
   arrayOf,
-  shape,
-  string,
   number,
   objectOf,
   oneOfType,
+  shape,
+  string,
 } from 'prop-types';
+
 import WebpPicture from 'components/common/WebpPicture';
 
 const Icons = ({ icons }) => {

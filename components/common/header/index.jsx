@@ -1,15 +1,18 @@
-import { useState, useEffect, useContext } from 'react';
-import { arrayOf, shape, string, number, bool } from 'prop-types';
-import LogoIcon from 'components/icons/LogoIcon';
-import Hamburger from 'hamburger-react';
-import Context from 'context/Context';
+import { useContext, useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import {
   desktop_breakpoint,
   header_height,
   header_height_mobile,
 } from 'config/constants';
-import { useMediaQuery } from 'react-responsive';
+import Context from 'context/Context';
+import Hamburger from 'hamburger-react';
+import { arrayOf, bool, number, shape, string } from 'prop-types';
+
+import LogoIcon from 'components/icons/LogoIcon';
+
 import NavLink from './NavLink';
+
 import styles from './header.module.scss';
 
 const Header = ({ nav_links, transparent }) => {

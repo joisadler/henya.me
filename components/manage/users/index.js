@@ -1,9 +1,10 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-restricted-globals */
-import { useState, useEffect, useReducer } from 'react';
-import { arrayOf, shape, string, bool, func } from 'prop-types';
-import { useFirestore } from 'hooks/useFirestore';
+import { useEffect, useReducer, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useFirestore } from 'hooks/useFirestore';
+import { arrayOf, bool, func, shape, string } from 'prop-types';
+
 import styles from './users.module.scss';
 
 const UsersItem = ({ user, users, forceUpdate }) => {

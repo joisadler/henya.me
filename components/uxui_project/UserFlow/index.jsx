@@ -1,5 +1,6 @@
 import { arrayOf, string } from 'prop-types';
 import textToKey from 'utils/textToKey';
+
 import styles from './user_flow.module.scss';
 
 const UserFlow = ({ user_flow }) => {

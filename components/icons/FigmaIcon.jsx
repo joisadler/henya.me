@@ -1,5 +1,5 @@
-import { string } from 'prop-types';
 import { forwardRef } from 'react';
+import { string } from 'prop-types';
 
 const FigmaIcon = forwardRef(({ className, color, ...props }, ref) => {
   return (

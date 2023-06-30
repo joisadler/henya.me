@@ -1,19 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import GoogleFontLoader from 'react-google-font-loader';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import {
   arrayOf,
-  shape,
-  string,
   number,
   objectOf,
   oneOfType,
+  shape,
+  string,
 } from 'prop-types';
-import { useRouter } from 'next/router';
-import GoogleFontLoader from 'react-google-font-loader';
+
+import Footer from 'components/common/footer';
 import Header from 'components/common/header';
 import MobileMenu from 'components/common/mobile_menu';
 import Main from 'components/uxui_project/main';
-import Footer from 'components/common/footer';
 
 const Project = ({ nav_links, projectsData }) => {
   const router = useRouter();

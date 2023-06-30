@@ -1,7 +1,9 @@
-import { string, arrayOf } from 'prop-types';
-import { desktop_breakpoint } from 'config/constants';
 import { useMediaQuery } from 'react-responsive';
+import { desktop_breakpoint } from 'config/constants';
+import { arrayOf, string } from 'prop-types';
+
 import WebpAnimation from 'components/common/WebpAnimation';
+
 import styles from './summary_section.module.scss';
 
 const Summary = ({ summary, device_type }) => {

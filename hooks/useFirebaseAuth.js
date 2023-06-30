@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import { useFirebaseApp } from 'hooks/useFirebaseApp';
+import { useEffect, useState } from 'react';
 import {
   getAuth,
   GoogleAuthProvider,
-  onIdTokenChanged,
   onAuthStateChanged,
+  onIdTokenChanged,
 } from 'firebase/auth';
+import { useFirebaseApp } from 'hooks/useFirebaseApp';
 
 export const useFirebaseAuth = () => {
   const { app } = useFirebaseApp();

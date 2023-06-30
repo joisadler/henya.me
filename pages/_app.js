@@ -1,9 +1,10 @@
-import { shape, elementType } from 'prop-types';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import GlobalState from 'context/GlobalState';
+import { elementType, shape } from 'prop-types';
+
 import 'normalize.css';
 import '../styles/globals.scss';
-import GlobalState from 'context/GlobalState';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faTrash, faPlus);
 

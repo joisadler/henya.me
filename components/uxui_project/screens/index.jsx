@@ -1,6 +1,8 @@
-import { arrayOf, shape, oneOfType, string } from 'prop-types';
-import WebpPicture from 'components/common/WebpPicture';
+import { arrayOf, oneOfType, shape, string } from 'prop-types';
 import textToKey from 'utils/textToKey';
+
+import WebpPicture from 'components/common/WebpPicture';
+
 import styles from './screens.module.scss';
 
 const Screens = ({ screens, device_type }) => {

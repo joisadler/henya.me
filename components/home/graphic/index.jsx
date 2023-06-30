@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import { arrayOf, shape, number, string } from 'prop-types';
-import RightArrowIcon from 'components/icons/RightArrowIcon';
+import { arrayOf, number, shape, string } from 'prop-types';
+
 import Modal from 'components/common/Modal';
 import WebpPicture from 'components/common/WebpPicture';
+import RightArrowIcon from 'components/icons/RightArrowIcon';
+
 import ProjectPreview from './GraphicProjectPreview';
+
 import styles from './graphic.module.scss';
 
 const Graphic = ({ projects }) => {

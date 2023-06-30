@@ -1,5 +1,6 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { node } from 'prop-types';
+
 import Context, { initialState } from './Context';
 
 const GlobalState = ({ children }) => {

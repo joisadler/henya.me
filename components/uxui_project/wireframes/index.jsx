@@ -1,5 +1,7 @@
 import { arrayOf, string } from 'prop-types';
+
 import WebpPicture from 'components/common/WebpPicture';
+
 import styles from './wireframes.module.scss';
 
 const Wireframes = ({ wireframes }) => {

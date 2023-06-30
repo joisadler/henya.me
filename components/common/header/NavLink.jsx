@@ -1,5 +1,6 @@
-import { string, bool } from 'prop-types';
 import Link from 'next/link';
+import { bool, string } from 'prop-types';
+
 import styles from './header.module.scss';
 
 const NavLink = ({ name, url, scroll, open_in_new_tab }) => {

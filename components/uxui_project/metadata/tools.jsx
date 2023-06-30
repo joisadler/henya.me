@@ -1,4 +1,5 @@
 import { arrayOf, string } from 'prop-types';
+
 import styles from './metadata.module.scss';
 
 const Tools = ({ tools }) => {

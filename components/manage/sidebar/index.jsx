@@ -1,4 +1,5 @@
-import { shape, func, string } from 'prop-types';
+import { func, shape, string } from 'prop-types';
+
 import styles from './sidebar.module.scss';
 
 const Sidebar = ({ user, logout, activePanel, setActivePanel }) => {

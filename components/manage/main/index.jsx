@@ -1,7 +1,9 @@
 import { string } from 'prop-types';
-import Users from 'components/manage/users';
+
 import CV from 'components/manage/cv';
+import Users from 'components/manage/users';
 import UxUiProjects from 'components/manage/UxUiProjects';
+
 import styles from './main.module.scss';
 
 const Main = ({ activePanel }) => {

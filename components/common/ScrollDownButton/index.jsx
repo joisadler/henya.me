@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
-import { bool } from 'prop-types';
-import { desktop_breakpoint } from 'config/constants';
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { desktop_breakpoint } from 'config/constants';
+import { bool } from 'prop-types';
+
 import styles from './scroll_down_button.module.scss';
 
 const ScrollDownButton = ({ dark }) => {

@@ -1,13 +1,15 @@
 import {
   arrayOf,
-  string,
   number,
   objectOf,
   oneOfType,
   shape,
+  string,
 } from 'prop-types';
-import UiKitInfo from './ui_kit_info';
+
 import UiKitIcons from './ui_kit_icons';
+import UiKitInfo from './ui_kit_info';
+
 import styles from './ui_kit.module.scss';
 
 const UiKit = ({

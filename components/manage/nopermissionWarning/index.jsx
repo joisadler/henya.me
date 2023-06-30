@@ -1,4 +1,5 @@
-import { string, shape, func } from 'prop-types';
+import { func, shape, string } from 'prop-types';
+
 import styles from './no_permission_warning.module.scss';
 
 const NoPermissionWarning = ({ user, logout }) => {

@@ -1,13 +1,15 @@
 import {
   arrayOf,
-  string,
-  shape,
+  number,
   objectOf,
   oneOfType,
-  number,
+  shape,
+  string,
 } from 'prop-types';
-import Icons from './icons';
+
 import ButtonIcons from './button_icons';
+import Icons from './icons';
+
 import styles from './ui_kit.module.scss';
 
 const UiKitIcons = ({ icons, button_icons }) => {

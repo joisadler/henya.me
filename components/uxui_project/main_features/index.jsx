@@ -1,5 +1,6 @@
 import { arrayOf, string } from 'prop-types';
 import textToKey from 'utils/textToKey';
+
 import styles from './main_features.module.scss';
 
 const MainFeatures = ({ main_features }) => {

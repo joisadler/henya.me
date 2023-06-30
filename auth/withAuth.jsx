@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import router from 'next/router';
 import { useFirebaseAuth } from 'hooks/useFirebaseAuth';
+import router from 'next/router';
 
 const withAuth = Component => props => {
   const { auth, onAuthStateChanged } = useFirebaseAuth();

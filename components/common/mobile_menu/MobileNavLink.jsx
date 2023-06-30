@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { string, bool } from 'prop-types';
 import { useContext } from 'react';
 import Context from 'context/Context';
 import Link from 'next/link';
+import { bool, string } from 'prop-types';
+
 import styles from './mobile_menu.module.scss';
 
 const NavLink = ({ name, url, scroll, open_in_new_tab }) => {

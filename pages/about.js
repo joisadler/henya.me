@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { arrayOf, shape, string, number } from 'prop-types';
-import Header from 'components/common/header';
-import MobileMenu from 'components/common/mobile_menu';
+import { useRouter } from 'next/router';
+import { arrayOf, number, shape, string } from 'prop-types';
+
 import Main from 'components/about/main';
 import Footer from 'components/common/footer';
+import Header from 'components/common/header';
+import MobileMenu from 'components/common/mobile_menu';
 
 const Home = ({ nav_links }) => {
   const router = useRouter();
