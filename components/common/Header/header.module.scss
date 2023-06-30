@@ -1,0 +1,91 @@
+@import 'utils';
+
+.container {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: $header_height_mobile;
+  padding-inline: $padding_inline_mobile;
+  color: $white;
+
+  @include breakpoint(tablet) {
+    padding-inline: $padding_inline_tablet;
+  }
+
+  @include breakpoint(desktop) {
+    height: $header_height;
+    padding-inline: $padding_inline_desktop;
+  }
+}
+
+.logo_container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: calc($header_height_mobile * 0.8);
+
+  @include breakpoint(desktop) {
+    height: calc($header_height * 0.8);
+  }
+}
+
+.nav_container {
+  display: none;
+
+  @include breakpoint(desktop) {
+    display: flex;
+    height: 100%;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-inline-end: toRem(12);
+}
+
+.nav_link {
+  margin-inline-end: toRem(30);
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: toRem(18);
+  line-height: toRem(22);
+  color: $white;
+}
+
+.contact_info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.contact_info_text {
+  color: $white;
+  font-family: $mulish;
+  font-size: toRem(16);
+  line-height: $padding_inline_tablet;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.hamburger_container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  @include breakpoint(desktop) {
+    display: none;
+  }
+}

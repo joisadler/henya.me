@@ -7,18 +7,18 @@ import {
   string,
 } from 'prop-types';
 
-import FinalPrototype from '../final_prototype';
-import LogoImage from '../logoImage';
-import MainFeatures from '../main_features';
-import Metadata from '../metadata';
-import Persons from '../persons';
-import Problem from '../problem';
-import Screens from '../screens';
-import Solution from '../solution';
-import SummarySection from '../summary_section';
-import UiKit from '../ui_kit';
+import FinalPrototype from '../FinalPrototype';
+import LogoImage from '../LogoImage';
+import MainFeatures from '../MainFeatures';
+import Metadata from '../Metadata';
+import Persons from '../Persons';
+import Problem from '../Problem';
+import Screens from '../Screens';
+import Solution from '../Solution';
+import SummarySection from '../SummarySection';
+import UiKit from '../UiKit';
 import UserFlow from '../UserFlow';
-import Wireframes from '../wireframes';
+import Wireframes from '../Wireframes';
 
 import styles from './main.module.scss';
 

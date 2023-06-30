@@ -1,0 +1,92 @@
+@import 'utils';
+
+.metadata_container {
+  position: relative;
+  max-width: $max_content_width;
+  margin-inline-start: -#{$padding_inline_mobile};
+  padding-inline: $padding_inline_mobile;
+
+  @include breakpoint(tablet) {
+    margin-inline-start: -#{$padding_inline_tablet};
+    padding-inline: $padding_inline_tablet;
+  }
+
+  @include breakpoint(desktop) {
+    margin-inline-start: -#{$padding_inline_desktop};
+    padding-inline: $padding_inline_desktop;
+  }
+
+  @media (min-width: 1440px) {
+    margin-inline: auto;
+    padding-inline: 0 $padding_inline_desktop;
+  }
+}
+
+.metadata {
+  display: flex;
+  flex-flow: column nowrap;
+  padding-block: toRem(30);
+
+  @include breakpoint(tablet) {
+    flex-flow: row nowrap;
+    gap: toRem(36);
+  }
+
+  @include breakpoint(desktop) {
+    gap: toRem(36);
+    &[data-device-type="mobile"] {
+      width: calc(100% - #{$preview_animation_width_mobile});
+    }
+    &[data-device-type="desktop"] {
+      width: calc(100% - #{$preview_animation_width_desktop});
+    }
+  }
+
+  @include breakpoint(macbook_pro) {
+    gap: toRem(70);
+  }
+}
+
+.metadata_item {
+  margin-block-end: 1rem;
+
+  @include breakpoint(tablet) {
+    margin-block-end: 0;
+  }
+}
+
+.metadata_title {
+  margin: 0;
+  font-family: $mulish;
+  font-weight: 700;
+  font-size: toRem(18);
+  line-height: 170%;
+  color: $black;
+  text-align: center;
+
+  @include breakpoint(tablet) {
+    text-align: start;
+  }
+
+  @include breakpoint(desktop) {
+    font-size: toRem(25);
+  }
+}
+
+.metadata_text {
+  width: 100%;
+  margin: 0;
+  font-family: $mulish;
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 125%;
+  color: $black;
+  white-space: pre;
+
+  @include breakpoint(tablet) {
+    width: 75%;
+  }
+  @include breakpoint(desktop) {
+    font-size: toRem(20);
+  }
+}

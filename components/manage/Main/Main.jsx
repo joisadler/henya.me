@@ -1,7 +1,7 @@
 import { string } from 'prop-types';
 
-import CV from 'components/manage/cv';
-import Users from 'components/manage/users';
+import CV from 'components/manage/CV';
+import Users from 'components/manage/Users';
 import UxUiProjects from 'components/manage/UxUiProjects';
 
 import styles from './main.module.scss';

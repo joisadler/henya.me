@@ -1,0 +1,38 @@
+@import 'utils';
+
+.container {
+  max-width: $max_content_width;
+  margin-inline: auto;
+}
+
+.title {
+  margin-block: toRem(20);
+  font-family: $mulish;
+  font-weight: 700;
+  font-size: $padding_inline_tablet;
+  line-height: 125%;
+
+  @include breakpoint(desktop) {
+    font-size: toRem(40);
+  }
+}
+
+.text {
+  font-family: $mulish;
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 125%;
+  color: $black;
+
+  &:last-child {
+    margin-block-end: toRem(50);
+  }
+
+  @include breakpoint(desktop) {
+    font-size: toRem(20);
+  }
+}
+
+.text_green {
+  color: $text_green;
+}

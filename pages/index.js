@@ -3,13 +3,13 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { arrayOf, bool, number, shape, string } from 'prop-types';
 
-import Footer from 'components/common/footer';
-import Header from 'components/common/header';
-import HelpUkraine from 'components/common/HelpUkraine/HelpUkraine';
-import MobileMenu from 'components/common/mobile_menu';
-import Graphic from 'components/home/graphic';
-import Main from 'components/home/main';
-import Motion from 'components/home/motion';
+import Footer from 'components/common/Footer';
+import Header from 'components/common/Header';
+import HelpUkraine from 'components/common/HelpUkraine';
+import MobileMenu from 'components/common/MobileMenu';
+import Graphic from 'components/home/Graphic';
+import Main from 'components/home/Main';
+import Motion from 'components/home/Motion';
 import UxUi from 'components/home/UxUi';
 
 const Home = ({

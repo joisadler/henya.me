@@ -1,0 +1,23 @@
+@import 'utils';
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.page_title {
+  margin: 0;
+  font-family: $mulish;
+  font-style: normal;
+  font-weight: 900;
+  font-size: $padding_inline_tablet;
+  color: $maastricht_blue;
+
+  strong {
+    color: $text_red;
+  }
+
+  @include breakpoint(desktop) {
+    font-size: toRem(36);
+  }
+}

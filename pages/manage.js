@@ -3,13 +3,13 @@ import { useFirestore } from 'hooks/useFirestore';
 import Head from 'next/head';
 import { arrayOf, bool, number, shape, string } from 'prop-types';
 
-import Footer from 'components/common/footer';
-import Header from 'components/common/header';
-import MobileMenu from 'components/common/mobile_menu';
-import AuthenticationWarning from 'components/manage/authenticationWarning';
-import Main from 'components/manage/main';
-import NoPermissionWarning from 'components/manage/nopermissionWarning';
-import Sidebar from 'components/manage/sidebar';
+import Footer from 'components/common/Footer';
+import Header from 'components/common/Header';
+import MobileMenu from 'components/common/MobileMenu';
+import AuthenticationWarning from 'components/manage/AuthenticationWarning';
+import Main from 'components/manage/Main';
+import NoPermissionWarning from 'components/manage/NopermissionWarning';
+import Sidebar from 'components/manage/Sidebar';
 
 import { useUser } from '../auth/useUser';
 import withAuth from '../auth/withAuth';
