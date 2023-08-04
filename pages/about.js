@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { arrayOf, number, shape, string } from 'prop-types';
 
 import Main from 'components/about/Main';
+import CVPopup from 'components/common/CVPopup';
 import Footer from 'components/common/Footer';
 import Header from 'components/common/Header';
 import MobileMenu from 'components/common/MobileMenu';
@@ -40,6 +41,7 @@ const Home = ({ nav_links }) => {
       <Header nav_links={nav_links} />
       <Main />
       <Footer />
+      <CVPopup />
     </>
   );
 };

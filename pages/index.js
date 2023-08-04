@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { arrayOf, bool, number, shape, string } from 'prop-types';
 
+import CVPopup from 'components/common/CVPopup';
 import Footer from 'components/common/Footer';
 import Header from 'components/common/Header';
 import HelpUkraine from 'components/common/HelpUkraine';
@@ -59,6 +60,7 @@ const Home = ({
       <Graphic projects={graphic_design_projects} />
       <Footer />
       <HelpUkraine isOpen={isHelpUkraineShown} onClose={closeHelpUkraine} />
+      <CVPopup />
     </>
   );
 };

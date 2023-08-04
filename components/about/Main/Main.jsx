@@ -1,7 +1,8 @@
 import {
-  useRef,
   // useEffect,
+  useContext,
 } from 'react';
+import Context from 'context/Context';
 
 import ScrollDownButton from 'components/common/ScrollDownButton';
 import WebpPicture from 'components/common/WebpPicture';
@@ -12,13 +13,15 @@ import styles from './main.module.scss';
 import buttonStyles from 'styles/buttons.module.scss';
 
 const Main = () => {
-  const cvLinkRef = useRef(null);
+  const { isCVPopupOpen, showCVPopup } = useContext(Context);
   // const pictureRef = useRef(null);
   // const textContentRef = useRef(null);
 
   const onDownloadCV = () => {
-    if (!cvLinkRef.current) return;
-    cvLinkRef.current.click();
+    if (isCVPopupOpen) {
+      return;
+    }
+    showCVPopup();
   };
 
   // const isMobile = useMediaQuery({
@@ -72,20 +75,11 @@ const Main = () => {
             design, I am constantly seeking opportunities to expand my knowledge
             and skill set through self-directed learning.
           </p>
-          <a
-            href="/download/Henya_Adler_CV.pdf"
-            className="hidden"
-            target="_blank"
-            rel="noopener"
-            ref={cvLinkRef}
-          >
-            Download Resume
-          </a>
           <button
             className={`${buttonStyles.action_button} ${styles.download_cv_button}`}
             onClick={onDownloadCV}
           >
-            Download Resume
+            Download CV
           </button>
         </div>
         <ScrollDownButton dark />
@@ -96,18 +90,7 @@ const Main = () => {
           <article className={styles.info_item}>
             <h3 className={styles.info_item_title}>Marketing Designer</h3>
             <h4 className={styles.info_item_subtitle}>
-              Agilite (2023 - present)
-            </h4>
-            <ul className={styles.info_item_list}>
-              <li>Designed ads, banners, newsletters.</li>
-              <li>Created animations.</li>
-              <li>Created and edited technical documents.</li>
-            </ul>
-          </article>
-          <article className={styles.info_item}>
-            <h3 className={styles.info_item_title}>Marketing Designer</h3>
-            <h4 className={styles.info_item_subtitle}>
-              Castro-Hoodies (2022 - 2023)
+              Castro-Hoodies (2023 - present)
             </h4>
             <h4 className={styles.info_item_note}>
               Replacement for maternity leave

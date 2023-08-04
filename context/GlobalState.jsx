@@ -27,12 +27,36 @@ const GlobalState = ({ children }) => {
     }));
   };
 
+  const setIsCVPopupOpen = () => {
+    setState(prevState => ({
+      ...prevState,
+      isCVPopupOpen: true,
+    }));
+  };
+
+  const showCVPopup = () => {
+    setState(prevState => ({
+      ...prevState,
+      isCVPopupOpen: true,
+    }));
+  };
+
+  const hideCVPopup = () => {
+    setState(prevState => ({
+      ...prevState,
+      isCVPopupOpen: false,
+    }));
+  };
+
   const Value = useMemo(
     () => ({
       ...state,
       setIsMobileMenuOpen,
       showMobileMenu,
       hideMobileMenu,
+      setIsCVPopupOpen,
+      showCVPopup,
+      hideCVPopup,
     }),
     [state]
   );
