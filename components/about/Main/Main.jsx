@@ -90,18 +90,7 @@ const Main = () => {
           <article className={styles.info_item}>
             <h3 className={styles.info_item_title}>Marketing Designer</h3>
             <h4 className={styles.info_item_subtitle}>
-              Agilite (2023 - present)
-            </h4>
-            <ul className={styles.info_item_list}>
-              <li>Designed ads, banners, newsletters.</li>
-              <li>Created animations.</li>
-              <li>Created and edited technical documents.</li>
-            </ul>
-          </article>
-          <article className={styles.info_item}>
-            <h3 className={styles.info_item_title}>Marketing Designer</h3>
-            <h4 className={styles.info_item_subtitle}>
-              Castro-Hoodies (2022 - 2023)
+              Castro-Hoodies (2023 - present)
             </h4>
             <h4 className={styles.info_item_note}>
               Replacement for maternity leave
