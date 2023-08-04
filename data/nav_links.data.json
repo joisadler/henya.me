@@ -22,8 +22,9 @@
   },  {
     "id": 4,
     "name": "My CV",
-    "url": "/download/Henya_Adler_CV.pdf",
+    "url": "/",
     "scroll": false,
-    "open_in_new_tab": true
+    "open_in_new_tab": true,
+    "isCV": true
   }
 ]

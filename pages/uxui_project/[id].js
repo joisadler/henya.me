@@ -11,6 +11,7 @@ import {
   string,
 } from 'prop-types';
 
+import CVPopup from 'components/common/CVPopup';
 import Footer from 'components/common/Footer';
 import Header from 'components/common/Header';
 import MobileMenu from 'components/common/MobileMenu';
@@ -57,6 +58,7 @@ const Project = ({ nav_links, projectsData }) => {
       <Header nav_links={nav_links} />
       <Main project={project} />
       <Footer />
+      <CVPopup />
     </>
   );
 };

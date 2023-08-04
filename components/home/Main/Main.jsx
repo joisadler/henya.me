@@ -1,5 +1,6 @@
-import { useRef } from 'react';
+import { useContext } from 'react';
 import Typed from 'react-typed';
+import Context from 'context/Context';
 
 // import WebpPicture from 'components/common/WebpPicture';
 // import WebpAnimation from 'components/common/WebpAnimation';
@@ -12,11 +13,13 @@ import buttonStyles from 'styles/buttons.module.scss';
 
 const Main = () => {
   const texts = ['UX/UI Designer', 'Graphic Designer', 'Motion Designer'];
-  const cvLinkRef = useRef(null);
+  const { isCVPopupOpen, showCVPopup } = useContext(Context);
 
   const onDownloadCV = () => {
-    if (!cvLinkRef.current) return;
-    cvLinkRef.current.click();
+    if (isCVPopupOpen) {
+      return;
+    }
+    showCVPopup();
   };
 
   return (
@@ -41,17 +44,8 @@ const Main = () => {
               />
             </span>
           </h1>
-          <a
-            href="/download/Henya_Adler_CV.pdf"
-            className="hidden"
-            target="_blank"
-            rel="noopener"
-            ref={cvLinkRef}
-          >
-            Download Resume
-          </a>
           <button className={buttonStyles.action_button} onClick={onDownloadCV}>
-            Download Resume
+            Download CV
           </button>
         </div>
         <ToolIcons />
